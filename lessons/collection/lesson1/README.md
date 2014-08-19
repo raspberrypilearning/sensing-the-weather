@@ -79,7 +79,7 @@ Each individual pin can be set up in two main modes: *Input* mode and *Output* m
 
 Output mode is used when you want to supply voltage/power to a device like an LED or buzzer. The picture below shows how a single LED would be connected, notice the grid of numbers below the GPIO pins. The red wire is being used to connect GPIO 4 to the positive `+` leg of the LED. The black wire connects the negative `-` leg of the LED to GND (ground) to complete the circuit.
 
-The LED will not light up though unless we give the command to make GPIO 4 output voltage/power. We'll look into these commands later.
+The LED will not light up though unless we give the command to make GPIO 4 output voltage/power. We'll look into these commands later but we could, for instance, issue the commands in such a way that the LED flashes on and off at a certain speed.
 
 ![](../../../images/gpio_out.png)
 
