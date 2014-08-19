@@ -67,11 +67,28 @@ What makes this computer different to the ones you may be used before is the row
 
 Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a vast array of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors. 
 
-So... we can use the Raspberry Pi GPIO pins to connect our weather sensors. The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it. Students will build up a library of code that will eventually be used in the finished weather station deployed outside.
+So we can use the Raspberry Pi GPIO pins to connect our weather sensors. The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it. Students will build up a library of code that will eventually be used in the finished weather station deployed outside.
 
 ## Main Development
 
-Let's take a closer look at the Raspberry Pi GPIO pins and how they work. The Raspberry Pi GPIO pins can be controlled through *programming*. This means by typing in a series of instructions and having the computer run them the GPIO pins can be made to do various things.
+The main part of this lesson will be an introduction to the GPIO pins and what they can do. This will form a foundation upon which the other lessons will build. The Raspberry Pi GPIO pins are controlled through *code*. This means by typing in a series of instructions and having the computer run them the GPIO pins can be made to do various things.
+
+Each individual pin can be set up in two main modes: *Input* mode and *Output* mode.
+
+### Output mode
+
+Output mode is used when you want to supply voltage/power to a device like an LED or buzzer. The picture below shows how a single LED would be connected, notice the grid of numbers below the GPIO pins. The red wire is being used to connect GPIO 4 to the positive `+` leg of the LED. The black wire connects the negative `-` leg of the LED to GND (ground) to complete the circuit.
+
+The LED will not light up though unless we give the command to make GPIO 4 output voltage/power. We'll look into these commands later.
+
+![](../../../images/gpio_out.png)
+
+### Input mode
+
+If we use *input* mode, a GPIO pin has a value that we can read in our code. If the pin has voltage going into it, the reading will be `1` HIGH; if the pin was connected directly to ground (no voltage), the reading will be `0` LOW.
+
+![](../../../images/gpio_in.png)
+
 
 ## Plenary
 
