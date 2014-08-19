@@ -44,7 +44,7 @@ Wind speed | Anemometer
 
 Next ask the class to think about how they would record data from these instruments. We're going to need a lot of data. *Lots*. Ideally we need to monitor all of these characteristics as they change over a long period of time so that trends and patterns can be sought.
 
-The answer is that with most of those instruments you would need to visually *look* at it and then write down the measurement. Ask the class what else we might want to record in the interests of being scientific.
+The answer is that with most of those instruments you would need to visually *look* at them and then write down the measurement. Ask the class what else we might want to record in the interests of being scientific.
 
 Measurement | Reason
 --- | --- 
@@ -67,13 +67,11 @@ What makes this computer different to the ones you may be used before is the row
 
 Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a vast array of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors. 
 
-So... we can use the Raspberry Pi GPIO pins to connect our weather sensors. Eventually we will be able to give the computer a command to make it read a value from a sensor and display it on screen (or save it to a file).
-
-The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to them. Students will build up a library of code that they will eventually use in the finished weather station deployed outdoors.
+So... we can use the Raspberry Pi GPIO pins to connect our weather sensors. The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it. Students will build up a library of code that will eventually be used in the finished weather station deployed outside.
 
 ## Main Development
 
-
+Let's take a closer look at the Raspberry Pi GPIO pins and how they work. The Raspberry Pi GPIO pins can be controlled through *programming*. This means by typing in a series of instructions and having the computer run them the GPIO pins can be made to do various things.
 
 ## Plenary
 
