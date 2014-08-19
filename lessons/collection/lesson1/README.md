@@ -53,9 +53,9 @@ Location | Ties the measurement to a specific place allowing for comparison to o
 
 So how are we going to gather all this data? Let's suppose we want to take a reading from each of the instruments once every five minutes. Ask the class if there are any volunteers to sit outside in a shed day and night writing down numbers from those instruments?
 
-The problem is that people need rest and there is also the issue of human error. Even if people were to work in shifts there is the possibility that mistakes will be made when writing down the measurements. What we need is some kind of automatic machine that doesn't need sleep.
+The problem is that people need rest and there is also the issue of human error. Even if people were to work in shifts there is the possibility that mistakes will be made when writing down the measurements. What we need is some kind of automatic machine that doesn't need sleep. What we need is a *computer!*
 
-
+A computer doesn't need sleep and we could easily program it to take the measurements every five minutes. We can then just leave it on and it will happily continue to record measurements until the end of time. But how are we going to connect the sensors to it?
 
 ## Main Development
 
