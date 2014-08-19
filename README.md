@@ -5,19 +5,20 @@
 ## Introduction
 This scheme of work has been designed to be a cross curricular exploration of how we can predict the behaviour of our weather, by measuring, collecting and anaylsing weather data. By the end of all the lessons, students will have built their own weather station using a Raspberry Pi, used it to collect data about the weather and created a webpage in order to display their findings. 
 
-This scheme of work is specifically targeted towards KS2 Computing, although it could be taught in conjunction with Science, Geography and Numeracy lessons. These lessons could be used as a wider scheme of work at KS3. This has been developed in harmony with the new Computing curriculum in the UK.
+This scheme of work is specifically targeted towards KS2 Computing, although it could be taught in conjunction with Science, Geography and Numeracy lessons. These lessons could be used as a wider scheme of work at KS3 and KS4. This has been developed in harmony with the new Computing curriculum in the UK.
 
 ## Learning Outcomes
 Over the course of these lessons, students will learn:
 - How information about the weather is measured and collected
 - How to build a weather recording device with a Raspberry Pi
-- How to analyse weather data and make predictions about it before outputting the information to a webapge
+- How to build a website to display collected weather data
+- How to analyse weather data and make predictions about future weather
 
 ## Computing programme of Study Met 
 
-**KS2**
-
 **KS3**
+
+**KS4**
 
 [National Curriculum Computing Programmes of Study](https://www.gov.uk/government/publications/national-curriculum-in-england-computing-programmes-of-study/national-curriculum-in-england-computing-programmes-of-study#key-stage-3)
 
@@ -74,6 +75,6 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-***Predicting the Weather Lessons*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+***Weather Station Scheme of Work*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/predicting-the-weather-lessons
+Based on a work at https://github.com/raspberrypilearning/weather-station-sow
