@@ -5,7 +5,7 @@
 ## Introduction
 This scheme of work has been designed to be a cross curricular exploration of how we can predict the behaviour of our weather by measuring, collecting and anaylsing weather data. By the end of all the lessons, students will have built their own weather station using a Raspberry Pi, used it to collect data about the weather and created a webpage in order to display their findings. 
 
-This scheme of work is specifically targeted towards KS2 Computing, although it could be taught in conjunction with Science, Geography and Numeracy lessons. These lessons could be used as a wider scheme of work at KS3 and KS4. This has been developed in harmony with the new Computing curriculum in the UK.
+This scheme of work is specifically targeted towards KS3 and 4 Computing, although it could be taught in conjunction with Science, Geography and Numeracy lessons.
 
 ## Learning Outcomes
 Over the course of these lessons, students will learn:
