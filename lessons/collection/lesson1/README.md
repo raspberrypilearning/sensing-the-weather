@@ -59,9 +59,21 @@ We could easily program a computer to take the measurements every five minutes. 
 
 The answer is we need a computer that has a general purpose interface.
 
+![](../../../images/raspberrypis.png)
+
+The Raspberry Pi is a tiny, inexpensive, computer that's roughly the same size as a deck of cards. It comes as a naked circuit board with no case although many third party cases are available. It's a full standalone PC that works independently, can be connected to any TV or Monitor and uses standard USB peripherals.
+
+What makes this computer different to the ones you may be used before is the row of pins, sticking up, in the corner.
+
+Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a vast array of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors. 
+
+So... we can use the Raspberry Pi GPIO pins to connect our weather sensors. Eventually we will be able to give the computer a command to make it read a value from a sensor and display it on screen (or save it to a file).
+
+The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it.
+
 ## Main Development
 
-![](../../../images/raspberrypis.png)
+
 
 ## Plenary
 
