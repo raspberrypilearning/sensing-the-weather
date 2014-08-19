@@ -49,7 +49,12 @@ The answer is that with most of those instruments you would need to visually *lo
 Measurement | Reason
 --- | --- 
 Date and Time | Ties the measurement to a specific time allowing for comparison to other measurements taken at earlier or later times
-Location | Ties the measurement to a specific place allowing for comparison to other measurements taken at different locations and for plotting data on a map
+Location | Ties the measurement to a specific place allowing for comparison to other measurements taken at different locations and for plotting on a map
+
+So how are we going to gather all this data? Let's suppose we want to take a reading from each of the instruments once every five minutes. Ask the class if there are any volunteers to sit outside in a shed day and night writing down numbers from those instruments?
+
+The problem is that people need rest and there is also the issue of human error. Even if people were to work in shifts there is the possibility that mistakes will be made when writing down the measurements. What we need is some kind of automatic machine that doesn't need sleep.
+
 
 
 ## Main Development
