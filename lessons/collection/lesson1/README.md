@@ -77,27 +77,11 @@ Each individual pin can be set up in two main modes: *Input* mode and *Output* m
 
 ### Output mode
 
-Output mode is used when you want to supply voltage/power to a device like an LED or buzzer. The picture below shows how a single LED would be connected, notice the grid of numbers below the GPIO pins. The red wire is being used to connect GPIO 4 to the positive `+` leg of the LED (the anode). The black wire connects the negative `-` leg of the LED (the cathode) to GND (ground) to complete the circuit.
+Output mode is used when you want to supply voltage/power to a device like an LED or buzzer. The picture below shows how a single LED would be connected, notice the grid of numbers below the GPIO pins. The red wire is being used to connect GPIO 4 to the positive `+` leg of the LED. The black wire connects the negative `-` leg of the LED to GND (ground) to complete the circuit.
 
-The LED will not light up though unless we give the command to make GPIO 4 output voltage/power.
+The LED will not light up though unless we give the command to make GPIO 4 output voltage/power. We'll look into these commands later.
 
 ![](../../../images/gpio_out.png)
-
-Here is some example code which would turn the LED on for one second and then off again.
-
-```python
-import RPi.GPIO as GPIO, time
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)
-GPIO.outout(4, GPIO.HIGH)
-
-time.sleep(1)
-
-GPIO.outout(4, GPIO.LOW)
-```
-
-
 
 ### Input mode
 
