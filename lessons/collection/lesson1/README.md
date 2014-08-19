@@ -69,7 +69,7 @@ Those are called General Purpose Input Output pins or *GPIO* for short. These al
 
 So... we can use the Raspberry Pi GPIO pins to connect our weather sensors. Eventually we will be able to give the computer a command to make it read a value from a sensor and display it on screen (or save it to a file).
 
-The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it.
+The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to them. Students will build up a library of code that they will eventually use in the finished weather station deployed outdoors.
 
 ## Main Development
 
