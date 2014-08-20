@@ -79,13 +79,17 @@ Each individual pin can be set up in two main modes: *Input* mode and *Output* m
 
 Output mode is used when you want to supply power to a device like an LED or buzzer. The picture below shows how a single LED would be connected. Notice the grid of numbers below the GPIO pins, that shows what each pin is for. Don't try to understand the numbering system, just consider it arbitrary for now. 
 
-The red wire is being used to connect GPIO 4 to the positive leg of the LED. The black wire connects the negative leg of the LED to GND (ground) to complete the circuit. The LED will not light up though unless we give the Python command to make GPIO 4 output power. We'll look into these commands later but we could, for instance, issue the commands in such a way that the LED flashes on and off at a certain speed. We have computational control of the LED turning on and off.
+The red wire is being used to connect GPIO 4 to the positive leg of the LED. The black wire connects the negative leg of the LED to GND (ground) to complete the circuit. The LED will not light up though unless we give the Python command to make GPIO 4 output power. We'll look into these commands later but we could, for instance, issue the commands in such a way that the LED flashes on and off at a certain speed. The point to understand is that we have *control* of the LED turning on and off in our code.
 
 ![](../../../images/gpio_out.png)
 
 ### Input mode
 
-If we use *input* mode, a GPIO pin has a value that we can read in our code. If the pin has voltage going into it, the reading will be `1` HIGH; if the pin was connected directly to ground (no voltage), the reading will be `0` LOW.
+If we use *input* mode, a GPIO pin has a value that we can read in our code. If the pin has voltage going into it, the reading will be `1` HIGH; if the pin was connected directly to ground (no voltage), the reading will be `0` LOW. The picture below shows how a push button would be connected. In our code we want to know if the button has been pressed or not. To do this we can use a clever trick to loop back some power from the Raspberry Pi, through the button and into a GPIO pin that is using input mode.
+
+The orange wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi. The green wire connects the other side of the button to GPIO 4. While the button is up no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed voltage will flow into GPIO 4 whereup on the reading will be `1` HIGH.
+
+In our code we would then use a loop to continually check the GPIO 4 reading. When it changes from LOW to HIGH we can show a message or take any action that we want.
 
 ![](../../../images/gpio_in.png)
 
