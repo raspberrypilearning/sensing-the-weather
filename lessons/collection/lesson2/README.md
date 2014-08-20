@@ -99,8 +99,8 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   | Code | Meaning |
   | --- | --- |
   |`#!/usr/bin/python` | This line denotes this file as a Python program so that the computer knows *how* to run the code. All of your Python programs will have this.|
-  |`import RPi.GPIO as GPIO` |  Allows you to control the GPIO pins.|
-  |`import time` | Allows you to measure time or make the program sleep.|
+  |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library that allows you to control the GPIO pins.|
+  |`import time` | Imports the `time` library that allows you to measure time or make the program sleep.|
   |`pin = 4` | A variable called `pin` to store the value 4. This will be used whenever you need to refer to the GPIO pin number that you're using later on in the program.|
   |`GPIO.setmode(GPIO.BCM)` | Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. This configures the pin layout that you want to use. The brackets `()` are important because they enclose the function *parameters;* the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since layout this matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way. If you prefer to use `GPIO.BOARD` then the `pin` variable should be changed from 4 to 7.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | The next line `GPIO.setup` configures the IO (input/output) mode for a given GPIO pin. When you want to input multiple parameters to a function you separate them with a comma `,`. There are three parameters; `pin` which specifies the number of the GPIO pin to configure; `GPIO.IN` specifies that we want to use input mode and `GPIO.PUD_UP` is saying we want to turn on the internal pull up resistor so that the pin always reads HIGH.|
