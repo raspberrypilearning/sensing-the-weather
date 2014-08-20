@@ -134,6 +134,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   1
   1
   ```
+9. Press `Ctrl - C` to exit your program.
 
 ### Pull down circuit
 
