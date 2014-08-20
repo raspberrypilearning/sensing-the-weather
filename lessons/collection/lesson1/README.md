@@ -53,15 +53,17 @@ Location | Ties the measurement to a specific place allowing for comparison to o
 
 So how are we going to gather all this data? Let's suppose we want to take a reading from each of the instruments once every five minutes. Ask the class if there are any volunteers to sit outside in a shed day and night writing down numbers from those instruments?
 
-The problem is that people need rest and there is also the issue of human error. Even if people were to work in shifts there is the possibility that mistakes will be made when writing down the measurements. What we need is some kind of automatic machine that doesn't need sleep. What we need is a *computer!*
+The problem is that people need rest and there is also the issue of human error. Even if people were to work in shifts there is the possibility that mistakes will be made when writing down the measurements. What we need is some kind of automatic machine that doesn't need sleep. We need a *computer!*
 
-We could easily program a computer to take the measurements every five minutes. We can then just leave it unattended and it will happily continue to record measurements until the end of time. But how are we going to connect the sensors to it?
+We could easily program a computer to take the measurements every five minutes. We can then just leave it unattended and it will happily continue to record measurements until the end of time.
 
-The answer is we need a computer that has a general purpose interface.
+But how are we going to connect the sensors to it? The answer is we need a computer that has a general purpose interface.
 
 ![](../../../images/raspberrypis.png)
 
-The Raspberry Pi is a tiny, inexpensive, computer that's roughly the same size as a deck of cards. It comes as a naked circuit board with no case although many third party cases are available. It's a full standalone PC that works independently, can be connected to any TV or Monitor and uses standard USB peripherals.
+*The Raspberry Pi model B (left) and the B+ (right)*
+
+The [Raspberry Pi](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) is a tiny, inexpensive, computer that's roughly the same size as a pack of cards. It comes as a bare circuit board with no case although many third party cases are available. It's a full standalone PC that works independently, can be connected to any TV or Monitor and uses standard USB peripherals.
 
 What makes this computer different to the ones you may be used before is the row of pins, sticking up, in the corner.
 
@@ -71,7 +73,7 @@ So we can use the Raspberry Pi GPIO pins to connect our weather sensors. The stu
 
 ## Main Development
 
-The main part of this lesson will be an introduction to the GPIO pins and what they can do. This will form a foundation upon which the other lessons will build. The Raspberry Pi GPIO pins are controlled through *code*. Specifically, in these lessons, the [Python](https://www.python.org/about) programming language will be used.
+Let's put weather measurement to one side for a while so we can gain an understanding of the technology we're going to use. The main part of this lesson will be an introduction to the GPIO pins and what they can do. This will form a foundation upon which the other lessons will build. The Raspberry Pi GPIO pins are controlled through *code*. Specifically, in these lessons, the [Python](https://www.python.org/about) programming language will be used.
 
 Each individual pin can be set up in two main modes: *Input* mode and *Output* mode.
 
@@ -93,7 +95,7 @@ The orange wire is being used to connect one side of the button to the 3.3 volt 
 
 In our code we would then use a loop to repeatedly check the GPIO 4 reading. When it changes from LOW to HIGH we have detected the button press and can show a message or take any action that we want. The point to remember is that a pin can be made to use *either* input mode or output mode but not both at the same time. Note that the above examples both used GPIO 4.
 
-### HIGH and LOW
+## Plenary
 
 Just to recap let's reiterate the meaning of HIGH and LOW. These are the two states a GPIO pin can have regardless of which mode it is using. Take a look at the graph below, this shows the voltage of GPIO 4 on the *y* axis and time on the *x* axis:
 
@@ -108,7 +110,5 @@ Ask the class the following questions:
 
 1. The LED is flashing on and off three times.
 1. Someone is pressing and releasing the button three times.
-
-## Plenary
 
 ## Homework
