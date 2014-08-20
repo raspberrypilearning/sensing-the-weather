@@ -6,8 +6,8 @@ This lesson will introduce the concept of a weather station and why we need one 
 
 ## Learning Objectives
 
+- Know the weather characteristics that we can measure
 - Appreciate the need for an automated weather station
-- Understand the weather characteristics that we can measure
 - Understand the potential uses for the Raspberry Pi GPIO interface
 - Differentiate between the input mode and output mode of the GPIO interface
 - Understand the meaning of HIGH and LOW
