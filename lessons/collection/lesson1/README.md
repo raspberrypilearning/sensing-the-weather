@@ -2,14 +2,14 @@
 
 ## Introduction
 
-This lesson will introduce the concept of a weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will orientate the students to give them a general overview of the goals they will work towards. It will also introduce the theory behind using a general purpose interface to connect measurement devices to a Raspberry Pi.
+This lesson will introduce the concept of a weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will orientate the students to give them a general overview of the goals they will work towards. It will also introduce the theory behind using a general purpose interface to connect measurement devices to the Raspberry Pi.
 
 ## Learning Objectives
 
 - Know the weather characteristics that we can measure
 - Appreciate the need for an automated weather station
 - Understand the potential uses for the Raspberry Pi GPIO interface
-- Differentiate between the input mode and output mode of the GPIO interface
+- Differentiate between the input and output modes of the GPIO interface
 - Understand the meaning of HIGH and LOW
 
 ## Starter
@@ -71,7 +71,7 @@ What makes this computer different to the ones you may be used before is the row
 
 Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a vast array of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors. 
 
-So we can use the Raspberry Pi GPIO pins to connect our weather sensors. The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it. Students will build up a library of code that will eventually be used in the finished weather station deployed outside.
+So can we use the Raspberry Pi GPIO pins to connect weather instruments? The students might be wondering how we could connect something like a surgical thermometer to the GPIO pins at this point. The answer is that we wouldn't use the traditional instruments mentioned above but rather versions of them that have been specifically designed for computer control. Each of the following lessons introduces a new, computer interfaceable, sensor and explains how to program the Raspberry Pi to talk to it. Students will build up a library of code that will eventually be used in the finished weather station deployed outside.
 
 ## Main Development
 
@@ -93,7 +93,7 @@ If we use *input* mode, a GPIO pin has a value that we can read in our code. If 
 
 ![](../../../images/gpio_in.png)
 
-The orange wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi (a pin that always outputs 3.3 volts by default). The green wire connects the other side of the button to GPIO 4. The button works like a switch, so while it's up (open switch) no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed (closed switch) voltage will flow into GPIO 4 whereup on the reading will be `1` HIGH.
+The orange wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi (a pin that always outputs 3.3 volts by default). The green wire connects the other side of the button to GPIO 4. The button works like a switch, so while it's up (open switch) no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed (closed switch) voltage will flow into GPIO 4 whereupon on the reading will be `1` HIGH.
 
 In our code we would then use a loop to repeatedly check the GPIO 4 reading. When it changes from LOW to HIGH we have detected the button press and can show a message or take any action that we want. The point to remember is that a pin can be made to use *either* input mode or output mode but not both at the same time. Note that the above examples both used GPIO 4.
 
