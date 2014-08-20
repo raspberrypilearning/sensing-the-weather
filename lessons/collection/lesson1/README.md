@@ -71,15 +71,15 @@ So we can use the Raspberry Pi GPIO pins to connect our weather sensors. The stu
 
 ## Main Development
 
-The main part of this lesson will be an introduction to the GPIO pins and what they can do. This will form a foundation upon which the other lessons will build. The Raspberry Pi GPIO pins are controlled through *code*. This means by typing in a series of instructions and having the computer run them the GPIO pins can be made to do various things.
+The main part of this lesson will be an introduction to the GPIO pins and what they can do. This will form a foundation upon which the other lessons will build. The Raspberry Pi GPIO pins are controlled through *code*. Specifically, in these lessons, the [Python](https://www.python.org/about) programming language will be used.
 
 Each individual pin can be set up in two main modes: *Input* mode and *Output* mode.
 
 ### Output mode
 
-Output mode is used when you want to supply voltage/power to a device like an LED or buzzer. The picture below shows how a single LED would be connected, notice the grid of numbers below the GPIO pins. The red wire is being used to connect GPIO 4 to the positive `+` leg of the LED. The black wire connects the negative `-` leg of the LED to GND (ground) to complete the circuit.
+Output mode is used when you want to supply power to a device like an LED or buzzer. The picture below shows how a single LED would be connected. Notice the grid of numbers below the GPIO pins, that shows what each pin is for. Don't try to understand the numbering system, just consider it arbitrary for now. 
 
-The LED will not light up though unless we give the command to make GPIO 4 output voltage/power. We'll look into these commands later but we could, for instance, issue the commands in such a way that the LED flashes on and off at a certain speed.
+The red wire is being used to connect GPIO 4 to the positive leg of the LED. The black wire connects the negative leg of the LED to GND (ground) to complete the circuit. The LED will not light up though unless we give the Python command to make GPIO 4 output power. We'll look into these commands later but we could, for instance, issue the commands in such a way that the LED flashes on and off at a certain speed. We have computational control of the LED turning on and off.
 
 ![](../../../images/gpio_out.png)
 
