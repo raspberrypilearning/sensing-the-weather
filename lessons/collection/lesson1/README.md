@@ -89,9 +89,25 @@ If we use *input* mode, a GPIO pin has a value that we can read in our code. If 
 
 ![](../../../images/gpio_in.png)
 
-The orange wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi. The green wire connects the other side of the button to GPIO 4. While the button is up no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed voltage will flow into GPIO 4 whereup on the reading will be `1` HIGH.
+The orange wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi (a pin that always outputs 3.3 volts by default). The green wire connects the other side of the button to GPIO 4. The button works like a switch, so while it's up (open switch) no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed (closed switch) voltage will flow into GPIO 4 whereup on the reading will be `1` HIGH.
 
-In our code we would then use a loop to continually check the GPIO 4 reading. When it changes from LOW to HIGH we can show a message or take any action that we want.
+In our code we would then use a loop to repeatedly check the GPIO 4 reading. When it changes from LOW to HIGH we can show a message or take any action that we want. The point to remember is that a pin can be made to use *either* input mode or output mode but not both at the same time. Note that the above examples both used GPIO 4.
+
+### HIGH and LOW
+
+Just to recap let's reiterate the meaning of HIGH and LOW. These are the two states a GPIO pin can have regardless of which mode it is using. Take a look at the graph below, this shows the voltage of GPIO 4 on the *y* axis and time on the *x* axis:
+
+![](../../../images/high_low.png)
+
+Ask the class the following questions:
+
+1. What would be happening if this graph was from the Output mode LED example?
+1. What would be happening if this graph was from the Input mode button example?
+
+*Answers:*
+
+1. The LED is flashing on and off three times.
+1. Someone is pressing and releasing the button three times.
 
 ## Plenary
 
