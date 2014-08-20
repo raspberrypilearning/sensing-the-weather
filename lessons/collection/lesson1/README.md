@@ -2,13 +2,15 @@
 
 ## Introduction
 
-This lesson will introduce the concept of a weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will orientate the students to give them a general overview of the goals they will work towards.
+This lesson will introduce the concept of a weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will orientate the students to give them a general overview of the goals they will work towards. It will also introduce the theory behind using a general purpose interface to connect measurement devices to a Raspberry Pi.
 
 ## Learning Objectives
 
-## Learning Outcomes
-
-## Lesson Summary
+- Appreciate the need for an automated weather station
+- Understand the weather characteristics that we can measure
+- Understand the potential uses for the Raspberry Pi GPIO interface
+- Differentiate between the input mode and output mode of the GPIO interface
+- Understand the meaning of HIGH and LOW
 
 ## Starter
 
@@ -63,7 +65,7 @@ But how are we going to connect the sensors to it? The answer is we need a compu
 
 *The Raspberry Pi model B (left) and the B+ (right)*
 
-The [Raspberry Pi](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) is a tiny, inexpensive, computer that's roughly the same size as a pack of cards. It comes as a bare circuit board with no case although many third party cases are available. It's a full standalone PC that works independently, can be connected to any TV or Monitor and uses standard USB peripherals.
+The [Raspberry Pi](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) is a tiny, inexpensive, computer that's roughly the same size as a credit card. It comes as a bare circuit board with no case although many third party cases are available. It's a full standalone PC that works independently, can be connected to any TV or Monitor and uses standard USB peripherals.
 
 What makes this computer different to the ones you may be used before is the row of pins, sticking up, in the corner.
 
@@ -111,4 +113,4 @@ Ask the class the following questions:
 1. The LED is flashing on and off three times.
 1. Someone is pressing and releasing the button three times.
 
-## Homework
+[Next lesson](../lesson2/README.md)
