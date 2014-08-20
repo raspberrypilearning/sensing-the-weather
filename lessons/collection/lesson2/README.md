@@ -79,21 +79,26 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 2. Go to the Linux command prompt, either Exit the desktop or open LX Terminal.
 3. Enter the command `nano pullup.py` and press Enter.
 4. Enter the code below.
-```python
-#!/usr/bin/python
-import RPi.GPIO as GPIO
-import time
-
-pin = 4
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-while True:
-    pin_value = GPIO.input(pin)
-    print pin_value
-    time.sleep(0.5)
-```
+  ```python
+  #!/usr/bin/python
+  import RPi.GPIO as GPIO
+  import time
+  
+  pin = 4
+  
+  GPIO.setmode(GPIO.BCM)
+  GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  
+  while True:
+      pin_value = GPIO.input(pin)
+      print pin_value
+      time.sleep(0.5)
+  ```
+  The first line ` #!/usr/bin/python` denotes this file as a Python program so that Linux knows how to run the code.
+  
+  The next two `import` lines give us access to some pre-written libraries of code. The first `RPi.GPIO as GPIO` allows us to control the GPIO pins. The second `time` gives us some timing based functions that allow us to measure time or make our program sleep.
+  
+5. Dave
 
 ### Pull down circuit
 
