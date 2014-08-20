@@ -70,7 +70,7 @@ We will test our switch in both pull up and pull down circuit configurations.
 
 Here we are going to use the internal pull up resistor to make GPIO 4 always read HIGH, then we will short it to ground through the wires so that it will read LOW when we touch the wires together.
 
-*Note: The first 26 pins on a B+ are the same as those on a model B.*
+*Note: The first 26 pins on a B+ are the same as those on a model A or B.*
 
 1. Attach the female ends of the jumper wires to the Raspberry Pi GPIO pins as shown below. Take care to select the correct pins.
 
@@ -94,9 +94,15 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
       print pin_value
       time.sleep(0.5)
   ```
-  The first line ` #!/usr/bin/python` denotes this file as a Python program so that Linux knows how to run the code.
+  The first line ` #!/usr/bin/python` denotes this file as a Python program so that the computer knows *how* to run the code. All of your Python programs will have this.
   
-  The next two `import` lines give us access to some pre-written libraries of code. The first `RPi.GPIO as GPIO` allows us to control the GPIO pins. The second `time` gives us some timing based functions that allow us to measure time or make our program sleep.
+  The next two `import` lines give you access to some pre-written libraries of code. The first `RPi.GPIO as GPIO` allows you to control the GPIO pins. The second one `time` allows you to measure time or make the program sleep.
+  
+  We then define a variable called `pin` and store the value 4 in it. This will be used whenever you need to refer to the GPIO pin number that you're using later on in the program.
+  
+  Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. The `setmode` function configures the pin layout that you want to use. The brackets `()` are important as enclose are the function *parameters*, the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since this matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way.
+  
+  
   
 5. Dave
 
