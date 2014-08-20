@@ -91,7 +91,7 @@ If we use *input* mode, a GPIO pin has a value that we can read in our code. If 
 
 The orange wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi (a pin that always outputs 3.3 volts by default). The green wire connects the other side of the button to GPIO 4. The button works like a switch, so while it's up (open switch) no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed (closed switch) voltage will flow into GPIO 4 whereup on the reading will be `1` HIGH.
 
-In our code we would then use a loop to repeatedly check the GPIO 4 reading. When it changes from LOW to HIGH we can show a message or take any action that we want. The point to remember is that a pin can be made to use *either* input mode or output mode but not both at the same time. Note that the above examples both used GPIO 4.
+In our code we would then use a loop to repeatedly check the GPIO 4 reading. When it changes from LOW to HIGH we have detected the button press and can show a message or take any action that we want. The point to remember is that a pin can be made to use *either* input mode or output mode but not both at the same time. Note that the above examples both used GPIO 4.
 
 ### HIGH and LOW
 
