@@ -96,17 +96,15 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   ```
   **Code walkthrough:**
   
-  The first line ` #!/usr/bin/python` denotes this file as a Python program so that the computer knows *how* to run the code. All of your Python programs will have this.
-  
-  The next two `import` lines give you access to some pre-written libraries of code. The first `RPi.GPIO as GPIO` allows you to control the GPIO pins. The second one `time` allows you to measure time or make the program sleep.
-  
-  We then define a variable called `pin` and store the value 4 in it. This will be used whenever you need to refer to the GPIO pin number that you're using later on in the program.
-  
-  Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. This configures the pin layout that you want to use. The brackets `()` are important because they enclose the function *parameters;* the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since layout this matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way. If you prefer to use `GPIO.BOARD` then the `pin` variable should be changed from 4 to 7.
-  
-  The next line `GPIO.setup` configures the IO (input/output) mode for a given GPIO pin. When you want to input multiple parameters to a function you separate them with a comma `,`. There are three parameters; `pin` which specifies the number of the GPIO pin to configure; `GPIO.IN` specifies that we want to use input mode and `GPIO.PUD_UP` is saying we want to turn on the internal pull up resistor so that the pin always reads HIGH.
-  
-  Now everything is set up and we can start reading the pin value. To keep it simple the program will just use a loop to repeat the same set of instructions. Those instructions will read the value of GPIO 4 and display it on the screen allowing you to see the pin value changing in real time. We're going to use a *while* loop. A while loop is usually used with a condition such as `while a < b` (while a is less than b) meaning that the looping will carry on as long as that condition remains true. So if *a* becomes equal to or greater than *b* the loop would exit.
+  Code | Meaning
+  --- | ---
+  `#!/usr/bin/python` | This line denotes this file as a Python program so that the computer knows *how* to run the code. All of your Python programs will have this.
+  `import RPi.GPIO as GPIO` |  Allows you to control the GPIO pins.
+  `import time` | Allows you to measure time or make the program sleep.
+  `pin = 4` | A variable called `pin` to store the value 4. This will be used whenever you need to refer to the GPIO pin number that you're using later on in the program.
+  `GPIO.setmode(GPIO.BCM)` | Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. This configures the pin layout that you want to use. The brackets `()` are important because they enclose the function *parameters;* the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since layout this matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way. If you prefer to use `GPIO.BOARD` then the `pin` variable should be changed from 4 to 7.
+  `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | The next line `GPIO.setup` configures the IO (input/output) mode for a given GPIO pin. When you want to input multiple parameters to a function you separate them with a comma `,`. There are three parameters; `pin` which specifies the number of the GPIO pin to configure; `GPIO.IN` specifies that we want to use input mode and `GPIO.PUD_UP` is saying we want to turn on the internal pull up resistor so that the pin always reads HIGH.
+  `while True:` | Now everything is set up and we can start reading the pin value. To keep it simple the program will just use a loop to repeat the same set of instructions. Those instructions will read the value of GPIO 4 and display it on the screen allowing you to see the pin value changing in real time. We're going to use a *while* loop. A while loop is usually used with a condition such as `while a < b` (while a is less than b) meaning that the looping will carry on as long as that condition remains true. So if *a* becomes equal to or greater than *b* the loop would exit.
   
   The `while True` syntax specifies an infinite loop. The keyword `True` is a *constant* (not a variable) and so the loop will never exit unless we press `Ctrl - C`. It's not the most elegant way to program it but this is just test code after all.
   
