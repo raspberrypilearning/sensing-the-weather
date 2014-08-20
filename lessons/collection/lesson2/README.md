@@ -118,7 +118,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 7. GPIO functions require root access on your Pi, so you must use the `sudo` command to run your code. If you don't use sudo you'll see the following error: `No access to dev/mem. Try running as root!`
 
   `sudo ./pullup.py`
-8. The number `1` should begin scrolling up the screen, when you hold the wires together for a few seconds you'll see the number 0. Release the wires and it will return to 1.
+8. The number `1` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the number `0` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `1` because of the internal pull up resistor.
 
   ```
   1
