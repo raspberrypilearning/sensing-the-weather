@@ -87,7 +87,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   pin = 4
   
   GPIO.setmode(GPIO.BCM)
-  GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
   
   while True:
       pin_value = GPIO.input(pin)
@@ -100,7 +100,9 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   
   We then define a variable called `pin` and store the value 4 in it. This will be used whenever you need to refer to the GPIO pin number that you're using later on in the program.
   
-  Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. The `setmode` function configures the pin layout that you want to use. The brackets `()` are important as enclose are the function *parameters*, the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since this matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way.
+  Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. This configures the pin layout that you want to use. The brackets `()` are important because they enclose the function *parameters;* the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since this matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way. If you prefer to use `GPIO.BOARD` then the `pin` variable should be changed from 4 to 7.
+  
+  The next line `GPIO.setup` configures the IO (input/output) mode for a given GPIO pin. There are three parameters; `pin` which specifies the actual GPIO pin; `GPIO.IN` specifies that we want to use input mode and `GPIO.PUD_UP` is saying we want to turn on the internal pull up resistor so that the pin always reads HIGH.
   
   
   
