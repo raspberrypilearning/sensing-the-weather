@@ -27,7 +27,7 @@ In this lesson we are going to make a very basic switch and program the Raspberr
 
 ![](../../../images/jumpers.jpg)
 
-In the previous lesson we learnt about the HIGH and LOW states of GPIO pin. In order to detect the open and closed position in code the switch must turn voltage on and off for a GPIO pin. Then, using input mode, we can detect a change in the HIGH or LOW value in our code.
+In the previous lesson we learnt about the HIGH and LOW states the GPIO pins. In order to detect the open and closed position in code the switch must turn voltage on and off for a GPIO pin. Then, using input mode, we can detect a change in the pin's value in our code.
 
 When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change *only* when the we touch the wires together.
 
@@ -47,6 +47,7 @@ We can do this in two ways:
   
   *Note: The 1kΩ R2 resistor is there in both circuits to give the GPIO pin a fail-safe protection, in case we mistakenly set the pin to be in OUTPUT mode.*
 
+Fortunately, the Raspberry Pi has all the above circuitry *built in* and we can select either a pull up or a pull down circuit *in our code* for each GPIO pin. Let's give it a try in practice next.
 
 ## Main Development
 
