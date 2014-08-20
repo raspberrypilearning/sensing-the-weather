@@ -23,11 +23,13 @@ Students should work in pairs and will each pair need the following equipment:
 
 ## Starter
 
-In this lesson we are going to make a very basic switch and program the Raspberry Pi to detect its position. The switch will actually just be two jumper wires that you touch together. If they are touching the switch is closed, if not the switch is open.
+In this lesson we are going to make a very basic switch and program the Raspberry Pi to detect its position. The switch will actually just be two jumper wires that you touch together, see below. If they are touching the switch is closed, if not the switch is open.
 
-In the previous lesson we learnt about the HIGH and LOW states of GPIO pin. In order to detect the open or closed position in code the switch must turn voltage on and off for a GPIO pin. Then, using input mode, we can detect a change in the HIGH/LOW value in code.
+![](../../../images/jumpers.jpg)
 
-When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change *only* when the we touch the wires.
+In the previous lesson we learnt about the HIGH and LOW states of GPIO pin. In order to detect the open and closed position in code the switch must turn voltage on and off for a GPIO pin. Then, using input mode, we can detect a change in the HIGH or LOW value in our code.
+
+When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change *only* when the we touch the wires together.
 
 We can do this in two ways:
 
