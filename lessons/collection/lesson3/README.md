@@ -41,20 +41,18 @@ So how do we interface with it? Let's consider what information we need in order
 
 If we know both of those the answer is easy: *Bucket volume multiplied by number of tips.*
 
-The product [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) tells us that 0.2794 mm of rain will tip the bucket. So we just need to know how many bicket tips have happened. To get that information we need to program the Raspberry Pi to detect when the bucket tips and keep a count.
+The product [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) tells us that 0.2794 mm of rain will tip the bucket. So we just need to know how many bucket tips have happened. To get that information we need to program the Raspberry Pi to detect when the bucket tips and keep a count.
 
 Take a close look at the ridge between the two buckets. Inside this is a small cylindrical magnet that points towards the back wall. Inside the back wall there is a clever piece of electronics called a *reed switch*, pictured below.
 
 ![](../../../images/reed_switch.jpg)
 
-The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. The code from the previous lesson will even work on it.
+The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. We can use a *pull up* or *pull down* to detect when the reed switch closes.
 
-The top of the back will does come off if you want to see inside, just pull on one side gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and lid before continuing.
+The top of the back wall does come off if you want to see inside, just pull on one side gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and lid before continuing.
 
 ## Main Development
 
 ## Plenary
-
-
 
 [Next lesson](../lesson4/README.md)
