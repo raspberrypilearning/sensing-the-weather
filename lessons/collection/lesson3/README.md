@@ -47,7 +47,7 @@ Take a close look at the ridge between the two buckets. Inside this is a small c
 
 ![](../../../images/reed_switch.jpg)
 
-The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. When the bucket tips the magnet in the ridge passes the reed switch casing it to close momentarily, so we can use a *pull up* or *pull down* circuit to detect this.
+The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. When the bucket tips the magnet passes the reed switch causing it to close momentarily. So we can use a *pull up* or *pull down* circuit to detect this, just like before.
 
 The top of the back wall does come off if you want to see inside, just pull on one side gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and lid before continuing.
 
