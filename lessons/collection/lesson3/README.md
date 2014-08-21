@@ -43,9 +43,11 @@ If we know both of those the answer is easy: *Bucket volume multiplied by number
 
 The product [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) tells us that 0.2794 mm of rain will tip the bucket. So we just need to know how many bicket tips have happened. To get that information we need to program the Raspberry Pi to detect when the bucket tips and keep a count.
 
-
+Take a close look at the ridge between the two buckets. Inside this is a small cylindrical magnet that points towards the back wall. Inside the back wall there is a clever piece of electronics called a *reed switch*, pictured below.
 
 ![](../../../images/reed_switch.jpg)
+
+The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. So, electronically speaking, this works in exactly the same way as the two jumper wires from the previous lesson. The code from the previous lesson will even work on it.
 
 ## Main Development
 
