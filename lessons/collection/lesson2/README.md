@@ -93,7 +93,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   
   while True:
       pin_value = GPIO.input(pin)
-      print pin_value
+      print "HIGH" if pin_value else "LOW"
       time.sleep(0.5)
   ```
   **Code walkthrough:**
@@ -110,7 +110,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   |`while True:`| The `while True` syntax specifies an infinite loop. The keyword `True` is a *constant* (not a variable) and so the loop will never exit unless we press `Ctrl - C`. It's not the most elegant way to program it but this is just test code after all.|
   |*Note:*|Whenever you see a colon `:` think of this as meaning *then*. So `while True:` *while true is true then repeat these lines of code*. The subsequent lines are indented to denote that they all belong to the loop. You can either use multiple space characters or a tab character for indentation. If you prefer to use spaces then the number of spaces in the indentation can be variable, as long as they remain constant in each block of code. **Understanding the rules of indentation is fundamental to Python; it can be a stumbling block for students.** Students often do not understand what white space is; they therefore need to be shown that spaces and tabs are real text characters which are normally invisible in text editors.|
   |`pin_value = GPIO.input(pin)`| This is defining a variable called `pin_value` and setting it to the result of the `GPIO.input` function. This will go and get the value of the specified GPIO pin number (based on the voltage going into it) so we pass the variable `pin` in as a parameter. The result value will be either `1` if HIGH or `0` if LOW.|
-  |`print pin_value`| This line will print the contents of the `pin_value` variable to the screen, so either a `1` or `0` will be displayed.|
+  |`print "HIGH" if pin_value else "LOW"`| This line uses a `print` statement with an in-line `if` statement. It will print the text HIGH if `pin_value` is `1` otherwise it will print LOW.|
   |`time.sleep(0.5)`| This line uses a function inside the `time` library called `sleep`, the function accepts only one parameter which is how long you want it to sleep for. Here we specify half a second. This essentially pauses the execution of the code for half a second on each iteration of the loop.|
   
 5. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
@@ -120,21 +120,21 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 7. GPIO functions require root access on your Pi, so you must use the `sudo` command to run your code. If you don't use sudo you'll see the following error: `No access to dev/mem. Try running as root!`
 
   `sudo ./pullup.py`
-8. The number `1` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the number `0` because you're shorting the pin to ground. This causes GPIO 4 to go LOW. Release the wires (open the switch) and it will return to `1` (HIGH) because of the internal pull *up* resistor.
+8. The text `HIGH` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `LOW` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `HIGH` because of the internal pull *up* resistor.
 
   ```
-  1
-  1
-  1
-  1
-  0
-  0
-  0
-  0
-  1
-  1
-  1
-  1
+  HIGH
+  HIGH
+  HIGH
+  HIGH
+  LOW
+  LOW
+  LOW
+  LOW
+  HIGH
+  HIGH
+  HIGH
+  HIGH
   ```
 9. Press `Ctrl - C` to exit your program.
 
@@ -160,42 +160,42 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 6. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
 
   `sudo ./pulldown.py`
-7. The number `0` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the number `1` because you're shorting the pin to 3.3 volts. This causes GPIO 4 to go HIGH. Release the wires (open the switch) and it will return to `0` (LOW) because of the internal pull *down* resistor.
+7. The text `LOW` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the wires (open the switch) and it will return to `LOW` because of the internal pull *down* resistor.
 
   ```
-  0
-  0
-  0
-  0
-  1
-  1
-  1
-  1
-  0
-  0
-  0
-  0
+  LOW
+  LOW
+  LOW
+  LOW
+  HIGH
+  HIGH
+  HIGH
+  HIGH
+  LOW
+  LOW
+  LOW
+  LOW
   ```
 8. Press `Ctrl - C` to exit your program.
 
 ## Plenary
 
-Show this table to the class to recap. `1` = HIGH and `0` = LOW. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed.
+Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed.
 
 Pull up | Switch | Pull down
 :---:|:---:|:---:
-1 | Open | 0
-1 | Open | 0
-1 | Open | 0
-1 | Open | 0
-0 | Closed | 1
-0 | Closed | 1
-0 | Closed | 1
-0 | Closed | 1 
-1 | Open | 0
-1 | Open | 0 
-1 | Open | 0
-1 | Open | 0
+HIGH | Open | LOW
+HIGH | Open | LOW
+HIGH | Open | LOW
+HIGH | Open | LOW
+LOW | Closed | HIGH
+LOW | Closed | HIGH
+LOW | Closed | HIGH
+LOW | Closed | HIGH 
+HIGH | Open | LOW
+HIGH | Open | LOW 
+HIGH | Open | LOW
+HIGH | Open | LOW
 
 Ask the class to explain why this is.
 
