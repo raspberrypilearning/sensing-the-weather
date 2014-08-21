@@ -33,6 +33,18 @@ Firstly ask everyone to remove the lid from their rain gauge. This is done by ap
 
 ![](../../../images/rain_guage_open.jpg)
 
+This rain gauge is basically a self emptying tipping bucket. Rain is collected by the lid and funnelled down into the bucket. Once enough rain water has collected gravity will make the bucket tip over, the water will drain out from the base, and the opposite bucket will come up into position.
+
+So how do we interface with it? Let's consider what information we need in order to calculate a rainfall measurement.
+- How much water will tip the bucket?
+- How many bucket tips have happened?
+
+If we know both of those the answer is easy: *Bucket volume multiplied by number of tips.*
+
+The product [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) tells us that 0.2794 mm of rain will tip the bucket. So we just need to know how many bicket tips have happened. To get that information we need to program the Raspberry Pi to detect when the bucket tips and keep a count.
+
+
+
 ![](../../../images/reed_switch.jpg)
 
 ## Main Development
