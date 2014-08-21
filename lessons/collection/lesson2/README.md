@@ -8,7 +8,7 @@ In this lesson students will experiment with the Raspberry Pi GPIO and do some P
 
 ## Resources
 
-Students should work in pairs and will each pair need the following equipment:
+Students should work in pairs. Each pair will require the following equipment:
 
 - Raspberry Pi
 - Micro USB power adaptor
