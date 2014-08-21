@@ -101,13 +101,13 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   |`#!/usr/bin/python` | This line denotes this file as a Python program so that the computer knows *how* to run the code. All of your Python programs will have this.|
   |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library that allows you to control the GPIO pins.|
   |`import time` | Imports the `time` library that allows you to measure time or make the program sleep.|
-  |`pin = 4` | A variable called `pin` to store the value 4. This will be used whenever you need to refer to the GPIO pin number that you're switching voltage on and off for later on in the program.|
-  |`GPIO.setmode(GPIO.BCM)` | Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. This configures the pin layout that you want to use. The brackets `()` are important because they enclose the function *parameters;* the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since this layout matches the diagrams that are part of this resource. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way. If you prefer to use `GPIO.BOARD` then the `pin` variable should be changed from 4 to 7.|
+  |`pin = 4` | A variable called `pin` to store the number 4. This will be used whenever you need to refer to the GPIO pin number that you're switching voltage on and off for later on in the program.|
+  |`GPIO.setmode(GPIO.BCM)` | Wherever you see the syntax `SOMETHING.` the *dot* signifies accessing a function or properly inside the thing before the dot. So `GPIO.setmode` is going inside the `GPIO` library and calling the function `setmode`. This configures the pin layout that you want to use. The brackets `()` are important because they enclose the function *parameters;* the input data that the funciton needs. You can input either `GPIO.BCM` or `GPIO.BOARD` to this function. We're going to use `GPIO.BCM` here since this layout matches the diagrams that are part of this lesson. `GPIO.BOARD` sets the pin numbers up in a sequential fashion and some programmers prefer it that way. If you prefer to use `GPIO.BOARD` then the `pin` variable should be changed from 4 to 7.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | This configures the IO (input/output) mode for a given GPIO pin. When you want to input multiple parameters to a function you separate them with a comma `,`. There are three parameters; `pin` which specifies the number of the GPIO pin to configure; `GPIO.IN` specifies that we want to use input mode and `GPIO.PUD_UP` is saying we want to turn on the internal pull up resistor so that the pin always reads HIGH.|
   |*Note:*|Now everything is set up and we can start reading the pin value. To keep it simple the program will just use a loop to repeat the same set of instructions. Those instructions will read the value of GPIO 4 and display it on the screen allowing you to see the pin value changing in real time. We're going to use a *while* loop. A while loop is usually used with a condition such as `while a < b` (while a is less than b) meaning that the looping will carry on as long as that condition remains true. So if *a* becomes equal to or greater than *b* the loop would exit.|
   |`while True:`| The `while True` syntax specifies an infinite loop. The keyword `True` is a *constant* (not a variable) and so the loop will never exit unless we press `Ctrl - C`. It's not the most elegant way to program it but this is just test code after all.|
   |*Note:*|Whenever you see a colon `:` think of this as meaning *then*. So `while True:` *while true is true then repeat these lines of code*. The subsequent lines are indented to denote that they all belong to the loop. You can either use multiple space characters or a tab character for indentation. If you prefer to use spaces then the number of spaces in the indentation can be variable, as long as they remain constant in each block of code. **Understanding the rules of indentation is fundamental to Python; it can be a stumbling block for students.** Students often do not understand what white space is; they therefore need to be shown that spaces and tabs are real text characters which are normally invisible in text editors.|
-  |`pin_value = GPIO.input(pin)`| This is defining a variable called `pin_value` and setting it to the result of the `GPIO.input` function. This will go and get the value of the specified GPIO pin number (based on the voltage going into it) so we pass the variable `pin` into `GPIO.input` as a parameter. The result value will be either `1` if HIGH or `0` if LOW.|
+  |`pin_value = GPIO.input(pin)`| This is defining a variable called `pin_value` and setting it to the result of the `GPIO.input` function. This will go and get the value of the specified GPIO pin number (based on the voltage going into it) so we pass the variable `pin` in as a parameter. The result value will be either `1` if HIGH or `0` if LOW.|
   |`print pin_value`| This line will print the contents of the `pin_value` variable to the screen, so either a `1` or `0` will be displayed.|
   |`time.sleep(0.5)`| This line uses a function inside the `time` library called `sleep`, the function accepts only one parameter which is how long you want it to sleep for. Here we specify half a second. This essentially pauses the execution of the code for half a second on each iteration of the loop.|
   
@@ -118,7 +118,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 7. GPIO functions require root access on your Pi, so you must use the `sudo` command to run your code. If you don't use sudo you'll see the following error: `No access to dev/mem. Try running as root!`
 
   `sudo ./pullup.py`
-8. The number `1` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the number `0` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `1` because of the internal pull up resistor.
+8. The number `1` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the number `0` because you're shorting the pin to ground. This causes GPIO 4 to go LOW. Release the wires (open the switch) and it will return to `1` (HIGH) because of the internal pull *up* resistor.
 
   ```
   1
@@ -137,6 +137,44 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 9. Press `Ctrl - C` to exit your program.
 
 ### Pull down circuit
+
+1. Remove the jumper cables from the Raspberry Pi GPIO pins and reattach them as shown in the diagram below. Take care to select the correct pins.
+
+  ![](../../../images/pull_down_wire.png)
+
+2. The code required to test the pull down circuit is almost identical that for the pull up so to save time we will just make a copy of your file and change one thing. Enter the command below (this takes a copy of `pullup.py` and saves it as `pulldown.py`):
+
+  `cp pullup.py pulldown.py`
+
+3. Enter the command below to edit the new file:
+
+  `nano pulldown.py`
+
+4. Find the `GPIO.setup` line and change the last parameter from `GPIO.PUD_UP` to `GPIO.PUD_DOWN`. This sets the internal pull down resistor on GPIO 4 so that it will always read LOW. For example:
+
+  `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
+
+5. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+6. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
+
+  `sudo ./pulldown.py`
+7. The number `0` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the number `1` because you're shorting the pin to 3.3 volts. This causes GPIO 4 to go HIGH. Release the wires (open the switch) and it will return to `0` (LOW) because of the internal pull *down* resistor.
+
+  ```
+  0
+  0
+  0
+  0
+  1
+  1
+  1
+  1
+  0
+  0
+  0
+  0
+  ```
+8. Press `Ctrl - C` to exit your program.
 
 ## Plenary
 
