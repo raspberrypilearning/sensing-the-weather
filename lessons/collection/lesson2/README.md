@@ -211,4 +211,10 @@ Ask the class whether they think one circuit is better than the other? If so why
 
 - Neither is better, they are both an equally valid way to detect a switch or push button.
 
+We've learnt an important technique in this lesson which will allow us to interface with two of the weather station sensors. Ask the class which sensors they think we will use this for?
+
+**Answer:**
+
+- The rain guage and the anemometer (wind speed sensor).
+
 [Next lesson](../lesson3/README.md)
