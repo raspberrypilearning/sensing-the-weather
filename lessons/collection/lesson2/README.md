@@ -199,16 +199,16 @@ HIGH | Open | LOW
 
 Ask the class to explain why this is.
 
-  **Answer:**
+**Answer:**
 
-  With a pull up circuit the GPIO pin is internally pulled up to 3.3 volts (via a programmable resistor) so that it always reads HIGH. When we close the switch we short the GPIO pin to ground causing it to read LOW.
+- With a pull up circuit the GPIO pin is internally pulled up to 3.3 volts (via a programmable resistor) so that it always reads HIGH. When we close the switch we short the GPIO pin to ground causing it to read LOW.
   
-  With a pull down circuit the GPIO pin is internally pulled down to ground (via a programmable resistor) so that it always reads LOW. When we close the switch we short the GPIO pin to 3.3 volts causing it to read HIGH.
+- With a pull down circuit the GPIO pin is internally pulled down to ground (via a programmable resistor) so that it always reads LOW. When we close the switch we short the GPIO pin to 3.3 volts causing it to read HIGH.
 
 Ask the class whether they think one circuit is better than the other? If so why?
 
-  **Answer:**
+**Answer:**
 
-  Neither is better, they are both an equally valid way to detect a switch or push button.
+- Neither is better, they are both an equally valid way to detect a switch or push button.
 
 [Next lesson](../lesson3/README.md)
