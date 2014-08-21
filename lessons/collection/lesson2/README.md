@@ -201,7 +201,7 @@ Ask the class the following questions.
 
 1. Explain why the pull up shows those values.
 1. Explain why the pull down shows those values.
-1. Is one circuit is better than the other? If so why?
+1. Is one circuit better than the other? If so why?
 1. We've learnt an important technique in this lesson which will allow us to interface with two of the weather station sensors. Which sensors we will use this for?
 
 **Answers:**
