@@ -47,7 +47,7 @@ Take a close look at the ridge between the two buckets. Inside this is a small c
 
 ![](../../../images/reed_switch.jpg)
 
-The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. So, electronically speaking, this works in exactly the same way as the two jumper wires from the previous lesson. The code from the previous lesson will even work on it.
+The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. The code from the previous lesson will even work on it.
 
 ## Main Development
 
