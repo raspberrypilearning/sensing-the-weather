@@ -47,7 +47,9 @@ We can do this in two ways:
   
   *Note: The 1kΩ R2 resistor is there in both circuits to give the GPIO pin a fail-safe protection, in case we mistakenly set the pin to be in OUTPUT mode.*
 
-Fortunately, the Raspberry Pi has all the above circuitry *built in* and we can select either a pull up or a pull down circuit *in our code* for each GPIO pin. Let's give it a try in practice next.
+Fortunately, the Raspberry Pi has all the above circuitry built in. It can be helpful to imagine that the two resistors `R1` and `R2` from the diagrams above are *inside* the circuitry of the Raspberry Pi and they can be enabled or disabled as we desire. We can select either a pull up or a pull down *in our code* for each GPIO pin. 
+
+Let's give it a try in practice next.
 
 ## Main Development
 
@@ -142,7 +144,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 
   ![](../../../images/pull_down_wire.png)
 
-2. The code required to test the pull down circuit is almost identical that for the pull up so to save time we will just make a copy of your file and change one thing. Enter the command below (this takes a copy of `pullup.py` and saves it as `pulldown.py`):
+2. The code required to test the pull down circuit is almost identical to that for the pull up so to save time we will just make a copy of your file and change one thing. Enter the command below (this takes a copy of `pullup.py` and saves it as `pulldown.py`):
 
   `cp pullup.py pulldown.py`
 
@@ -177,5 +179,36 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 8. Press `Ctrl - C` to exit your program.
 
 ## Plenary
+
+Show this table to the class to recap. `1` = HIGH and `0` = LOW. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed.
+
+Pull up | Switch | Pull down
+:---:|:---:|:---:
+1 | Open | 0
+1 | Open | 0
+1 | Open | 0
+1 | Open | 0
+0 | Closed | 1
+0 | Closed | 1
+0 | Closed | 1
+0 | Closed | 1 
+1 | Open | 0
+1 | Open | 0 
+1 | Open | 0
+1 | Open | 0
+
+Ask the class to explain why this is.
+
+**Answer:**
+
+With a pull up circuit the GPIO pin is internally pulled up to 3.3 volts (via a programmable resistor) so that it always reads HIGH. When we close the switch we short the GPIO pin to ground causing it to read LOW.
+
+With a pull down circuit the GPIO pin is internally pulled down to ground (via a programmable resistor) so that it always reads LOW. When we close the switch we short the GPIO pin to 3.3 volts so that it will read HIGH.
+
+Ask the class whether they think one circuit is better than the other? If so why?
+
+**Answer:**
+
+Neither is better, they are both an equally valid way to detect a switch or push button.
 
 [Next lesson](../lesson3/README.md)
