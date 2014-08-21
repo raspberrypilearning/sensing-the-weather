@@ -180,7 +180,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 
 ## Plenary
 
-Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed.
+Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed. It can help if you first cover up the pull down column, and then cover up the pull up column instead.
 
 Pull up | Switch | Pull down
 :---:|:---:|:---:
