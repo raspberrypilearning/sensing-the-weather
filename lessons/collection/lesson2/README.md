@@ -21,6 +21,10 @@ Students should work in pairs and will each pair need the following equipment:
 
 ## Learning Objectives
 
+- Understand what a pull up circuit is, what a pull down circuit is and be able to differentiate the two
+- Understand how to detect the position of a switch in the Python programming language
+- To gain practical experience in programming and electronics
+
 ## Starter
 
 In this lesson we are going to make a very basic switch and program the Raspberry Pi to detect its position. The switch will actually just be two jumper wires that you touch together, see below. If they are touching the switch is closed, if not the switch is open.
