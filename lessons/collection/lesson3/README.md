@@ -49,6 +49,8 @@ Take a close look at the ridge between the two buckets. Inside this is a small c
 
 The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. The code from the previous lesson will even work on it.
 
+The top of the back will does come off if you want to see inside, just pull on one side gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and lid before continuing.
+
 ## Main Development
 
 ## Plenary
