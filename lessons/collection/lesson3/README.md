@@ -91,7 +91,8 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   Nothing? Try it a few times. If you're lucky, and you catch it at the right moment, you'll see maybe one `LOW`.
 
-2. Press `Ctrl - C` to exit your program. We have found a serious flaw in the code here. Remember inside the `while` loop there was the line `time.sleep(0.5)`? It takes a lot less than half a second for the magnet to flip past the reed switch. So we actually *miss* the event because our code was paused in the sleep function. There are two ways we can solve this, one is to reduce the sleep time causing the loop to run more often. Let's try this next:
+2. Press `Ctrl - C` to exit your program.
+3. We have found a serious flaw in the code here. Remember inside the `while` loop there was the line `time.sleep(0.5)`? It takes a lot less than half a second for the magnet to flip past the reed switch. So we actually *miss* the event because our code was paused in the sleep function. We could reduce the sleep time causing the loop to run more often? Let's try this next:
 
   `nano pullup.py`
 
@@ -99,13 +100,13 @@ The top of the back wall does come off if you want to see inside, just pull on t
   
   `time.sleep(0.01)`
   
-3. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-4. Run the code and remember to the `sudo` command:
+4. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+5. Run the code and remember to the `sudo` command:
 
   `sudo ./pullup.py`
 
-5. You'll notice the text scrolls up a *lot* faster this time, this is because the loop runs 100 times a second. Use your finger to flip the bucket and you should see at least a few lines of `LOW` scroll up and dissapear. Press `Ctrl - C` to exit your program.
-6. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to count them.  
+6. You'll notice the text scrolls up a *lot* faster this time, this is because the loop runs 100 times a second. Use your finger to flip the bucket and you should see at least a few lines of `LOW` scroll up and dissapear. Press `Ctrl - C` to exit your program.
+7. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to count them.  
 
 ## Plenary
 
