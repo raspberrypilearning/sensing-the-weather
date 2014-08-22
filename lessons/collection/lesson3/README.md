@@ -47,7 +47,7 @@ Take a close look at the ridge between the two buckets. Inside this is a small c
 
 ![](../../../images/reed_switch.jpg)
 
-The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. When the bucket tips the magnet passes the reed switch causing it to close momentarily. So we can use a *pull up* or *pull down* circuit to detect this, just like before.
+The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as the two jumper wires from the previous lesson. When the bucket tips the magnet passes the reed switch causing it to close momentarily. So we can use a *pull up* or *pull down* circuit to detect this, just like before. If you look at the RJ11 plug on the end of the wire attached to the rain gauge you'll see there are only two wires inside, a red and a green one. Think of these as the two jumper wires from last time.
 
 The top of the back wall does come off if you want to see inside, just pull on the flat end gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and back wall lid before continuing. Leave the outer funnel/lid off for now.
 
@@ -212,7 +212,7 @@ Ask the class the following questions.
 
 **Answers:**
 
-1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the state `HIGH` or `LOW` of GPIO 17 when the bucket tips. It would only ever read `LOW`.
+1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the bucket tips. It would only ever read `LOW`.
 1. The rain gauge measures only a small sample of the rain that falls from the sky, however we can generalise that the amount of rain falling into it will be the same as that falling everywhere locally per unit of surface area. This allows us to assert that our calculation of rainfall will equate to the amount of rain that has fallen over a much larger area than the rain gauge itself.
 
 [Next lesson](../lesson4/README.md)
