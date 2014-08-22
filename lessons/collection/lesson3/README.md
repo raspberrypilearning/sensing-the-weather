@@ -160,7 +160,13 @@ The top of the back wall does come off if you want to see inside, just pull on t
   |`while True:` | An infinite loop that must be manually aborted by the user. All lines of code that belong to this loop must be *indented*.|
   |`current_state = GPIO.input(pin)` | Reads the state of GPIO pin 17 and stores the result in the `current_state` variable.|
   |`if previous_state == GPIO.HIGH and current_state == GPIO.LOW:` | A Python *if* statement. An if statement tests the given condition, if true it will run the indented lines below, otherwise it skips over them. Here the condition is that the previous state equals `HIGH` *and* the current state equals `LOW`. Notice the double equal sign `==` is used to test for equality where as a single equal sign `=` is used for setting a variable.|
-  
+  |`count += 1` | Incrementing the `count` variable by one. Note that `+=` is a shorthand way to do `count = count + 1`.|
+  |`print count` | Prints the contents of the `count` variable to the screen.|
+  |`previous_state = current_state` | Copies the contents of the `current_state` variable into the `previous_state` variable so that it can be used by the if statement on the next iteration of the loop.|
+  |`time.sleep(0.01)` | Pauses the execution of the code for 0.01 seconds.|
+
+10. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+
 ## Plenary
 
 [Next lesson](../lesson4/README.md)
