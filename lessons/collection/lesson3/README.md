@@ -101,7 +101,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
   `time.sleep(0.01)`
   
 4. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-5. Run the code and remember to the `sudo` command:
+5. Run the code and remember to use the `sudo` command:
 
   `sudo ./pullup.py`
 
