@@ -157,6 +157,9 @@ The top of the back wall does come off if you want to see inside, just pull on t
   |`count = 0` | Defines a variable that will be incremented by one when a bucket tip occurs.|
   |`current_state = 0` | A variable that will be used to store the current state of the GPIO pin for each iteration of the while loop.|
   |`previous_state = 0` | At the end of each loop iteration the current state will be copied into this variable so that it can be compared to the next current state.|
+  |`while True:` | An infinite loop that must be manually aborted by the user. All lines of code that belong to this loop must be *indented*.|
+  |`current_state = GPIO.input(pin)` | Reads the state of GPIO pin 17 and stores the result in the `current_state` variable.|
+  |`if previous_state == GPIO.HIGH and current_state == GPIO.LOW:` | A Python *if* statement. An if statement tests the given condition, if true it will run the indented lines below, otherwise it skips over them. Here the condition is that the previous state equals `HIGH` *and* the current state equals `LOW`. Notice the double equal sign `==` is used to test for equality where as a single equal sign `=` is used for setting a variable.|
   
 ## Plenary
 
