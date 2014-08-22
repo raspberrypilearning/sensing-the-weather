@@ -166,7 +166,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
   |`time.sleep(0.01)` | Pauses the execution of the code for 0.01 seconds.|
 
 1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-1. Run the code and remember to use the sudo command:
+1. Run the code and remember to use the `sudo` command:
 
   `sudo ./rain_gauge.py`
 
@@ -178,7 +178,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   Modify the line `print count` to `print count * 0.2794`.
 1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-1. Run the code and remember to use the sudo command:
+1. Run the code and remember to use the `sudo` command:
 
   `sudo ./rain_gauge.py`
 
