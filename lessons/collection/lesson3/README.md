@@ -203,6 +203,37 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
 1. Press `Ctrl - C` to exit your program.
 
+### Using interrupt handling
+
+The programming technique you have been using above is known as *continuous polling*. From the word *poll* meaning census, survey or ballot etc. Essentially the code keeps using the `GPIO.input` function, in a loop, to *poll* the state of the GPIO pin. To keep asking if it's `HIGH` or `LOW`. There is educational value in knowing how to program a pull up circuit in that way (which is why it's included here) however there is a much more efficient method that requires a lot less code.
+
+It's called interrupt handling. Essentially we can just tell the computer that we want to be notified when a particular event happens, such as the GPIO pin going from `HIGH` to `LOW`, and the computer will raise an event that will cause some of our code to run. This eliminates the need for continuous polling and therefore the requirement to compare the current state to the previous state on each iteration of the loop.
+
+1. Let's create a brand new file for this. Enter the command below:
+
+  `nano rain_interrupt.py`
+
+  Enter the code below:
+    ```python
+    #!/usr/bin/python
+    import RPi.GPIO as GPIO
+    
+    count = 0
+    
+    def bucket_tipped(channel):
+        global count
+        count += 1
+        print print count * 0.2794
+    
+    pin = 17
+    
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+    GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+    
+    raw_input("Press Enter to exit...")
+    ```
+
 ## Plenary
 
 Ask the class the following questions.
