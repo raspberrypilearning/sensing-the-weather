@@ -74,7 +74,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `nano pullup.py`
 
-  The weather expansion board connects the rain gauge to GPIO 17 in a *pull up* circuit. So find the line where we define the `pin` variable and change the number 4 to 17.
+  The weather expansion board connects the rain gauge to GPIO 17 in a *pull up* circuit. So find the line where we define the `pin` variable and change the number 4 to 17. For example:
   
   `pin = 17`
   
@@ -102,7 +102,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `nano rain_gauge.py`
 
-  Find the `time.sleep(0.5)` line and change 0.5 to 0.01.
+  Find the `time.sleep(0.5)` line and change 0.5 to 0.01. For example:
   
   `time.sleep(0.01)`
   
