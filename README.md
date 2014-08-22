@@ -62,7 +62,7 @@ Students will also learn how to combine their data with that from other weather 
 
 ### Interpretation
 
-![](images/michael_fish_colour.png)
+![](images/bbc_school_report.png)
 
 Students will learn how to discern patterns in weather data, analyse them and use them to inform predictions about future weather. This will be done for both local (using their own data) and national weather (using data from the Oracle server on the Internet).
 
