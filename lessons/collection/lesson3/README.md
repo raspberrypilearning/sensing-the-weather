@@ -115,9 +115,9 @@ The top of the back wall does come off if you want to see inside, just pull on t
 1. Press `Ctrl - C` to exit your program.
 1. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to do the counting. We need to think about this carefully though. It's not as simple as keeping a count variable and adding one to it whenever the pin state is `LOW`. From the previous test you will have seen multiple `LOW` messages scroll up the screen when the bucket was tipped.
 
-    What we need to do is only add one to the count when the pin state has changed from `HIGH` to `LOW` which should only occur *once* for every bucket tip (as the bucket tips it will go from `HIGH` to `LOW` and back to `HIGH`). To detect that we will need to know the pin state from the previous time around the loop so that we can compare it with the current pin state. So if the previous state was `HIGH` but this time its `LOW` we know the bucket has just tipped. Let's program this behaviour:
+  What we need to do is only add one to the count when the pin state has changed from `HIGH` to `LOW` which should only occur *once* for every bucket tip (as the bucket tips it will go from `HIGH` to `LOW` and back to `HIGH`). To detect that we will need to know the pin state from the previous time around the loop so that we can compare it with the current pin state. So if the previous state was `HIGH` but this time its `LOW` we know the bucket has just tipped. Let's program this behaviour:
     
-    `nano rain_gauge.py`
+  `nano rain_gauge.py`
 
 1. Change your code to match the code below:
     ```python
@@ -170,7 +170,20 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `sudo ./rain_gauge.py`
 
-1. Dave
+1. Tip the bucket and you will see the count only displays *once* when you tip the bucket. This is a lot easier to read than the previous code since we only use a print statement in the indented code of the if statement. Most of the time the evaluation of that if condition will be *false* and so the indented lines will be skipped.
+1. Press `Ctrl - C` to exit your program.
+1. There is one thing left to do. Let's add the calculation to multiply the tip volume (0.2794) by the count. Enter the command below:
+
+  `nano rain_gauge.py`
+
+  Modify the line `print count` to `print count * 0.2794`.
+1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+1. Run the code and remember to use the sudo command:
+
+  `sudo ./rain_gauge.py`
+
+1. Tip the bucket a few times and now you'll see the actual measurement of rain in millimetres.
+
 ## Plenary
 
 [Next lesson](../lesson4/README.md)
