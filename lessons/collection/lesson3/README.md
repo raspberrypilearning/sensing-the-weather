@@ -105,8 +105,11 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `sudo ./pullup.py`
 
-6. You'll notice the text scrolls up a *lot* faster this time, this is because the loop runs 100 times a second. Use your finger to flip the bucket and you should see at least a few lines of `LOW` scroll up and dissapear. Press `Ctrl - C` to exit your program.
-7. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to count them.  
+6. You'll notice the text scrolls up a *lot* faster this time, this is because the loop runs 100 times a second. Use your finger to flip the bucket and you should see at least a few lines of `LOW` scroll up and dissapear.
+7. Press `Ctrl - C` to exit your program.
+8. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to do the counting. We need to think about this carefully though. It's not as simple as keeping a count variable and adding one to it whenever the pin state is `LOW`. From the previous test you will have seen multiple `LOW` messages scroll up the screen when the bucket was tipped. That way would give us a completely erroneous count.
+
+    What we need to do is only add one to the count when the pin state has changed from HIGH to LOW which should only occur once for every bucket tip.
 
 ## Plenary
 
