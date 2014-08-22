@@ -82,9 +82,9 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 
   ![](../../../images/pull_up_wire.png)
 
-2. Go to the Linux command prompt, either Exit the desktop or open LX Terminal.
-3. Enter the command `nano pullup.py` and press Enter (nano is a text editor program).
-4. Enter the code below.
+1. Go to the Linux command prompt, either Exit the desktop or open LX Terminal.
+1. Enter the command `nano pullup.py` and press Enter (nano is a text editor program).
+1. Enter the code below.
   ```python
   #!/usr/bin/python
   import RPi.GPIO as GPIO
@@ -117,14 +117,14 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   |`print "HIGH" if pin_value else "LOW"`| This line uses a `print` statement with an in-line `if` statement. It will print the text HIGH if `pin_value` is `1` otherwise it will print LOW.|
   |`time.sleep(0.5)`| This line uses a function inside the `time` library called `sleep`, the function accepts only one parameter which is how long you want it to sleep for. Here we specify half a second. This essentially pauses the execution of the code for half a second on each iteration of the loop.|
   
-5. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-6. Next, mark the file as executable with the following command:
+1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+1. Next, mark the file as executable with the following command:
 
   `chmod +x pullup.py`
-7. GPIO functions require root access on your Pi, so you must use the `sudo` command to run your code. If you don't use sudo you'll see the following error: `No access to dev/mem. Try running as root!`
+1. GPIO functions require root access on your Pi, so you must use the `sudo` command to run your code. If you don't use sudo you'll see the following error: `No access to dev/mem. Try running as root!`
 
   `sudo ./pullup.py`
-8. The text `HIGH` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `LOW` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `HIGH` because of the internal pull *up* resistor.
+1. The text `HIGH` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `LOW` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `HIGH` because of the internal pull *up* resistor.
 
   ```
   HIGH
@@ -140,7 +140,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   HIGH
   HIGH
   ```
-9. Press `Ctrl - C` to exit your program.
+1. Press `Ctrl - C` to exit your program.
 
 ### Pull down circuit
 
@@ -148,23 +148,23 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
 
   ![](../../../images/pull_down_wire.png)
 
-2. The code required to test the pull down circuit is almost identical to that for the pull up so to save time we will just make a copy of your file and change one thing. Enter the command below (this takes a copy of `pullup.py` and saves it as `pulldown.py`):
+1. The code required to test the pull down circuit is almost identical to that for the pull up so to save time we will just make a copy of your file and change one thing. Enter the command below (this takes a copy of `pullup.py` and saves it as `pulldown.py`):
 
   `cp pullup.py pulldown.py`
 
-3. Enter the command below to edit the new file:
+1. Enter the command below to edit the new file:
 
   `nano pulldown.py`
 
-4. Find the `GPIO.setup` line and change the last parameter from `GPIO.PUD_UP` to `GPIO.PUD_DOWN`. This sets the internal pull down resistor on GPIO 4 so that it will always read LOW. For example:
+1. Find the `GPIO.setup` line and change the last parameter from `GPIO.PUD_UP` to `GPIO.PUD_DOWN`. This sets the internal pull down resistor on GPIO 4 so that it will always read LOW. For example:
 
   `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
 
-5. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-6. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
+1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+1. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
 
   `sudo ./pulldown.py`
-7. The text `LOW` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the wires (open the switch) and it will return to `LOW` because of the internal pull *down* resistor.
+1. The text `LOW` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the wires (open the switch) and it will return to `LOW` because of the internal pull *down* resistor.
 
   ```
   LOW
@@ -180,7 +180,7 @@ Here we are going to use the internal pull up resistor to make GPIO 4 always rea
   LOW
   LOW
   ```
-8. Press `Ctrl - C` to exit your program.
+1. Press `Ctrl - C` to exit your program.
 
 ## Plenary
 
