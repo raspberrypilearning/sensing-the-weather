@@ -170,13 +170,22 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `sudo ./rain_gauge.py`
 
-1. Tip the bucket and you will see the count only displays *once* when you tip the bucket. This is a lot easier to read than the previous code since we only use a print statement in the indented code of the if statement. Most of the time the evaluation of that if condition will be *false* and so the indented lines will be skipped.
+1. Tip the bucket and you will see the number only displays *once* when you tip the bucket. This is a lot easier to read since we only use a print statement within the indented block of code that belongs to the if statement. Most of the time the evaluation of that if condition will be *false* and so the indented lines will be skipped.
+
+  ```
+  1
+  2
+  3
+  4
+  5
+  ```
+
 1. Press `Ctrl - C` to exit your program.
 1. There is one thing left to do. Let's add the calculation to multiply the tip volume (0.2794) by the count. Enter the command below:
 
   `nano rain_gauge.py`
 
-  Modify the line `print count` to `print count * 0.2794`.
+  Change the line `print count` to `print count * 0.2794`.
 1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
 1. Run the code and remember to use the `sudo` command:
 
@@ -184,6 +193,26 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
 1. Tip the bucket a few times and now you'll see the actual measurement of rain in millimetres.
 
+  ```
+  0.2794
+  0.5588
+  0.8382
+  1.1176
+  1.397
+  ```
+
+1. Press `Ctrl - C` to exit your program.
+
 ## Plenary
+
+Ask the class the following questions.
+
+1. Explain why we could not use a pull down circuit to detect the bucket tip.
+1. Why is the unit of measurement for rainfall a length/depth as opposed to a volume?
+
+**Answers:**
+
+1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the state `HIGH` or `LOW` of GPIO 17 when the bucket tips. It would only ever read `LOW`.
+1. The rain gauge measures only a small sample of the rain that falls from the sky, however we can generalise that the amount of rain falling into it will be the same as that falling everywhere locally per unit of surface area. This allows us to assert that our calculation of rainfall will equate to the amount of rain that has fallen over a much larger area than the rain gauge itself.
 
 [Next lesson](../lesson4/README.md)
