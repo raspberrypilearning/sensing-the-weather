@@ -44,9 +44,10 @@ Code will be written to log data from the sensors into a database stored on the 
 
 Finally the finished weather station will be deployed to an outdoor location, chosen in a scientific way, to ensure the reliability of the data. The weather station will be remotely accessible by the students allowing them to develop a website to display the their data in real time.
 
-- [Lesson 1](lessons/collection/lesson1/README.md)
-- [Lesson 2](lessons/collection/lesson2/README.md)
-- [Lesson 3](lessons/collection/lesson3/README.md)
+- [Lesson 1](lessons/collection/lesson1/README.md): General orientation
+- [Lesson 2](lessons/collection/lesson2/README.md): Using GPIO input mode
+- [Lesson 3](lessons/collection/lesson3/README.md): The rain gauge
+- [Lesson 4](lessons/collection/lesson4/README.md): The anemometer
 
 ### Display
 
