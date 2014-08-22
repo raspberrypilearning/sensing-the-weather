@@ -51,7 +51,7 @@ Finally the finished weather station will be deployed to an outdoor location, ch
 
 ### Display
 
-![](images/flot.png)
+![](images/uk_heat_map.png)
 
 Students will learn how to create a website that will provide weather reports based on the data that they have collected. This website will show numerous graphs and graphical displays to the user and will continually update as new weather measurements are taken.
 
@@ -62,7 +62,7 @@ Students will also learn how to combine their data with that from other weather 
 
 ### Interpretation
 
-![](images/uk_heat_map.png)
+![](images/michael_fish_colour.png)
 
 Students will learn how to discern patterns in weather data, analyse them and use them to inform predictions about future weather. This will be done for both local (using their own data) and national weather (using data from the Oracle server on the Internet).
 
