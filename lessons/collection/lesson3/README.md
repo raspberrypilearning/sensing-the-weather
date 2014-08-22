@@ -27,6 +27,7 @@ Students should work in pairs. Each pair will require the following equipment:
 - Understand how the rain gauge works
 - Understand how to write code to interface with it and produce a measurement
 - Be able to differentiate between continuous polling and interrupt handler techniques
+- Understand what de-bouncing is
 
 ## Starter
 
