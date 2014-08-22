@@ -211,9 +211,10 @@ It's called interrupt handling. Essentially we can just tell the computer that w
 
 1. Let's create a brand new file for this. Enter the command below:
 
-  `nano rain_interrupt.py`
+    `nano rain_interrupt.py`
 
-  Enter the code below:
+    Enter the code below:
+  
     ```python
     #!/usr/bin/python
     import RPi.GPIO as GPIO
@@ -232,6 +233,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
     
     raw_input("Press Enter to exit...")
     ```
+    
   **Code walkthrough:**
   
   | Code | Meaning |
