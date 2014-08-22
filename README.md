@@ -53,9 +53,9 @@ Finally the finished weather station will be deployed to an outdoor location, ch
 
 ![](images/uk_heat_map.png)
 
-Students will learn how to create a website that will provide weather reports based on the data that they have collected. This website will show numerous graphs and graphical displays to the user and will continually update as new weather measurements are taken.
+Students will learn how to create a website that will provide weather reports based on the data that they have collected. This website will show numerous graphs and graphical displays and will continually update as new weather measurements are collected.
 
-Students will also learn how to combine their data with that from other weather stations around the UK to produce a [Google Maps](https://maps.google.co.uk/) overlay to geographically display integrated weather maps.
+Students will also learn how to combine their data with other data from weather stations around the UK to produce a [Google Maps](https://maps.google.co.uk/) overlay and geographically display integrated weather maps.
 
 - Lesson 1
 - Lesson 2
