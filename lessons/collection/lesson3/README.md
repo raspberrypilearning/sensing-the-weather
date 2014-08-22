@@ -144,7 +144,20 @@ The top of the back wall does come off if you want to see inside, just pull on t
         previous_state = current_state
         time.sleep(0.01)
     ```
-
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`#!/usr/bin/python` | Denotes this file as a Python program.|
+  |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
+  |`import time` | Imports the `time` library.|
+  |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
+  |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that the pin always reads HIGH.|
+  |`count = 0` | Defines a variable that will be incremented by one when a bucket tip occurs.|
+  |`current_state = 0` | A variable that will be used to store the current state of the GPIO pin for each iteration of the while loop.|
+  |`previous_state = 0` | At the end of each loop iteration the current state will be copied into this variable so that it can be compared to the next current state.|
+  
 ## Plenary
 
 [Next lesson](../lesson4/README.md)
