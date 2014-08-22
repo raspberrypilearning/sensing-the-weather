@@ -153,7 +153,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
   |`import time` | Imports the `time` library.|
   |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
-  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that the pin always reads HIGH.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
   |`count = 0` | Defines a variable that will be incremented by one when a bucket tip occurs.|
   |`current_state = 0` | A variable that will be used to store the current state of the GPIO pin for each iteration of the while loop.|
   |`previous_state = 0` | At the end of each loop iteration the current state will be copied into this variable so that it can be compared to the next current state.|
@@ -218,14 +218,13 @@ It's called interrupt handling. Essentially we can just tell the computer that w
     #!/usr/bin/python
     import RPi.GPIO as GPIO
     
+    pin = 17
     count = 0
     
     def bucket_tipped(channel):
         global count
         count += 1
-        print print count * 0.2794
-    
-    pin = 17
+        print count * 0.2794
     
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
@@ -233,6 +232,26 @@ It's called interrupt handling. Essentially we can just tell the computer that w
     
     raw_input("Press Enter to exit...")
     ```
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`#!/usr/bin/python` | Denotes this file as a Python program.|
+  |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
+  |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
+  |`def bucket_tipped(channel):` | The `def` keyword is used to define your own functions. Here we define a function called `bucket_tipped`. Lines of code that belong to this function are indented. This will be the call back function that runs when a buck tip occurs. The function takes one parameter, `channel`, which is expected by the RPi.GPIO library.|
+  |`global count` | This makes the `count` variable declared above available inside the scope of this function. Without this a new copy of the variable would be created locally just for this function and the main `count` variable would never change.|
+  |`count += 1` | Incrementing the `count` variable by one. |
+  |`print count * 0.2794` | Displays the calculation of tip volume multiplied by tip count.|
+  |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
+  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `bucket_tipped`. The bounce time is 300 milliseconds and this is used to avoid detecting multiple events in close succession that might occur if the bucket bounced back.|
+  |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
+
+1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+1. Run the code and remember to use the `sudo` command:
+
+  `sudo ./rain_interrupt.py`
 
 ## Plenary
 
