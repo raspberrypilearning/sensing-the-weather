@@ -1,6 +1,6 @@
 # Weather Station Scheme of Work
 
-![](images/flooding.png)
+![](images/michael_fish.png)
 
 ## Introduction
 This scheme of work has been designed to be a cross curricular exploration of how we can predict the behaviour of our weather by measuring, collecting and anaylsing weather data. By the end of all the lessons, students will have built their own weather station using a Raspberry Pi, used it to collect data about the weather and created a webpage in order to display their findings. 
@@ -36,7 +36,7 @@ For the majority of the lessons, it is suggested that work is carried out by stu
 
 ### Collection
 
-![](images/weather_station.jpg)
+![](images/weather_station.png)
 
 These lessons will cover how to use the Raspberry Pi and peripherals to build a fully working weather station capable of recording measurements from a variety of sensors. Students will learn how each sensor works and how to write python code to take readings from them.
 
@@ -62,7 +62,7 @@ Students will also learn how to combine their data with that from other weather 
 
 ### Interpretation
 
-![](images/michael_fish.png)
+![](images/uk_heat_map.png)
 
 Students will learn how to discern patterns in weather data, analyse them and use them to inform predictions about future weather. This will be done for both local (using their own data) and national weather (using data from the Oracle server on the Internet).
 
