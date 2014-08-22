@@ -79,7 +79,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
   `pin = 17`
   
 2. This is all we need to change for now. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-3. Run the code and remember to the `sudo` command:
+3. Run the code and remember to use the `sudo` command:
 
   `sudo ./pullup.py`
   
@@ -92,9 +92,15 @@ The top of the back wall does come off if you want to see inside, just pull on t
   Nothing? Try it a few times. If you're lucky, and you catch it at the right moment, you'll see maybe one `LOW`.
 
 2. Press `Ctrl - C` to exit your program.
-3. We have found a serious flaw in the code here. Remember inside the `while` loop there was the line `time.sleep(0.5)`? It takes a lot less than half a second for the magnet to flip past the reed switch. So we actually *miss* the event because our code was paused in the sleep function. We could reduce the sleep time causing the loop to run more often? Let's try this next:
+3. We have found a serious flaw in the code here. Remember inside the `while` loop there was the line `time.sleep(0.5)`? It takes a lot less than half a second for the magnet to flip past the reed switch. So we actually *miss* the event because our code was paused in the sleep function. We could reduce the sleep time causing the loop to run more often? Let's try this next.
 
-  `nano pullup.py`
+  First copy the old code into a new file:
+
+  `cp pullup.py rain_gauge.py`
+
+  Edit the new file:
+
+  `nano rain_gauge.py`
 
   Find the `time.sleep(0.5)` line and change 0.5 to 0.01.
   
@@ -103,13 +109,41 @@ The top of the back wall does come off if you want to see inside, just pull on t
 4. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
 5. Run the code and remember to use the `sudo` command:
 
-  `sudo ./pullup.py`
+  `sudo ./rain_gauge.py`
 
 6. You'll notice the text scrolls up a *lot* faster this time, this is because the loop runs 100 times a second. Use your finger to flip the bucket and you should see at least a few lines of `LOW` scroll up and dissapear.
 7. Press `Ctrl - C` to exit your program.
-8. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to do the counting. We need to think about this carefully though. It's not as simple as keeping a count variable and adding one to it whenever the pin state is `LOW`. From the previous test you will have seen multiple `LOW` messages scroll up the screen when the bucket was tipped. That way would give us a completely erroneous count.
+8. Now that the code is running fast enough to detect the bucket tip we also need to write some extra code to do the counting. We need to think about this carefully though. It's not as simple as keeping a count variable and adding one to it whenever the pin state is `LOW`. From the previous test you will have seen multiple `LOW` messages scroll up the screen when the bucket was tipped.
 
-    What we need to do is only add one to the count when the pin state has changed from HIGH to LOW which should only occur once for every bucket tip.
+    What we need to do is only add one to the count when the pin state has changed from `HIGH` to `LOW` which should only occur *once* for every bucket tip (as the bucket tips it will go from `HIGH` to `LOW` and back to `HIGH`). To detect that we will need to know the pin state from the previous time around the loop so that we can compare it with the current pin state. So if the previous state was `HIGH` but this time its `LOW` we know the bucket has just tipped. Let's program this behaviour:
+    
+    `nano rain_gauge.py`
+
+9. Change your code to match the code below:
+    ```python
+    #!/usr/bin/python
+    import RPi.GPIO as GPIO
+    import time
+    
+    pin = 17
+    
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+    
+    count = 0
+    current_state = 0
+    previous_state = 0
+    
+    while True:
+        current_state = GPIO.input(pin)
+        
+        if previous_state == GPIO.HIGH and current_state == GPIO.LOW:
+            count += 1
+            print count
+        
+        previous_state = current_state
+        time.sleep(0.01)
+    ```
 
 ## Plenary
 
