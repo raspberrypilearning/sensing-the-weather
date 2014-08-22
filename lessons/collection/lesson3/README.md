@@ -279,7 +279,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
 
 Ask the class the following questions.
 
-1. Explain why we could not use a pull down circuit to detect the bucket tip.
+1. Why we could not use a pull down circuit to detect the bucket tip?
 1. Why is the unit of measurement for rainfall a length/depth as opposed to a volume?
 1. What are the advantages of using interrupt handlers over continuous polling?
 1. What is de-bouncing?
