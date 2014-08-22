@@ -241,7 +241,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
   |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
-  |`def bucket_tipped(channel):` | The `def` keyword is used to define your own functions. Here we define a function called `bucket_tipped`. Lines of code that belong to this function are indented. This will be the call back function that runs when a buck tip occurs. The function takes one parameter, `channel`, which is expected by the RPi.GPIO library.|
+  |`def bucket_tipped(channel):` | The `def` keyword is used to define your own functions. Here we define a function called `bucket_tipped`. Lines of code that belong to this function are indented. This will be the call back function that runs when a buck tip occurs. The function takes one parameter, `channel`, which is expected by the `RPi.GPIO` library.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function. Without this a new copy of the variable would be created locally just for this function and the main `count` variable would never change.|
   |`count += 1` | Incrementing the `count` variable by one. |
   |`print count * 0.2794` | Displays the calculation of tip volume multiplied by tip count.|
@@ -251,9 +251,25 @@ It's called interrupt handling. Essentially we can just tell the computer that w
   |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
 
 1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
+1. Because this is a new file we need to mark it as executable before we run it. Enter the command below:
+
+  `chmod +x rain_interrupt.py`
+
 1. Run the code and remember to use the `sudo` command:
 
   `sudo ./rain_interrupt.py`
+
+1. Tip the bucket a few times and now you'll see the measurement of rain in millimetres just as before.
+
+  ```
+  0.2794
+  0.5588
+  0.8382
+  1.1176
+  1.397
+  ```
+
+1. Finally let's test the bounce time. This is designed avoid multiple event detections due to switch bounce. This happens with most buttons and switches and the technique is known as *de-bouncing*. If you flick the bucket down with some force you'll find that it bounces back to its original position. While the magnet actually passed the reed switch twice you'll notice that your program only detected *one* bucket tip. This is because the second tip occurred within 300 milliseconds of the first. So the bounce time is a timeout during which all other interrupt events will be ignored.
 
 ## Plenary
 
