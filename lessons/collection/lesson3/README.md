@@ -26,6 +26,7 @@ Students should work in pairs. Each pair will require the following equipment:
 
 - Understand how the rain gauge works
 - Understand how to write code to interface with it and produce a measurement
+- Be able to differentiate between continuous polling and interrupt handler techniques
 
 ## Starter
 
@@ -269,7 +270,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
   1.397
   ```
 
-1. Finally let's test the bounce time. This is designed avoid multiple event detections due to switch bounce. This happens with most buttons and switches and the technique is known as *de-bouncing*. If you flick the bucket down with some force you'll find that it bounces back to its original position. While the magnet actually passed the reed switch twice you'll notice that your program only detected *one* bucket tip. This is because the second tip occurred within 300 milliseconds of the first. So the bounce time is a timeout during which all other interrupt events will be ignored.
+1. Finally let's test the bounce time. This is designed avoid multiple event detections due to switch bounce. This happens with most buttons and switches and the technique is known as *de-bouncing*. If you flick the bucket down with some force you'll find that it bounces back to its original position. While the magnet actually passed the reed switch twice you'll notice that your program only detected *one* bucket tip. This is because the second tip occurred within 300 milliseconds of the first. 
 
 1. Press Enter to exit your program.
 
@@ -279,10 +280,14 @@ Ask the class the following questions.
 
 1. Explain why we could not use a pull down circuit to detect the bucket tip.
 1. Why is the unit of measurement for rainfall a length/depth as opposed to a volume?
+1. What are the advantages of using interrupt handlers over continuous polling?
+1. What is de-bouncing?
 
 **Answers:**
 
 1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the bucket tips. It would only ever read `LOW`.
 1. The rain gauge measures only a small sample of the rain that falls from the sky, however we can generalise that the amount of rain falling into it will be the same as that falling everywhere locally per unit of surface area. This allows us to assert that our calculation of rainfall will equate to the amount of rain that has fallen over a much larger area than the rain gauge itself.
+1. Interrupt handlers allow you to avoid having to write code compare the current and previous states of the GPIO pin between each iteration of a continuous polling loop.
+1. De-bouncing is a timeout, started when an interrupt occurs, during which subsequent interrupt events are ignored. This avoids switch bounce causing multiple, undesired, event detections that could produce erroneous results.
 
 [Next lesson](../lesson4/README.md)
