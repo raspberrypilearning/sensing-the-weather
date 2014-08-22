@@ -288,7 +288,7 @@ Ask the class the following questions.
 
 1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the bucket tips. It would only ever read `LOW`.
 1. The rain gauge measures only a small sample of the rain that falls from the sky, however we can generalise that the amount of rain falling into it will be the same as that falling everywhere locally per unit of surface area. This allows us to assert that our calculation of rainfall will equate to the amount of rain that has fallen over a much larger area than the rain gauge itself.
-1. Interrupt handlers allow you to avoid having to write code compare the current and previous states of the GPIO pin between each iteration of a continuous polling loop.
+1. Interrupt handlers allow you to avoid having to write code to compare the current and previous states of the GPIO pin between each iteration of a continuous polling loop.
 1. De-bouncing is a timeout, started when an interrupt occurs, during which subsequent interrupt events are ignored. This avoids switch bounce causing multiple, undesired, event detections that could produce erroneous results.
 
 [Next lesson](../lesson4/README.md)
