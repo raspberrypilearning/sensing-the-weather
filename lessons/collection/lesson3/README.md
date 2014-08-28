@@ -271,7 +271,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
   1.397
   ```
 
-1. Finally let's test the bounce time. This is designed avoid multiple event detections due to switch bounce. This happens with most buttons and switches and the technique is known as *de-bouncing*. If you flick the bucket down with some force you'll find that it bounces back to its original position. While the magnet actually passed the reed switch twice you'll notice that your program only detected *one* bucket tip. This is because the second tip occurred within 300 milliseconds of the first. 
+1. Finally let's test the bounce time. This is designed to avoid multiple event detections due to switch bounce. This happens with most buttons and switches and the technique is known as *de-bouncing*. If you flick the bucket down with some force you'll find that it bounces back to its original position. While the magnet actually passed the reed switch twice you'll notice that your program only detected *one* bucket tip. This is because the second tip occurred within 300 milliseconds of the first. 
 
 1. Press Enter to exit your program.
 
