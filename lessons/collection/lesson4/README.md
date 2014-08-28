@@ -24,6 +24,9 @@ Students should work in pairs. Each pair will require the following equipment:
 
 ## Learning Objectives
 
+- Understand how the anemometer works
+- Understand how to write code to interface with it and calculate wind speed
+
 ## Starter
 
 ## Main Development
