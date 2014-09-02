@@ -91,6 +91,23 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
     raw_input("Press Enter to exit...")
     ```
 
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`#!/usr/bin/python` | Denotes this file as a Python program.|
+  |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
+  |`pin = 27` | A reference variable to store the GPIO pin number connected to the anemometer.|
+  |`count = 0` | Defines a variable that will be incremented by one when the anemometer reed switch closes.|
+  |`def spin(channel):` | The `def` keyword is used to define your own functions. Here we define a function called `spin`. Lines of code that belong to this function are indented. This will be the call back function that runs when the anemometer reed switch closes. The function takes one parameter, `channel`, which is expected by the `RPi.GPIO` library.|
+  |`global count` | This makes the `count` variable declared above available inside the scope of this function. Without this a new copy of the variable would be created locally just for this function and the main `count` variable would never change.|
+  |`count += 1` | Incrementing the `count` variable by one. |
+  |`print count` | Displays the count.|
+  |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
+  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `spin`. The bounce time is only 5 milliseconds as opposed to 300 like last time. This is because we need to accommodate the anemometer spinning during very fast winds.|
+  |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
+  
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
