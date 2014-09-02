@@ -243,6 +243,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
   |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
+  |`count = 0` | Defines a variable that will be incremented by one when a bucket tip occurs.|
   |`def bucket_tipped(channel):` | The `def` keyword is used to define your own functions. Here we define a function called `bucket_tipped`. Lines of code that belong to this function are indented. This will be the call back function that runs when a buck tip occurs. The function takes one parameter, `channel`, which is expected by the `RPi.GPIO` library.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function. Without this a new copy of the variable would be created locally just for this function and the main `count` variable would never change.|
   |`count += 1` | Incrementing the `count` variable by one. |
