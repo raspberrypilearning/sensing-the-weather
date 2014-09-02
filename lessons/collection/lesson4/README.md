@@ -184,9 +184,8 @@ To be able to give the speed in km per hour we need to do two things:
     def calculate_speed(r_cm, time_sec):
         global count
         c_cm = (2 * math.pi) * r_cm
-        c_km = c_cm / 100000 # convert to kilometres
-        rt = count // 2
-        d_km = c_km * rt
+        rt = count / 2
+        d_km = (c_cm * rt) / 100000 # convert to kilometres
         km_per_sec = d_km / time_sec
         km_per_hour = km_per_sec * 3600 # convert to distance per hour
         return km_per_hour
