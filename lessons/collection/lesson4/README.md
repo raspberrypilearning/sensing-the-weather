@@ -205,7 +205,7 @@ To be able to give the speed in km per hour we need to do two things:
     while True:
         count = 0
         time.sleep(interval)
-        print calculate_speed(9.0, interval), "km/h"
+        print calculate_speed(9.0, interval), "kph"
     ```
 
   **Code walkthrough:**
@@ -236,7 +236,7 @@ To be able to give the speed in km per hour we need to do two things:
   |`while True:` | An infinite loop that must be manually aborted by the user.|
   |`count = 0` | On each iteration of this loop we should reset the interrupt count to zero, we want to see if the speed has gone up or down since last time so we need to discard the interrupt counts from the previous iteration.|
   |`time.sleep(interval)` | Pauses the execution of the code, in this loop only, for the number of seconds in the `interval` variable. Meanwhile the interrupt counting will continue in the background and the `count` variable will increase in value.|
-  |`print calculate_speed(9.0, interval), "km/h"` | Calls the `calculate_speed` function passing in the value 9.0 for the radius and `interval` for the time. The return value from `calculate_speed` is passed to the `print` command which shows it on screen along with the text `km/h`.|
+  |`print calculate_speed(9.0, interval), "kph"` | Calls the `calculate_speed` function passing in the value 9.0 for the radius and `interval` for the time. The return value from `calculate_speed` is passed to the `print` command which shows it on screen along with the text `kph`.|
 
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
@@ -264,6 +264,12 @@ To be able to give the speed in km per hour we need to do two things:
   
   If you remove the `print count` line from the `spin` function the output will look a bit clearer.
   
+1. This is usually where students like to compete to see who has the best pair of lungs. It's very easy to make yourself feel faint by doing this so make sure everyone is warned to not be standing up while blowing on the anemometer.
+
+### Calibration
+
+
+
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
