@@ -145,13 +145,23 @@ The number π is a constant and describes the ratio of any circles circumference
 
 The formula to calculate circumference from radius is: **2πr**
 
-So our maths will be as follows:
+So our maths to get the wind speed will be as follows:
 
 - Count anemometer interrupts for time length **t**.
 - Calculate anemometer circumference **c** with 2πr, radius r is 9 cm (c = 2 * π * 9).
 - Calculate rotations **rt** by dividing `count` by two (rt = count / 2)
-- Calculate total distance **d** by multiplying the rotations **rt** by the circumference **c** (d = rt * c)
+- Calculate total distance **d** by multiplying the circumference **c** by the rotations **rt** (d = c * rt)
 - Calculate speed as total distance divided by time (speed = d / t)
+
+### Units of measurement
+
+When doing these kinds of calculations we must pay attention to the units of measurement used. The above example uses the radius in *cm* to calculate a circumference. So **c** will also be in *cm* and therefore so will the total distance **d**. Assuming the time **t** was in seconds our speed would then be in *cm per second*, not *km per hour*.
+
+To be able to give the speed in km per hour we need to do two things:
+
+- Convert either the radius or the total distance into kilometres before dividing by time.
+- Multiply the distance per second speed by 3600 (there are this many seconds in one hour).
+
 
 ## Plenary
 
