@@ -114,7 +114,7 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
   `chmod +x wind_speed.py`
 
-1. Run the code and remember to use the sudo command:
+1. Run the code and remember to use the `sudo` command:
 
   `sudo ./wind_speed.py`
 
@@ -240,7 +240,7 @@ To be able to give the speed in km per hour we need to do two things:
 
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
-1. Run the code and remember to use the sudo command:
+1. Run the code and remember to use the `sudo` command:
 
   `sudo ./wind_speed.py`
 
@@ -265,6 +265,8 @@ To be able to give the speed in km per hour we need to do two things:
   If you remove the `print count` line from the `spin` function the output will look a bit clearer.
   
 1. This is usually where students like to compete to see who has the best pair of lungs. It's very easy to make yourself feel faint by doing this so make sure everyone is warned to not be standing up while blowing on the anemometer.
+
+1. Press `Ctrl - C` to exit your program.
 
 ### Calibration
 
