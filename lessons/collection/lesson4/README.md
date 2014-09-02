@@ -228,7 +228,7 @@ To be able to give the speed in km per hour we need to do two things:
   |`def spin(channel):` | This will be the call back function that runs when the anemometer reed switch closes.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
   |`count += 1` | Incrementing the `count` variable by one. |
-  |`print count` | Displays the count.|
+  |`print count` | Displays the count. You may wish to remove this to make the program output more clear.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
