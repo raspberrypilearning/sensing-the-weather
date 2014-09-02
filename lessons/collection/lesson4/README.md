@@ -67,7 +67,7 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 ### Detect the interrupts
 
 1. We're going to carry on with interrupt detection from the previous lesson since this is more efficient than continuous polling. Remember the weather expansion board is *fixed* circuitry that you cannot change. So we need to write our code to accommodate the way it's wired up. The weather expansion board connects the anemometer to GPIO 27 in a *pull up* circuit (this is GPIO 21 on an old Rev 1 Raspberry Pi, a rev 1 board is easily [identifiable](../../../images/rev1pi.png) because it has no mounting holes).
-2. Let's start a new program, enter the command below:
+1. Let's start a new program, enter the command below:
 
   `nano wind_speed.py`
 
@@ -141,7 +141,7 @@ Since the cups rotate in circle we can use the anemometer circumference multipli
 
 ![](../../../images/pi_diagram.png)
 
-The number π is a constant and describes the ratio of any circles circumference to its diameter. It's approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre of the top to the very edge of one of the cups. You should find it's about 9 cm.
+The number π is a mathematical constant that is the ratio of any circles circumference to its diameter. It's approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre of the top to the very edge of one of the cups. You should find it's about 9 cm.
 
 The formula to calculate circumference from radius is: **2πr**
 
@@ -165,6 +165,48 @@ To be able to give the speed in km per hour we need to do two things:
 - Convert speed as distance per second into distance per hour.
 
   There are 60 seconds in minute and 60 minutes in an hour, so if we multiply the distance per second by 3600 (60 * 60) we can convert to distance per hour.
+
+### Program the calculation
+
+1. Let's continue editing our program, enter the command below:
+
+  `nano wind_speed.py`
+
+1. Remember to change the `import` line at the top. The `time` and `math` libraries are now needed. Change your code to match the code below:
+
+    ```python
+    #!/usr/bin/python
+    import RPi.GPIO as GPIO, time, math
+    
+    pin = 27 #21 if using an old Rev 1 Raspberry Pi
+    count = 0
+    
+    def calculate_speed(r_cm, time_sec):
+        global count
+        c_cm = (2 * math.pi) * r_cm
+        c_km = c_cm / 100000 # convert to kilometres
+        rt = count // 2
+        d_km = c_km * rt
+        km_per_sec = d_km / time_sec
+        km_per_hour = km_per_sec * 3600 # convert to distance per hour
+        return km_per_hour
+    
+    def spin(channel):
+        global count
+        count += 1
+        print count
+    
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)
+    
+    interval = 5
+    
+    while True:
+        count = 0
+        time.sleep(interval)
+        print calculate_speed(9.0, interval), "km per hour"
+    ```
 
 ## Plenary
 
