@@ -172,11 +172,12 @@ To be able to give the speed in km per hour we need to do two things:
 
   `nano wind_speed.py`
 
-1. Remember to change the `import` line at the top. The `time` and `math` libraries are now needed. Change your code to match the code below:
+1. Remember to add the new `import` line at the top. The `time` and `math` libraries are now needed. Change your code to match the code below:
 
     ```python
     #!/usr/bin/python
-    import RPi.GPIO as GPIO, time, math
+    import RPi.GPIO as GPIO
+    import time, math
     
     pin = 27 #21 if using an old Rev 1 Raspberry Pi
     count = 0
@@ -204,7 +205,7 @@ To be able to give the speed in km per hour we need to do two things:
     while True:
         count = 0
         time.sleep(interval)
-        print calculate_speed(9.0, interval), "km per hour"
+        print calculate_speed(9.0, interval), "km/h"
     ```
 
 ## Plenary
