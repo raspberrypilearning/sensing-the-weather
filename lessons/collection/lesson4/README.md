@@ -149,11 +149,11 @@ The formula to calculate circumference from radius is: **2πr**
 
 So our maths will be as follows:
 
-- Start a timer.
-- Calculate circumference with 2πr (r = 9).
-- Divide `count` by two to get the number of rotations.
-- Multiply rotations by the circumference to give the total distance one cup has travelled.
-- Divide the total distance by the value of the timer.
+- Count anemometer interrupts for time length **t** (lets say 10 seconds, t = 10).
+- Calculate anemometer circumference **c** with 2πr, radius r is 9 cm (c = 2 * π * 9).
+- Calculate rotations **rt** by dividing `count` by two (rt = count / 2)
+- Calculate total distance **d** that one cup has travelled by multiplying rotations by the circumference (d = rt * c)
+- Calculate speed as total distance divided by time (speed = d / t)
 
 ## Plenary
 
