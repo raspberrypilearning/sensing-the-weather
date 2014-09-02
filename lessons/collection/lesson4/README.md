@@ -22,6 +22,7 @@ Students should work in pairs. Each pair will require the following equipment:
 - HDMI cable
 - A monitor or TV
 - A small phillips screwdriver
+- A ruler
 
 ## Learning Objectives
 
@@ -127,6 +128,24 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
   5
   6
   ```
+
+1. Press `Enter` to exit your program.
+
+### How to calculate wind speed
+
+Ask the class to think back to their [geometry](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev1.shtml) maths lessons.
+
+Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we need to measure how far the cups have travelled in a given block of time.
+
+Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. *It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance.* We already know that the number of rotations will be the `count` variable, in the above code, divided by two (because there are two interrupts per rotation). Once we have this we just need to measure the rotations for a given period of time, divide the distance by the time and we have the speed.
+
+![](../../../images/pi_diagram.png)
+
+The number π is a constant and describes the ratio of any circles circumference to its diameter. It's approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius, or the other way round.
+
+Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre to the very edge of one of the cups. You should find it's about 9 cm.
+
+The formula to calculate circumference from radius is: **2πr**
 
 ## Plenary
 
