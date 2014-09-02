@@ -107,7 +107,27 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `spin`. The bounce time is only 5 milliseconds as opposed to 300 like last time. This is because we need to accommodate the anemometer spinning during high winds. A higher bounce time could cause desired counts to be ignored and we would be unable to calculate the wind speed correctly.|
   |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
-  
+
+1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
+1. Because this is a new file we need to mark it as executable before we run it. Enter the command below:
+
+  `chmod +x wind_speed.py`
+
+1. Run the code and remember to use the sudo command:
+
+  `sudo ./wind_speed.py`
+
+1. Hold the base of the anemometer in one hand and slowly rotate the blades/cups with the other. By doing this you can test that there are only ever *two* increments to the count for every complete rotation of the blades/cups. It can be helpful if you choose one cup and use it as a reference point for rotation.
+
+  ```
+  1
+  2
+  3
+  4
+  5
+  6
+  ```
+
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
