@@ -48,6 +48,49 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
 ## Main Development
 
+### Setting up your Pi
+
+1. Place the SD card into the slot of your Raspberry Pi.
+1. Connect the Weather Expansion Board to the GPIO pins.
+1. Connect the anemometer to the socket marked *WIND* on the Weather Expansion Board.
+1. Next connect the HDMI cable from the monitor or TV.
+1. Plug in the USB keyboard and mouse.
+1. Plug in the micro USB power supply.
+1. When prompted to login type:
+
+    ```bash
+    Login: pi
+    Password: raspberry
+    ```
+
+### Detect the interrupts
+
+1. We're going to carry on with interrupt detection from the previous lesson since this is more efficient than continuous polling. Remember the weather expansion board is *fixed* circuitry that you cannot change. So we need to write our code to accommodate the way it's wired up. The weather expansion board connects the anemometer to GPIO 27 in a *pull up* circuit (this is GPIO 21 on an old Rev 1 Raspberry Pi, a rev 1 board is easily identifiable because it has no mounting holes).
+2. Let's start a new program, enter the command below:
+
+  `nano wind_speed.py`
+
+1. Enter the code shown below:
+
+```python
+#!/usr/bin/python
+import RPi.GPIO as GPIO
+
+pin = 27 #21 if using an old Rev 1 Raspberry Pi
+count = 0
+
+def spin(channel):
+    global count
+    count += 1
+    print count
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)
+
+raw_input("Press Enter to exit...")
+```
+
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
