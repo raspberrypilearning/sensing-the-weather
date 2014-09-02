@@ -262,6 +262,8 @@ To be able to give the speed in km per hour we need to do two things:
   2.44290244743 km/h
   ```
   
+  If you remove the `print count` line from the `spin` function the output will look a bit clearer.
+  
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
