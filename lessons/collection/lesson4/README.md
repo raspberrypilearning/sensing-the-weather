@@ -159,9 +159,12 @@ When doing these kinds of calculations we must pay attention to the units of mea
 
 To be able to give the speed in km per hour we need to do two things:
 
-- Convert either the radius or the total distance into kilometres before dividing by time.
-- Multiply the distance per second speed by 3600 (there are this many seconds in one hour).
+- Convert either the radius or the total distance into kilometres before dividing by time. 
 
+  There are 100 cms in a meter, and 1000 meters in a kilometre. So if you take a value in cm and divide it by 100,000 (100 * 1000) the answer is the distance in kilometres (or as a fraction of a kilometre).
+- Convert speed as distance per second into distance per hour.
+
+  There are 60 seconds in minute and 60 minutes in an hour, so if we multiply the distance per second by 3600 (60 * 60) we can convert to distance per hour.
 
 ## Plenary
 
