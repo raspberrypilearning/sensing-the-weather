@@ -208,6 +208,38 @@ To be able to give the speed in km per hour we need to do two things:
         print calculate_speed(9.0, interval), "km/h"
     ```
 
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`#!/usr/bin/python` | Denotes this file as a Python program.|
+  |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
+  |`import time, math` | Imports both the time and math libraries. Multiple libraries can be imported on the same line with a comma to separate them.|
+  |`pin = 27` | A reference variable to store the GPIO pin number connected to the anemometer.|
+  |`count = 0` | Defines a variable that will be incremented by one when the anemometer reed switch closes.|
+  |`def calculate_speed(r_cm, time_sec):` | .|
+  |`global count` | .|
+  |`circ_cm = (2 * math.pi) * r_cm` | .|
+  |`rot = count / 2` | .|
+  |`dist_km = (circ_cm * rot) / 100000` | .|
+  |`km_per_sec = dist_km / time_sec` | .|
+  |`km_per_hour = km_per_sec * 3600` | .|
+  |`return km_per_hour` | .|
+  |`def spin(channel):` | This will be the call back function that runs when the anemometer reed switch closes.|
+  |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
+  |`count += 1` | Incrementing the `count` variable by one. |
+  |`print count` | Displays the count.|
+  |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
+  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
+  |`interval = 5` | .|
+  |`while True:` | .|
+  |`count = 0` | .|
+  |`time.sleep(interval)` | .|
+  |`print calculate_speed(9.0, interval), "km/h"` | .|
+
+1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
+
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
