@@ -72,24 +72,24 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
 1. Enter the code shown below:
 
-```python
-#!/usr/bin/python
-import RPi.GPIO as GPIO
-
-pin = 27 #21 if using an old Rev 1 Raspberry Pi
-count = 0
-
-def spin(channel):
-    global count
-    count += 1
-    print count
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)
-
-raw_input("Press Enter to exit...")
-```
+    ```python
+    #!/usr/bin/python
+    import RPi.GPIO as GPIO
+    
+    pin = 27 #21 if using an old Rev 1 Raspberry Pi
+    count = 0
+    
+    def spin(channel):
+        global count
+        count += 1
+        print count
+    
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)
+    
+    raw_input("Press Enter to exit...")
+    ```
 
 ## Plenary
 
