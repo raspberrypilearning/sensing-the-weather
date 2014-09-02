@@ -278,6 +278,22 @@ To compensate for this a calibration curve or lookup table can be used. This is 
 
 It only says: *A wind speed of 1.492 MPH (2.4 km/h) causes the switch to close once per second*.
 
+2.4 / 2.03575203953 = 1.1789
+
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+2.40218740664 km/h
+```
+
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
