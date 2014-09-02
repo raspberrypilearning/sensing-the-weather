@@ -228,18 +228,40 @@ To be able to give the speed in km per hour we need to do two things:
   |`def spin(channel):` | This will be the call back function that runs when the anemometer reed switch closes.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
   |`count += 1` | Incrementing the `count` variable by one. |
-  |`print count` | Displays the count. You may wish to remove this to make the program output more clear.|
+  |`print count` | Displays the count. You may wish to remove this to make the program output clearer.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
   |`interval = 5` | This will be the time interval in seconds to count interrupts for before we attempt to calculate the speed.|
   |`while True:` | An infinite loop that must be manually aborted by the user.|
   |`count = 0` | On each iteration of this loop we should reset the interrupt count to zero, we want to see if the speed has gone up or down since last time so we need to discard the interrupt counts from the previous iteration.|
-  |`time.sleep(interval)` | Pauses the execution of the code, in this loop, for the number of seconds in the `interval` variable. Meanwhile the interrupt counting will continue in the background and the `count` variable will increase in value.|
+  |`time.sleep(interval)` | Pauses the execution of the code, in this loop only, for the number of seconds in the `interval` variable. Meanwhile the interrupt counting will continue in the background and the `count` variable will increase in value.|
   |`print calculate_speed(9.0, interval), "km/h"` | Calls the `calculate_speed` function passing in the value 9.0 for the radius and `interval` for the time. The return value from `calculate_speed` is passed to the `print` command which shows it on screen along with the text `km/h`.|
 
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
+1. Run the code and remember to use the sudo command:
+
+  `sudo ./wind_speed.py`
+
+1. Start spinning the anemometer and every five seconds you should see a wind speed measurement display on the screen.
+
+  ```
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  11
+  12
+  2.44290244743 km/h
+  ```
+  
 ## Plenary
 
 [Next lesson](../lesson5/README.md)
