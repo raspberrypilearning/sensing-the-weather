@@ -44,7 +44,7 @@ So what does this mean? When the blades/cups are in their original position and 
 
 So using a similar programming technique to the rain gauge we can count the number of interrupts and divide it by two to give us the number of complete rotations. We can then calculate the wind speed with some maths using π.
 
-Reassemble the anemometer, put the base back into position ensure the knot in the cable remains inside. Replace the three screws and push the blades/cups back onto the top.
+Reassemble the anemometer, put the base back into position and ensure the knot in the cable remains inside. Replace the three screws and push the blades/cups back onto the top. Give it a spin to check it rotates correctly.
 
 ## Main Development
 
