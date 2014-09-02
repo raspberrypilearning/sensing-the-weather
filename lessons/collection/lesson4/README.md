@@ -135,9 +135,9 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
 Ask the class to think back to their [geometry](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev1.shtml) maths lessons.
 
-Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we need to measure how far the cups have travelled in a given block of time.
+Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we need to measure how far the cups have travelled in a given block of time. Speed is then: distance ÷ time.
 
-Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. *It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance.* We already know that the number of rotations will be the `count` variable, in the above code, divided by two (because there are two interrupts per rotation). Once we have this we just need to measure the rotations for a given period of time, divide the distance by the time and we have the speed.
+Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. *It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance.* We already know that the number of rotations will be the `count` variable, in the above code, divided by two (because there are two interrupts per rotation).
 
 ![](../../../images/pi_diagram.png)
 
@@ -146,6 +146,14 @@ The number π is a constant and describes the ratio of any circles circumference
 Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre to the very edge of one of the cups. You should find it's about 9 cm.
 
 The formula to calculate circumference from radius is: **2πr**
+
+So our maths will be as follows:
+
+- Start a timer.
+- Calculate circumference with 2πr (r = 9).
+- Divide `count` by two to get the number of rotations.
+- Multiply rotations by the circumference to give the total distance one cup has travelled.
+- Divide the total distance by the value of the timer.
 
 ## Plenary
 
