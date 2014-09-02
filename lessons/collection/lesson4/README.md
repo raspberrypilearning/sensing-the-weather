@@ -214,17 +214,17 @@ To be able to give the speed in km per hour we need to do two things:
   | --- | --- |
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
-  |`import time, math` | Imports both the time and math libraries. Multiple libraries can be imported on the same line with a comma to separate them.|
+  |`import time, math` | Imports both the `time` and `math` libraries. Multiple libraries can be imported on the same line with a comma to separate them.|
   |`pin = 27` | A reference variable to store the GPIO pin number connected to the anemometer.|
   |`count = 0` | Defines a variable that will be incremented by one when the anemometer reed switch closes.|
-  |`def calculate_speed(r_cm, time_sec):` | .|
-  |`global count` | .|
-  |`circ_cm = (2 * math.pi) * r_cm` | .|
-  |`rot = count / 2` | .|
-  |`dist_km = (circ_cm * rot) / 100000` | .|
-  |`km_per_sec = dist_km / time_sec` | .|
-  |`km_per_hour = km_per_sec * 3600` | .|
-  |`return km_per_hour` | .|
+  |`def calculate_speed(r_cm, time_sec):` | Defining a function called `calculate_speed` to perform the wind speed calculation and return the answer. It will take two parameters: the radius, `r_cm`, and the time in seconds, `time_sec`, that we have been counting for.|
+  |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
+  |`circ_cm = (2 * math.pi) * r_cm` | Calculates the circumference using the *2πr* calculation. When you see brackets around part of a calculation like this it is instructing the computer to perform that part *first*. So this is saying multiply π by two, get the answer and multiply *that* by `r_cm`.|
+  |`rot = count / 2` | Calculates the number of full rotations. Simply divide the `count` of interrupts by two.|
+  |`dist_km = (circ_cm * rot) / 100000` | Calculates the total distance. Note the use of brackets again. Multiply the circumference by the number of full rotations and then divide by 100,000 to get the answer in kilometres.|
+  |`km_per_sec = dist_km / time_sec` | Calculate the speed per second. Divide the distance in kilometres by the time in seconds.|
+  |`km_per_hour = km_per_sec * 3600` | Convert distance per second into distance per hour by multiplying by 3600.|
+  |`return km_per_hour` | Returns the `km_per_hour` variable as the result of the function.|
   |`def spin(channel):` | This will be the call back function that runs when the anemometer reed switch closes.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
   |`count += 1` | Incrementing the `count` variable by one. |
@@ -232,11 +232,11 @@ To be able to give the speed in km per hour we need to do two things:
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
-  |`interval = 5` | .|
-  |`while True:` | .|
-  |`count = 0` | .|
-  |`time.sleep(interval)` | .|
-  |`print calculate_speed(9.0, interval), "km/h"` | .|
+  |`interval = 5` | This will be the time interval in seconds to count interrupts for before we attempt to calculate the speed.|
+  |`while True:` | An infinite loop that must be manually aborted by the user.|
+  |`count = 0` | On each iteration of this loop we should reset the interrupt count to zero, we want to see if the speed has gone up or down since last time so we need to discard the interrupt counts from the previous iteration.|
+  |`time.sleep(interval)` | Pauses the execution of the code, in this loop, for the number of seconds in the `interval` variable. Meanwhile the interrupt counting will continue in the background and the `count` variable will increase in value.|
+  |`print calculate_speed(9.0, interval), "km/h"` | Calls the `calculate_speed` function passing in the value 9.0 for the radius and `interval` for the time. The return value from `calculate_speed` is passed to the `print` command which shows it on screen along with the text `km/h`.|
 
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
