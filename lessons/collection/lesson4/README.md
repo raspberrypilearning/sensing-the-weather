@@ -141,18 +141,16 @@ Since the cups rotate in circle we can use the anemometer circumference multipli
 
 ![](../../../images/pi_diagram.png)
 
-The number π is a constant and describes the ratio of any circles circumference to its diameter. It's approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius, or the other way round.
-
-Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre to the very edge of one of the cups. You should find it's about 9 cm.
+The number π is a constant and describes the ratio of any circles circumference to its diameter. It's approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the top of the centre to the very edge of one of the cups. You should find it's about 9 cm.
 
 The formula to calculate circumference from radius is: **2πr**
 
 So our maths will be as follows:
 
-- Count anemometer interrupts for time length **t** (lets say 10 seconds, t = 10).
+- Count anemometer interrupts for time length **t**.
 - Calculate anemometer circumference **c** with 2πr, radius r is 9 cm (c = 2 * π * 9).
 - Calculate rotations **rt** by dividing `count` by two (rt = count / 2)
-- Calculate total distance **d** that one cup has travelled by multiplying rotations by the circumference (d = rt * c)
+- Calculate total distance **d** by multiplying the rotations **rt** by the circumference **c** (d = rt * c)
 - Calculate speed as total distance divided by time (speed = d / t)
 
 ## Plenary
