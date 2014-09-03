@@ -277,9 +277,9 @@ To be able to give the speed in km per hour we need to do two things:
 
 ### Calibration
 
-Calibration is the practise of adjusting the value reported by our code to a known value of wind speed. In order to do this scientifically you would need a wind tunnel in your school where you could control the wind speed to an exact value. Since most of us don't have this available we'll need to make do.
+Calibration is the practise of adjusting the value reported by a sensor to match a scientifically known value. In order to do this for the anemometer you would need a wind tunnel in your school where you could control the wind speed to an exact value. Since most of us don't have this available we'll need to make do.
 
-Generally speaking anemometers tend to report the wind speed slightly lower than it actually is, a problem which gets progressively worse as the wind speed increases. Meaning that as wind speed increases the further away for correct the wind speed reading becomes.
+Generally speaking anemometers tend to report the wind speed slightly lower than it actually is, a problem which gets progressively worse as the wind speed increases.
 
 To compensate for this a calibration curve or lookup table can be used. This is typically information which is provided in the product [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) however the information given is very limited.
 
