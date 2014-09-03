@@ -325,13 +325,32 @@ In our code we have the line `interval = 5` this is used to define the length of
   2.03575203953 kph
   ```
   
-  That's a bit more like it. We're now in a position to work out a calibration number that we can apply to our code to calibrate the result. If we divide 2.4 (the number we expect) by the number we calculated the result will be our magic number. We can then multiple future calculations by this number to calibrate them.
+  That's a bit more like it. 
+  
+1. Press `Ctrl - C` to exit your program.
+  
+  We're now in a position to work out how calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be factor of how wrong we are. We can then multiply future calculations by this factor to calibrate them.
   
   For example, taking the kph value of 2.03575203953 from the above test we do: `2.4 / 2.03575203953 = 1.178925504`.
   
-  1.178925504 is the magic number. Let's round it up to *1.18*. 
+  1.178925504 is the factor. We can round it up to *1.18*. 
   
-  So does `2.03575203953 * 1.18 = 2.4`? Let's test it.
+1. So does `2.03575203953 * 1.18 = 2.4`? Let's test it. First we need to change our code, enter the command below:
+
+  `nano wind_speed.py`
+  
+  Find the `calculate_speed` function and modify the last line so that it reads `return km_per_hour * 1.18`.
+  
+    ```python
+    def calculate_speed(r_cm, time_sec):
+        global count
+        circ_cm = (2 * math.pi) * r_cm
+        rot = count / 2
+        dist_km = (circ_cm * rot) / 100000 # convert to kilometres
+        km_per_sec = dist_km / time_sec
+        km_per_hour = km_per_sec * 3600 # convert to distance per hour
+        return km_per_hour * 1.18
+    ```
 
 ```
 1
