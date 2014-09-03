@@ -220,7 +220,7 @@ To be able to give the speed in km per hour we need to do two things:
   |`def calculate_speed(r_cm, time_sec):` | Defining a function called `calculate_speed` to perform the wind speed calculation and return the answer. It will take two parameters: the radius, `r_cm`, and the time in seconds, `time_sec`, that we have been counting for.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
   |`circ_cm = (2 * math.pi) * r_cm` | Calculates the circumference using the *2πr* calculation. When you see brackets around part of a calculation like this it is instructing the computer to perform that part *first*. So this is saying multiply π by two, get the answer and multiply *that* by `r_cm`.|
-  |`rot = count / 2.0` | Calculates the number of full rotations. Simply divide the `count` of interrupts by decimal two.|
+  |`rot = count / 2.0` | Calculates the number of rotations. Simply divide the `count` of interrupts by decimal two.|
   |`dist_km = (circ_cm * rot) / 100000.0` | Calculates the total distance. Note the use of brackets again. Multiply the circumference by the number of full rotations and then divide by 100,000 to get the answer in kilometres.|
   |`km_per_sec = dist_km / time_sec` | Calculate the speed per second. Divide the distance in kilometres by the time in seconds.|
   |`km_per_hour = km_per_sec * 3600` | Convert distance per second into distance per hour by multiplying by 3600.|
@@ -329,9 +329,9 @@ In our code we have the line `interval = 5` which is used to define the length o
   
 1. Press `Ctrl - C` to exit your program.
   
-  We're now in a position to work out how calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be factor of how wrong we are. We can then multiply future calculations by this factor to calibrate them.
+  We're now in a position to work out how to calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be factor of how wrong we are. We can then multiply future calculations by this factor to calibrate them.
   
-  For example, taking the kph value of 2.03575203953 from the above test we do: `2.4 / 2.03575203953 = 1.178925504`.
+  For example, taking the kph value of 2.03575203953 from the above test we would do: `2.4 / 2.03575203953 = 1.178925504`.
   
   1.178925504 is the factor. We can round it up to *1.18*. 
   
@@ -377,7 +377,7 @@ In our code we have the line `interval = 5` which is used to define the length o
   
   There it is. The answer is approximately 2.4 but with a few extra decimal places of percision that we don't need to worry about. This is likely to be as correct as we're able to make it.
 
-1. Spin the anemometer as fast as you like to see other calibrated values now.
+1. Spin the anemometer as fast as you like to see other calibrated values.
 1. Press `Ctrl - C` to exit your program.
 
 ## Plenary
