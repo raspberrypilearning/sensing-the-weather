@@ -76,9 +76,9 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `nano pullup.py`
 
-  The weather expansion board connects the rain gauge to GPIO 17 in a *pull up* circuit. So find the line where we define the `pin` variable and change the number 4 to 17. For example:
+  The weather expansion board connects the rain gauge to GPIO 27 in a *pull up* circuit, (this is GPIO 21 on an old Rev 1 Raspberry Pi, a rev 1 board is easily [identifiable](../../../images/rev1pi.png) because it has no mounting holes). So find the line where we define the `pin` variable and change the number 4 to 27. For example:
   
-  `pin = 17`
+  `pin = 27`
   
 1. This is all we need to change for now. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
 1. Run the code and remember to use the `sudo` command:
@@ -127,7 +127,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
     import RPi.GPIO as GPIO
     import time
     
-    pin = 17
+    pin = 27
     
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
@@ -153,14 +153,14 @@ The top of the back wall does come off if you want to see inside, just pull on t
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
   |`import time` | Imports the `time` library.|
-  |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
+  |`pin = 27` | A reference variable to store the GPIO pin number connected to the rain gauge.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
-  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`count = 0` | Defines a variable that will be incremented by one when a bucket tip occurs.|
   |`current_state = 0` | A variable that will be used to store the current state of the GPIO pin for each iteration of the while loop.|
   |`previous_state = 0` | At the end of each loop iteration the current state will be copied into this variable so that it can be compared to the next current state.|
   |`while True:` | An infinite loop that must be manually aborted by the user. All lines of code that belong to this loop must be *indented*.|
-  |`current_state = GPIO.input(pin)` | Reads the state of GPIO pin 17 and stores the result in the `current_state` variable.|
+  |`current_state = GPIO.input(pin)` | Reads the state of GPIO pin 27 and stores the result in the `current_state` variable.|
   |`if previous_state == GPIO.HIGH and current_state == GPIO.LOW:` | A Python *if* statement. An if statement tests the given condition, if true it will run the indented lines below, otherwise it skips over them. Here the condition is that the previous state equals `HIGH` *and* the current state equals `LOW`. Notice the double equal sign `==` is used to test for equality where as a single equal sign `=` is used for setting a variable.|
   |`count += 1` | Incrementing the `count` variable by one. Note that `+=` is a shorthand way to do `count = count + 1`.|
   |`print count` | Prints the contents of the `count` variable to the screen.|
@@ -221,7 +221,7 @@ It's called interrupt handling. Essentially we can just tell the computer that w
     #!/usr/bin/python
     import RPi.GPIO as GPIO
     
-    pin = 17
+    pin = 27
     count = 0
     
     def bucket_tipped(channel):
@@ -242,14 +242,14 @@ It's called interrupt handling. Essentially we can just tell the computer that w
   | --- | --- |
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import RPi.GPIO as GPIO` |  Imports the `RPi.GPIO` library.|
-  |`pin = 17` | A reference variable to store the GPIO pin number connected to the rain gauge.|
+  |`pin = 27` | A reference variable to store the GPIO pin number connected to the rain gauge.|
   |`count = 0` | Defines a variable that will be incremented by one when a bucket tip occurs.|
   |`def bucket_tipped(channel):` | The `def` keyword is used to define your own functions. Here we define a function called `bucket_tipped`. Lines of code that belong to this function are indented. This will be the call back function that runs when a buck tip occurs. The function takes one parameter, `channel`, which is expected by the `RPi.GPIO` library.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function. Without this a new copy of the variable would be created locally just for this function and the main `count` variable would never change.|
   |`count += 1` | Incrementing the `count` variable by one. |
   |`print count * 0.2794` | Displays the calculation of tip volume multiplied by tip count.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
-  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `bucket_tipped`. The bounce time is 300 milliseconds and this is used to avoid detecting multiple events in close succession that might occur if the bucket bounced back.|
   |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
 
@@ -287,7 +287,7 @@ Ask the class the following questions.
 
 **Answers:**
 
-1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the bucket tips. It would only ever read `LOW`.
+1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 27 and the other is hard wired to ground. Which means we can only short GPIO 27 to ground. If we used a pull down on GPIO 27 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 27 when the bucket tips. It would only ever read `LOW`.
 1. The rain gauge measures only a small sample of the rain that falls from the sky, however we can generalise that the amount of rain falling into it will be the same as that falling everywhere locally per unit of surface area. This allows us to assert that our calculation of rainfall will equate to the amount of rain that has fallen over a much larger area than the rain gauge itself.
 1. Interrupt handlers allow you to avoid having to write code to compare the current and previous states of the GPIO pin between each iteration of a continuous polling loop.
 1. De-bouncing is a timeout, started when an interrupt occurs, during which subsequent interrupt events are ignored. This avoids switch bounce causing multiple, undesired, event detections that could produce erroneous results.
