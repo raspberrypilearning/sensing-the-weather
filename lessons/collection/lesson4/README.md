@@ -337,9 +337,11 @@ In our code we have the line `interval = 5` this is used to define the length of
   
 1. So does `2.03575203953 * 1.18 = 2.4`? Let's test it. First we need to change our code, enter the command below:
 
-  `nano wind_speed.py`
+    `nano wind_speed.py`
   
-  Find the `calculate_speed` function and modify the last line so that it reads `return km_per_hour * 1.18`.
+    Find the `calculate_speed` function and modify the last line so that it reads `return km_per_hour * 1.18`.
+    
+    For example:
   
     ```python
     def calculate_speed(r_cm, time_sec):
@@ -351,20 +353,27 @@ In our code we have the line `interval = 5` this is used to define the length of
         km_per_hour = km_per_sec * 3600 # convert to distance per hour
         return km_per_hour * 1.18
     ```
+1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
-```
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-2.40218740664 km/h
-```
+1. Run the code and remember to use the `sudo` command:
+
+  `sudo ./wind_speed.py`
+  
+  repeat the experiment again and stop spinning the anemometer when the number reaches 10.
+  
+  ```
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  2.40218740664 km/h
+  ```
 
 ## Plenary
 
