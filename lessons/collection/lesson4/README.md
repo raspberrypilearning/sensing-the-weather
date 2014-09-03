@@ -359,7 +359,7 @@ In our code we have the line `interval = 5` this is used to define the length of
 
   `sudo ./wind_speed.py`
   
-  repeat the experiment again and stop spinning the anemometer when the number reaches 10.
+1. Repeat the experiment again and stop spinning the anemometer when the number reaches 10. So 5 complete rotations over 5 seconds.
   
   ```
   1
@@ -374,6 +374,8 @@ In our code we have the line `interval = 5` this is used to define the length of
   10
   2.40218740664 km/h
   ```
+  
+  There it is. The answer is approximately 2.4 but with a few extra decimal places of percision that we don't need to worry about. This is likely to be as correct as we're able to make it.
 
 ## Plenary
 
