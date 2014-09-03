@@ -285,7 +285,7 @@ To compensate for this a calibration curve or lookup table can be used. This is 
 
 It only says: *A wind speed of 1.492 MPH (2.4 km/h) causes the switch to close once per second*.
 
-In our code we have the line `interval = 5` this is used to define the length of time we count interrupts for before doing the speed calculation.  So according to the datasheet if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Let's investigate this.
+In our code we have the line `interval = 5` which is used to define the length of time we count interrupts for before doing the speed calculation.  So according to the datasheet if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Let's investigate this.
 
 1. Run the code and remember to use the `sudo` command:
 
@@ -359,7 +359,7 @@ In our code we have the line `interval = 5` this is used to define the length of
 
   `sudo ./wind_speed.py`
   
-1. Repeat the experiment again and stop spinning the anemometer when the number reaches 10. So 5 complete rotations over 5 seconds.
+1. Repeat the experiment again and stop spinning the anemometer when the number reaches 10, so again 5 complete rotations over 5 seconds.
   
   ```
   1
@@ -376,6 +376,9 @@ In our code we have the line `interval = 5` this is used to define the length of
   ```
   
   There it is. The answer is approximately 2.4 but with a few extra decimal places of percision that we don't need to worry about. This is likely to be as correct as we're able to make it.
+
+1. Spin the anemometer as fast as you like to see other calibrated values now.
+1. Press `Ctrl - C` to exit your program.
 
 ## Plenary
 
