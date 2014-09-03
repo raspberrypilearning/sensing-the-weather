@@ -228,7 +228,7 @@ To be able to give the speed in km per hour we need to do two things:
   |`def spin(channel):` | This will be the call back function that runs when the anemometer reed switch closes.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
   |`count += 1` | Incrementing the `count` variable by one. |
-  |`print count` | Displays the count. You may wish to remove this to make the program output clearer.|
+  |`print count` | Displays the count.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 27 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
@@ -259,10 +259,17 @@ To be able to give the speed in km per hour we need to do two things:
   10
   11
   12
-  2.44290244743 kph
+  13
+  14
+  15
+  16
+  17
+  18
+  19
+  20
+  21
+  4.07150407905 kph
   ```
-  
-  If you remove the `print count` line from the `spin` function the output will look a bit clearer.
   
 1. This is usually where students like to compete to see who has the best pair of lungs. It's very easy to make yourself feel faint by doing this so make sure everyone is warned to not be standing up while blowing on the anemometer.
 
@@ -278,7 +285,49 @@ To compensate for this a calibration curve or lookup table can be used. This is 
 
 It only says: *A wind speed of 1.492 MPH (2.4 km/h) causes the switch to close once per second*.
 
-2.4 / 2.03575203953 = 1.1789
+In our code we have the line `interval = 5` this is used to define the length of time we count interrupts for before doing the speed calculation.  So according to the datasheet if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Lets investigate this.
+
+1. Run the code and remember to use the `sudo` command:
+
+  `sudo ./wind_speed.py`
+
+1. You don't need to worry about getting the interrupts to occur at exactly one second intervals here, just spin the anemometer and stop it when the number reaches 5.
+
+  ```
+  1
+  2
+  3
+  4
+  5
+  0.81430081581 kph
+  ```
+  Okay so this is wrong by almost a factor of 3. What could be going on?
+  The fault must be with one of the following:
+  
+  - The speed calculation is wrong
+  - The datasheet doesn't match our anemometer
+
+1. Since the maths is pretty basic my view is that the datasheet, or rather our interpretation of it, is wrong. It could be that the anemometer the datasheet refers to produces only one interrupt per complete rotation. Ours produces 2!
+
+  This would mean that 10 interrupts would happen in 5 seconds, so repeat the experiment again and this time stop spinning the anemometer when the number reaches 10.
+  
+  ```
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  2.03575203953 kph
+  ```
+  
+  That's a bit more like it. We're now in a position to work out a calibration number that we can apply to our code to make it give a calibrated result. If we divide 2.4 (the number we expect) by the number we calculated the result will be our magic number. We can then multiple future calculations by this number to calibrate them.
+  
+  For example ,taking the kph value of 2.03575203953 from the above test we have: `2.4 / 2.03575203953 = 1.178925504`
 
 ```
 1
