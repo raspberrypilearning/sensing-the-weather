@@ -185,8 +185,8 @@ To be able to give the speed in km per hour we need to do two things:
     def calculate_speed(r_cm, time_sec):
         global count
         circ_cm = (2 * math.pi) * r_cm
-        rot = count / 2
-        dist_km = (circ_cm * rot) / 100000 # convert to kilometres
+        rot = count / 2.0
+        dist_km = (circ_cm * rot) / 100000.0 # convert to kilometres
         km_per_sec = dist_km / time_sec
         km_per_hour = km_per_sec * 3600 # convert to distance per hour
         return km_per_hour
@@ -220,8 +220,8 @@ To be able to give the speed in km per hour we need to do two things:
   |`def calculate_speed(r_cm, time_sec):` | Defining a function called `calculate_speed` to perform the wind speed calculation and return the answer. It will take two parameters: the radius, `r_cm`, and the time in seconds, `time_sec`, that we have been counting for.|
   |`global count` | This makes the `count` variable declared above available inside the scope of this function.|
   |`circ_cm = (2 * math.pi) * r_cm` | Calculates the circumference using the *2πr* calculation. When you see brackets around part of a calculation like this it is instructing the computer to perform that part *first*. So this is saying multiply π by two, get the answer and multiply *that* by `r_cm`.|
-  |`rot = count / 2` | Calculates the number of full rotations. Simply divide the `count` of interrupts by two.|
-  |`dist_km = (circ_cm * rot) / 100000` | Calculates the total distance. Note the use of brackets again. Multiply the circumference by the number of full rotations and then divide by 100,000 to get the answer in kilometres.|
+  |`rot = count / 2.0` | Calculates the number of full rotations. Simply divide the `count` of interrupts by decimal two.|
+  |`dist_km = (circ_cm * rot) / 100000.0` | Calculates the total distance. Note the use of brackets again. Multiply the circumference by the number of full rotations and then divide by 100,000 to get the answer in kilometres.|
   |`km_per_sec = dist_km / time_sec` | Calculate the speed per second. Divide the distance in kilometres by the time in seconds.|
   |`km_per_hour = km_per_sec * 3600` | Convert distance per second into distance per hour by multiplying by 3600.|
   |`return km_per_hour` | Returns the `km_per_hour` variable as the result of the function.|
@@ -299,9 +299,9 @@ In our code we have the line `interval = 5` which is used to define the length o
   3
   4
   5
-  0.81430081581 kph
+  1.01787601976 kph
   ```
-  Okay so this is wrong by almost a factor of 3. What could be going on?
+  Okay so this is wrong by about a half. What could be going on?
   The fault must be with one of the following:
   
   - The speed calculation is wrong
@@ -347,8 +347,8 @@ In our code we have the line `interval = 5` which is used to define the length o
     def calculate_speed(r_cm, time_sec):
         global count
         circ_cm = (2 * math.pi) * r_cm
-        rot = count / 2
-        dist_km = (circ_cm * rot) / 100000 # convert to kilometres
+        rot = count / 2.0
+        dist_km = (circ_cm * rot) / 100000.0 # convert to kilometres
         km_per_sec = dist_km / time_sec
         km_per_hour = km_per_sec * 3600 # convert to distance per hour
         return km_per_hour * 1.18
