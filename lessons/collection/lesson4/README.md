@@ -386,6 +386,7 @@ Ask the class the following questions.
 
 1. Why we could not use a pull down circuit to detect the anemometer spinning?
 1. Why did we reduce the bounce time to 5 milliseconds in our code?
+1. Is there a case to have the bounce time even lower than this, perhaps zero?
 1. Why is calibration important?
 1. Have we done enough to calibrate the anemometer?
 
