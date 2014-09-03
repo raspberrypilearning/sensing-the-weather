@@ -372,7 +372,7 @@ In our code we have the line `interval = 5` which is used to define the length o
   8
   9
   10
-  2.40218740664 km/h
+  2.40218740664 kph
   ```
   
   There it is. The answer is approximately 2.4 but with a few extra decimal places of percision that we don't need to worry about. This is likely to be as correct as we're able to make it.
@@ -381,5 +381,16 @@ In our code we have the line `interval = 5` which is used to define the length o
 1. Press `Ctrl - C` to exit your program.
 
 ## Plenary
+
+Ask the class the following questions.
+
+1. Why we could not use a pull down circuit to detect the anemometer spinning?
+1. Why did we reduce the bounce time to 5 milliseconds in our code?
+1. Why is calibration important?
+1. Have we done enough to calibrate the anemometer?
+
+**Answers:**
+
+1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the HIGH or LOW state of GPIO 17 when the anemometer spins. It would only ever read LOW.
 
 [Next lesson](../lesson5/README.md)
