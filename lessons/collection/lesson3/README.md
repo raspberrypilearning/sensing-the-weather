@@ -76,7 +76,7 @@ The top of the back wall does come off if you want to see inside, just pull on t
 
   `nano pullup.py`
 
-  The weather expansion board connects the rain gauge to GPIO 27 in a *pull up* circuit, (this is GPIO 21 on an old Rev 1 Raspberry Pi, a rev 1 board is easily [identifiable](../../../images/rev1pi.png) because it has no mounting holes). So find the line where we define the `pin` variable and change the number 4 to 27. For example:
+  The weather expansion board connects the rain gauge to GPIO 27 in a *pull up* circuit (this is GPIO 21 on an old Rev 1 Raspberry Pi, a rev 1 board is easily [identifiable](../../../images/rev1pi.png) because it has no mounting holes). So find the line where we define the `pin` variable and change the number 4 to 27. For example:
   
   `pin = 27`
   
