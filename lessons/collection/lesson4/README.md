@@ -285,7 +285,7 @@ To compensate for this a calibration curve or lookup table can be used. This is 
 
 It only says: *A wind speed of 1.492 MPH (2.4 km/h) causes the switch to close once per second*.
 
-In our code we have the line `interval = 5` this is used to define the length of time we count interrupts for before doing the speed calculation.  So according to the datasheet if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Lets investigate this.
+In our code we have the line `interval = 5` this is used to define the length of time we count interrupts for before doing the speed calculation.  So according to the datasheet if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Let's investigate this.
 
 1. Run the code and remember to use the `sudo` command:
 
@@ -325,9 +325,13 @@ In our code we have the line `interval = 5` this is used to define the length of
   2.03575203953 kph
   ```
   
-  That's a bit more like it. We're now in a position to work out a calibration number that we can apply to our code to make it give a calibrated result. If we divide 2.4 (the number we expect) by the number we calculated the result will be our magic number. We can then multiple future calculations by this number to calibrate them.
+  That's a bit more like it. We're now in a position to work out a calibration number that we can apply to our code to calibrate the result. If we divide 2.4 (the number we expect) by the number we calculated the result will be our magic number. We can then multiple future calculations by this number to calibrate them.
   
-  For example ,taking the kph value of 2.03575203953 from the above test we have: `2.4 / 2.03575203953 = 1.178925504`
+  For example, taking the kph value of 2.03575203953 from the above test we do: `2.4 / 2.03575203953 = 1.178925504`.
+  
+  1.178925504 is the magic number. Let's round it up to *1.18*. 
+  
+  So does `2.03575203953 * 1.18 = 2.4`? Let's test it.
 
 ```
 1
