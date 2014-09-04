@@ -388,6 +388,7 @@ In our code we have the line `interval = 5` which is used to define the length o
 
 1. Spin the anemometer as fast as you like to see other calibrated values.
 1. You can also experiment with measuring for different interval periods. Try changing the line `interval = 5` to another number, perhaps 10. If you keep the rotation speed of the anemometer constant the calculated speed should not change regardless of how long you measure for.
+1. The anemometer is designed to be connected to the weather expansion board via the wind vane (wind direction sensor). You'll notice that the anemometer has quite a short cable whereas the wind vane has a long one. On the base of the wind vane there is a socket into which the anemometer can be connected. This then allows both wind vane and anemometer to be deployed at a distance together. Test that your code still works when connected in this way.
 1. Press `Ctrl - C` to exit your program.
 
 ## Plenary
