@@ -87,7 +87,7 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
     
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)
+    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)
     
     raw_input("Press Enter to exit...")
     ```
@@ -106,7 +106,7 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
   |`print count` | Displays the count.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
-  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `spin`. The bounce time is only 5 milliseconds as opposed to 300 like last time. This is because we need to accommodate the anemometer spinning during high winds. A higher bounce time could cause desired counts to be ignored and we would be unable to calculate the wind speed correctly.|
+  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `spin`. The bounce time zero as opposed to 300 like last time. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. A higher bounce time could cause desired counts to be ignored and we could then calculate the wind speed incorrectly.|
   |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
 
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
@@ -198,7 +198,7 @@ To be able to give the speed in km per hour we need to do two things:
     
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)
+    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)
     
     interval = 5
     
@@ -231,7 +231,7 @@ To be able to give the speed in km per hour we need to do two things:
   |`print count` | Displays the count.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
   |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
-  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=5)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
+  |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)` | Calling the `add_event_detect` function in the GPIO library to create the interrupt handler.|
   |`interval = 5` | This will be the time interval in seconds to count interrupts for before we attempt to calculate the speed.|
   |`while True:` | An infinite loop that must be manually aborted by the user.|
   |`count = 0` | On each iteration of this loop we should reset the interrupt count to zero, we want to see if the speed has gone up or down since last time so we need to discard the interrupt counts from the previous iteration.|
@@ -386,20 +386,14 @@ In our code we have the line `interval = 5` which is used to define the length o
 Ask the class the following questions.
 
 1. Why we could not use a pull down circuit to detect the anemometer spinning?
-1. Why did we reduce the bounce time to 5 milliseconds in our code?
-1. Is there a case to have the bounce time even lower than this, perhaps zero?
+1. Why did we reduce the bounce time to zero milliseconds in our code?
 1. Why is calibration important?
 1. Have we done enough to calibrate the anemometer?
 
 **Answers:**
 
 1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the anemometer spins. It would only ever read `LOW`.
-1. To accommodate operation during high winds when the anemometer would be spinning very fast.
-1. Yes. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. Its design makes it rotate in only one direction too, so there is no need for any de-bouncing. Make this change in your code.
-
-    ```python
-    GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)
-    ```
+1. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. Its design makes it rotate in only one direction too, so there is no need for any de-bouncing.
 1. Because we want to have confidence that our measurements are correct (or are at least within an acceptable tolerance).
 1. We know that the higher the wind speed the further from correct the anemometer becomes. In order to compensate for this we would need different calibration ratios for different speeds. With the information provided by the datasheet we have done as much as we can.
 
