@@ -145,18 +145,20 @@ Since the cups rotate in circle we can use the anemometer circumference multipli
 
 ![](../../../images/pi_diagram.png)
 
-The number π is a mathematical constant that is the ratio of any circles circumference to its diameter, π is approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre of the top to the very edge of one of the cups. You should find it's about 9 cm.
+The number π is a mathematical constant that is the ratio of any circles circumference to its diameter, π is approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the top to the very edge of one of the cups. You should find it's about 9 cm.
 
 The formula to calculate circumference from radius is: **2πr**
 
-Once we know the circumference we can multiply it by the number of rotations (count ÷ 2) to get the *total* distance. Speed is then distance ÷ time.
+Once we know the circumference we can multiply it by the number of rotations (given by count ÷ 2) to get the *total* distance.
+
+Speed is then distance ÷ time.
 
 So our maths to get the wind speed will be as follows:
 
 - Count anemometer interrupts for time length **t**.
-- Calculate anemometer circumference **c** with 2πr, radius **r** is 9 cm (c = 2 * π * 9).
+- Calculate anemometer circumference **c** with 2πr, radius **r** is 9 cm (c = 2 × π × 9).
 - Calculate rotations **rot** by dividing count by two (rot = count ÷ 2)
-- Calculate total distance **d** by multiplying the circumference **c** by the rotations **rot** (d = c * rot)
+- Calculate total distance **d** by multiplying the circumference **c** by the rotations **rot** (d = c × rot)
 - Calculate speed as total distance divided by time (speed = d ÷ t)
 
 ### Units of measurement
