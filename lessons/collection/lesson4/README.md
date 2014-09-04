@@ -107,7 +107,7 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
   |`count += 1` | Incrementing the `count` variable by one. |
   |`print count` | Displays the count.|
   |`GPIO.setmode(GPIO.BCM)` | Sets the pin layout to match the diagrams that are part of this scheme of work.|
-  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables internal pull up resistor so that pin 17 always reads HIGH.|
+  |`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` | Enables the internal pull up resistor so that pin 17 always reads HIGH.|
   |`GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)` | This line is calling the `add_event_detect` function in the GPIO library to create the interrupt handler. This function takes four parameters. The GPIO pin number, the type of event (either `RISING`, `FALLING` or `BOTH`), the call back function and a bounce time in milliseconds. We pass in `FALLING` because it's a pull up circuit, when the pin is shorted to ground it goes from HIGH to LOW and therefore we want to detect the voltage `FALLING` from HIGH to LOW. The call back is the code we want to run when the interrupt occurs so here we pass in `spin`. The bounce time zero as opposed to 300 like last time. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. A higher bounce time could cause desired counts to be ignored and we could then calculate the wind speed incorrectly (especially during a gale).|
   |`raw_input("Press Enter to exit...")` | The `raw_input` function is normally used to get text input from the user but here we are using it to hold up the program and prevent it from exiting. Pressing enter will release this function and cause the program to exit. |
 
@@ -120,7 +120,7 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
   `sudo ./wind_speed.py`
 
-1. Hold the base of the anemometer in one hand and slowly rotate the blades/cups with the other. By doing this you can test that there are only ever *two* increments to the count for every complete rotation of the blades/cups. It can be helpful if you choose one cup and use it as a reference point for rotation.
+1. Hold the base of the anemometer in one hand and slowly rotate the blades/cups with the other. By doing this you can test that there are only ever *two* increments to the count for every complete rotation of the blades/cups. It can be helpful if you choose one cup and use it as a reference point for rotation (so move the one cup all the way round and back to the same position).
 
   ```
   1
@@ -137,22 +137,26 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
 Ask the class to think back to their [geometry](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev1.shtml) maths lessons.
 
-Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we need to measure how far the cups have travelled in a given block of time. Speed is then: distance ÷ time.
+Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we need to measure how far the cups have travelled in a given block of time. Speed is then distance ÷ time.
 
-Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. *It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance.* We already know that the number of rotations will be the `count` variable, in the above code, divided by two (because there are two interrupts per rotation).
+The time we measure for is essentially arbitrary. We could measure for 5, 10 or 60 seconds during which we keep counting the interrupts coming from GPIO 17. So *we* decide the time, do the counting and divide `count` by two to get the number of rotations (remember there are two interrupts per rotation). We then need to know the *distance* the cups have travelled and divide *that* by the time we chose.
+
+Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance. Now think of the anemometer like a wheel going along the ground, every rotation moves it forwards and increases the distance by the circumference. How can we calculate the circumference?
 
 ![](../../../images/pi_diagram.png)
 
-The number π is a mathematical constant that is the ratio of any circles circumference to its diameter. It's approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre of the top to the very edge of one of the cups. You should find it's about 9 cm.
+The number π is a mathematical constant that is the ratio of any circles circumference to its diameter, π is approximately 3.14159. Using π we can calculate the circumference of a circle if we know its diameter or radius. Take a ruler and measure the radius of the anemometer now. Measure from the small depression in the centre of the top to the very edge of one of the cups. You should find it's about 9 cm.
 
 The formula to calculate circumference from radius is: **2πr**
+
+Once we know the circumference we can multiply it by the number of rotations (`count` ÷ 2) to get the *total* distance.
 
 So our maths to get the wind speed will be as follows:
 
 - Count anemometer interrupts for time length **t**.
-- Calculate anemometer circumference **c** with 2πr, radius r is 9 cm (c = 2 * π * 9).
-- Calculate rotations **rt** by dividing `count` by two (rt = count / 2)
-- Calculate total distance **d** by multiplying the circumference **c** by the rotations **rt** (d = c * rt)
+- Calculate anemometer circumference **c** with 2πr, radius **r** is 9 cm (c = 2 * π * 9).
+- Calculate rotations **rot** by dividing `count` by two (rot = count / 2)
+- Calculate total distance **d** by multiplying the circumference **c** by the rotations **rot** (d = c * rot)
 - Calculate speed as total distance divided by time (speed = d / t)
 
 ### Units of measurement
