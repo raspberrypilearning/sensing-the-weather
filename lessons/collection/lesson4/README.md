@@ -137,9 +137,9 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
 Ask the class to think back to their [geometry](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev1.shtml) maths lessons.
 
-Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we need to measure how far the cups have travelled in a given block of time. Speed is then distance ÷ time.
+Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we first need to measure how far the cups have travelled in a given block of time.
 
-The time we measure for is essentially arbitrary. We could measure for 5, 10 or 60 seconds during which we keep counting the interrupts coming from GPIO 17. So *we* decide the time, do the counting and divide `count` by two to get the number of rotations (remember there are two interrupts per rotation). We then need to know the *distance* the cups have travelled and divide *that* by the time we chose.
+The time we measure for is essentially arbitrary. We could measure for 5, 10 or 60 seconds during which we keep counting the interrupts coming from GPIO 17. So *we* decide the time to measure for, do the counting and divide `count` by two to get the number of rotations (remember there are two interrupts per rotation). We then need to know the *distance* the cups have travelled and divide *that* by the time we chose. How can we get the distance?
 
 Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance. Now think of the anemometer like a wheel going along the ground, every rotation moves it forwards and increases the distance by the circumference. How can we calculate the circumference?
 
@@ -149,15 +149,15 @@ The number π is a mathematical constant that is the ratio of any circles circum
 
 The formula to calculate circumference from radius is: **2πr**
 
-Once we know the circumference we can multiply it by the number of rotations (`count` ÷ 2) to get the *total* distance.
+Once we know the circumference we can multiply it by the number of rotations (count ÷ 2) to get the *total* distance. Speed is then distance ÷ time.
 
 So our maths to get the wind speed will be as follows:
 
 - Count anemometer interrupts for time length **t**.
 - Calculate anemometer circumference **c** with 2πr, radius **r** is 9 cm (c = 2 * π * 9).
-- Calculate rotations **rot** by dividing `count` by two (rot = count / 2)
+- Calculate rotations **rot** by dividing count by two (rot = count ÷ 2)
 - Calculate total distance **d** by multiplying the circumference **c** by the rotations **rot** (d = c * rot)
-- Calculate speed as total distance divided by time (speed = d / t)
+- Calculate speed as total distance divided by time (speed = d ÷ t)
 
 ### Units of measurement
 
