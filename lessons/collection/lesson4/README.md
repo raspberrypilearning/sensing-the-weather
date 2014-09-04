@@ -339,7 +339,7 @@ In our code we have the line `interval = 5` which is used to define the length o
   
   We're now in a position to work out how to calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be the ratio of one to the other (in the same way that π is a ratio of the diameter of a circle to its circumference). We can then multiply future calculations by this ratio to calibrate them.
   
-  For example, taking the kph value of 2.03575203953 from the above test we would do: 2.4 ÷ 2.03575203953 = 1.178925504.
+  For example, taking the kph value of 2.03575203953 from the above test we would do 2.4 ÷ 2.03575203953 = 1.178925504.
   
   1.178925504 is the ratio. We can round it up to *1.18*. 
   
