@@ -339,11 +339,11 @@ In our code we have the line `interval = 5` which is used to define the length o
   
   We're now in a position to work out how to calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be the ratio of one to the other (in the same way that π is a ratio of the diameter of a circle to its circumference). We can then multiply future calculations by this ratio to calibrate them.
   
-  For example, taking the kph value of 2.03575203953 from the above test we would do: `2.4 / 2.03575203953 = 1.178925504`.
+  For example, taking the kph value of 2.03575203953 from the above test we would do: 2.4 ÷ 2.03575203953 = 1.178925504.
   
   1.178925504 is the ratio. We can round it up to *1.18*. 
   
-1. So does `2.03575203953 * 1.18 = 2.4`? Let's test it. First we need to change our code, enter the command below:
+1. So does 2.03575203953 × 1.18 = 2.4? Let's test it. First we need to change our code, enter the command below:
 
     `nano wind_speed.py`
   
@@ -387,6 +387,7 @@ In our code we have the line `interval = 5` which is used to define the length o
   There it is. The answer is approximately 2.4 but with a few extra decimal places of percision that we don't need to worry about. This is likely to be as correct as we're able to make it.
 
 1. Spin the anemometer as fast as you like to see other calibrated values.
+1. You can also experiment with measuring for different interval periods. Try changing the line `interval = 5` to another number, perhaps 10. If you keep the rotation speed of the anemometer constant the calculated speed should not change regardless of how long you measure for.
 1. Press `Ctrl - C` to exit your program.
 
 ## Plenary
