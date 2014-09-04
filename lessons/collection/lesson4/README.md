@@ -137,9 +137,9 @@ Reassemble the anemometer, put the base back into position and ensure the knot i
 
 Ask the class to think back to their [geometry](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev1.shtml) maths lessons.
 
-Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we first need to measure how far the cups have travelled in a given block of time.
+Our overall goal is to calculate the wind speed, or rather the speed at which the anemometer cups are spinning. Speed is a measurement of distance over time, for example: 20 kilometres *per hour*. So to calculate wind speed we first need to measure how far the cups have travelled *in* a given block of time.
 
-The time we measure for is essentially arbitrary. We could measure for 5, 10 or 60 seconds during which we keep counting the interrupts coming from GPIO 17. So *we* decide the time to measure for, do the counting and divide `count` by two to get the number of rotations (remember there are two interrupts per rotation). We then need to know the *distance* the cups have travelled and divide *that* by the time we chose. How can we get the distance?
+The time we measure for is essentially arbitrary. We could measure for 5, 10 or 60 seconds during which we keep counting the interrupts coming from GPIO 17. So *we* decide the time to measure for, let the interrupts occur so that the `count` variable increments via the `spin` function and then divide `count` by two to get the number of rotations (remember there are two interrupts per rotation). We then need to know the *distance* the cups have travelled and divide *that* by the time we chose. How can we get the distance from the number of rotations?
 
 Since the cups rotate in circle we can use the anemometer circumference multiplied by the number of rotations to give us this distance. It can be helpful to imagine wrapping a tape measure around your waist, if you then hold the tape out straight that is the circumference of your waist as a distance. Now think of the anemometer like a wheel going along the ground, every rotation moves it forwards and increases the distance by the circumference. How can we calculate the circumference?
 
