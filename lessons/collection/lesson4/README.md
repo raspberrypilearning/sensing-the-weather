@@ -396,6 +396,7 @@ Ask the class the following questions.
 1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the anemometer spins. It would only ever read `LOW`.
 1. To accommodate operation during high winds when the anemometer would be spinning very fast.
 1. Yes. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. Its design makes it rotate in only one direction too, so there is no need for any de-bouncing. Make this change in your code.
+
     ```python
     GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin, bouncetime=0)
     ```
