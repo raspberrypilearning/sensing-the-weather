@@ -386,7 +386,8 @@ In our code we have the line `interval = 5` which is used to define the length o
 Ask the class the following questions.
 
 1. Why we could not use a pull down circuit to detect the anemometer spinning?
-1. Why did we reduce the bounce time to zero milliseconds in our code?
+1. Why is the bounce time zero milliseconds in our code?
+1. What might happen if the bounce time was higher?
 1. Why is calibration important?
 1. Have we done enough to calibrate the anemometer?
 
@@ -394,6 +395,7 @@ Ask the class the following questions.
 
 1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the anemometer spins. It would only ever read `LOW`.
 1. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. Its design makes it rotate in only one direction too, so there is no need for any de-bouncing.
+1. At high wind speeds some interrupts could occur during the bounce time causing them to be ignored. This could produce an incorrect wind speed calculation.
 1. Because we want to have confidence that our measurements are correct (or are at least within an acceptable tolerance).
 1. We know that the higher the wind speed the further from correct the anemometer becomes. In order to compensate for this we would need different calibration ratios for different speeds. With the information provided by the datasheet we have done as much as we can.
 
