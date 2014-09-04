@@ -285,7 +285,7 @@ To compensate for this a calibration curve or lookup table can be used. This is 
 
 It only says: *A wind speed of 1.492 MPH (2.4 km/h) causes the switch to close once per second*.
 
-In our code we have the line `interval = 5` which is used to define the length of time we count interrupts for before doing the speed calculation.  So according to the datasheet if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Let's investigate this.
+In our code we have the line `interval = 5` which is used to define the length of time we count interrupts for before doing the speed calculation.  So, according to the datasheet, if we count 5 interrupts in 5 seconds the wind speed should come out as 2.4 kph. Let's investigate this.
 
 1. Run the code and remember to use the `sudo` command:
 
@@ -309,7 +309,7 @@ In our code we have the line `interval = 5` which is used to define the length o
 
 1. Since the maths is pretty basic my view is that the datasheet, or rather our interpretation of it, is wrong. It could be that the anemometer the datasheet refers to produces only one interrupt per complete rotation. Ours produces 2!
 
-  This would mean that 10 interrupts would happen in 5 seconds, so repeat the experiment again and this time stop spinning the anemometer when the number reaches 10.
+  This would mean that 10 interrupts would happen for 5 full rotations, so repeat the experiment again and this time stop spinning the anemometer when the number reaches 10.
   
   ```
   1
