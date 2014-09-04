@@ -329,7 +329,7 @@ In our code we have the line `interval = 5` which is used to define the length o
   
 1. Press `Ctrl - C` to exit your program.
   
-  We're now in a position to work out how to calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be ratio of one to the other (in the same way that π is a ratio of the diameter of a circle to its circumference). We can then multiply future calculations by this ratio to calibrate them.
+  We're now in a position to work out how to calibrate the result of the speed calculation. If we divide 2.4 (the number we expect) by the number we calculated the result will be the ratio of one to the other (in the same way that π is a ratio of the diameter of a circle to its circumference). We can then multiply future calculations by this ratio to calibrate them.
   
   For example, taking the kph value of 2.03575203953 from the above test we would do: `2.4 / 2.03575203953 = 1.178925504`.
   
@@ -353,6 +353,7 @@ In our code we have the line `interval = 5` which is used to define the length o
         km_per_hour = km_per_sec * 3600 # convert to distance per hour
         return km_per_hour * 1.18
     ```
+    
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
 1. Run the code and remember to use the `sudo` command:
@@ -393,5 +394,9 @@ Ask the class the following questions.
 **Answers:**
 
 1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hard wired to GPIO 17 and the other is hard wired to ground. Which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the anemometer spins. It would only ever read `LOW`.
+1. To accommodate operation during high winds when the anemometer would be spinning very fast.
+1. Yes. The anemometer is a rotary device and, unlike the rain gauge, has no parts that can bounce back when force is applied to them. Its design makes it only rotate in one direction too. Therefore there is no need for any de-bouncing. Feel free to make this change in your code.
+1. Because we want to have confidence that our measurements are correct (or are at least within an acceptable tolerance).
+1. We know that the higher the wind speed the further from correct the anemometer becomes. In order to compensate for this we would need different calibration ratios for different speeds. With the information provided by the datasheet we have done as much as we can.
 
 [Next lesson](../lesson5/README.md)
