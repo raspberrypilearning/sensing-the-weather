@@ -45,7 +45,19 @@ Next take the screwdriver and remove the three screws in the base, slide the bas
 
 ![](../../../images/wind_vane_reed.png)
 
-Examine the green side of the circuit board now.
+Examine the green side of the circuit board now, this is the side that faces upward inside the wind vane. The magnet points down onto it. North is at the top in the picture above, where the two black clips for the anemometer socket are.
+
+Look closely and you'll see there is a ring of metal that goes all the way around the edge. There is also a smaller ring in the centre. Each reed switch connects to the outer ring to the inner ring through a resistor. You'll see that `SW1` (switch 1) has `R1` near it (resistor 1), similarly `SW2` has `R2` and so on up to 8.
+
+So what is going on here? Firstly students need to understand what a [resistor](http://en.wikipedia.org/wiki/Resistor) is. These are small components that resist the flow of electrical current but do not stop it. Resistors can have different values, a low value would let almost all current through but a high value would let very little through.
+
+The wind vane is working like a big variable resistor, think of a volume knob. Look at the schematic diagram below (the zigzag line is the symbol for a resistor). The idea is that voltage comes in on the outer ring and can take a path through any of the switches to the inner ring which is connected directly to ground. As the magnet rotates different reed switches will open and close and thus switch their corresponding resistor in and out of the circuit.
+
+![](../../../images/wind_vane_schematic.png)
+
+Each of the 8 resistors have different values which you'll see printed in white text next to them, this then allows the wind vane to have 16 possible combinations of resistance since the magnet is able to close two reed switches when half way between them.
+
+
 
 ## Main Development
 
