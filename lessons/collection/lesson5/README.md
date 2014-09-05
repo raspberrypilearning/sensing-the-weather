@@ -31,10 +31,21 @@ Students should work in pairs. Each pair will require the following equipment:
 
 ## Starter
 
-A wind vane shows the direction *from which* the wind is coming, not where it's going. It works by the wind exerting force on a vertical blade which rotates to finds the position of least resistance, this position is then aligned with the direction of the oncoming wind.
+A wind vane shows the direction *from which* the wind is coming, not where it's going (this can be confusing because TV weather maps show it the other way around). It works by the wind exerting force on a vertical blade which rotates to finds the position of least resistance, this position is then aligned with the direction of the oncoming wind.
 
-Also known as a weather vane they are often found as decorative adornments at the highest point of buildings or churches. Tpically taking the shape of a cockerel, horse or ship.
+Also known as a weather vane these are often found as decorative adornments at the highest point on buildings or churches. Typically taking the shape of a cockerel, horse or ship.
 
+The wind vane is the most complex of the sensors studied so far. It does use reed switches and magnets but it works in a completely different way. Ask the students to pull the top off their wind vane, it should come off without much force. On the underside you'll again find the metal cylinder which is the magnet.
+
+![](../../../images/wind_vane_magnet.png)
+
+*Note: Disassembling the next part is only recommended for students with good motor skills. Younger students may have difficulty reassembling it.*
+
+Next take the screwdriver and remove the three screws in the base, slide the base panel down the cable a bit to get it out of the way. If you look inside now you'll see there are eight reed switches arranged like the spokes of a wheel. Remove the three remaining screws allowing the circuit board to come free. Do not lose these screws.
+
+![](../../../images/wind_vane_reed.png)
+
+Examine the green side of the circuit board now.
 
 ## Main Development
 
