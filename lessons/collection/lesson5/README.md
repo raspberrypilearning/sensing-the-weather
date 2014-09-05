@@ -31,6 +31,11 @@ Students should work in pairs. Each pair will require the following equipment:
 
 ## Starter
 
+A wind vane shows the direction *from which* the wind is coming, not where it's going. It works by the wind exerting force on a vertical blade which rotates to finds the position of least resistance, this position is then aligned with the direction of the oncoming wind.
+
+Also known as a weather vane they are often found as decorative adornments at the highest point of buildings or churches. Tpically taking the shape of a cockerel, horse or ship.
+
+
 ## Main Development
 
 ### Setting up your Pi
