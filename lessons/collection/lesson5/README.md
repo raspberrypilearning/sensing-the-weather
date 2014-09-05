@@ -53,15 +53,18 @@ Look closely and you'll see there is a ring of metal that goes all the way aroun
 
 So what is going on here? Firstly students need to understand what a [resistor](http://en.wikipedia.org/wiki/Resistor) is. These are small components that resist/reduce the flow of electrical current but do not stop it, at the same time they also reduce the voltage moving through the circuit. Resistors can have different values, a low value would let almost all voltage/current through but a high value would let very little through.
 
-The wind vane is working like a big variable resistor, think of a volume knob. Look at the schematic diagram below (the zigzag line is the symbol for a resistor). The idea is that voltage comes in on the outer ring and can take a path through any of the switches to the inner ring which is connected directly to ground. As the magnet rotates different reed switches will open and close and thus switch their corresponding resistor in and out of the circuit.
+The wind vane is working like a big variable resistor, think of a volume knob. Look at the schematic diagram below (a zigzag line is the symbol for a resistor). The idea is that voltage comes in on the outer ring and can take a path through any of the switches to the inner ring which is connected directly to ground. As the magnet rotates different reed switches will open and close and thus switch their corresponding resistor in and out of the circuit.
 
 ![](../../../images/wind_vane_schematic.png)
 
-Each of the 8 resistors have different values which you'll see printed in white text next to them, this then allows the wind vane to have 16 possible combinations of resistance since the magnet is able to close two reed switches when half way between them. Meaning that we can also get North North East, East North East and so on.
+Each of the 8 resistors have different values which you'll see printed in white text next to them, this then allows the wind vane to have 16 possible combinations of resistance since the magnet is able to close two reed switches when half way between them.
 
-Reassemble the wind vane. Firstly locate the letter N on the side of the base, insert the circuit board with the green side facing away from you so that the anemometer socket aligns with North. Replace the three smaller screws (this step can be tricky and a magnetic screwdriver helps a lot). Next replace the base ensuring the knot in the cable remains inside. Finally replace the three larger screws.
+Reassemble the wind vane now. Firstly locate the letter N on the side of the base, insert the circuit board with the green side facing away from you so that the anemometer socket aligns with North. Replace the three smaller screws (this step can be tricky and a magnetic screwdriver helps a lot). Next replace the base ensuring the knot in the cable remains inside. Finally replace the three larger screws.
 
 ### How can we measure it?
+
+So we now understand that the wind vane is essentially a variable resistor similar to a volume knob. Resistance is something that we can't measure directly because it's a passive property of the wind vane. What we need to do is measure something that changes as a consequence of the resistance. Namely the *voltage* going through the wind vane. The voltage level will go up and down as different resistors are switched on and off. That we *can* measure.
+
 
 
 ## Main Development
