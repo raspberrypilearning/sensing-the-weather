@@ -391,7 +391,7 @@ In our code we have the line `interval = 5` which is used to define the length o
 1. The anemometer is designed to be connected to the weather expansion board via the wind vane (wind direction sensor). You'll notice that the anemometer has quite a short cable whereas the wind vane has a long one. On the base of the wind vane there is a socket into which the anemometer can be connected. This then allows both wind vane and anemometer to be deployed at a distance together.
   - Unplug anemometer from the weather expansion board.
   - Plug the anemometer into the base of the wind vane.
-  - Plug the wind vane into the socket marked WIND on the Weather Expansion Board.
+  - Plug the wind vane into the socket marked *WIND* on the weather expansion board.
   - Test that your code still works with the anemometer connected in this way.
 1. Press `Ctrl - C` to exit your program.
 
