@@ -29,7 +29,7 @@ Students should work in pairs. Each pair will require the following equipment:
 - Be able to differentiate between analogue and digital signals
 - Understand the purpose of an Analogue to Digital Converter
 - Understand digital communication using the I²C protocol
-- Use these technologies to determine the direction the wind vane is pointing
+- Determine the direction of the wind vane
 
 ## Starter
 
