@@ -23,6 +23,12 @@ Students should work in pairs. Each pair will require the following equipment:
 
 ## Learning Objectives
 
+- Understand how the wind vane works
+- Be able to differentiate between analogue and digital signals
+- Understand the purpose of an Analogue to Digital Converter
+- Understand digital communication using the I²C protocol
+- Use these technologies to determine the direction the wind vane is pointing
+
 ## Starter
 
 ## Main Development
