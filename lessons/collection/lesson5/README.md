@@ -6,6 +6,8 @@
 
 ## Introduction
 
+In this lesson students will use the weather station expansion board and the win vane. Students will firstly learn how the wind vane works and understand the differences between analogue and digital signals. Python code will be written to convert the analogue signal from the wind vane to a digital number using an ADC (Analogue to Digital Converter). This number will then be used to determine the direction the wind vane is pointing.
+
 ## Resources
 
 Students should work in pairs. Each pair will require the following equipment:
@@ -31,7 +33,7 @@ Students should work in pairs. Each pair will require the following equipment:
 
 ## Starter
 
-A wind vane shows the direction *from which* the wind is coming, not where it's going (this can be confusing because TV weather maps show it the other way around). It works by the wind exerting force on a vertical blade which rotates to find the position of least resistance, this position is then aligned with the direction of the oncoming wind.
+A wind vane shows the direction *from which* the wind is coming, not where it's going (this can be confusing because TV weather maps show the opposite). It works by the wind exerting force on a vertical blade which rotates to find the position of least resistance, this position is then aligned with the direction of the oncoming wind.
 
 Also known as a weather vane these are often found as decorative adornments at the highest point on buildings or churches. Typically taking the shape of a cockerel, horse or ship.
 
