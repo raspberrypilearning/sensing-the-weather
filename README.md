@@ -48,6 +48,7 @@ Finally the finished weather station will be deployed to an outdoor location, ch
 - [Lesson 2](lessons/collection/lesson2/README.md): Using GPIO input mode
 - [Lesson 3](lessons/collection/lesson3/README.md): The rain gauge
 - [Lesson 4](lessons/collection/lesson4/README.md): The anemometer
+- [Lesson 5](lessons/collection/lesson5/README.md): The wind vane
 
 ### Display
 
