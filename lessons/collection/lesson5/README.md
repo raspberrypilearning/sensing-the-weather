@@ -105,7 +105,7 @@ We therefore need to find out what those 16 numbers are and translate them into 
 
 There is one more layer that we need to reveal.
 
-Generally speaking most computer chips communicate by sending and receiving binary data. In order to have successful two way communication there needs to be set of rules (like a language) that both chips obey. In computing terms this is known as a *protocol*. The ADC chip on the weather expansion board uses the [I²C protocol](http://en.wikipedia.org/wiki/I%C2%B2C) for this (pronounced I-squared-C) which stands for Inter-Integrated Circuit. Several other chips on the weather expansion board also use it, such as the pressure and humidity sensors (covered in separate lessons). We're not going to go into the finer details of I²C but it is important that we understand the general principle so that the code we write makes sense later on.
+Generally speaking most computer chips communicate by sending and receiving binary data. In order to have successful two way communication there needs to be set of rules (like a language) that both chips obey. In computing terms this is known as a *protocol*. The ADC chip on the weather expansion board uses the [I²C protocol](http://en.wikipedia.org/wiki/I%C2%B2C) (pronounced I-squared-C) which stands for Inter-Integrated Circuit. Several other chips on the weather expansion board also use it, such as the pressure and humidity sensors (covered in separate lessons). We're not going to go into the finer details of I²C but it is important that we understand the general principle so that the code we write makes sense later on.
 
 ![](../../../images/i2c-diagram.png)
 
