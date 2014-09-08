@@ -103,27 +103,26 @@ We therefore need to find out what those 16 numbers are and translate them into 
 
 ### How do we talk to the ADC chip?
 
-There is one more layer that we need to reveal. This is *how* we talk to the ADC chip in our Python code.
+There is one more layer that we need to reveal.
 
-Generally speaking most computer chips communicate by sending and receiving binary data. In order to have successful two way communication there needs to be set of rules (like a language) that both chips obey. In computing terms this is known as a *protocol*. The ADC chip on the weather expansion board uses the [I²C protocol](http://en.wikipedia.org/wiki/I%C2%B2C) for this (pronounced I-squared-C) which stands for Inter-Integrated Circuit. Several other chips on the weather expansion board also use it, such as the pressure and humidity sensors (covered in separate lessons).
+Generally speaking most computer chips communicate by sending and receiving binary data. In order to have successful two way communication there needs to be set of rules (like a language) that both chips obey. In computing terms this is known as a *protocol*. The ADC chip on the weather expansion board uses the [I²C protocol](http://en.wikipedia.org/wiki/I%C2%B2C) for this (pronounced I-squared-C) which stands for Inter-Integrated Circuit. Several other chips on the weather expansion board also use it, such as the pressure and humidity sensors (covered in separate lessons). We're not going to go into the finer details of I²C but it is important that we understand the general principle so that the code we write makes sense later on.
 
 ![](../../../images/i2c-diagram.png)
 
-With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires. One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively.
+With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively.
 
-In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave or read data back from one, but the slaves never communicate with each other directly.
+In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or pull data back from one (read) and the slaves never communicate with each other directly.
 
+Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later.
 
+In practise the Pi (the master) will send a binary sequence to a slave device with the desired address (the ADC), the binary usually instructs the slave to do something (such as measure the analogue voltage from the wind vane). The Pi then waits for a *tiny* amount of time for the ADC to do its work whereupon it sends a read command. The ADC then starts sending binary data back to the master and this will represent the value of the measurement it just took.
 
+Our task is to understand what binary sequence we need to send (from the master Pi to the slave ADC) in order to make the ADC take a reading and *then* to understand what to do with the binary data that we get back as the answer. Only when we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
 
-
-
-
-
-
-
+There is a lot to take in here but do not be discouraged. A lot of these techniques will be reused for other sensors on the weather expansion board in future lessons.
 
 ## Main Development
+
 
 ### Setting up your Pi
 
