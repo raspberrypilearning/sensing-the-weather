@@ -93,7 +93,15 @@ So to recap then. The wind vane has a voltage going through it and this will var
 
 ![](../../../images/adc_msop10.png)
 
-To do this we're going to use a clever microchip called an [Analogue to Digital Converter](http://en.wikipedia.org/wiki/Analog-to-digital_converter) or ADC for short. The weather expansion board has one of these built in. An ADC chip, like the one above, has a number of input pins. One of them is connected to the voltage going through the wind vane. We don't need to worry about the internal workings of the chip we just need to understand that it can convert from a continuous analogue voltage to a digital number that represents the voltage magnitude. More voltage will give a higher number, less voltage a lower one.
+To do this we're going to use a clever microchip called an [Analogue to Digital Converter](http://en.wikipedia.org/wiki/Analog-to-digital_converter) or ADC for short. The weather expansion board has one of these built in (as do most games consoles). An ADC chip, like the one above, has a number of input pins. One of them is connected to the voltage going through the wind vane. We don't need to worry about the internal workings of the chip we just need to understand that it can convert from a continuous analogue voltage to a number (in code) that represents the voltage *magnitude*. More voltage will give a higher number, less voltage a lower one.
+
+The *resolution* of an ADC chip describes the number of unique readings that it can produce to represent this magnitude. The resolution value is given in *bits* (a bit is a binary 1 or 0). A ten bit ADC, for example, can produce values between 0 and 1023 (1111111111 in binary = 1023 in decimal). *You can try this using the Windows Calculator if you like. Press Alt - 3 and choose Bin. Type 15 1s in and then click Dec.*
+
+The ADC we're using has 15 bits of resolution. So this can produce values between 0 and 32767 in our code. That's quite a lot of resolution! However the wind vane has only 16 possible combinations of resistance that each represent a compass direction. This gives us 16 possible voltage levels to convert with the ADC. In turn this gives us only 16 possible readings from the ADC that lie somewhere between 0 and 32767. 
+
+We therefore need to find out what those 16 numbers are and translate them into a compass direction in our code. A sensible option is to use degrees clockwise from North. This a better way to represent a compass angle on a computer (as opposed to the traditional North, South, East, West) because it allows for easy numeric comparison and or averaging.
+
+
 
 ## Main Development
 
