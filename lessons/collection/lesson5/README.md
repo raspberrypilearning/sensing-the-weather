@@ -107,7 +107,9 @@ There is one more layer that we need to reveal. This is *how* we talk to the ADC
 
 Generally speaking most computer chips communicate by sending and receiving binary data. In order to have successful two way communication there needs to be set of rules (like a language) that both chips obey. In computing terms this is known as a *protocol*. The ADC chip on the weather expansion board uses the [I²C protocol](http://en.wikipedia.org/wiki/I%C2%B2C) for this (pronounced I-squared-C) which stands for Inter-Integrated Circuit. Several other chips on the weather expansion board also use it, such as the pressure and humidity sensors (covered in separate lessons).
 
-With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires. One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` and `CLOCK` respectively.
+![](../../../images/i2c-diagram.png)
+
+With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires. One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively.
 
 In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave or read data back from one, but the slaves never communicate with each other directly.
 
