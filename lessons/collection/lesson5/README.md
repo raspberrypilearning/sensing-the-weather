@@ -111,7 +111,7 @@ Generally speaking most computer chips communicate by sending and receiving bina
 
 With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively.
 
-In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or pull data back from one (read) and the slaves never communicate with each other directly.
+In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or receive data back from one (read) but the slaves never communicate with each other directly.
 
 Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later.
 
