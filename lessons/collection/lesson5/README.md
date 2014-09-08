@@ -123,6 +123,13 @@ There is a lot to take in here. A lot of these techniques will be reused making 
 
 ## Main Development
 
+Our general plan of action will be as follows:
+
+- Write code to talk to the ADC
+- Use the ADC to measure the voltage level going through the wind vane
+- Verify that these readings change as the wind vane rotates
+- Record the ADC measurements for each of the 16 possible wind vane positions
+- Construct a look up table to translate between the ADC value and the compass direction
 
 ### Setting up your Pi
 
