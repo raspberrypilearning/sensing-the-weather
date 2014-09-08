@@ -111,9 +111,9 @@ Generally speaking most computer chips communicate by sending and receiving bina
 
 With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively.
 
-In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or receive data back from one (read) but the slaves never communicate with each other directly.
+In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or receive data back from one (read) but the slaves never communicate with each other directly. 
 
-Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later.
+It's not just for sensors. Most mobile phones use I²C extensively. It allows the phone I²C master (built into the CPU) to communicate with all the subsidiary devices such as the screen, touchpad, camera, microphone and speakers. Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later.
 
 In practise the master will write a binary sequence to a slave with the intended address, the binary code usually instructs the slave to perform a task (such as take a measurement). The master then waits for a *tiny* amount of time for the slave to carry it out whereupon a read command is sent. The slave then starts sending binary data back to the master and this will be the result of said task (such as the value of the measurement).
 
