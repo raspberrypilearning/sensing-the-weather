@@ -99,7 +99,7 @@ The *resolution* of an ADC chip describes the number of unique readings that it 
 
 The ADC we're using has 15 bits of resolution. So this can produce values between 0 and 32767 in our code. That's quite a lot of resolution! However the wind vane has only 16 possible combinations of resistance that each represent a compass direction. This gives us 16 possible voltage levels to convert with the ADC. In turn this gives us only 16 possible readings from the ADC that lie somewhere between 0 and 32767. 
 
-We therefore need to find out what those 16 numbers are and translate them into a compass direction in our code. A sensible option is to use degrees clockwise from North. This a better way to represent a compass angle on a computer (as opposed to the traditional North, South, East, West) because it allows for easy numeric comparison and or averaging.
+We therefore need to find out what those 16 numbers are and translate them into a compass direction in our code.
 
 ### How do we talk to the ADC chip?
 
