@@ -125,7 +125,7 @@ There is a lot to take in here. A lot of these techniques will be reused making 
 
 Our general plan of action will be as follows:
 
-1. Install and configure the required software packages. 
+1. Install and configure the software, then test it. 
 1. Write code to talk to the ADC.
 1. Use the ADC to measure the voltage level going through the wind vane.
 1. Verify that these readings change as the wind vane rotates.
@@ -149,7 +149,7 @@ Our general plan of action will be as follows:
     Password: raspberry
     ```
 
-### Install and configure
+### Install, configure and test
 
 *Note: This will only need to be done once. But in a class environment it can help if this step has been done prior to starting the lesson.*
 
@@ -209,7 +209,7 @@ Our general plan of action will be as follows:
   - 69: ADC
   - 77: Pressure sensor
   
-  You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the weather expansion board.
+  You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board. Make sure it's connected properly and try again.
 
 ## Plenary
 
