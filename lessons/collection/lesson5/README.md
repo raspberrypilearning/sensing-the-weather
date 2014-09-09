@@ -97,7 +97,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
 The *resolution* of an ADC chip describes the number of unique readings that it can produce to represent this magnitude. The resolution value is given in *bits* (a bit is a binary 1 or 0). A ten bit ADC, for example, can produce values between 0 and 1023 (`1111111111` in binary = `1023` in decimal).
 
-The ADC we're using has 15 bits of resolution. So this can produce values between 0 and 32767 in our code. That's quite a lot of resolution! However the wind vane has only 16 possible combinations of resistance that each represent a compass direction. This gives us 16 possible voltage levels to convert with the ADC. In turn this gives us only 16 possible readings from the ADC that lie somewhere between 0 and 32767. 
+The ADC we're using has 15 bits of resolution. So this can produce values between 0 and 32767 in our code. That's quite a lot of resolution! However the wind vane has only 16 possible combinations of resistance that each represent a compass direction (these are listed in the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf)). This gives us 16 possible voltage levels to convert with the ADC. In turn this gives us only 16 possible readings from the ADC that lie somewhere between 0 and 32767.
 
 We therefore need to find out what those 16 numbers are and translate them into a compass direction in our code.
 
