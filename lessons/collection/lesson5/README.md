@@ -184,18 +184,31 @@ Our general plan of action will be as follows:
 1. Let's list all slave devices that are connected to the I²C bus, enter the command below:
 
   `sudo i2cdetect -y 1`
-
+  
+  If you're using an old Rev 1 Raspberry Pi (without mounting holes) you'll need to use `-y 0` in the above command.
+  
+  The output should look something like this:
   ```
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
   00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
   10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
   20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-  30: -- -- -- -- -- -- -- -- UU -- -- -- -- -- -- -- 
+  30: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 
   40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
   50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
   60: -- -- -- -- -- -- -- -- 68 69 -- -- -- -- -- -- 
   70: -- -- -- -- -- -- -- 77
   ```
+  The list is showing all available bus addresses and where the slave devices are occupying them, `--` means the address is free. You'll also notice the list is in [hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal), the columns go from 0 to f.
+  
+  These are the devices that are using the addresses:
+  
+  - 40: Humidity sensor
+  - 68: Real time clock
+  - 69: ADC
+  - 77: Pressure sensor
+  
+  You may notice that 40 and 77 are not present. You will need to plug in the AIR board in order for those two to appear on the I²C bus.
 
 ## Plenary
 
