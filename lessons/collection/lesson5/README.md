@@ -115,7 +115,7 @@ In our case the master is the Raspberry Pi itself and the slave devices are thin
 
 It's not just for sensors though. Most mobile phones use I²C extensively. It allows the phone to communicate with all the subsidiary devices such as the screen, touchpad, camera, microphone and speakers. Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later.
 
-In practise the master will write a binary sequence to a slave with the intended address, the binary code usually instructs the slave to perform a task (such as take a measurement). The master then waits for a *tiny* amount of time for the slave to do the work whereupon a read command is sent. The slave then starts sending binary data back to the master and this will be the result of said task (such as the value of the measurement).
+In practise the master will write a binary sequence to a slave at the intended address, the binary code usually instructs the slave to perform a task (such as take a measurement). The master then waits for a *tiny* amount of time for the slave to do the work whereupon a read command is sent. The slave then starts sending binary data back to the master and this will be the result of said task (such as the value of the measurement).
 
 Below we will learn how to do this for the ADC chip. We will first understand the binary code for giving instructions to the ADC and then how to interpret the binary the ADC sends back. When we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
 
