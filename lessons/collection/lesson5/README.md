@@ -181,7 +181,7 @@ Our general plan of action will be as follows:
 
   This will also take a few moments.
 
-1. Let's list all slave devices that are connected to the I²C bus, enter the command below:
+1. Let's list all slave devices that are connected to the I²C bus, this is a really good way to test that the sensors are alive and working. Enter the command below:
 
   `sudo i2cdetect -y 1`
   
@@ -203,12 +203,13 @@ Our general plan of action will be as follows:
   
   These are the devices that are using the addresses:
   
+  - 3b: UU means reserved
   - 40: Humidity sensor
   - 68: Real time clock
   - 69: ADC
   - 77: Pressure sensor
   
-  You may notice that 40 and 77 are not present. You will need to plug in the AIR board in order for those two to appear on the I²C bus.
+  You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the weather expansion board.
 
 ## Plenary
 
