@@ -117,7 +117,7 @@ It's not just for sensors though. Most mobile phones use I²C extensively. It al
 
 In practise the master will write a binary sequence to a slave at the intended address, the binary code usually instructs the slave to perform a task (such as take a measurement). The master then waits for a *tiny* amount of time for the slave to do the work whereupon a read command is sent. The slave then starts sending binary data back to the master and this will be the result of said task (such as the value of the measurement).
 
-Below we will learn how to do this for the ADC chip. We will first understand the binary code for giving instructions to the ADC and then how to interpret the binary sendt back by the ADC. When we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
+Below we will learn how to do this for the ADC chip. We will first understand the binary code for giving instructions to the ADC and then how to interpret the binary sent back. When we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
 
 There is a lot to take in here. A lot of these techniques will be reused making future lessons easier so do not be discouraged!
 
@@ -125,12 +125,13 @@ There is a lot to take in here. A lot of these techniques will be reused making 
 
 Our general plan of action will be as follows:
 
-1. Write code to talk to the ADC
-1. Use the ADC to measure the voltage level going through the wind vane
-1. Verify that these readings change as the wind vane rotates
-1. Record the ADC measurements for each of the 16 possible wind vane positions
-1. Construct a look up table to translate between the ADC value and the compass direction
-1. Write code to determine the direction of the wind vane
+1. Install and configure the required software packages. 
+1. Write code to talk to the ADC.
+1. Use the ADC to measure the voltage level going through the wind vane.
+1. Verify that these readings change as the wind vane rotates.
+1. Record the ADC measurements for each of the 16 possible wind vane positions.
+1. Construct a look up table to translate between the ADC value and the compass direction.
+1. Write code to determine the direction of the wind vane.
 
 ### Setting up your Pi
 
@@ -139,6 +140,7 @@ Our general plan of action will be as follows:
 1. Connect the wind vane to the socket marked *WIND* on the Weather Expansion Board.
 1. Next connect the HDMI cable from the monitor or TV.
 1. Plug in the USB keyboard and mouse.
+1. Plug in an Ethernet cable for Internet access.
 1. Plug in the micro USB power supply.
 1. When prompted to login type:
 
@@ -146,6 +148,10 @@ Our general plan of action will be as follows:
     Login: pi
     Password: raspberry
     ```
+
+### Install and configure
+
+
 
 ## Plenary
 
