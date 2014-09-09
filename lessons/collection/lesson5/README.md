@@ -151,7 +151,7 @@ Our general plan of action will be as follows:
 
 ### Install and configure
 
-*Note: In a class environment it can help if this step has been done prior to starting the lesson.*
+*Note: This will only need to be done once. But in a class environment it can help if this step has been done prior to starting the lesson.*
 
 1. Before we can start using any I²C devices on your Raspberry Pi we need to edit a few files, reboot and then install some software packages. Firstly the I²C kernel module needs to be un-blacklisted. Enter the following at the command line:
 
