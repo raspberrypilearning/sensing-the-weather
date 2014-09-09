@@ -117,7 +117,7 @@ It's not just for sensors though. Most mobile phones use I²C extensively. It al
 
 In practise the master will write a binary sequence to a slave at the intended address, the binary code usually instructs the slave to perform a task (such as take a measurement). The master then waits for a *tiny* amount of time for the slave to do the work whereupon a read command is sent. The slave then starts sending binary data back to the master and this will be the result of said task (such as the value of the measurement).
 
-Below we will learn how to do this for the ADC chip. We will first understand the binary code for giving instructions to the ADC and then how to interpret the binary the ADC sends back. When we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
+Below we will learn how to do this for the ADC chip. We will first understand the binary code for giving instructions to the ADC and then how to interpret the binary sendt back by the ADC. When we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
 
 There is a lot to take in here. A lot of these techniques will be reused making future lessons easier so do not be discouraged!
 
