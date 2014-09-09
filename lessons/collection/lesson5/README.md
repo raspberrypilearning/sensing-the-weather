@@ -151,6 +151,8 @@ Our general plan of action will be as follows:
 
 ### Install and configure
 
+*Note: In a class environment it can help if this step has been done prior to starting the lesson.*
+
 1. Before we can start using any I²C devices on your Raspberry Pi we need to edit a few files, reboot and then install some software packages. Firstly the I²C kernel module needs to be un-blacklisted. Enter the following at the command line:
 
   `sudo nano /etc/modprobe.d/raspi-blacklist.conf`
@@ -166,6 +168,18 @@ Our general plan of action will be as follows:
 1. Reboot:
 
   `sudo reboot`
+
+1. Login again as per usual. Now update your local package repository:
+
+  `sudo apt-get update`
+  
+  This may take a few minutes depending on Internet speed at your location.
+
+1. Install the I²C tools package:
+
+  `sudo apt-get install i2c-tools`
+
+  This will also take a few moments.
 
 ## Plenary
 
