@@ -219,7 +219,7 @@ We're going to write code that will send an eight bit binary number, over the IÂ
 
 `11111111` for example is 255 in decimal.
 
-There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field), sometimes called [flag words](http://en.wikipedia.org/wiki/Flag_word#Examples) too. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
+There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *logical bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field), sometimes called [flag words](http://en.wikipedia.org/wiki/Flag_word#Examples) too. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
 
 ![](../../../images/flags.png)
 
@@ -245,7 +245,7 @@ So basically, we just decide what we want the ADC to do and then stitch together
 
 | 7 | 6/5 | 4 | 3/2 | 1/0 |
 |:---:|:---:|:---:|:---:|:---:|
-| Ready bit | Channel selection bits | Conversion mode bit | Sample rate bits | Gain bits |
+| Ready | Channel selection | Conversion mode | Sample rate | Gain |
 | `1` | `00` | `0` | `10` | `00` |
 | Start conversion | Use channel 0 | One shot mode | 16 bit | No gain |
 
@@ -256,6 +256,12 @@ So this gives us binary `10001000` which is `136` in decimal and `88` in hexadec
 
 **Answer:**
 - Bits 6/5 would be `01` instead of `00` giving `10101000` which is `168` in decimal and `A8` in hexadecimal. 
+
+1. Finally we can write some code. Let's start a new program, enter the command below:
+
+  `sudo nano adc.py`
+
+1. This program will contain the code for using the ADC but it will not contain code specific to the wind vane, we'll put that in a separate file.
 
 ## Plenary
 
