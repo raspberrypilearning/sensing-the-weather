@@ -109,11 +109,13 @@ Generally speaking most computer chips communicate by sending and receiving bina
 
 ![](../../../images/i2c-diagram.png)
 
-With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively.
+With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively. The I²C bus on the Raspberry Pi originates from the two GPIO pins shown below in light blue. The weather expansion board then does the job of connecting the slave devices to it.
 
-In our case the master is the Raspberry Pi itself and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or receive data back from one (read) but the slaves never communicate with each other directly. 
+![](../../../images/p1_i2c.png)
 
-It's not just for sensors though. Most mobile phones use I²C extensively. It allows the phone to communicate with all the subsidiary devices such as the screen, touchpad, camera, microphone and speakers. Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later.
+So the Raspberry Pi itself is the master and the slave devices are things like this ADC chip and various other sensor chips. The master is essentially in charge of all the slave devices and is responsible for starting and stopping all communications. The master can send data to a slave (write) or receive data back from one (read) but the slaves never communicate with each other directly. 
+
+It's not just for sensors though. Most mobile phones use I²C extensively. It allows the phone to communicate with all the subsidiary devices such as the screen, touchpad, camera, microphone and speakers. Each device on the I²C bus has a unique *address* which is used by the master to differentiate slave devices during communication. We will need to put the I²C bus address of the ADC into our Python code later for example.
 
 In practise the master will write a binary sequence to a slave at the intended address, the binary code usually instructs the slave to perform a task (such as take a measurement). The master then waits for a *tiny* amount of time for the slave to do the work whereupon a read command is sent. The slave then starts sending binary data back to the master and this will be the result of said task (such as the value of the measurement).
 
