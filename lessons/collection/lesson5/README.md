@@ -213,9 +213,11 @@ Our general plan of action will be as follows:
   
   You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board, check it and try again.
 
-### Logical bitwise encoding
+### Understanding what the numbers mean
 
-We're going to write code that will send an eight bit binary number, over the I²C bus, to the ADC. The number is basically a command. But what does this mean exactly? A bit is a binary 1 or 0. So *eight bit* just means a binary number that is eight digits long.
+Now we know our I²C devices are all alive and working we're going to write code that will send an eight bit binary number, over the bus, to the ADC. The number is basically a command. But what does this mean exactly? 
+
+So a bit is a binary 1 or 0. So *eight bit* just means a binary number that is eight digits long.
 
 `11111111` for example is 255 in decimal.
 
