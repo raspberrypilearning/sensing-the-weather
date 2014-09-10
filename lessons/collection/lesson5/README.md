@@ -213,7 +213,7 @@ Our general plan of action will be as follows:
   
   You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board, check it and try again.
 
-### Write code to talk to the ADC
+### Logical bitwise encoding
 
 We're going to write code that will send an eight bit binary number, over the I²C bus, to the ADC. The number is basically a command. But what does this mean exactly? A bit is a binary 1 or 0. So *eight bit* just means a binary number that is eight digits long.
 
@@ -256,6 +256,8 @@ So this gives us binary `10001000` which is `136` in decimal and `88` in hexadec
 
 **Answer:**
 - Bits 6/5 would be `01` instead of `00` giving `10101000` which is `168` in decimal and `A8` in hexadecimal. 
+
+### Write code to talk to the ADC
 
 1. Finally we can write some code. Let's start a new program, enter the command below:
 
