@@ -219,7 +219,7 @@ We're going to write code that will send an eight bit binary number, over the IÂ
 
 `11111111` for example is 255 in decimal.
 
-There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *bitwise encoding*. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
+There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field). Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
 
 ![](../../../images/flags.png)
 
@@ -229,7 +229,7 @@ When we send the binary number to the ADC it saves it to a configuration registe
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Ready bit | Channel selection bit | Channel selection bit | Conversion mode bit | Sample rate bit | Sample rate bit | Gain bit | Gain bit |
+| Ready | Channel selection | Channel selection | Conversion mode | Sample rate | Sample rate | Gain | Gain |
 
 The table below explains the meanings of `1` and `0` for each bit. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
 
