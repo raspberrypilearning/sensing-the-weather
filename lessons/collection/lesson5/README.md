@@ -223,7 +223,7 @@ There is a clever way to use binary numbers to encode information besides just r
 
 ![](../../../images/flags.png)
 
-As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is obviously analogues to an eight bit binary number, each binary bit encodes a yes or no meaning for the I²C slave device.
+As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is obviously analogous to an eight bit binary number, each binary bit encodes a yes or no meaning for the I²C slave device.
 
 ## Plenary
 
