@@ -223,7 +223,15 @@ There is a clever way to use binary numbers to encode information besides just r
 
 ![](../../../images/flags.png)
 
-As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is obviously analogous to an eight bit binary number, each binary bit encodes a yes or no meaning for the I²C slave device.
+As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a yes or no (1 or 0) meaning to the I²C slave device.
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Ready bit | Channel Selection | Channel Selection | Conversion Mode | Sample Rate | Sample Rate | Gain | Gain |
+
+When we send the binary number to the ADC it saves it to its configuration register and then performs the task required. The meanings for each bit are summarised in the table above. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
+
+
 
 ## Plenary
 
