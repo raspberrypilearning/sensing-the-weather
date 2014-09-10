@@ -225,12 +225,18 @@ There is a clever way to use binary numbers to encode information besides just r
 
 As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a yes or no (1 or 0) meaning to the I²C slave device. The actual numeric value doesn't even matter. It's all about which bits are 1 and which are 0.
 
-When we send the binary number to the ADC it saves it to its configuration register and then performs the task required. The meanings for each bit are summarised in the table below. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
+When we send the binary number to the ADC it saves it to its configuration register and then performs the tasks required. The meanings for each bit are summarised in the table below. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 
+
+| Bit | Meaning |
+| --- | --- |
+| 7 | The Ready bit. Sending this bit as `1` causes the ADC to start a new analogue to digital conversion task. |
+| 6/5 | The channel selection bits. The ADC has two input channels, allowing two separate analogue signals to be measured. The wind vane is connected to channel 0 and the air quality sensor is on channel 1. To select channel 0 you send `00` for these two bits, and `01` for channel 1. |
+| 4 | Conversion mode bit. The ADC supports two types of analogue to digital conversion. *One shot* mode is where it just does one conversion and stops and *continuous* is where it keeps going until told to stop. Sending `1` here means use one shot mode, and `0` means continuous. We will be using one shot mode. |
 
 
 ## Plenary
