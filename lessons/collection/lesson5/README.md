@@ -228,7 +228,7 @@ As long as the flags stay in the right order and everyone knows the meaning of e
 When we send the binary number to the ADC it saves it to its configuration register (a small piece of memory on the chip) and then performs the tasks required. The meanings for each bit are summarised in the table below.
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 
 The table below explains the meanings of `1` and `0` for each bit. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
@@ -244,7 +244,7 @@ The table below explains the meanings of `1` and `0` for each bit. More detail i
 So basically, we just decide what we want the ADC to do and then stitch together the 1s and 0s according to the above table to form the number to send as a command. So for example if we wanted to start a new analogue to digital conversion on channel 0, in one shot mode and using 16 bit resolution and no gain the number we would send would be:
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
 
