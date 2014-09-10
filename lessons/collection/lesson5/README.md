@@ -219,7 +219,7 @@ We're going to write code that will send an eight bit binary number, over the IÂ
 
 `11111111` for example is 255 in decimal.
 
-There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field). Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
+There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field), sometimes called [flag words](http://en.wikipedia.org/wiki/Flag_word#Examples) too. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
 
 ![](../../../images/flags.png)
 
