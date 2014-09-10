@@ -243,22 +243,15 @@ The table below explains the meanings of `1` and `0` for each bit. More detail i
 
 So basically, we just decide what we want the ADC to do and then stitch together the 1s and 0s according to the above table to form the number to send as a command. So for example if we wanted to start a new analogue to digital conversion on channel 0, in one shot mode, using 16 bit resolution and no gain the number we would send would be:
 
-| 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
-| 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
+| 7 | 6/5 | 4 | 3/2 | 1/0 |
+|:---:|:---:|:---:|:---:|:---:|
+| Ready bit | Channel selection bits | Conversion mode bit | Sample rate bits | Gain bits |
+| `1` | `00` | `0` | `10` | `00` |
+| Start conversion | Use channel 0 | One shot mode | 16 bit | No gain |
 
 So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. 
 
-Another example might be to start a new conversion on channel 1, in continuous mode, using 12 bit resolution and x8 gain the number we would send would be:
-
-| 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
-| 1 | 0 | 1 | 1 | 0 | 0 | 1 | 1 |
-
-So this is binary `10110011` which is `179` in decimal and `b3` in hexadecimal. In practise we'll never use a combination like that. We will just stick to one shot mode, 16 bit resolution and only switch between channel 0 and 1.
-
+If we wanted to do the same but on channel 1 the number would be `10101000`, with bit 5 set to `1` to select channel 1.
 
 ## Plenary
 
