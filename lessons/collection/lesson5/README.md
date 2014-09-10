@@ -223,14 +223,15 @@ There is a clever way to use binary numbers to encode information besides just r
 
 ![](../../../images/flags.png)
 
-As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a yes or no (1 or 0) meaning to the I²C slave device. The actual numeric value doesn't even matter. It's all about which bits are 1 and which are 0.
+As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a yes or no (1 or 0) meaning to the I²C slave device. The actual *value* of the number we send doesn't even matter. It's all about which bits are 1 and which are 0.
 
-When we send the binary number to the ADC it saves it to its configuration register and then performs the tasks required. The meanings for each bit are summarised in the table below. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
+When we send the binary number to the ADC it saves it to its configuration register (a small piece of memory) and then performs the tasks required. The meanings for each bit are summarised in the table below. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 
+The table below explains the meanings of `1` and `0` for each bit:
 
 | Bit | Meaning |
 | --- | --- |
