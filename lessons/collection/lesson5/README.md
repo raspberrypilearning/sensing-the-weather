@@ -248,14 +248,16 @@ So basically, we just decide what we want the ADC to do and then stitch together
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
 
-So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. Another example might be to start a new conversion on channel 1, in continuous mode, using 12 bit resolution and x8 gain the number we would send would be:
+So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. 
+
+Another example might be to start a new conversion on channel 1, in continuous mode, using 12 bit resolution and x8 gain the number we would send would be:
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 1 |
 
-So this is binary `10110011` which is `179` in decimal and `b3` in hexadecimal.
+So this is binary `10110011` which is `179` in decimal and `b3` in hexadecimal. In practise we'll never use a combination like that. We will just stick to one shot mode, 16 bit resolution and only switch between channel 0 and 1.
 
 
 ## Plenary
