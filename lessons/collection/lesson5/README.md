@@ -189,7 +189,7 @@ Our general plan of action will be as follows:
   
   If you're using an old Rev 1 Raspberry Pi (without mounting holes) you'll need to use `-y 0` in the above command.
   
-  The output should look something like this:
+  This cycles through all the possible addresses testing to see if anything responds for each one. The output should look something like this:
   ```
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
   00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -201,17 +201,29 @@ Our general plan of action will be as follows:
   60: -- -- -- -- -- -- -- -- 68 69 -- -- -- -- -- -- 
   70: -- -- -- -- -- -- -- 77
   ```
-  The list is showing all available bus addresses and where the slave devices are occupying them, `--` means the address is free. You'll also notice the list is in [hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal), the columns go from 0 to f.
+  The list is showing all available bus addresses and where the slave devices are occupying them. The `--` means that the address is free. You'll also notice the list is in [hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal), the columns go from 0 to f.
   
   These are the devices that are using the addresses:
   
-  - 3b: UU means reserved
+  - 3b: UU means reserved (for an optional audio device)
   - 40: Humidity sensor
   - 68: Real time clock
   - 69: ADC
   - 77: Pressure sensor
   
-  You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board. Make sure it's connected properly and try again.
+  You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board, check it and try again.
+
+### Write code to talk to the ADC
+
+We're going to write code that will send an eight bit binary number, over the I²C bus, to the ADC. The number is basically a command. But what does this mean exactly? A bit is a binary 1 or 0. So *eight bit* just means a binary number that is eight digits long.
+
+`11111111` for example is 255 in decimal.
+
+There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *bitwise encoding*. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
+
+![](../../../images/flags.png)
+
+As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is obviously analogues to an eight bit binary number, each binary bit encodes a yes or no meaning for the I²C slave device.
 
 ## Plenary
 
