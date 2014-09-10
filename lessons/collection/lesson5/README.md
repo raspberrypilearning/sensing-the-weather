@@ -109,7 +109,7 @@ Generally speaking most computer chips communicate by sending and receiving bina
 
 ![](../../../images/i2c-diagram.png)
 
-With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively. The I²C bus on the Raspberry Pi originates from the two GPIO pins shown below in light blue. The weather expansion board then does the job of connecting the slave devices to it.
+With I²C there is usually one *master* device and several *slaves* that are all connected through a pair of wires known as the I²C *bus* (as above). One wire is for transferring data and the other is used for a timing signal. Often referred to as `DATA` *(SDA)* and `CLOCK` *(SCL)* respectively. The I²C bus originates on the Raspberry Pi from the two GPIO pins shown below in blue. The weather expansion board then does the job of connecting the slave devices to it.
 
 ![](../../../images/p1_i2c.png)
 
