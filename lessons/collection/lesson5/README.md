@@ -251,7 +251,10 @@ So basically, we just decide what we want the ADC to do and then stitch together
 
 So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. 
 
-If we wanted to do the same but on channel 1 the number would be `10101000`, with bit 5 set to `1` to select channel 1.
+Ask the class what should change if we wanted to use channel 1 instead of 0?
+
+**Answer:**
+- Bits 6/5 would be `01` instead `00` giving `10101000` which is `168` decimal and `a8` in hexadecimal. 
 
 ## Plenary
 
