@@ -225,7 +225,7 @@ There is a clever way to use binary numbers to encode information besides just r
 
 As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a yes or no (1 or 0) meaning to the I²C slave device. The actual *value* of the number we send doesn't even matter. It's all about which bits are 1 and which are 0.
 
-When we send the binary number to the ADC it saves it to its configuration register (a small piece of memory on the chip) and then performs the tasks required. The meanings for each bit are summarised in the table below.
+When we send the binary number to the ADC it saves it to a configuration register (a small piece of memory on the chip) and then performs the tasks required. The meanings for each bit are summarised in the table below.
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -237,19 +237,25 @@ The table below explains the meanings of `1` and `0` for each bit. More detail i
 | --- | --- |
 | 7 | Ready bit. Sending this bit as `1` causes the ADC to start a new analogue to digital conversion task. |
 | 6/5 | Channel selection bits. The ADC has two input channels, allowing two separate analogue signals to be measured. The wind vane is connected to channel 0 and the air quality sensor (also analogue) is on channel 1. To select channel 0 you send `00` for these two bits, and `01` for channel 1. |
-| 4 | Conversion mode bit. The ADC supports two types of analogue to digital conversion. *One shot* mode is where it just does one conversion and stops and *continuous* is where it keeps going until told to stop. Sending `1` here means use one shot mode, and `0` means continuous. We will be using one shot mode. |
+| 4 | Conversion mode bit. The ADC supports two types of analogue to digital conversion. *One shot* mode is where it just does one conversion and stops and *continuous* is where it keeps going until told to stop. Sending `0` here means use one shot mode, and `1` means continuous. We will be using one shot mode. |
 | 3/2 | Sample rate bits. This allows you to select the ADC *resolution* as mentioned earlier (the number of bits used to report the result of the conversion). `00` means 12 bits, `01` means 14 bit and `10` means 16. |
 | 1/0 | Gain bits. This allows you to boost especially weak electrical signals that you might want to measure. `00` is no gain, `01` is x2, `10` is x4 and `11` is x8. We will not use this. |
 
-So basically, we just decide what we want the ADC to do and then stitch together the 1s and 0s according to the above table to form the number to send as a command. So for example if we wanted to start a new analogue to digital conversion on channel 0, in one shot mode and using 16 bit resolution and no gain the number we would send would be:
+So basically, we just decide what we want the ADC to do and then stitch together the 1s and 0s according to the above table to form the number to send as a command. So for example if we wanted to start a new analogue to digital conversion on channel 0, in one shot mode, using 16 bit resolution and no gain the number we would send would be:
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
 
-So this gives us binary `10001000` or `136` in decimal or `88` in hexadecimal.
+So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. Another example might be to start a new conversion on channel 1, in continuous mode, using 12 bit resolution and x8 gain the number we would send would be:
 
+| 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
+| 1 | 0 | 1 | 1 | 0 | 0 | 1 | 1 |
+
+So this is binary `10110011` which is `179` in decimal and `b3` in hexadecimal.
 
 
 ## Plenary
