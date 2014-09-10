@@ -227,7 +227,7 @@ As long as the flags stay in the right order and everyone knows the meaning of e
 
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Ready bit | Channel Selection | Channel Selection | Conversion Mode | Sample Rate | Sample Rate | Gain | Gain |
+| Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
 
 When we send the binary number to the ADC it saves it to its configuration register and then performs the task required. The meanings for each bit are summarised in the table above. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
 
