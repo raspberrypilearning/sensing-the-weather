@@ -229,7 +229,7 @@ When we send the binary number to the ADC it saves it to a configuration registe
 
 | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Ready bit | Channel selection bit 1 | Channel selection bit 2 | Conversion mode bit | Sample rate bit 1 | Sample rate bit 2 | Gain bit 1 | Gain bit 2 |
+| Ready bit | Channel selection bit | Channel selection bit | Conversion mode bit | Sample rate bit | Sample rate bit | Gain bit | Gain bit |
 
 The table below explains the meanings of `1` and `0` for each bit. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
 
@@ -254,7 +254,7 @@ So this gives us binary `10001000` which is `136` in decimal and `88` in hexadec
 Ask the class what should change if we wanted to use channel 1 instead of 0?
 
 **Answer:**
-- Bits 6/5 would be `01` instead `00` giving `10101000` which is `168` decimal and `a8` in hexadecimal. 
+- Bits 6/5 would be `01` instead `00` giving `10101000` which is `168` decimal and `A8` in hexadecimal. 
 
 ## Plenary
 
