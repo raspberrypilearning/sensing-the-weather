@@ -121,6 +121,52 @@ In practise the master will write a binary sequence to a slave at the intended a
 
 Below we will learn how to do this for the ADC chip. We will first understand the binary code for giving instructions to the ADC and then how to interpret the binary sent back. When we've got that far we can then start looking at converting the reading into a compass direction for the wind vane.
 
+### Understanding the binary code
+
+Below we're going to write code that will send an eight bit binary number, over the bus, to the ADC. The number is basically a command. But what does this mean exactly? 
+
+So a bit is a binary 1 or 0. So *eight bit* just means a binary number that is eight digits long.
+
+`11111111` for example is 255 in decimal.
+
+There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *logical bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field), sometimes called [flag words](http://en.wikipedia.org/wiki/Flag_word#Examples) too. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
+
+![](../../../images/flags.png)
+
+As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a logical true or false (1 or 0) meaning for the I²C slave device. The actual *value* of the number we send doesn't even matter. It's all about which bits are 1 and which are 0.
+
+When we send the binary number to the ADC it saves it to a configuration register (a small piece of memory on the chip) and then performs the tasks required. The meanings for each bit are summarised in the table below.
+
+| 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Ready | Channel selection | Channel selection | Conversion mode | Sample rate | Sample rate | Gain | Gain |
+
+The table below explains the meanings of `1` and `0` for each bit. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
+
+| Bit | Meaning |
+| --- | --- |
+| 7 | Ready bit. Sending this bit as `1` causes the ADC to start a new analogue to digital conversion task. |
+| 6/5 | Channel selection bits. The ADC has two input channels, allowing two separate analogue signals to be measured. The wind vane is connected to channel 0 and the air quality sensor (also analogue) is on channel 1. To select channel 0 you send `00` for these two bits, and `01` for channel 1. |
+| 4 | Conversion mode bit. The ADC supports two types of analogue to digital conversion. *One shot* mode is where it just does one conversion and stops and *continuous* is where it keeps going until told to stop. Sending `0` here means use one shot mode, and `1` means continuous. We will be using one shot mode. |
+| 3/2 | Sample rate bits. This allows you to select the ADC *resolution* as mentioned earlier (the number of bits used to report the result of the conversion). `00` means 12 bits, `01` means 14 and `10` means 16. |
+| 1/0 | Gain bits. This allows you to boost especially weak electrical signals that you might want to measure. `00` is no gain, `01` is x2, `10` is x4 and `11` is x8. We will not use this. |
+
+So basically, we just decide what we want the ADC to do and then stitch together the 1s and 0s (according to the above table) to form the number to send as a command. So for example if we wanted to start a new analogue to digital conversion on channel 0, in one shot mode, using 16 bit resolution and no gain the number we would send would be:
+
+| 7 | 6/5 | 4 | 3/2 | 1/0 |
+|:---:|:---:|:---:|:---:|:---:|
+| Ready | Channel selection | Conversion mode | Sample rate | Gain |
+| `1` | `00` | `0` | `10` | `00` |
+| Start conversion | Use channel 0 | One shot mode | 16 bit | No gain |
+
+So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. 
+
+**Class question:**
+- What should change if we wanted to use channel 1 instead of 0?
+
+**Answer:**
+- Bits 6/5 would be `01` instead of `00` giving `10101000` which is `168` in decimal and `A8` in hexadecimal. 
+
 There is a lot to take in here. A lot of these techniques will be reused making future lessons easier so do not be discouraged!
 
 ## Main Development
@@ -212,52 +258,6 @@ Our general plan of action will be as follows:
   - 77: Pressure sensor
   
   You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board, check it and try again.
-
-### Understanding what the numbers mean
-
-Now we know our I²C devices are all alive and working we're going to write code that will send an eight bit binary number, over the bus, to the ADC. The number is basically a command. But what does this mean exactly? 
-
-So a bit is a binary 1 or 0. So *eight bit* just means a binary number that is eight digits long.
-
-`11111111` for example is 255 in decimal.
-
-There is a clever way to use binary numbers to encode information besides just representing a numeric value. It's called *logical bitwise encoding*, numbers that use it are known as [bit fields](http://en.wikipedia.org/wiki/Bit_field), sometimes called [flag words](http://en.wikipedia.org/wiki/Flag_word#Examples) too. Think of a row of eight flags. Each flag has a particular meaning and it can either be *up* or *down* on the flagpole. This way you can encode eight different yes or no meanings into the row of flags.
-
-![](../../../images/flags.png)
-
-As long as the flags stay in the right order and everyone knows the meaning of each flag it will work. The row of eight flags is analogous to an eight bit binary number, each binary bit encodes a logical true or false (1 or 0) meaning for the I²C slave device. The actual *value* of the number we send doesn't even matter. It's all about which bits are 1 and which are 0.
-
-When we send the binary number to the ADC it saves it to a configuration register (a small piece of memory on the chip) and then performs the tasks required. The meanings for each bit are summarised in the table below.
-
-| 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Ready | Channel selection | Channel selection | Conversion mode | Sample rate | Sample rate | Gain | Gain |
-
-The table below explains the meanings of `1` and `0` for each bit. More detail is given in the ADC [datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/22226a.pdf) under section 5.2 (page 18) if you want to see it.
-
-| Bit | Meaning |
-| --- | --- |
-| 7 | Ready bit. Sending this bit as `1` causes the ADC to start a new analogue to digital conversion task. |
-| 6/5 | Channel selection bits. The ADC has two input channels, allowing two separate analogue signals to be measured. The wind vane is connected to channel 0 and the air quality sensor (also analogue) is on channel 1. To select channel 0 you send `00` for these two bits, and `01` for channel 1. |
-| 4 | Conversion mode bit. The ADC supports two types of analogue to digital conversion. *One shot* mode is where it just does one conversion and stops and *continuous* is where it keeps going until told to stop. Sending `0` here means use one shot mode, and `1` means continuous. We will be using one shot mode. |
-| 3/2 | Sample rate bits. This allows you to select the ADC *resolution* as mentioned earlier (the number of bits used to report the result of the conversion). `00` means 12 bits, `01` means 14 and `10` means 16. |
-| 1/0 | Gain bits. This allows you to boost especially weak electrical signals that you might want to measure. `00` is no gain, `01` is x2, `10` is x4 and `11` is x8. We will not use this. |
-
-So basically, we just decide what we want the ADC to do and then stitch together the 1s and 0s (according to the above table) to form the number to send as a command. So for example if we wanted to start a new analogue to digital conversion on channel 0, in one shot mode, using 16 bit resolution and no gain the number we would send would be:
-
-| 7 | 6/5 | 4 | 3/2 | 1/0 |
-|:---:|:---:|:---:|:---:|:---:|
-| Ready | Channel selection | Conversion mode | Sample rate | Gain |
-| `1` | `00` | `0` | `10` | `00` |
-| Start conversion | Use channel 0 | One shot mode | 16 bit | No gain |
-
-So this gives us binary `10001000` which is `136` in decimal and `88` in hexadecimal. 
-
-**Class question:**
-- What should change if we wanted to use channel 1 instead of 0?
-
-**Answer:**
-- Bits 6/5 would be `01` instead of `00` giving `10101000` which is `168` in decimal and `A8` in hexadecimal. 
 
 ### Write code to talk to the ADC
 
