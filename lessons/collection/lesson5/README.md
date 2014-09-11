@@ -127,7 +127,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
   `sudo nano /etc/modules`
 
-1. Append `i2c-dev` on a new line at the end of the file.
+1. Type `i2c-dev` on a new line at the end of the file.
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 1. Reboot:
 
