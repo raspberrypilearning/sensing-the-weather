@@ -117,7 +117,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
 *Note: This will only need to be done once. But in a class environment it can help if this step has been done prior to starting the lesson.*
 
-1. Before we can start we need to edit a few files, reboot and then install some software packages. We don't need to understand why or what this means. But this is basically to allow our code to talk to the I²C microchips on the weather expansion board. Enter the following at the command line:
+1. Before we can start we need to edit a few files, reboot and then install some software packages. We don't need to understand why or what this means. But, if you really want to know, this basically allows our code to talk to the I²C microchips on the weather expansion board (such as the ADC chip). Enter the following at the command line:
 
   `sudo nano /etc/modprobe.d/raspi-blacklist.conf`
 
