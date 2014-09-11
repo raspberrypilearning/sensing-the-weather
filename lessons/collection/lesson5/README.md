@@ -97,16 +97,6 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
 ## Main Development
 
-Our general plan of action will be as follows:
-
-1. Install and configure the software, then test it. 
-1. Write code to talk to the ADC.
-1. Use the ADC to measure the voltage level going through the wind vane.
-1. Verify that these readings change as the wind vane rotates.
-1. Record the ADC measurements for each of the 16 possible wind vane positions.
-1. Construct a look up table to translate between the ADC value and the compass direction.
-1. Write code to determine the direction of the wind vane.
-
 ### Setting up your Pi
 
 1. Place the SD card into the slot of your Raspberry Pi.
@@ -127,7 +117,7 @@ Our general plan of action will be as follows:
 
 *Note: This will only need to be done once. But in a class environment it can help if this step has been done prior to starting the lesson.*
 
-1. Before we can start using any I²C devices on your Raspberry Pi we need to edit a few files, reboot and then install some software packages. Firstly the I²C kernel module needs to be un-blacklisted. Enter the following at the command line:
+1. Before we can start we need to edit a few files, reboot and then install some software packages. We don't need to understand why or what this means. But this is basically to allow our code to talk to the I²C microchips on the weather expansion board. Enter the following at the command line:
 
   `sudo nano /etc/modprobe.d/raspi-blacklist.conf`
 
@@ -155,43 +145,9 @@ Our general plan of action will be as follows:
 
   This will also take a few moments.
 
-1. Let's list all slave devices that are connected to the I²C bus, this is a really good way to test that the sensors are alive and working. Enter the command below:
+1. Next we need to download some library code which allows us to use the analogue to digital chip.
 
-  `sudo i2cdetect -y 1`
-  
-  If you're using an old Rev 1 Raspberry Pi (without mounting holes) you'll need to use `-y 0` in the above command.
-  
-  This cycles through all the possible addresses testing to see if anything responds for each one. The output should look something like this:
-  ```
-       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-  00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-  10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-  20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-  30: -- -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- 
-  40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-  50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-  60: -- -- -- -- -- -- -- -- 68 69 -- -- -- -- -- -- 
-  70: -- -- -- -- -- -- -- 77
-  ```
-  The list is showing all available bus addresses and where the slave devices are occupying them. The `--` means that the address is free. You'll also notice the list is in [hexadecimal](http://en.wikipedia.org/wiki/Hexadecimal), the columns go from 0 to f.
-  
-  These are the devices that are using the addresses:
-  
-  - 3b: UU means reserved (for an optional audio device)
-  - 40: Humidity sensor
-  - 68: Real time clock
-  - 69: ADC
-  - 77: Pressure sensor
-  
-  You may notice that 40 and 77 are not there. You will need to plug in the AIR board in order for those two to appear on the I²C bus. 68 and 69 are on the main weather expansion board though and you should expect to always see them. If you don't there may be an issue with the connection to the board, check it and try again.
 
-### Write code to talk to the ADC
-
-1. Finally we can write some code. Let's start a new program, enter the command below:
-
-  `sudo nano adc.py`
-
-1. This program will contain the code for using the ADC but it will not contain code specific to the wind vane, we'll put that in a separate file.
 
 ## Plenary
 
