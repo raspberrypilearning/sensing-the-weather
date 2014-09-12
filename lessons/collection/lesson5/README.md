@@ -216,6 +216,11 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   32767
   32767
   ```
+  This is the *maximum* number the ADC will give us. So these numbers represent the magnitude of the voltage going through the wind vane. Take another look at the wind vane diagram below. The ADC actually measures the voltage where the arrow is, just before it enters the wind vane. The wind vane circuit then siphons voltage off to ground through the reed switches and resistors. That causes the voltage being measured by the ADC to drop in relation to which resistors are switched on.
+  
+  ![](../../../images/wind_vane_schematic.png)
+  
+  If you completely disconnect the wind vane, like now, no voltage gets siphoned off to ground and so the max voltage detected by the ADC and this is why we get the maximum value without it connected.
 
 
 ## Plenary
