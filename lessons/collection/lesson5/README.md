@@ -230,7 +230,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   - The number reported by the ADC is always the same (± 1) for a given direction.
   - The numbers bear no relationship to the direction itself.
   
-  
+  A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the resistance to change in a linear way. The further you turn the knob to the right the higher the resistance. The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
 
 ## Plenary
 
