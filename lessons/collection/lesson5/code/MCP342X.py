@@ -33,23 +33,23 @@ class MCP342X(object):
     shared = None
     def __init__(self, address = 0x69):
         self.dev = i2c(address, 1)
-		self.max = 32767.0 #15 bits
+        self.max = 32767.0 #15 bits
         if MCP342X.shared == None:
             MCP342X.shared = self
         self.reset()
 
     def reset(self):
-		self.dev.write(CMD_ZERO)
+        self.dev.write(CMD_ZERO)
         self.dev.write(CMD_RESET)
         msleep(1)
 
     def latch(self):
-		self.dev.write(CMD_ZERO)
+        self.dev.write(CMD_ZERO)
         self.dev.write(CMD_LATCH)
         msleep(1)
 
     def conversion(self):
-		self.dev.write(CMD_ZERO)
+        self.dev.write(CMD_ZERO)
         self.dev.write(CMD_CONVERSION)
         msleep(1)
 
