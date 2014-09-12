@@ -136,7 +136,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
   `sudo wget https://raw.githubusercontent.com/raspberrypilearning/weather-station-sow/master/lessons/collection/lesson5/code/MCP342X.py --no-check-certificate`
 
-  This will download a file called: `MCP342X.py`
+  This will download a file called: `MCP342X.py` (MCP3427 is the name of the ADC chip by the way).
 
 1. Let's test the library. Enter the commands below:
   ```bash
@@ -178,7 +178,10 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import time` | Imports the `time` library.|
   |`from MCP342X import *` | Imports the `MCP342X` library that allows us to talk to the ADC chip.|
-  |`adc = MCP342X()` | The `MCP342X` library contains a template of code called a *class*, this line creates an instance of that class and calls it `adc`. We can then use the `adc.` syntax to give us access to the ADC functions.|
+  |`adc = MCP342X()` | This creates a special kind of variable called `adc` which is an [object](http://en.wikipedia.org/wiki/Object-oriented_programming). We can then use the Python syntax `adc.` to get access to the ADC functions.|
+  |`while True:` | An infinite loop that must be manually aborted by the user. All lines of code that belong to this loop must be *indented*.|
+  |`print adc.read(0)` | This goes inside the `adc` object and calls the `read` function, passing in the channel number (which is zero). This instructs the ADC to take a reading from channel zero and return the answer, this is then passed back to the `print` command which will display it on the screen.|
+  |`time.sleep(0.1)` | Pauses the execution of the program so that the infinite loop doesn't overload the CPU.|
   
 ## Plenary
 
