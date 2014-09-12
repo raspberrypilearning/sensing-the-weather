@@ -188,9 +188,25 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
   `sudo chmod +x wind_direction.py`
   
-1. Run your code and remember to use `sudo`: 
+1. Ensure that the wind vane is connected to the socket marked *WIND* on the weather expansion board.
+1. Run the code and remember to use the `sudo` command:
 
   `sudo ./wind_direction.py`
+
+1. Numbers should begin scrolling up the screen. Slowly rotate the wind vane in a complete circle but stop at each of the major directions for a few seconds at a time. 
+  ```
+  12926
+  12926
+  12926
+  3981
+  3981
+  3981
+  520
+  520
+  520
+  ```
+  You should find that the numbers remain constant when you keep the wind vane still in one position.
+
 
 ## Plenary
 
