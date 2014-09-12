@@ -230,8 +230,13 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   - The number reported by the ADC is always the same (± 1) for a given direction.
   - The numbers bear no relationship to the direction itself.
   
-  A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the resistance to change in a linear way. The further you turn the knob to the right the higher the resistance. The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
+  A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the resistance to change in a linear way. The further you turn the knob to the right the higher the resistance (this would cause the numbers reported by our code to increase and decrease proportionally to the rotation). The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
 
+  They are. Look on page 2 of the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) for a detailed list of the resistor values. But... they have been chosen so that each direction just gives a *distinct* reading compared to all the others. As long as each direction gives us a different reading from the ADC we can work out what direction it is.
+  
+  All we need to do is make our program expect the right numbers and translate them into the corresponding wind direction.
+
+  
 ## Plenary
 
 [Next lesson](../lesson6/README.md)
