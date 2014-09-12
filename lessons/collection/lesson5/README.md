@@ -241,9 +241,17 @@ They have been chosen so that each direction just gives a *distinct* reading com
   
 All we need to do is make our program *expect* the right numbers and translate them into the corresponding wind direction. It's also a sensible idea to represent the wind direction as a number as opposed to the traditional compass names (North, South etc). If we use a number we can then use code to easily compare wind directions and or work out an average.
 
-Because there are 360° in a circle it makes sense to use degrees clockwise from North. So 0° would be North, 90° would be East, 180° South and 270° West for example.
+Because there are 360 degrees in a circle it makes sense to use degrees clockwise from North. So 0° would be North, 90° would be East, 180° South and 270° West for example. So to recap there are going to be 16 possible wind directions that we can detect. There are only 8 reed switches but it's possible for the magnet to close two at the same time when half way between two (which gives us another 8 combinations).
 
-1. Use your [compass direction worksheet](Compass direction.pdf) printout to record the ADC values for each direction. Do the shaded rows first, and only when you've recorded those attempt the white rows. Remember the main four compass directions are embossed onto the lower part of the wind vane.
+1. Run the code again and remember to use the `sudo` command:
+
+  `sudo ./wind_direction.py`
+
+1. Complete the [compass direction worksheet](Compass direction.pdf) and record the ADC values for each direction.
+1. Aim the wind vane at the chosen direction (remember the main four compass directions are embossed onto it) and observe the ADC value repeating on the screen.
+1. Write the number into the corresponding row of the worksheet. If the number is jittering just pick one.
+1. Do the shaded rows first, and only when you've recorded those attempt the white rows.
+1. The white rows are for *half way* directions when two reed switches are closed by the magnet. These can sometimes be quite tricky to find, which is why it's good to have already recorded the value on either side so that you can clearly tell if you've found that sweet spot with the magnet.
 
 ## Plenary
 
