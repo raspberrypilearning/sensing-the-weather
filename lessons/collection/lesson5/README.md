@@ -206,6 +206,16 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   520
   ```
   You should find that the numbers remain constant when you keep the wind vane still in one position.
+  
+1. So what do these numbers mean? As an experiment, leave your program running but disconnect the wind vane from the weather expansion board. You should now see the following output:
+  
+  ```
+  32767
+  32767
+  32767
+  32767
+  32767
+  ```
 
 
 ## Plenary
