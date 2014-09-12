@@ -149,7 +149,26 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   CH1: 32767
   ```
   If you see those two lines then everything is working correctly. Don't worry if the numbers are different.
+
+### Detect wind direction
+
+1. Let's start a new program. Enter the command below:
+
+  `sudo nano wind_direction.py`
   
+1. Enter the code below:
+
+  ```python
+  #!/usr/bin/python
+  import time
+  from MCP342X import *
+  
+  adc = MCP342X()
+  
+  while True:
+     print adc.read(0)
+  ```
+
 ## Plenary
 
 [Next lesson](../lesson6/README.md)
