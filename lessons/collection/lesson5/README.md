@@ -132,38 +132,24 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
   `sudo reboot`
 
-1. Login again as per usual. Now update your local package repository:
-
-  `sudo apt-get update`
-  
-  This may take a few minutes depending on Internet speed at your location.
-
-1. Install the I²C tools package:
-
-  `sudo apt-get install i2c-tools`
-
-  This will also take a few moments.
-
-1. Next we need to download some library code which allows us to access the analogue to digital converter chip. Copy and paste the line below:
+1. Login again as per usual. Next we need to download some library code which allows us to access the analogue to digital converter chip. Copy and paste the line below:
 
   `sudo wget https://raw.githubusercontent.com/raspberrypilearning/weather-station-sow/master/lessons/collection/lesson5/code/MCP342X.py --no-check-certificate`
 
   This will download a file called: `MCP342X.py`
 
 1. Let's test the library. Enter the commands below:
-
   ```bash
   chmod +x MCP342X.py
   sudo ./MCP342X.py
   ```
-  
   The output should look *something* like this:
-  
   ```
   CH0: 32767
   CH1: 32767
   ```
-
+  If you see those two lines then everything is working correctly. Don't worry if the numbers are different.
+  
 ## Plenary
 
 [Next lesson](../lesson6/README.md)
