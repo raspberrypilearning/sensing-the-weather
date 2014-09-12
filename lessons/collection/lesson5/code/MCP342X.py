@@ -61,9 +61,9 @@ class MCP342X(object):
         msleep(300)
 
     def read(self, channel = None):
-		if channel != None:
-			self.configure(channel)
-			
+        if channel != None:
+            self.configure(channel)
+
         data = self.dev.read(3)
         buf = array.array('B', data)
 
