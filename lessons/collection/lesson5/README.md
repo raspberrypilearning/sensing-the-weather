@@ -150,7 +150,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   ```
   If you see those two lines then everything is working correctly. Don't worry if the numbers are different.
   
-  `CH0` and `CH1` refers to the input *channels* on the ADC chip. Channel 0 is connected to the wind vane and channel 1 is connected to the Air Quality sensor (covered in a different lesson).
+  The `CH0` and `CH1` refers to the input *channels* on the ADC chip. Channel 0 is connected to the wind vane and channel 1 is connected to the Air Quality sensor (covered in a different lesson). So, for this lesson, we're only interested in channel 0.
 
 ### Detect wind direction
 
@@ -169,8 +169,17 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   
   while True:
      print adc.read(0)
+     time.sleep(0.1)
   ```
-
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`#!/usr/bin/python` | Denotes this file as a Python program.|
+  |`import time` | Imports the `time` library.|
+  |`from MCP342X import *` | Imports the `MCP342X` library that allows us to talk to the ADC chip.|
+  |`adc = MCP342X()` | The `MCP342X` library contains a template of code called a *class*, this line creates an instance of that class and calls it `adc`. We can then use the `adc.` syntax to give us access to the ADC functions.|
+  
 ## Plenary
 
 [Next lesson](../lesson6/README.md)
