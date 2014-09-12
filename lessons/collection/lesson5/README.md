@@ -248,10 +248,10 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   `sudo ./wind_direction.py`
 
 1. Complete the [compass direction worksheet](Compass direction.pdf) and record the ADC values for each direction.
-1. Aim the wind vane at the chosen direction (remember the main four compass directions are embossed onto it) and observe the ADC value repeating on the screen.
-1. Write the number into the corresponding row of the worksheet. If the number is jittering just pick one.
+1. Aim the wind vane at the chosen direction (remember the main four compass directions are embossed onto the plasic body). Then observe the ADC value repeating on the screen.
+1. Write the number into the corresponding row of the worksheet. If the number is jittering just pick the most frequent one.
 1. Do the shaded rows first, and only when you've recorded those attempt the white rows.
-1. The white rows are for *half way* directions when two reed switches are closed by the magnet. These can sometimes be quite tricky to find, which is why it's good to have already recorded the value on either side so that you can clearly tell if you've found that sweet spot with the magnet.
+1. The white rows are for *half way* directions when two reed switches are closed by the magnet. These can sometimes be quite tricky to find, which is why it's good to have already recorded the value on either side so that you can clearly tell if you've found that sweet spot between the two.
 
 ## Plenary
 
