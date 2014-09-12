@@ -206,7 +206,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   520
   520
   ```
-  You should find that the numbers remain semi-constant when you keep the wind vane still in one position. They may fluctuate by up and down by one or maybe two. This is a phenomenon known as *jitter* and is something that all ADCs do.
+  You should find that the numbers remain semi-constant when you keep the wind vane still in one position. They may fluctuate up and down by one or maybe two. This is a phenomenon known as *jitter* and is something that all ADCs do.
   
 1. So what do these numbers mean? As an experiment, leave your program running but disconnect the wind vane from the weather expansion board. You should now see the following output:
   ```
