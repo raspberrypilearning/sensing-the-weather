@@ -221,7 +221,9 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   
   If you completely disconnect the wind vane, like now, no voltage gets siphoned off to ground and so the full voltage is detected by the ADC and this is why we get the maximum value.
 
-1. Reconnect the wind vane.
+1. Reconnect the wind vane. Rotate it again to ensure the values are changing. You should see the same values as before ± 1. One other thing to note. As the numbers scroll up the screen, do you periodically see `32727` anyway?
+
+  This is happening because the wind vane is not perfect and at some positions the magnet doesn't close any switches. This is the same as having the wind vane completely unplugged. The technical term for this is known as *open circuit*.
 
 ## Plenary
 
