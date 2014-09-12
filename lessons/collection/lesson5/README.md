@@ -149,6 +149,8 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   CH1: 32767
   ```
   If you see those two lines then everything is working correctly. Don't worry if the numbers are different.
+  
+  `CH0` and `CH1` refers to the input *channels* on the ADC chip. Channel 0 is connected to the wind vane and channel 1 is connected to the Air Quality sensor (covered in a different lesson).
 
 ### Detect wind direction
 
