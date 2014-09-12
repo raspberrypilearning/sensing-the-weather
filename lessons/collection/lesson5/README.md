@@ -234,13 +234,14 @@ So from our observations so far we can say the following:
 - The number reported by the ADC is always the same (± 1) for a given direction.
 - The numbers bear no relationship to the direction itself.
   
-A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the resistance to change in a linear way. The further you turn the knob to the right the higher the resistance (this would cause the numbers reported by our code to increase and decrease proportionally to the rotation). The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
+A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the readings to change in a linear way (this would cause the numbers reported by our code to increase and decrease proportionally to the rotation). The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
 
-They have been. Look on page 2 of the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) for a detailed list of the resistor values. But... they have been chosen so that each direction just gives a *distinct* reading compared to all the others. As long as each direction gives us a different reading from the ADC we can work out what direction it is.
+Look on page 2 of the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) for a detailed list of the resistor values. They have been chosen so that each direction just gives a *distinct* reading compared to all the others. But as long as each direction gives us a different reading from the ADC we can work out what direction it is.
   
-All we need to do is make our program expect the right numbers and translate them into the corresponding wind direction.
+All we need to do is make our program *expect* the right numbers and translate them into the corresponding wind direction. It's also a sensible idea to represent the wind direction as a number as opposed to the traditional compass names (North, South etc). If we use a number we can then use code to easily compare wind directions and or work out an average.
 
-  
+There are 360° in a circle so it makes sense to use degrees clockwise from North. 0° would be North, 90° would be East, 180° South and 270° West for example.
+
 ## Plenary
 
 [Next lesson](../lesson6/README.md)
