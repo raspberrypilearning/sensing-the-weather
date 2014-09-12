@@ -223,7 +223,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
 1. Reconnect the wind vane. Rotate it again to ensure the values are changing. You should see the same values as before ± 1. One other thing to note. As the numbers scroll up the screen, do you periodically see `32727` anyway?
 
-  This is happening because the wind vane is not perfect and at some positions the magnet doesn't close any switches. This is the same as having the wind vane completely unplugged. The technical term for this is known as *open circuit*.
+  This is happening because the wind vane is not perfect and at some positions the magnet doesn't close any reed switches. This is the same as having the wind vane completely unplugged. The technical term for this is *open circuit* and we need to find a way to compensate for it (more on this later).
 
 ## Plenary
 
