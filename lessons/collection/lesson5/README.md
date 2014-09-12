@@ -28,7 +28,6 @@ Students should work in pairs. Each pair will require the following equipment:
 - Understand how the wind vane works
 - Be able to differentiate between analogue and digital signals
 - Understand the purpose of an Analogue to Digital Converter
-- Understand digital communication using the I²C protocol
 - Determine the direction of the wind vane
 
 ## Starter
@@ -117,7 +116,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
 *Note: This will only need to be done once. But in a class environment it can help if this step has been done prior to starting the lesson.*
 
-1. Before we can start we need to edit a few files, reboot and then install some software packages. We don't need to understand why or what this means. But, if you really want to know, this basically allows our code to talk to the I²C microchips on the weather expansion board (such as the ADC chip). Enter the following at the command line:
+1. Before we can start we need to edit a few files, reboot and then install some software packages. We don't need to understand why or what this means. But, if you really want to know, this basically allows our code to talk to the [I²C](http://en.wikipedia.org/wiki/I%C2%B2C) microchips on the weather expansion board (such as the ADC chip). Enter the following at the command line:
 
   `sudo nano /etc/modprobe.d/raspi-blacklist.conf`
 
@@ -145,9 +144,25 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 
   This will also take a few moments.
 
-1. Next we need to download some library code which allows us to use the analogue to digital chip.
+1. Next we need to download some library code which allows us to access the analogue to digital converter chip. Copy and paste the line below:
 
+  `sudo wget https://raw.githubusercontent.com/raspberrypilearning/weather-station-sow/master/lessons/collection/lesson5/code/MCP342X.py --no-check-certificate`
 
+  This will download a file called: `MCP342X.py`
+
+1. Let's test the library. Enter the commands below:
+
+  ```bash
+  chmod +x MCP342X.py
+  sudo ./MCP342X.py
+  ```
+  
+  The output should look *something* like this:
+  
+  ```
+  CH0: 32767
+  CH1: 32767
+  ```
 
 ## Plenary
 
