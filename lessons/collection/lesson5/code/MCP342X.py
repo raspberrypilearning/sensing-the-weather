@@ -78,8 +78,8 @@ class MCP342X(object):
         return result
 
 if __name__ == "__main__":
-	if MCP342X.shared == None:
-		adc = MCP342X()
+    if MCP342X.shared == None:
+        adc = MCP342X()
 	
     adc = MCP342X.shared
     adc.conversion()
