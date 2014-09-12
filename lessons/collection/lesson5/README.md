@@ -152,7 +152,7 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   
   The `CH0` and `CH1` refers to the input *channels* on the ADC chip. Channel 0 is connected to the wind vane and channel 1 is connected to the Air Quality sensor (covered in a different lesson). So, for this lesson, we're only interested in channel 0.
 
-### Detect wind direction
+### Detect wind vane rotation
 
 1. Let's start a new program that will repeatedly display the value of channel 0 on the ADC. Enter the command below:
 
@@ -224,17 +224,21 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
 1. Reconnect the wind vane. Rotate it again to ensure the numbers are changing. You should see the same values as before ± 1 for a given direction. One other thing to note. As the numbers scroll up the screen, do you periodically see `32767` anyway?
 
   This is happening because the wind vane is not perfect and at some positions the magnet *doesn't close any reed switches*. This is the same as having the wind vane completely unplugged. The technical term for this is *open circuit* and we need to find a way to compensate for it in our code (more on this later).
-  
-  So from our observations so far we can say the following:
-  
-  - The number reported by the ADC is always the same (± 1) for a given direction.
-  - The numbers bear no relationship to the direction itself.
-  
-  A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the resistance to change in a linear way. The further you turn the knob to the right the higher the resistance (this would cause the numbers reported by our code to increase and decrease proportionally to the rotation). The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
 
-  They are. Look on page 2 of the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) for a detailed list of the resistor values. But... they have been chosen so that each direction just gives a *distinct* reading compared to all the others. As long as each direction gives us a different reading from the ADC we can work out what direction it is.
+1. Press `Ctrl - C` to stop the program.
+
+### Translate into wind direction
+
+So from our observations so far we can say the following:
   
-  All we need to do is make our program expect the right numbers and translate them into the corresponding wind direction.
+- The number reported by the ADC is always the same (± 1) for a given direction.
+- The numbers bear no relationship to the direction itself.
+  
+A volume knob doesn't seem like such a good comparison now. With a volume knob you would expect the resistance to change in a linear way. The further you turn the knob to the right the higher the resistance (this would cause the numbers reported by our code to increase and decrease proportionally to the rotation). The wind vane doesn't work like that, the resistors paired with each reed switch have seemingly been chosen randomly.
+
+They have been. Look on page 2 of the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) for a detailed list of the resistor values. But... they have been chosen so that each direction just gives a *distinct* reading compared to all the others. As long as each direction gives us a different reading from the ADC we can work out what direction it is.
+  
+All we need to do is make our program expect the right numbers and translate them into the corresponding wind direction.
 
   
 ## Plenary
