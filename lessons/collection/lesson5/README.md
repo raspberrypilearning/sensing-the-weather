@@ -299,13 +299,17 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   NNW ]
   
   def get_direction(adc_value, jitter_margin):
-      list_pos = 0
-      for i in range(len(lookup_list)):
-          list_value = lookup_list[i]
-          if adc_value >= (list_value - jitter_margin) and adc_value <= (list_value + jitter_margin):
-              list_pos = i
+      found_pos = 0
+      for loop_pos in range(len(lookup_list)):
+          test_value = lookup_list[loop_pos]
+          
+          bottom_end = test_value - jitter_margin
+          top_end = test_value + jitter_margin
+          
+          if adc_value >= bottom_end and adc_value <= top_end:
+              found_pos = loop_pos
               break
-      return list_pos * 22.5
+      return found_pos * 22.5
   
   adc = MCP342X()
   
