@@ -307,11 +307,11 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   9378
   ]
   
-  def get_dir(adc_value, margin):
+  def get_dir(adc_value, jitter_margin):
       list_pos = 0
       for i in range(len(lookup_list)):
           list_value = lookup_list[i]
-          if adc_value >= (list_value - margin) and adc_value <= (list_value + margin):
+          if adc_value >= (list_value - jitter_margin) and adc_value <= (list_value + jitter_margin):
               list_pos = i
               break
       return list_pos * 22.5
