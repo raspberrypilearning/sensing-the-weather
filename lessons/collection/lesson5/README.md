@@ -250,7 +250,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 1. Aim the wind vane at the chosen direction (remember the main four compass directions are embossed onto the plasic body). Then observe the ADC value repeating on the screen.
 1. Write the number into the corresponding row of the worksheet. If the number is jittering just pick the most frequent one.
 1. Do the shaded rows first, and only when you've recorded those attempt the white rows.
-1. The white rows are for *half way* directions when two reed switches are closed by the magnet. These can sometimes be quite tricky to find, which is why it's good to have already recorded the value on either side so that you can clearly tell if you've found that sweet spot between the two.
+1. The white rows are for *half way* directions when two reed switches are closed by the magnet. These can sometimes be quite tricky to find, which is why it's good to have already recorded the value on either side so that you can clearly tell if you've found that sweet spot between the two. Sometimes it can help if you apply a little pressure to front of the rotary part as this makes the magnet go slightly closer to the reed switches. Don't be rough with it though, patience is a virtue.
 1. Press `Ctrl - C` to stop the program when you have finished.
 
 ### Program the translation in code
@@ -258,6 +258,36 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 1. Now we can program our code to take the number from the ADC and translate it into angle in degrees from north. Let's continue editing the code:
 
   `nano wind_direction.py`
+
+  Do not take values from other people in the class. You will find that each wind vane may produce slightly different adc readings. Only use your own measurements in the code.
+
+1. We're going to use a Python list to record our measurements. A typical list looks like this (don't type this in, it's just an example):
+
+  `mylist = ['Cat', 'Dog', 'Hamster']`
+  
+  Lists can also contain numbers:
+
+  `mylist = [13, 14, 15]`
+  
+  Look again at your worksheet and you'll notice that, for each row, the degrees from north value increases by 22.5. This is because there are 16 directions that we can detect and (360 ÷ 16 = 22.5).
+  
+  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from North.
+  
+1. We're going to follow this general plan for our code:
+  - Take a reading from the ADC
+  - Find the value in our Python list
+  - Note the list *position* where we found the ADC value (like the Row number)
+  - Multiply the list position number by 22.5 to calculate the angle
+  
+  Let's do an example. Say the ADC value was about 520. Counting from zero we would find this at position 4 in the list. We then multiply 22.5 by 4 and get 90 degrees which is East.
+
+1. Modify your code to match the code below.
+
+
+
+
+
+
 
 ## Plenary
 
