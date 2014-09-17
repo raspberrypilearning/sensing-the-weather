@@ -316,6 +316,14 @@ All we need to do is make our program *expect* the right numbers and translate t
       print adc_value, get_direction(adc_value, 10)
       time.sleep(0.1)
   ```
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`#!/usr/bin/python` | Denotes this file as a Python program.|
+  |`import time` | Imports the `time` library.|
+  |`from MCP342X import *` | Imports the `MCP342X` library that allows us to talk to the ADC chip.|
+  
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
 ```
