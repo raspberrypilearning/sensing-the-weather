@@ -307,7 +307,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   9378
   ]
   
-  def get_dir(adc_value, jitter_margin):
+  def get_direction(adc_value, jitter_margin):
       list_pos = 0
       for i in range(len(lookup_list)):
           list_value = lookup_list[i]
@@ -320,10 +320,9 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   
   while True:
       adc_value = adc.read(0)
-      print adc_value, get_dir(adc_value, 10)
+      print get_direction(adc_value, 10)
       time.sleep(0.1)
   ```
-
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
 
