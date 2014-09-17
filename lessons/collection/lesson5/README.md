@@ -239,9 +239,7 @@ A volume knob doesn't seem like such a good comparison now. With a volume knob y
 
 They have been chosen so that each direction just gives a *distinct* reading compared to all the others. As long as each direction gives us a different reading from the ADC we can work out what direction it is.
   
-All we need to do is make our program *expect* the right numbers and translate them into the corresponding wind direction. It's also a sensible idea to represent the wind direction as a number as opposed to the traditional compass names (North, South etc). If we use a number we can then use code to easily compare wind directions and or work out an average.
-
-Because there are 360 degrees in a circle it makes sense to use degrees clockwise from North. So 0° would be North, 90° would be East, 180° South and 270° West for example. So to recap there are going to be 16 possible wind directions that we can detect. There are only 8 reed switches but it's possible for the magnet to close two at the same time when half way between two (which gives us another 8 combinations).
+All we need to do is make our program *expect* the right numbers and translate them into the corresponding wind direction. Because there are 360 degrees in a circle it makes sense to use degrees clockwise from North. So 0° would be North, 90° would be East, 180° South and 270° West for example. If we use a number we can then use code to easily compare wind directions and or work out an average. So to recap there are going to be 16 possible wind directions that we can detect. There are only 8 reed switches but it's possible for the magnet to close two at the same time when half way between two (which gives us another 8 combinations).
 
 1. Run the code again and remember to use the `sudo` command:
 
@@ -326,7 +324,6 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 7202 225.0
 28023 270.0
 28026 270.0
-7203 225.0
 7203 225.0
 7203 225.0
 1969 180.0
