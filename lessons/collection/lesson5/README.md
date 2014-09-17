@@ -281,48 +281,50 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   
   Let's do an example. Say the ADC value was about 520. Counting from zero we would find this at position 4 in the list. We then multiply 22.5 by 4 and get 90 degrees which is East.
 
-1. Modify your code to match the code below.
+1. Modify your code to match the code below, `lookup_list` should contain the *ADC number* values from your worksheet. Enter them on separate rows as they appear on your worksheet, don't forget that each one must be followed by a comma.
 
-```python
-#!/usr/bin/python
-import time
-from MCP342X import *
+  ```python
+  #!/usr/bin/python
+  import time
+  from MCP342X import *
+  
+  lookup_list = [
+  12926,
+  3234,
+  3981,
+  462,
+  520,
+  358,
+  1128,
+  726,
+  1966,
+  1593,
+  7205,
+  6469,
+  28030,
+  15414,
+  20352,
+  9378
+  ]
+  
+  def get_dir(adc_value, margin):
+      list_pos = 0
+      for i in range(len(lookup_list)):
+          list_value = lookup_list[i]
+          if adc_value >= (list_value - margin) and adc_value <= (list_value + margin):
+              list_pos = i
+              break
+      return list_pos * 22.5
+  
+  adc = MCP342X()
+  
+  while True:
+      adc_value = adc.read(0)
+      print adc_value, get_dir(adc_value, 10)
+      time.sleep(0.1)
+  ```
 
-lookup_list = [
-12926,
-3234,
-3981,
-462,
-520,
-358,
-1128,
-726,
-1966,
-1593,
-7205,
-6469,
-28030,
-15414,
-20352,
-9378
-]
-
-def get_dir(adc_value, margin):
-    list_pos = 0
-    for i in range(len(lookup_list)):
-        list_value = lookup_list[i]
-        if adc_value >= (list_value - margin) and adc_value <= (list_value + margin):
-            list_pos = i
-            break
-    return list_pos * 22.5
-
-adc = MCP342X()
-
-while True:
-    adc_value = adc.read(0)
-    print adc_value, get_dir(adc_value, 10)
-    time.sleep(0.1)
-```
+1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
 
 
