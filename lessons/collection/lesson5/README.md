@@ -315,13 +315,27 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   
   while True:
       adc_value = adc.read(0)
-      print get_direction(adc_value, 10)
+      print adc_value, get_direction(adc_value, 10)
       time.sleep(0.1)
   ```
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
-
-
+```
+7202 225.0
+7202 225.0
+7202 225.0
+28023 270.0
+28026 270.0
+7203 225.0
+7203 225.0
+7203 225.0
+1969 180.0
+1968 180.0
+7202 225.0
+7203 225.0
+28021 270.0
+28027 270.0
+```
 
 
 ## Plenary
