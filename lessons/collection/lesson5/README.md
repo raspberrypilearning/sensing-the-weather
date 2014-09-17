@@ -263,7 +263,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 
 1. We're going to use a Python list to record our measurements. A typical list looks like this (don't type this in):
 
-  `mylist = ['Cat', 'Dog', 'Hamster']`
+  `mylist = ['Cat', 'Dog', 'Parrot']`
   
   Square brackets `[]` are used to *enclose* a list and a comma `,` separates items *in* the list. Lists can also contain numbers:
 
@@ -271,17 +271,9 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   
   Look again at your worksheet and you'll notice that, for each row, the degrees from north value increases by 22.5. This is because there are 16 directions that we can detect and (360 ÷ 16 = 22.5).
   
-  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from north.
-  
-1. We're going to follow this general plan for our code:
-  - Take a reading from the ADC
-  - Find the value in our Python list
-  - Note the list *position* where we found the ADC value (like the Row number)
-  - Multiply the list position number by 22.5 to calculate the angle
-  
-  Let's do an example. Say the ADC value was about 520. Counting from zero we would find this at position 4 in the list. We then multiply 22.5 by 4 and get 90 degrees which is East.
+  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from north. Try this on a calculator now.
 
-1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding ADC number from your worksheet. Don't forget that each one must be followed by a comma except the last one.
+1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding *ADC number* from your worksheet. Don't forget that each one must be followed by a comma except the last one.
 
   ```python
   #!/usr/bin/python
