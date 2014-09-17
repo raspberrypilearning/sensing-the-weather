@@ -265,7 +265,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 
   `mylist = ['Cat', 'Dog', 'Hamster']`
   
-  Lists can also contain numbers:
+  Square brackets `[]` are used to *enclose* a list and a comma `,` separates items *in* the list. Lists can also contain numbers:
 
   `mylist = [13, 14, 15]`
   
@@ -281,7 +281,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   
   Let's do an example. Say the ADC value was about 520. Counting from zero we would find this at position 4 in the list. We then multiply 22.5 by 4 and get 90 degrees which is East.
 
-1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding ADC number from your worksheet. Don't forget that each one must be followed by a comma!
+1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding ADC number from your worksheet. Don't forget that each one must be followed by a comma except the last one.
 
   ```python
   #!/usr/bin/python
@@ -304,8 +304,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   W,
   WNW,
   NW,
-  NNW
-  ]
+  NNW ]
   
   def get_direction(adc_value, jitter_margin):
       list_pos = 0
