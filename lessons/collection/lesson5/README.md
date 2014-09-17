@@ -169,8 +169,8 @@ To do this we're going to use a clever microchip called an [Analogue to Digital 
   adc = MCP342X()
   
   while True:
-     print adc.read(0)
-     time.sleep(0.1)
+      print adc.read(0)
+      time.sleep(0.1)
   ```
   **Code walkthrough:**
   
@@ -261,7 +261,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 
   Do not take values from other people in the class. You will find that each wind vane may produce slightly different adc readings. Only use your own measurements in the code.
 
-1. We're going to use a Python list to record our measurements. A typical list looks like this (don't type this in, it's just an example):
+1. We're going to use a Python list to record our measurements. A typical list looks like this (don't type this in):
 
   `mylist = ['Cat', 'Dog', 'Hamster']`
   
@@ -271,7 +271,7 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
   
   Look again at your worksheet and you'll notice that, for each row, the degrees from north value increases by 22.5. This is because there are 16 directions that we can detect and (360 ÷ 16 = 22.5).
   
-  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from North.
+  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from north.
   
 1. We're going to follow this general plan for our code:
   - Take a reading from the ADC
@@ -283,7 +283,46 @@ Because there are 360 degrees in a circle it makes sense to use degrees clockwis
 
 1. Modify your code to match the code below.
 
+```python
+#!/usr/bin/python
+import time
+from MCP342X import *
 
+lookup_list = [
+12926,
+3234,
+3981,
+462,
+520,
+358,
+1128,
+726,
+1966,
+1593,
+7205,
+6469,
+28030,
+15414,
+20352,
+9378
+]
+
+def get_dir(adc_value, margin):
+    list_pos = 0
+    for i in range(len(lookup_list)):
+        list_value = lookup_list[i]
+        if adc_value >= (list_value - margin) and adc_value <= (list_value + margin):
+            list_pos = i
+            break
+    return list_pos * 22.5
+
+adc = MCP342X()
+
+while True:
+    adc_value = adc.read(0)
+    print adc_value, get_dir(adc_value, 10)
+    time.sleep(0.1)
+```
 
 
 
