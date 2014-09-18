@@ -324,6 +324,9 @@ All we need to do is make our program *expect* the right numbers and translate t
   |`import time` | Imports the `time` library.|
   |`from MCP342X import *` | Imports the `MCP342X` library that allows us to talk to the ADC chip.|
   | `lookup_list = [ ]` | Creates a Python list object called `lookup_list`. The list will records the values from your compass direction worksheet so that they can be used by our program. The angle brackets `[]` enclose the list and the commas `,` separate items inside it. It's perfectly okay to write the list over several lines like this. As long as all the brackets and commas are there it will work. |
+  | `def get_direction(adc_value, jitter_margin):` | Defines a function called `get_direction` that will take a number from the ADC, find its position number `lookup_list`, multiply the position number by 22.5 and give us the angle from north in degrees. It takes two parameters; `adc_value` is the number we just read from the ADC and `jitter_margin` is the error margin to compensate for jitter. |
+  | `found_pos = 0` | Creates a variable called `found_pos` which will be used to record the list position number where we find a match for `adc_value`. |
+  | `for loop_pos in range(len(lookup_list)):` | |
   
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
