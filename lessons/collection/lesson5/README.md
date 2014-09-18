@@ -323,6 +323,7 @@ All we need to do is make our program *expect* the right numbers and translate t
   |`#!/usr/bin/python` | Denotes this file as a Python program.|
   |`import time` | Imports the `time` library.|
   |`from MCP342X import *` | Imports the `MCP342X` library that allows us to talk to the ADC chip.|
+  ! `lookup_list = [ ]` | Creates a Python list object called `lookup_list`. The list will records the values from your compass direction worksheet so that they can be used by our program. The angle brackets `[]` enclose the list and the commas `,` separate items inside it. It's perfectly okay to write the list over several lines like this. As long as all the brackets and commas are there it will work. |
   
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
