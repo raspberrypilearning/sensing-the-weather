@@ -271,7 +271,7 @@ All we need to do is make our program *expect* the right numbers and translate t
   
   Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from North. Try this on a calculator now.
 
-1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding *ADC number* from your worksheet. Don't forget that each one must be followed by a comma except the last one.
+1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding *ADC number* from your worksheet. Don't forget that each one must be followed by a comma except the last one. Do not leave any of the letters in, if you do the code will not run and you'll see `NameError: name 'N' is not defined` for example.
 
   ```python
   #!/usr/bin/python
