@@ -253,7 +253,7 @@ All we need to do is make our program *expect* the right numbers and translate t
 
 ### Program the translation in code
 
-1. Now we can program our code to take the number from the ADC and translate it into angle in degrees from north. Let's continue editing the code:
+1. Now we can program our code to take the number from the ADC and translate it into angle in degrees from North. Let's continue editing the code:
 
   `nano wind_direction.py`
 
@@ -267,9 +267,9 @@ All we need to do is make our program *expect* the right numbers and translate t
 
   `mylist = [13, 14, 15]`
   
-  Look again at your worksheet and you'll notice that, for each row, the degrees from north value increases by 22.5. This is because there are 16 directions that we can detect and (360 ÷ 16 = 22.5).
+  Look again at your worksheet and you'll notice that, for each row, the degrees from North value increases by 22.5. This is because there are 16 directions that we can detect and (360 ÷ 16 = 22.5).
   
-  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from north. Try this on a calculator now.
+  Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from North. Try this on a calculator now.
 
 1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding *ADC number* from your worksheet. Don't forget that each one must be followed by a comma except the last one.
 
@@ -326,15 +326,17 @@ All we need to do is make our program *expect* the right numbers and translate t
   |`import time` | Imports the `time` library.|
   |`from MCP342X import *` | Imports the `MCP342X` library that allows us to talk to the ADC chip.|
   | `lookup_list = [ ]` | Creates a Python list object called `lookup_list`. The list will records the values from your compass direction worksheet so that they can be used by our program. The angle brackets `[]` enclose the list and the commas `,` separate items inside it. It's perfectly okay to write the list over several lines like this. As long as all the brackets and commas are there it will work. |
-  | `def get_direction(adc_value, jitter_margin):` | Defines a function called `get_direction` that will take a number from the ADC, find its position number in `lookup_list`, multiply the position number by 22.5 and give us the angle from north in degrees. It takes two parameters. Firstly `adc_value` is the number we just read from the ADC and secondly `jitter_margin` is the error margin to compensate for jitter. |
-  | `angle = None` | Creates a variable called `angle` which we will set to the corresponding angle from north when we find a match for `adc_value`. We initialise it with `None` so that we can detect when`adc_value` does not find a match.|
+  | `def get_direction(adc_value, jitter_margin):` | Defines a function called `get_direction` that will take a number from the ADC, find its position number in `lookup_list`, multiply the position number by 22.5 and give us the angle from North in degrees. It takes two parameters. Firstly `adc_value` is the number we just read from the ADC and secondly `jitter_margin` is the error margin to compensate for jitter. |
+  | `angle = None` | Creates a variable called `angle` which we will set to the corresponding angle from North when we find a match for `adc_value`. We initialise it with `None` so that we can detect when`adc_value` does not find a match.|
   | `for loop_pos in range(len(lookup_list)):` | A for loop is used when you know exactly how many times you need to loop for (as opposed to a while loop where you need to wait for a particular condition to be met before exiting the loop). Here we want to loop over each item in the `lookup_list` to try and find a match for `adc_value` but we need to keep track of the list position numbers. So to do this we use the `range` function and pass in the length of `lookup_list` given by the `len` function. This makes us loop over a number range from 0 to 15 which are essentially the row numbers from your worksheet. So by doing this the `loop_pos` variable will increment by one each time around the loop giving us the list position number. |
   |`lookup_value = lookup_list[loop_pos]` | Declares a variable called `lookup_value` and sets it to the corresponding value from `lookup_list` at the position (in the list) specified by `loop_pos` (note the use of angle brackets `[ ]`), `lookup_value` will then contain the number want to compare `adc_value` with. So as `loop_pos` increments for each iteration of the loop `lookup_value` will contain the next value from `lookup_list`.|
   | `bottom_end = lookup_value - jitter_margin` | To compensate for jitter we need to know if `adc_value` is within an acceptable range either above or blow `lookup_value`. This is what `jitter_margin` is for. So here we declare a variable called `bottom_end` and set it to `lookup_value` *minus* `jitter_margin`, this gives us the lowest possible number that `adc_value` can be for it to match.|
   | `top_end = lookup_value + jitter_margin` | Now we do the opposite, we declare a variable called `top_end` and set it to `lookup_value` *plus* `jitter_margin` to give us the highest possible number that `adc_value` can be for it to match.|
   | `if adc_value >= bottom_end and adc_value <= top_end:` | So does `adc_value` fall within the acceptable range? We now use a Python *if statement* to test whether `adc_value` is greater than or equal to `bottom_end` *and* less than or equal to `top_end`.|
-  | `angle = loop_pos * 22.5` | A match has been found, so this sets `angle` to `loop_pos` multiplied by 22.5 to give us the angle from north for the current list position number. |
-  | `break` | Now that we've got the angle from North we don't need to continue with the for loop, so we use the `break` command to abort (break out of) the loop early.| 
+  | `angle = loop_pos * 22.5` | A match has been found, so this sets `angle` to `loop_pos` multiplied by 22.5 to give us the angle from North for the current list position number. |
+  | `break` | Now that we've got the angle from North we don't need to continue with the `for` loop, so we use the `break` command to abort (break out of) the loop early.|
+  | `return angle` | This will return whatever is in the `angle` variable as the result of the function. If a match for `adc_value` was found it will contain a number representing the angle. If no match was found then it will have remained unchanged from when we initialised it with `None`. |
+  
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
 ```
