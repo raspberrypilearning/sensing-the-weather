@@ -297,7 +297,8 @@ All we need to do is make our program *expect* the right numbers and translate t
   NNW ]
   
   def get_direction(adc_value, jitter_margin):
-      found_pos = 0
+      found_pos = None
+      
       for loop_pos in range(len(lookup_list)):
           lookup_value = lookup_list[loop_pos]
           
@@ -307,7 +308,11 @@ All we need to do is make our program *expect* the right numbers and translate t
           if adc_value >= bottom_end and adc_value <= top_end:
               found_pos = loop_pos
               break
-      return found_pos * 22.5
+              
+      if found_pos != None:
+          return found_pos * 22.5
+      else:
+          return None
   
   adc = MCP342X()
   
