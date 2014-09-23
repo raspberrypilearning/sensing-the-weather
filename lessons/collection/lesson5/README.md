@@ -299,16 +299,15 @@ All we need to do is make our program *expect* the right numbers and translate t
   def get_direction(adc_value, jitter_margin):
       angle = None
       
-      for loop_pos in range(len(lookup_list)):
-          lookup_value = lookup_list[loop_pos]
-          
-          bottom_end = lookup_value - jitter_margin
-          top_end = lookup_value + jitter_margin
-          
+      for i, value in enumerate(lookup_list):
+
+          bottom_end = value - jitter_margin
+          top_end = value + jitter_margin
+
           if adc_value >= bottom_end and adc_value <= top_end:
-              angle = loop_pos * 22.5
+              angle = i * 22.5
               break
-              
+      
       return angle
   
   adc = MCP342X()
