@@ -330,7 +330,7 @@ All we need to do is make our program *expect* the right numbers and translate t
   |`lookup_value = lookup_list[loop_pos]` | Declares a variable called `lookup_value` and sets it to the corresponding value from `lookup_list` at the position (in the list) specified by `loop_pos` (note the use of angle brackets `[ ]`), `lookup_value` will then contain the number want to compare `adc_value` with. So as `loop_pos` increments for each iteration of the loop `lookup_value` will contain the next value from `lookup_list`.|
   | `bottom_end = lookup_value - jitter_margin` | To compensate for jitter we need to know if `adc_value` is within an acceptable range either above or blow `lookup_value`. This is what `jitter_margin` is for. So here we declare a variable called `bottom_end` and set it to `lookup_value` *minus* `jitter_margin`, this gives us the lowest possible number that `adc_value` can be for it to match.|
   | `top_end = lookup_value + jitter_margin` | Now we do the opposite, we declare a variable called `top_end` and set it to `lookup_value` *plus* `jitter_margin` to give us the highest possible number that `adc_value` can be for it to match.|
-  | `if adc_value >= bottom_end and adc_value <= top_end:` | We now use a Python if statement to test if `adc_value` is greater than or equal to `bottom_end` *and* less than or equal to `top_end`. Meaning that `adc_value` falls within the acceptable range.|
+  | `if adc_value >= bottom_end and adc_value <= top_end:` | So does `adc_value` fall within the acceptable range? We now use a Python *if statement* to test whether `adc_value` is greater than or equal to `bottom_end` *and* less than or equal to `top_end`.|
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
 ```
