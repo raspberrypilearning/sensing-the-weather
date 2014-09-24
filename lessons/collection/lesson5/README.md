@@ -360,8 +360,9 @@ All we need to do is make our program *expect* the right numbers and translate t
   1969 180.0
   ```
 
-  The first number on each line is the raw ADC measurement, the second is the result of our conversion to an angle from North.
-1. Do you see any lines with `None` on them? This should be expected if the raw measurement was `32767` (meaning open circuit, the same as having the wind vane disconnected).
+  The first number on each line is the raw ADC measurement, the second is the result of its conversion to an angle from North.
+1. Do you see any lines with `None` on them? This should be expected if the raw measurement was `32767` (meaning open circuit, the same as having the wind vane disconnected). If, however, you see a raw measurement that is less than 32767 but the converted value was still `None` then this indicates a problem with the values in `lookup_list` in your code.
+1. Take some time now to iron out any issues or gaps where a `None` is occurring. Do this by moving the wind vane and finding exactly where the `None` value occurs, make a note of the raw measurement and update your code accordingly. Remember to press `Ctrl - C` to stop the program when you need to edit the code.
 
 ## Plenary
 
