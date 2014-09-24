@@ -344,6 +344,7 @@ All we need to do is make our program *expect* the right numbers and translate t
 
   `sudo ./wind_direction.py`
 1. Numbers should begin scrolling up the screen. Slowly rotate the wind vane in a complete circle but stop at each of the major directions for a few seconds at a time. This is the kind of output you should see:
+
   ```
   7201 225.0
   1129 135.0
@@ -358,6 +359,7 @@ All we need to do is make our program *expect* the right numbers and translate t
   1129 135.0
   1969 180.0
   ```
+
   The first number on each line is the raw ADC measurement, the second is the result of our conversion to an angle from North.
 1. Do you see any lines with `None` on them? This should be expected if the raw measurement was `32767` (meaning open circuit, the same as having the wind vane disconnected).
 
