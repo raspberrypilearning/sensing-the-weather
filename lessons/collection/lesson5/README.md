@@ -273,7 +273,7 @@ All we need to do is make our program *expect* the right numbers and translate t
 
 1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding *ADC number* from your worksheet. Don't forget that each one must be followed by a comma except the last one. Do not leave any of the letters in, if you do the code will not run and you'll see `NameError: name 'N' is not defined` for example.
   
-  The hash `#` symbol in Python denotes a comment. So if you write `#dave was here` the computer will not try to run that as a command. The hash symbol is used below to make sure you don't lose which direction each line was for.
+  The hash `#` symbol in Python denotes a comment. So if you write `#dave was here` the computer will not try to run that as a command. The hash symbol is used below to make sure you don't lose which direction each line is for.
 
   ```python
   #!/usr/bin/python
