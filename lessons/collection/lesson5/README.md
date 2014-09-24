@@ -340,23 +340,26 @@ All we need to do is make our program *expect* the right numbers and translate t
   |`time.sleep(0.1)` | Pauses the execution of the program so that the infinite loop doesn't overload the CPU.|
   
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
+1. Run the code and remember to use the `sudo` command:
 
-```
-7202 225.0
-7202 225.0
-7202 225.0
-28023 270.0
-28026 270.0
-7203 225.0
-7203 225.0
-1969 180.0
-1968 180.0
-7202 225.0
-7203 225.0
-28021 270.0
-28027 270.0
-```
-
+  `sudo ./wind_direction.py`
+1. Numbers should begin scrolling up the screen. Slowly rotate the wind vane in a complete circle but stop at each of the major directions for a few seconds at a time. This is the kind of output you should see:
+  ```
+  7201 225.0
+  1129 135.0
+  1129 135.0
+  1129 135.0
+  1970 180.0
+  1970 180.0
+  32767 None
+  1129 135.0
+  1970 180.0
+  1969 180.0
+  1129 135.0
+  1969 180.0
+  ```
+  The first number on each line is the raw ADC measurement, the second is the result of our conversion to an angle from North.
+1. Do you see any lines with `None` on them? This should be expected if the raw measurement was `32767` (meaning open circuit, the same as having the wind vane disconnected).
 
 ## Plenary
 
