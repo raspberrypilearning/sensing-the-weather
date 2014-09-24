@@ -272,6 +272,8 @@ All we need to do is make our program *expect* the right numbers and translate t
   Look at the **Row** column on your worksheet. If you multiply the row number by 22.5 you get the degrees from North. Try this on a calculator now.
 
 1. Modify your code to match the code below. Note that `lookup_list` should contain the *ADC number* values from your worksheet. Replace the direction letters (N, NNE, NE etc) with the corresponding *ADC number* from your worksheet. Don't forget that each one must be followed by a comma except the last one. Do not leave any of the letters in, if you do the code will not run and you'll see `NameError: name 'N' is not defined` for example.
+  
+  The hash `#` symbol in Python denotes a comment. So if you write `#dave was here` the computer will not try to run that as a command. The hash symbol is used below to make sure you don't lose which direction each line was for.
 
   ```python
   #!/usr/bin/python
@@ -279,22 +281,23 @@ All we need to do is make our program *expect* the right numbers and translate t
   from MCP342X import *
   
   lookup_list = [
-  N,
-  NNE,
-  NE,
-  ENE,
-  E,
-  ESE,
-  SE,
-  SSE,
-  S,
-  SSW,
-  SW,
-  WSW,
-  W,
-  WNW,
-  NW,
-  NNW ]
+  N, #North
+  NNE, #North North East
+  NE, #North East
+  ENE, #East North East
+  E, #East
+  ESE, #East South East
+  SE, #South East
+  SSE, #South South East
+  S, #South
+  SSW, #South South West
+  SW, #South West
+  WSW, #West South West
+  W, #West
+  WNW, #West North West
+  NW, #North West
+  NNW #North North West
+  ]
   
   def get_direction(adc_value, jitter_margin):
       angle = None
