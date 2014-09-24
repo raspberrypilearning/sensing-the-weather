@@ -332,7 +332,12 @@ All we need to do is make our program *expect* the right numbers and translate t
   | `if adc_value >= bottom_end and adc_value <= top_end:` | So does `adc_value` fall within the acceptable range? We now use a Python *if* statement to test whether `adc_value` is greater than or equal to `bottom_end` *and* less than or equal to `top_end`.|
   | `angle = i * 22.5` | A match has been found, so this sets `angle` to `i` multiplied by 22.5 to give us the angle from North for the current list position number. |
   | `break` | Now that we've got the angle from North we don't need to continue with the `for` loop, so we use the `break` command to abort (break out of) the loop early.|
-  | `return angle` | This will return whatever is in the `angle` variable as the result of the function. If a match for `adc_value` was found it will contain a number representing the angle. If no match was found then it will have remained unchanged from when we initialised it with `None`. |
+  | `return angle` | This will return whatever is in the `angle` variable as the result of the function. If a match for `adc_value` was found it will contain a number representing the angle from North. If no match was found then it will have remained unchanged from when we initialised it with `None`. |
+  |`adc = MCP342X()` | This creates an object that gives us access to the ADC functions.|
+  |`while True:` | An infinite loop that must be manually aborted by the user.|
+  |`adc_value = adc.read(0)` | This takes a reading from channel zero on the ADC and saves the result into a variable called `adc_value`.|
+  | `print adc_value, get_direction(adc_value, 10)` | This prints the raw `adc_value` as well as the result of passing `adc_value` into the `get_direction` function. We pass 10 into `get_direction` as well for the `jitter_margin` parameter. |
+  |`time.sleep(0.1)` | Pauses the execution of the program so that the infinite loop doesn't overload the CPU.|
   
 1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
 
