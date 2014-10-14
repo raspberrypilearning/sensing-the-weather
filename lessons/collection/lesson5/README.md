@@ -382,10 +382,27 @@ Much greater accuracy can be gained by taking many measurements and averaging th
 
   `nano wind_direction.py`
 
-1. Modify your code to match the code below.
+1. Modify the main **while** loop to match the code below.
 
   ```python
   while True:
+      data = [] # a list to store the measurements
+      length = 10 # ten seconds
+      start_time = time.time()
+      print "Measuring wind direction for", length, "seconds..."
+      
+      while time.time() - start_time <= length:
+        adc_value = adc.read(0)
+        direction = get_direction(adc_value, 10)
+        if direction != None: # keep only good measurements
+          data.append(direction)
+      
+      average = None
+      
+      if len(data) > 0:
+        average = sum(data) / len(data)
+      
+      print average
   ```
   
 ## Plenary
