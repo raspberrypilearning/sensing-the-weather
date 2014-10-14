@@ -372,9 +372,11 @@ All we need to do is make our program *expect* the right numbers and translate t
 
 Under normal conditions, where wind direction is constant, the wind vane will experience some level of back and forth oscillation. This behaviour can easily be observed by using a desk fan or a hair dryer. Provided the wind is blowing it very rarely remains still.
 
-We know that we can only correctly detect 16 possible directions using the code we have written but is that accurate enough? Since each direction is a multiple of 22.5 degrees we can say that any measurement will be accurate to within half of this. So all our measurements would need to be qualified as ±11.25 degrees.
+We know that we can only correctly detect 16 possible directions using the code we have written but is that accurate enough? Since each direction is a multiple of 22.5 degrees we can say that any *individual* measurement will be accurate to within a half of this. So all our measurements would need to be qualified as ±11.25 degrees.
 
 That's not very good.
+
+Much greater accuracy can be gained by taking many measurements and averaging them. The easiest kind of average to calculate is the [arithmetic mean](http://en.wikipedia.org/wiki/Average#Arithmetic_mean).
 
 
 
