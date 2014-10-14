@@ -365,10 +365,17 @@ All we need to do is make our program *expect* the right numbers and translate t
 
   The first number on each line is the raw ADC measurement, the second is the result of its conversion to an angle from North.
 1. Do you see any lines with `None` on them? This should be expected if the raw measurement was `32767` (meaning open circuit, the same as having the wind vane disconnected). If, however, you see a raw measurement that is less than 32767 but the converted value was still `None` then this indicates a problem with the values in `lookup_list` in your code.
-1. Take some time now to iron out any issues or gaps where a `None` is occurring. Do this by moving the wind vane and finding exactly where the `None` value occurs, make a note of the raw measurement, update your code accordingly and retest it. Remember to press `Ctrl - C` to stop the program when you need to edit the code.
+1. Take some time now to iron out any issues or gaps where a `None` is occurring. Do this by moving the wind vane and finding exactly where the `None` value occurs, make a note of the raw measurement, update your `lookup_list` with the raw measurement and retest it. Remember to press `Ctrl - C` to stop the program when you need to edit the code.
 1. Move onto the next section when you're confident that `lookup_list` in your code contains the correct raw measurements for each direction.
 
 ### Average wind direction
+
+Under normal conditions, where wind direction is constant, the wind vane will experience some level of back and forth oscillation. This behaviour can easily be observed by using a desk fan or a hair dryer. Provided the wind is blowing it very rarely remains still.
+
+We know that we can only correctly detect 16 possible directions using the code we have written but is that accurate enough? Since each direction is a multiple of 22.5 degrees we can say that any measurement will be accurate to within half of this. So all our measurements would need to be qualified as ±11.25 degrees.
+
+That's not very good.
+
 
 
 
