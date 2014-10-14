@@ -392,17 +392,17 @@ Much greater accuracy can be gained by taking many measurements and averaging th
       print "Measuring wind direction for", length, "seconds..."
       
       while time.time() - start_time <= length:
-        adc_value = adc.read(0)
-        direction = get_direction(adc_value, 10)
-        if direction != None: # keep only good measurements
-          data.append(direction)
+          adc_value = adc.read(0)
+          direction = get_direction(adc_value, 10)
+          if direction != None: # keep only good measurements
+              data.append(direction)
       
       average = None
       
       if len(data) > 0:
-        average = sum(data) / len(data)
+          average = sum(data) / len(data)
       
-      print average
+      print "Wind direction:", average
   ```
   
 ## Plenary
