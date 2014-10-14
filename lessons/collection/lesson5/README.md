@@ -378,11 +378,16 @@ That's not very good.
 
 Much greater accuracy can be gained by taking many measurements and averaging them. The easiest kind of average to calculate is the [arithmetic mean](http://en.wikipedia.org/wiki/Average#Arithmetic_mean). This is basically where you divide the sum of all your measured values by the number of measurements that you took *(add them up and divide by how many)*.
 
-1. We can easily modify our code to continuously read from the ADC for say ten seconds and then calculate the mean at the end. Let's continue editing the code:
+1. We can easily modify our code to continuously read from the ADC for say ten seconds (the length of time does not matter) and then calculate the mean at the end. Let's continue editing the code:
 
   `nano wind_direction.py`
 
+1. Modify your code to match the code below.
 
+  ```python
+  while True:
+  ```
+  
 ## Plenary
 
 [Next lesson](../lesson6/README.md)
