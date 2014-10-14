@@ -374,7 +374,7 @@ Under normal conditions, where wind direction is constant, the wind vane will ex
 
 We know that we can only correctly detect 16 possible directions using the code we have written but is that accurate enough? Since each direction is a multiple of 22.5 degrees we can say that any *individual* measurement will be accurate to within a half of this. So all our measurements would need to be qualified as ±11.25 degrees.
 
-That's not very good.
+That's not very good given how much we know the wind vane oscilates under normal conditions.
 
 Much greater accuracy can be gained by taking many measurements and averaging them. The easiest kind of average to calculate is the [arithmetic mean](http://en.wikipedia.org/wiki/Average#Arithmetic_mean). This is basically where you divide the sum of all your measured values by the number of measurements that you took *(add them up and divide by how many)*.
 
@@ -405,6 +405,12 @@ Much greater accuracy can be gained by taking many measurements and averaging th
       
       print "Wind direction:", average
   ```
+  **Code walkthrough:**
+  
+  | Code | Meaning |
+  | --- | --- |
+  |`while True:` | An infinite loop that must be manually aborted by the user.|
+  |`adc_value = adc.read(0)` | This takes a reading from channel zero on the ADC and saves the result into a variable called `adc_value`.|
   
 ## Plenary
 
