@@ -388,8 +388,9 @@ Much greater accuracy can be gained by taking many measurements and averaging th
   while True:
       data = [] # a list to store the measurements
       length = 10 # ten seconds
-      start_time = time.time()
+      
       print "Measuring wind direction for", length, "seconds..."
+      start_time = time.time()
       
       while time.time() - start_time <= length:
           adc_value = adc.read(0)
