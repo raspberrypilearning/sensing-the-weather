@@ -453,8 +453,8 @@ Ask the class the following questions.
 
 **Answers:**
 
-1. Place holder
-1. Place holder
+1. Analogue technology works with a continuous stream of electricity with a varying voltage amplitude. Digital technology works using HIGH and LOW pulses of electricity to signify binary `1` and `0` respectively.
+1. The ADC gives us a number that represents the voltage level going through the wind vane. This number is a value between 0 and 32767 and has nothing to do with the actual direction in degrees. The degrees from North is derived by way of a look up table which records the expected ADC value for each direction. Using numbers that represent an angle from north allows us to compare measurements in an intuitive way and to calculate an average wind direction.
 1. Place holder
 1. Place holder
 1. Place holder
