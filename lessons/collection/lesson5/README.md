@@ -449,13 +449,13 @@ Ask the class the following questions.
 1. Why do we need to convert a raw ADC measurement to degrees from North?
 1. What advantage do we get by averaging the wind direction?
 1. What does *open circuit* mean?
-1. Why do we need to compensate for open circuit in our code?
+1. Why do we need to handle open circuit in our code?
 
 **Answers:**
 
 1. Analogue technology works with a continuous stream of electricity with a varying voltage amplitude. Digital technology works using HIGH and LOW pulses of electricity to signify binary `1` and `0` respectively.
 1. The ADC gives us a number that represents the voltage level going through the wind vane. This number is a value between 0 and 32767 and has nothing to do with the actual direction in degrees. The degrees from North is derived by way of a look up table which records the expected ADC value for each direction. Using numbers that represent an angle from north allows us to compare measurements in an intuitive way and to calculate an average wind direction.
-1. Place holder
+1. The wind vane is only capable of detecting 16 different directions. Each of these is 22.5 degrees apart so any single measurement will have an error of half this, which is ± 11.25 degrees. Taking many measurements and averaging them greatly reduces this error and gives us a measurement that we can be a lot more confident about.
 1. Place holder
 1. Place holder
 
