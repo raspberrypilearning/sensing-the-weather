@@ -456,7 +456,7 @@ Ask the class the following questions.
 1. Analogue technology works with a continuous stream of electricity with a varying voltage amplitude. Digital technology works using HIGH and LOW pulses of electricity to signify binary `1` and `0` respectively.
 1. The ADC gives us a number that represents the voltage level going through the wind vane. This number is a value between 0 and 32767 and has nothing to do with the actual direction in degrees. The degrees from North is derived by way of a look up table which records the expected ADC value for each direction. Using numbers that represent an angle from north allows us to compare measurements in an intuitive way and to calculate an average wind direction.
 1. The wind vane is only capable of detecting 16 different directions. Each of these is 22.5 degrees apart so any single measurement will have an error of half this, which is ± 11.25 degrees. Taking many measurements and averaging them greatly reduces this error and gives us a measurement that we can be a lot more confident about.
-1. Place holder
-1. Place holder
+1. The wind vane is not perfect and, at certain positions, the magnet does not close any reed switches. In this state there is no resistance load on the circuit and so no voltage is siphoned off to ground. Therefore the ADC will detect the maximum voltage level. This is the same as having the wind vane completely disconnected.
+1. The value returned by the ADC during open circuit is 32767 and this does not match any of the values held in the lookup table used to convert to degrees from North. We must firstly ensure that we do not interpret this as a direction and secondly avoid using any open circuit measurements as part of any average calculation since this would skew the average erroneously.
 
 [Next lesson](../lesson6/README.md)
