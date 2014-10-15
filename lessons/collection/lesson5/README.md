@@ -363,7 +363,7 @@ All we need to do is make our program *expect* the right numbers and translate t
   1969 180.0
   ```
 
-  The first number on each line is the raw ADC measurement, the second is the result of its conversion to an angle from North.
+  The first number on each line is the raw ADC measurement, the second is the result of its conversion to an angle from North. Verify the direction you receive is correct by looking at the direction letters embossed onto the plastic of the wind vane case.
 1. Do you see any lines with `None` on them? This should be expected if the raw measurement was `32767` (meaning open circuit, the same as having the wind vane disconnected). If, however, you see a raw measurement that is less than 32767 but the converted value was still `None` then this indicates a problem with the values in `lookup_list` in your code.
 1. Take some time now to iron out any issues or gaps where a `None` is occurring. Do this by moving the wind vane and finding exactly where the `None` value occurs, make a note of the raw measurement, update your `lookup_list` with the raw measurement and retest it. Remember to press `Ctrl - C` to stop the program when you need to edit the code.
 1. Move onto the next section when you're confident that `lookup_list` in your code contains the correct raw measurements for each direction.
@@ -437,7 +437,12 @@ Much greater accuracy can be gained by taking many measurements and averaging th
   Wind direction: 189.26
   Measuring wind direction for 10 seconds...
   ```
-  
+1. Feel free to test it using a desk fan or a hair dryer. Press `Ctrl - C` to exit your program when you're finished.
+
 ## Plenary
+
+Ask the class the following questions.
+
+1. What is the difference between analogue and digital?
 
 [Next lesson](../lesson6/README.md)
