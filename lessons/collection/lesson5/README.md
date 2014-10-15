@@ -378,6 +378,8 @@ That's not very good given how much the wind vane oscilates under normal conditi
 
 Much greater accuracy can be gained by taking many measurements and averaging them. The easiest kind of average to calculate is the [arithmetic mean](http://en.wikipedia.org/wiki/Average#Arithmetic_mean). This is basically where you divide the sum of all your measured values by the number of measurements that you took *(add them up and divide by how many)*.
 
+Keep the *open circuit* problem in the back of your mind while you do the next bit of programming.
+
 1. We can easily modify our code to continuously read from the ADC for say ten seconds (the length of time is arbitrary) and then calculate the mean at the end. Let's continue editing the code:
 
   `nano wind_direction.py`
@@ -444,5 +446,17 @@ Much greater accuracy can be gained by taking many measurements and averaging th
 Ask the class the following questions.
 
 1. What is the difference between analogue and digital?
+1. Why do we need to convert a raw ADC measurement to degrees from North?
+1. What advantage do we get by averaging the wind direction?
+1. What does *open circuit* mean?
+1. Why do we need to compensate for open circuit in our code?
+
+**Answers:**
+
+1. Place holder
+1. Place holder
+1. Place holder
+1. Place holder
+1. Place holder
 
 [Next lesson](../lesson6/README.md)
