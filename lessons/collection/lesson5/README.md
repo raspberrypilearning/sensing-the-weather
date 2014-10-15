@@ -423,6 +423,20 @@ Much greater accuracy can be gained by taking many measurements and averaging th
   | `if len(data) > 0:` | We now use an if statement to test that the data list has something in it, the `len` function is used to get the number of items inside `data` and we test that this is greater than zero. |
   | `average = sum(data) / len(data)` | To calculate the average we get the `sum` of all items inside `data` and divide it by the number of items given by `len`. This is the arithmetic mean and we store the result inside the `average` variable. |
   | `print "Wind direction:", average` | We then print the final result to screen so the user can see it. |
+
+1. Press `Ctrl - O` then `Enter` to save, followed by `Ctrl - X` to quit from nano.
+1. Run the code and remember to use the `sudo` command:
+
+  `sudo ./wind_direction.py`
+1. Simulate the back and forth oscillation of the wind vane as you wait for the ten seconds to elapse. This is the kind of output you should see:
+
+  ```
+  Measuring wind direction for 10 seconds...
+  Wind direction: 221.03
+  Measuring wind direction for 10 seconds...
+  Wind direction: 189.26
+  Measuring wind direction for 10 seconds...
+  ```
   
 ## Plenary
 
