@@ -416,7 +416,8 @@ Much greater accuracy can be gained by taking many measurements and averaging th
   | `start_time = time.time()` | Defining a variable called `start_time` and setting it to the current time given by `time.time()`. This will be used to detect when ten seconds of time has elapsed *from now*. |
   | `while time.time() - start_time <= length:` | This loop will be used to keep taking the measurements until time is up. This is a more common type of while loop too, one where a condition is being specified. As long as the condition remains `True` the loop will keep going, when it becomes `False` the loop exits. Here the condition is testing that the current time given by `time.time()` is less than or equal to `<=` the `length` variable (ten seconds). |
   | `adc_value = adc.read(0)` | We're now in the main continuous measurement loop. This line takes a reading from channel zero on the ADC and saves the result into a variable called `adc_value`.|
-  | `direction = get_direction(adc_value, 10)` | We now use our `get_direction` function to convert the raw `adc_value` into degrees from North and then save the result to a variable called `direction`. |  
+  | `direction = get_direction(adc_value, 10)` | We now use our `get_direction` function to convert the raw `adc_value` into degrees from North and save the result into a variable called `direction`. |  
+  | `if direction != None:` | We now use an `if` statement to test the `direction` variable contains a valid value. The `get_direction` function will have returned `None` if it was unable to find a match in `lookup_list`. If we test for not equal to `!= None` then we have a way to exclude bad measurements that may occur due to *open circuit*. |
   
 ## Plenary
 
