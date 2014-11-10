@@ -21,12 +21,12 @@ Students should work in pairs. Each pair will require the following equipment:
 - Ground temperature probe
 - Long Ethernet Cable (long enough to reach from the school building to the chosen location)
 - 24 volt UK Mains Power Supply
+- 2 x IP65/66 electrical junction box (the case to protect the electronics)
 - An SD Card with Raspbian already set up through NOOBS
 - USB keyboard
 - USB mouse
 - HDMI cable
 - A monitor or TV
-
 
 ## Learning Objectives
 
