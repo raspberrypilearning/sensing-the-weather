@@ -10,7 +10,7 @@ In this lesson students will fully assemble and test the weather station indoors
 
 ## Resources
 
-Students should work in pairs. Each pair will require the following equipment (most of this will have been supplied as port of the weather station kit):
+Students should work in pairs. Each pair will require the following equipment (most of this will have been supplied as part of the weather station kit):
 
 - Raspberry Pi
 - Weather Station Expansion Board
