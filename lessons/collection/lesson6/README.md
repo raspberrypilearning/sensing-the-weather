@@ -10,18 +10,22 @@ In this lesson students will fully assemble and test the weather station indoors
 
 ## Resources
 
-Students should work in pairs. Each pair will require the following equipment:
+Students should work in pairs. Each pair will require the following equipment (most of this will have been supplied as port of the weather station kit itself):
 
 - Raspberry Pi
 - Weather Station Expansion Board
 - Rain guage
 - Anemometer
 - Wind vane
-- AIR sensor board (with a short 6 wire RJ11 cable)
+- AIR sensor board (with short 6 wire RJ11 cable)
 - Ground temperature probe
 - Long Ethernet Cable (long enough to reach from the school building to the chosen location)
 - 24 volt UK Mains Power Supply
+- Passive POE splitter and injector set
 - 2 x IP65/66 electrical junction box (the case to protect the electronics)
+- Screws for fixing the junction boxes to another object (e.g. gate post)
+- Rubber washers to prevent ingress of water via the screw holes
+- 5 x IP65/66 M20 cable glands
 - An SD Card with Raspbian already set up through NOOBS
 - USB keyboard
 - USB mouse
