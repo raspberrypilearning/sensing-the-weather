@@ -49,7 +49,7 @@ Finally the finished weather station will be deployed to an outdoor location, ch
 - [Lesson 3](lessons/collection/lesson3/README.md): The rain gauge
 - [Lesson 4](lessons/collection/lesson4/README.md): The anemometer
 - [Lesson 5](lessons/collection/lesson5/README.md): The wind vane
-- [Lesson 5](lessons/collection/lesson6/README.md): Deploying the Weather Station
+- [Lesson 6](lessons/collection/lesson6/README.md): Deploying the Weather Station
 
 ### Display
 
