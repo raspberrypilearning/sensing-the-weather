@@ -18,6 +18,7 @@ Students should work in pairs. Each pair will require the following equipment:
 - HDMI cable
 - A monitor or TV
 - Two **Male to Female** jumper wires (try [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
+- Note: Install the NOOBS software before the lesson to save time
 
 ## Learning Objectives
 
