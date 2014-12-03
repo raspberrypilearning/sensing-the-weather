@@ -77,6 +77,8 @@ We will test our switch in both pull up and pull down circuit configurations.
 
 Here we are going to use the internal pull up resistor to make GPIO 4 always read HIGH, then we will short it to ground through the wires so that it will read LOW when we touch the wires together.
 
+###Students were confused between Board / GPIO numbers Why is PIN 4 number 6? is it work adding a quick not to explain this?
+
 *Note: The first 26 pins on a B+ are the same as those on a model A or B.*
 
 1. Attach the female ends of the jumper wires to the Raspberry Pi GPIO pins as shown below. Take care to select the correct pins.
