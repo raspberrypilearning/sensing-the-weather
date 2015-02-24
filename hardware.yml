@@ -1,0 +1,12 @@
+- name: Raspberry Pi camera module
+  img: camera
+  url: http://www.raspberrypi.org/products/camera-module/
+- name: 1 x Solderless breadboard
+  img: breadboard
+  url: http://shop.pimoroni.com/products/colourful-mini-breadboard
+- name: 2 x Male-to-female jumper leads
+  img: jumper-male-to-female
+  url: http://shop.pimoroni.com/products/jumper-jerky
+- name: 1 x Tactile button
+  img: tactile-push-button
+  url: http://uk.rs-online.com/web/p/tactile-switches/7182443/
