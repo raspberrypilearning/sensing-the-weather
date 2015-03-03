@@ -38,19 +38,11 @@ Connect your wires / buttons as shown:
 
   | Code | Meaning |
   | --- | --- |
-
   |`#!/usr/bin/python3` | This line denotes this file as a Python program so that the computer knows *how* to run the code.|
-
   |`import RPi.GPIO as GPIO`<br>`import time`|  Imports the `RPi.GPIO` library that allows you to control the GPIO pins and the time library to measure time or make the program sleep.|
-
     |`pin = 4`<br>`GPIO.setmode(GPIO.BCM)`<br> `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`| These 3 lines setup a variable call pin to store the pin number. We then set the scheme for refering to our pins as the BCM scheme. The important bit is the 3rd line where we setup the pin as an input using a pull up resistor|
-
   |`pin_value = GPIO.input(pin)`| This line reads the state of the pin and stores the result in a variable called **pin_value**. This will either be *True* or *False*.|
-
-  |`if pin_value == True:`<br>
-    `print ("HIGH")`<br>
-  `else:`<br>
-    `print()"LOW")`|These lines check the value of the **pin_value** variable and prints out "HIGH" if the value is True and "LOW" if the value is False.
+  |`if pin_value == True:`<br>`print ("HIGH")`<br>`else:`<br>`print()"LOW")`|These lines check the value of the **pin_value** variable and prints out "HIGH" if the value is True and "LOW" if the value is False.|
 
 
 1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
