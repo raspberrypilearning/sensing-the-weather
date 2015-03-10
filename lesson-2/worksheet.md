@@ -7,7 +7,7 @@ In this lesson you will:
 4. Adapt the program to use a pull down circuit.
 4. Explore the timings of the loop to get the ideal sensitivity.
 
-## Reading an input pi
+## Reading an input pin
 
 First we need to be able to make sure we can read the input pin 4, we will start by build a **pull up** circuit.
 
@@ -17,7 +17,7 @@ Connect your wires / buttons as shown:
 
 1. In LX terminal enter the command `nano pullup.py` and press Enter (nano is a text editor program).
 1. Enter the code below.
-  ```python
+```python
   #!/usr/bin/python3
   import RPi.GPIO as GPIO
   import time
@@ -34,24 +34,67 @@ Connect your wires / buttons as shown:
     print()"LOW")
   ```
 
-  **Code walkthrough:**
+  **Code explained:**
 
-  | Code | Meaning |
-  | --- | --- |
-  |`#!/usr/bin/python3` | This line denotes this file as a Python program so that the computer knows *how* to run the code.|
-  |`import RPi.GPIO as GPIO`<br>`import time`|  Imports the `RPi.GPIO` library that allows you to control the GPIO pins and the time library to measure time or make the program sleep.|
-    |`pin = 4`<br>`GPIO.setmode(GPIO.BCM)`<br> `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`| These 3 lines setup a variable call pin to store the pin number. We then set the scheme for refering to our pins as the BCM scheme. The important bit is the 3rd line where we setup the pin as an input using a pull up resistor|
-  |`pin_value = GPIO.input(pin)`| This line reads the state of the pin and stores the result in a variable called **pin_value**. This will either be *True* or *False*.|
-  |`if pin_value == True:`<br>`print ("HIGH")`<br>`else:`<br>`print()"LOW")`|These lines check the value of the **pin_value** variable and prints out "HIGH" if the value is True and "LOW" if the value is False.|
+  ```python
+  #!/usr/bin/python3```
 
+   This line denotes this file as a Python program so that the computer knows *how* to run the code.
 
+  ```python
+  import RPi.GPIO as GPIO
+  import time```
+
+  Imports the `RPi.GPIO` library that allows you to control the GPIO pins and the time library to measure time or make the program sleep.
+
+  ```python
+  pin = 4
+  GPIO.setmode(GPIO.BCM)
+  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+  ```
+
+   These 3 lines setup a variable call pin to store the pin number. We then set the scheme for referring to our pins as the BCM scheme. The important bit is the 3rd line where we setup the pin as an input using a pull up resistor
+
+   ```python
+   pin_value = GPIO.input(pin)
+   ```
+    This line reads the state of the pin and stores the result in a variable called **pin_value**. This will either be *True* or *False*.
+
+    ```python
+    if pin_value == True:
+      print ("HIGH")
+    else:
+      print("LOW")
+    ```
+    These lines check the value of the **pin_value** variable and prints out `HIGH` if the value is **True** and `LOW` if the value is **False**.
+
+3. Press Ctrl - O then Enter to save, followed by Ctrl - X to quit from nano.
+4. Next, mark the file as executable with the following command:
+`chmod +x pullup.py`
+
+5. Type `sudo ./pullup.py` to test your code to ensure that when the button is pressed you get the output `LOW` and otherwise `high`.
+
+## Repeatedly polling the input pin.
+Currently our code checks the pin status once and displays an appropriate output.
+
+Next we are going to add a slight adaptation to make it check repeatedly or **poll** the pin.
+
+1. Edit you code again, in LX terminal enter the command `nano pullup.py` and press Enter.
+
+2. You want to make the code simply check the pin over and over again until we stop the program. To do this we will wrap the main 5 lines of our program in a while loop, we will also add a pause to the program so that it doesn't check too often.
+
+3. Adapt your code so that it the last section looks like this (be careful to get the indentation correct):
+  ```python
+    while True:           #This line tells the program to loop the following indented section
+        pin_value = GPIO.input(pin)
+        if pin_value == True:
+          print ("HIGH")
+        else:
+          print("LOW")
+        time.sleep(0.5)   #This line adds a 0.5 second pause between polls.
+  ```
 1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-1. Next, mark the file as executable with the following command:
-
-  `chmod +x pullup.py`
-1. GPIO functions require root access on your Pi, so you must use the `sudo` command to run your code. If you don't use sudo you'll see the following error: `No access to dev/mem. Try running as root!`
-
-  `sudo ./pullup.py`
+1. Enter `sudo ./pullup.py` to run your code.
 1. The text `HIGH` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `LOW` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `HIGH` because of the internal pull *up* resistor.
 
   ```
@@ -70,7 +113,15 @@ Connect your wires / buttons as shown:
   ```
 1. Press `Ctrl - C` to exit your program.
 
-### Pull down circuit
+## Adjusting Polling time
+
+Now that our code constantly polls the input pin for it's state we need to think about timing.
+
+1. Can you press the button fast enough that the program misses it?
+
+2. Experiment with the line `time.sleep(0.5)`, change the time so that it always detects you're input. Try different times, find the biggest pause that still detects the input.
+
+## Pull down circuit
 
 1. Remove the jumper cables from the Raspberry Pi GPIO pins and reattach them as shown in the diagram below. Take care to select the correct pins.
 
@@ -84,15 +135,15 @@ Connect your wires / buttons as shown:
 
   `nano pulldown.py`
 
-1. Find the `GPIO.setup` line and change the last parameter from `GPIO.PUD_UP` to `GPIO.PUD_DOWN`. This sets the internal pull down resistor on GPIO 4 so that it will always read LOW. For example:
+1. There is one line in the program that needs updating to reflect the change from a **pull up** to a **pull down**, which line is it?
 
-  `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
+2. Update the program and press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
 
-1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-1. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
+3. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
 
   `sudo ./pulldown.py`
-1. The text `LOW` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the wires (open the switch) and it will return to `LOW` because of the internal pull *down* resistor.
+
+4. The text `LOW` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the wires (open the switch) and it will return to `LOW` because of the internal pull *down* resistor.
 
   ```
   LOW
@@ -109,3 +160,10 @@ Connect your wires / buttons as shown:
   LOW
   ```
 1. Press `Ctrl - C` to exit your program.
+
+## What's next?
+In this lesson we have made our program respond to a single button press using a **Pull Up** and **Pull Down** setup.
+
+- Are either of these circuits better than the other, does it make a difference which one we want to use?
+- In our code we used a button to print a simple statement, what else could you make it do? What do you want your button to do?
+- Could you connect multiple buttons to your Raspberry Pi and detect the states of each? Could you count the number of button presses?
