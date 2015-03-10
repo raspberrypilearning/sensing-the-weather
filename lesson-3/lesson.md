@@ -75,6 +75,7 @@ More detail for students can be found in the [student worksheet](worksheet.md).
 3. Once their code counts the number of tips they can multiply this by **0.2794** to get the amount of rainfall.
 
 Their code should end up looking something like this.
+
     ```python
     #!/usr/bin/python
     import RPi.GPIO as GPIO
