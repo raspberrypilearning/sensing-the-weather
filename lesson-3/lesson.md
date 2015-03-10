@@ -74,7 +74,7 @@ More detail for students can be found in the [student worksheet](worksheet.md).
 
 3. Once their code counts the number of tips they can multiply this by **0.2794** to get the amount of rainfall.
 
-Their code should end up looking something like this.
+  Their code should end up looking something like this.
 
     ```python
     #!/usr/bin/python
@@ -125,23 +125,24 @@ A more sensible and efficient technique is to use interrupts to only pay attenti
   ```
 The bouncetime setting is the minimum amount of time between detections, this can be customised.
 
-Their final code should look something like this.
-```python
-#!/usr/bin/python
- import RPi.GPIO as GPIO
+3. Their final code should look something like this.
 
- pin = 27
- count = 0
+  ```python
+  #!/usr/bin/python
+  import RPi.GPIO as GPIO
 
- def bucket_tipped(channel):
-     global count
-     count = count + 1
-     print (count * 0.2794)
+  pin = 27
+  count = 0
 
- GPIO.setmode(GPIO.BCM)
- GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
- GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
- ```
+  def bucket_tipped(channel):
+      global count
+      count = count + 1
+      print (count * 0.2794)
+
+  GPIO.setmode(GPIO.BCM)
+  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+  GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+  ```
 
 ## Plenary
 
