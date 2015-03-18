@@ -20,7 +20,7 @@ In this lesson you will:
   - The amount of water needed to tip the bucket **0.2794** (can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf))
   - How many times the bucket has tipped **can be counted as the number of input signals**
 
-  ** Rainfall = 0.2794 * number of tips **
+  >** Rainfall = 0.2794 * number of tips **
 
 ##What if I don't have a rain gauge?
 In most classroom situations you won't have a rain gauge (or at least one to yourself), in that situation you can simulate one using a pair of wires and a button.
