@@ -60,21 +60,16 @@ cp pullup.py rain_polling.py
 
 	In pseudocode (planning) our loop might look like this:
 	
-	> LOOP
-    	
-    	SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
-    	
-    	IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN
-    	
-    	--- ADD 1 ONTO **COUNT**
-    	
-    	--- DISPLAY **RAINFALL**
-    	
-    	MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
-    	
-    	PAUSE 0.01 SECONDS
-    	
-    	END LOOP
+	> ```
+	LOOP
+	SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
+	IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN
+	--- ADD 1 ONTO **COUNT**
+	--- DISPLAY **RAINFALL**
+	MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
+	PAUSE 0.01 SECONDS
+	END LOOP
+	```
 
 	In Python we would write
 		
