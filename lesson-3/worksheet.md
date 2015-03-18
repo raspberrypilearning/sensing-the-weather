@@ -62,19 +62,19 @@ cp pullup.py rain_polling.py
 	
 	> LOOP
     	
-    	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
+    	SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
     	
-    	> IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN
+    	IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN
     	
-    	> --- ADD 1 ONTO **COUNT**
+    	--- ADD 1 ONTO **COUNT**
     	
-    	> --- DISPLAY **RAINFALL**
+    	--- DISPLAY **RAINFALL**
     	
-    	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
+    	MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
     	
-    	> PAUSE 0.01 SECONDS
+    	PAUSE 0.01 SECONDS
     	
-    	> END LOOP
+    	END LOOP
 
 	In Python we would write
 		
