@@ -18,9 +18,9 @@ In this lesson you will:
 
 3. In order to calculate the amount of water that's passed through the gauge we need to know:
   - The amount of water needed to tip the bucket **0.2794** (can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf))
-  - How many times the bucket has tipped **can be counted as the number of input signals**
+  - How many times the bucket has tipped which can be counted as the number of input signals.
 
-  >** Rainfall = 0.2794 * number of tips **
+  **Rainfall = 0.2794 * number of tips**
 
 ##What if I don't have a rain gauge?
 In most classroom situations you won't have a rain gauge (or at least one to yourself), in that situation you can simulate one using a pair of wires and a button.
@@ -59,29 +59,35 @@ cp pullup.py rain_polling.py
 4. We will still want a `while True:` loop to constantly check the pin status, but we want to do something extra with it.
 
 	In pseudocode (planning) our loop might look like this:
-
-
-    > LOOP
-	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
+	
+	> LOOP
+    
+    	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
+    
 	> IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN
-	> --- ADD 1 ONTO **COUNT**
+    
+    	> --- ADD 1 ONTO **COUNT**
+    
 	> --- DISPLAY **RAINFALL**
-	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
-	> PAUSE 0.01 SECONDS
-	> END LOOP
+    
+    	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
+    
+    	> PAUSE 0.01 SECONDS
+    
+    	> END LOOP
 
 	In Python we would write
 		
-		```python
-		while True:
-	        current_state = GPIO.input(pin)
+	```python
+	while True:
+	       current_state = GPIO.input(pin)
 
 	        if previous_state == GPIO.HIGH and current_state == GPIO.LOW:
 	            count=count + 1
 	            print (count * 0.2794)
 
 			previous_state = current_state
-		```
+	```
      5. Once you have entered your code you can save by pressing `CTRL + o` then `enter`, and then exit with `CTRL + x`.
      6. Ensure your code is executable by typing `chmod 755 rain_polling.py`.
      7. Run your code with the command `sudo ./rain_polling.py`. If you press your button a few times, it should look something like this:
