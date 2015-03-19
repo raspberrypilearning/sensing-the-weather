@@ -112,7 +112,7 @@ To do that we need use a technique called interrupt handling. Rather than consta
 
 3. The code to increment the count and display the current rainfall need to be moved into a function. You should also remove the variables **current_state** and **previous_state** as we won't need them. You should call the function something sensible and you will need this function name for the next step.
 
-```python
+	```python
 #!/usr/bin/python3
 import RPi.GPIO as GPIO
 
@@ -127,33 +127,33 @@ def bucket_tipped(channel):
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 
-```
+	```
 
 4. In order to get your function to be triggered when the input voltage on pin 27 drops, you will need to define an interrupt event. Add this line to your code:
 
-```python
+	```python
 GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
-```
+	```
 
 This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time (milliseconds) between two event being detected.
 
 5. Finally we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press enter, and then exit.
 
-```python
+	```python
 input("Press Enter to stop logging\n")
-```
+	```
 
 6. Save your code by pressing `CTRL + o` and `Enter`, then exit with `CTRL + x`.
 7. From the terminal you should now be able to run your program by typing `sudo ./rain_interrupt.py`, the output should look something like this:
 
-```bash
+	```bash
 pi@raspberrypi ~/weather_station $ sudo ./rain_interrupt.py
 Press Enter to stop logging
 0.2794
 0.5588
 0.8382
 1.1176
-```
+	```
 
 8. If your code doesn't work, check it against the full version [here](code/rain_interrupt.py).
 
