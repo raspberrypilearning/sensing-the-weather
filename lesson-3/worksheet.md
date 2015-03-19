@@ -135,7 +135,7 @@ GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
 	```
 
-This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time (milliseconds) between two event being detected.
+	This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time (milliseconds) between two event being detected.
 
 5. Finally we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press enter, and then exit.
 
