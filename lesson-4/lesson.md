@@ -69,7 +69,7 @@ Depending on your class you may also want to get them to recap some basic circle
 1. Connect your pi up to the weather station add-on board and ensure the anemometer is connected to the weather station via the port marked "WIND".
 2. Pupils are not likely to have their own weather station and so will have to connect their Pi to some wires or a button to simulate the weather station signal pulses.
 
-![](images/gpio_setup.png)
+![](images/gpio-setup.png)
 
 ### Detect the interrupts
 
@@ -78,11 +78,11 @@ Before starting practically, get students to open their rain gauge code and reca
 The first thing students need to do is adapt their rain_gauge code to make it gather data from the anemometer instead.
 
 1. Copy the code from last lesson rain gauge and rename it as wind_speed.py.
-```bash
+	```bash
 cp rain_interrupt.py wind_speed.py
 ```
 2. Edit the code with nano
-```bash
+	```bash
 nano wind_speed.py
 ```
 3. There are 3 changes to be made. 
@@ -168,7 +168,7 @@ Ask the students to try code the solution using the above as a template, encoura
         circ_cm = (2 * math.pi) * r_cm
         rot = count / 2.0
         dist_km = (circ_cm * rot) / 100000.0 # convert to kilometres
-        km_per_sec = dist_km / time_sec
+        km_per_sec = dist_km / time_sec
         km_per_hour = km_per_sec * 3600 # convert to distance per hour
         return km_per_hour
 
