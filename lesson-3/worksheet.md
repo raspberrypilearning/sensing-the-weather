@@ -95,7 +95,7 @@ cp pullup.py rain_polling.py
 ##Using interrupts in place of polling
 So far we have used polling to repeatedly check the status of the input pin, something which is very inefficient. The code constantly checks for rainfall every 0.01 seconds, which uses some processing power. Wouldn't it be better if the system only checked for rainfall when it was raining and ignored the rain gauge the rest of the time?
 
-To do that we need use a technique called interrupt handling. Rather than constantly check the status of the pin, we use a signal (interrupt) to trigger a function.
+To do that we need use a technique called interrupt handling. Rather than constantly check the status of the pin, we use a mechanism called an interrupt to trigger a function.
 
 1. Copy your existing code to a new file called `rain_interrupt.py`
 
@@ -108,7 +108,7 @@ To do that we need use a technique called interrupt handling. Rather than consta
 	nano rain_interrupt.py
 	```
 
-3. The code to increment the count and display the current rainfall need to be moved into a function. You should also remove the variables **current_state** and **previous_state** as we won't need them. You should call the function something sensible and you will need this function name for the next step.
+3. The code to increment the count and display the current rainfall need to be moved into a function. You should also remove the variables **current_state** and **previous_state** as we won't need them. You ought call the function something sensible and you will need this function name for the next step. We've called ours `bucket_tipped`
 
 ```python
 #!/usr/bin/python3
@@ -129,11 +129,11 @@ GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 
 4. In order to get your function to be triggered when the input voltage on pin 27 drops, you will need to define an interrupt event. Add this line to your code:
 
-```python
+	```python
 GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
-```
+	```
 
-This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time (milliseconds) between two event being detected.
+	This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time (milliseconds) between two event being detected.
 
 5. Finally we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press enter, and then exit.
 
