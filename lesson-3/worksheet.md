@@ -18,9 +18,9 @@ In this lesson you will:
 
 3. In order to calculate the amount of water that's passed through the gauge we need to know:
   - The amount of water needed to tip the bucket **0.2794** (can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf))
-  - How many times the bucket has tipped **can be counted as the number of input signals**
+  - How many times the bucket has tipped which can be counted as the number of input signals.
 
-  ** Rainfall = 0.2794 * number of tips **
+  **Rainfall = 0.2794 * number of tips**
 
 ##What if I don't have a rain gauge?
 In most classroom situations you won't have a rain gauge (or at least one to yourself), in that situation you can simulate one using a pair of wires and a button.
@@ -59,32 +59,34 @@ cp pullup.py rain_polling.py
 4. We will still want a `while True:` loop to constantly check the pin status, but we want to do something extra with it.
 
 	In pseudocode (planning) our loop might look like this:
-
-
-    > LOOP
-	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**
-	> IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN
-	> --- ADD 1 ONTO **COUNT**
-	> --- DISPLAY **RAINFALL**
-	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**
-	> PAUSE 0.01 SECONDS
-	> END LOOP
+	
+	
+	> LOOP  
+	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**  
+	> IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN  
+	> --- ADD 1 ONTO **COUNT**  
+	> --- DISPLAY **RAINFALL**  
+	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**  
+	> PAUSE 0.01 SECONDS  
+	> END LOOP  
+	
 
 	In Python we would write
 		
-		```python
-		while True:
-	        current_state = GPIO.input(pin)
+	```python
+	while True:
+	       current_state = GPIO.input(pin)
 
 	        if previous_state == GPIO.HIGH and current_state == GPIO.LOW:
 	            count=count + 1
 	            print (count * 0.2794)
 
 			previous_state = current_state
-		```
-     5. Once you have entered your code you can save by pressing `CTRL + o` then `enter`, and then exit with `CTRL + x`.
-     6. Ensure your code is executable by typing `chmod 755 rain_polling.py`.
-     7. Run your code with the command `sudo ./rain_polling.py`. If you press your button a few times, it should look something like this:
+	```
+	
+5. Once you have entered your code you can save by pressing `CTRL + o` then `enter`, and then exit with `CTRL + x`.
+6. Ensure your code is executable by typing `chmod 755 rain_polling.py`.
+7. Run your code with the command `sudo ./rain_polling.py`. If you press your button a few times, it should look something like this:
      ```
      pi@raspberrypi ~/weather_station $ sudo ./rain_polling.py 
 0.2794
@@ -110,7 +112,7 @@ To do that we need use a technique called interrupt handling. Rather than consta
 
 3. The code to increment the count and display the current rainfall need to be moved into a function. You should also remove the variables **current_state** and **previous_state** as we won't need them. You ought call the function something sensible and you will need this function name for the next step. We've called ours `bucket_tipped`
 
-```python
+	```python
 #!/usr/bin/python3
 import RPi.GPIO as GPIO
 
@@ -125,7 +127,7 @@ def bucket_tipped(channel):
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 
-```
+	```
 
 4. In order to get your function to be triggered when the input voltage on pin 27 drops, you will need to define an interrupt event. Add this line to your code:
 
@@ -137,21 +139,21 @@ GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
 
 5. Finally we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press enter, and then exit.
 
-```python
+	```python
 input("Press Enter to stop logging\n")
-```
+	```
 
 6. Save your code by pressing `CTRL + o` and `Enter`, then exit with `CTRL + x`.
 7. From the terminal you should now be able to run your program by typing `sudo ./rain_interrupt.py`, the output should look something like this:
 
-```bash
+	```bash
 pi@raspberrypi ~/weather_station $ sudo ./rain_interrupt.py
 Press Enter to stop logging
 0.2794
 0.5588
 0.8382
 1.1176
-```
+	```
 
 8. If your code doesn't work, check it against the full version [here](code/rain_interrupt.py).
 
