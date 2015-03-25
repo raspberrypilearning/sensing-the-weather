@@ -132,26 +132,26 @@ After successfully testing the code the students need to convert the count varia
 ### Coding the solution
 Give the students an outline solution in pseudocode / structured English or similar, for example:
 
->import GPIO,time,math
->pin 17
->count = 0
+> import GPIO,time,math
+> pin 17
+> count = 0
 
->FUNCTION spin (channel)
->---increment global count varible
->---display count 
+> FUNCTION spin (channel)
+> ---increment global count varible
+> ---display count 
 
->FUNCTION calcspeed
->---using r = 9cm, t=5sec, count and math.pi
->---calulate windspeed in km / h
->---return windspeed
+> FUNCTION calcspeed
+> ---using r = 9cm, t=5sec, count and math.pi
+> ---calulate windspeed in km / h
+> ---return windspeed
 
->Setup GPIO and interrupt which has spin as it’s callback function.
+> Setup GPIO and interrupt which has spin as it’s callback function.
 
->LOOP
->---reset global count to 0
->---wait 5 sec
->---call calcspeed to get value
->---display windspeed value
+> LOOP
+> ---reset global count to 0
+> ---wait 5 sec
+> ---call calcspeed to get value
+> ---display windspeed value
 
 Ask the students to try code the solution using the above as a template, encourage students to collaborate, test and use trial and error to get there. A solution is provided here for reference:
 
