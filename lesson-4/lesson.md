@@ -112,7 +112,7 @@ nano wind_speed.py
 
 1. This will count the number of signals from the sensor and display the total on screen, there should be a signal detected each time the wires are connected (or for 1/2 a revolution).
 2. Test the code by saving `Ctrl + O` , exiting `Ctrl + X` and then running:
-```bash
+	```bash
 sudo ./wind_speed.py
 ```
 
@@ -137,21 +137,21 @@ Give the students an outline solution in pseudocode / structured English or simi
 >count = 0
 
 >FUNCTION spin (channel)
----increment global count varible
----display count 
+>---increment global count varible
+>---display count 
 
 >FUNCTION calcspeed
----using r = 9cm, t=5sec, count and math.pi
----calulate windspeed in km / h
----return windspeed
+>---using r = 9cm, t=5sec, count and math.pi
+>---calulate windspeed in km / h
+>---return windspeed
 
 >Setup GPIO and interrupt which has spin as it’s callback function.
 
 >LOOP
----reset global count to 0
----wait 5 sec
----call calcspeed to get value
----display windspeed value
+>---reset global count to 0
+>---wait 5 sec
+>---call calcspeed to get value
+>---display windspeed value
 
 Ask the students to try code the solution using the above as a template, encourage students to collaborate, test and use trial and error to get there. A solution is provided here for reference:
 
