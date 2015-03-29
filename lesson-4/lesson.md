@@ -55,7 +55,7 @@ To help explain how the device works you can dismantle it following these steps:
 
 4. So what does this mean? When the blades/cups are in their original position and spinning the magnet will rotate in a tight circle above the reed switch. So for every complete rotation there will be two moments when the switch is closed.
 
-5. So using a similar programming technique to the rain gauge we can count the number of interrupts and divide it by two to give us the number of complete rotations. 
+5. So using a similar programming technique to the rain gauge we can count the number of interrupts and divide it by two to give us the number of complete rotations.
 
 6. Reassemble the anemometer, put the base back into position and ensure the knot in the cable remains inside. Replace the three screws and push the blades/cups back onto the top. Give it a spin to check it rotates correctly.
 
@@ -85,7 +85,7 @@ cp rain_interrupt.py wind_speed.py
 	```bash
 nano wind_speed.py
 ```
-3. There are 3 changes to be made. 
+3. There are 3 changes to be made.
 - Firstly change the pin from 27 to 17
 - Then change the name of the function from **bucket_tipped** to **spin**
 - Remove the multiplier for rainfall and just print the count
@@ -190,7 +190,7 @@ Ask the students to try code the solution using the above as a template, encoura
         time.sleep(interval)
         print (calculate_speed(9.0, interval), "kph")
     ```
-    
+
 At any point the students can run their code by exiting nano `Ctrl + O` followed by `Ctrl + X`, then typing `sudo ./wind_speed.py`.
 
 
@@ -202,7 +202,7 @@ Generally speaking anemometers tend to report the wind speed slightly lower than
 
 In order to get a more accurate reading the figure our program calculates needs to be multiplied by a factor of **1.18**. The final line of the `calculate_speed` function should now read :
 
-```python 
+```python
 return km_per_hour * 1.18
 ```
 
@@ -225,4 +225,5 @@ Ask the class the following questions.
 ## Extension
 
 - Students could test their anemometer with a fan or other wind source to ensure consistency.
-- 
+- Students have used interrupts this lesson to collect inputs from the anemometer, could they write a program to use continuous polling instead.
+- Students could begin to think about the deployment of the weather station, where would be an ideal location for the sensors. What factors might affect that decision?
