@@ -1,5 +1,9 @@
 # Hardware Requirements
 
-Some extra information about the specifics of the hardware requirements or alternative products you can use.
+In order to follow this scheme of work you will need:
 
-This file is optional
+- A Raspberry Pi weather station for demostating to the class
+- 2 male to female jumper leads per pupil.
+- A breadbaord per pupil (optional)
+- A push button per pupil (optional)
+- 
