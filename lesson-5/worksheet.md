@@ -22,8 +22,7 @@ They probably look someting like this:
 
 |Rain Gauge|Anemometer|
 |----------|----------|
-|
-```python
+|```python
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import time
@@ -32,7 +31,7 @@ pin = 27
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-  ```|```python
+  ``` | ```python
   #!/usr/bin/python
   import RPi.GPIO as GPIO
   import time
@@ -41,7 +40,7 @@ GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-    ```|
+    ``` |
 
 
 ## Creating a single solution
