@@ -1,4 +1,5 @@
 You'll also need:
 
-- Blu tack
-- Scissors
+- A shallow tray
+- Water
+- A fan
