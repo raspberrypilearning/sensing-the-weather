@@ -48,7 +48,7 @@ Explain to students that their challenge today is to combine these 2 programs to
 
 - Some lines of code occur in both programs and would only need to occur once.
 - Some variables (count,pin etc) in the programs are the same, would this cause a problem.
-- Each program has a set of defined function, these need to be defined at the beginning of the program before they are used.
+- Each program has a set of defined functions, these need to be defined at the beginning of the program before they are used.
 - Both programs contain a loop of some kind to display the current readings, these will need to be combined.
 
 ### Importance of Comments
