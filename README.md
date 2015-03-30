@@ -1,8 +1,8 @@
-# Example Resource
+# Weather Station - Working with Sensors
 
 ![](cover.png)
 
-Short description of the resource
+This scheme of work introduces students to Raspberry Pi Weather Station project. Over the course of this unit they will explore some of the simple sensors from the kit. They will use the Python programming language to read and interpret data from the sensors.
 
 ## Licence
 
