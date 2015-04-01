@@ -100,7 +100,6 @@ Ask the class the following questions.
 
 1. With a pull up circuit the GPIO pin is internally pulled up to 3.3 volts (via a programmable resistor) so that it always reads HIGH. When we close the switch we short the GPIO pin to ground causing it to read LOW.
 1. With a pull down circuit the GPIO pin is internally pulled down to ground (via a programmable resistor) so that it always reads LOW. When we close the switch we short the GPIO pin to 3.3 volts causing it to read HIGH.
-1. Neither is better, they are both an equally valid way to detect a switch or push button.
 1.  The rain guage and the anemometer (wind speed sensor).
 up
 
