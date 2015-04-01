@@ -1,32 +1,33 @@
-# KS3 Data Collection - Lesson Plan 1 - Getting Started
+# Working with Sensors - Lesson Plan 1
 
-This lesson will introduce the concept of a weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will orientate the students to give them a general overview of the goals they will work towards. It will also introduce the theory behind using a general purpose interface to connect measurement devices to the Raspberry Pi.
+
+This lesson will introduce the idea behind the weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will prepare the students to give them a general overview of what they are aiming to achieve. It will also introduce the using a the Raspberry Pi GPIO pins to connect to measurement devices.
 
 ## Learning objectives
 
-- Identify the weather characteristics that we can measure
-- Appreciate the need for an automated weather station
-- Understand the potential uses for the Raspberry Pi GPIO interface
-- Differentiate between the input and output modes of the GPIO interface
-- Understand the meaning of HIGH and LOW
+- To identify weather characteristics that can be measured
+- To explain the need for an automated weather station
+- To understand the potential uses for the Raspberry Pi GPIO interface
+- To differentiate between the input and output modes of the GPIO interface
+- Understand the meaning of HIGH and LOW in releation to digital hardware
 
 ## Learning outcomes
 
 ### All students are able to
 
-- Understand that collecting data is essential to weather forecasting
-- Suggest a property of the local weather that could be measured
+- Understand why collecting data is essential to weather forecasting
+- Suggest a property of the weather that could be measured
 - Explain the difference between input and output
 
 ### Most students are able to
 
 - Suggest appropriate methods or devices for capturing weather data
-- Understand that digital devices only read and produces two states High / Low
+- Understand that digital devices only read and produces two states `HIGH` / `LOW`
 
 ### Some students are able to
 
-- Relate HIGH / LOW to other digital representation (ON/OFF, 1/0)
-- Describe how the sensors might work and be able to connect to High / Low signals.
+- Relate `HIGH` / `LOW` to other digital representations (ON/OFF, 1/0)
+- Describe how the sensors might work and be able to connect to `HIGH` / `LOW` signals.
 
 ## Lesson Summary
 
@@ -42,7 +43,7 @@ Predictions about future weather aren't useful unless they are based on scientif
 Get students to consider the different characteristics that could be collected, how these could be collected and what the measurement might be. This could be done through:
 - general class discussion
 - playing with the sensors and predicting what they might do
-- a simple [cardsort](files/WeatherStationCardsort.pdf) (needs measurements checking)
+- a simple [cardsort](files/WeatherStationCardsort.pdf)
 
 Discuss with the students other data we might want to store which isn't being captured by the sensors, bring them round to the idea that we will need the following.
 
@@ -69,7 +70,7 @@ Location | Ties the measurement to a specific place allowing for comparison to o
 
 4. What makes this computer different to the ones you may be used before is the row of pins, sticking up, in the corner.
 
-    Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a vast array of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors.
+    Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a wide range of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors.
 
     Each individual pin can be set up in two main modes: *Input* mode and *Output* mode.
 
