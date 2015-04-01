@@ -1,1 +1,1 @@
-Over the course of this scheme of work students will consider the importance of collecting weather data and how this can be done. They will connect some simple sensors and use different programming techniques to get inputs from them.
+Over the course of this scheme of work students will consider the importance of collecting weather data and how this can be done. They will connect some simple sensors and be introduced to the python programming language and some simple techniques to gather sensor data.
