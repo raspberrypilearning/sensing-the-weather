@@ -1,4 +1,4 @@
-# Weather Station - Data Collection Lesson Plan 2 - Using GPIO input mode
+#Weather Station Basic I/O - Lesson Plan 2
 
 In this lesson students will experiment with the Raspberry Pi GPIO and do some Python programming. We are going to focus on input mode specifically since this is more appropriate to sensing things from the outside world than output mode. This knowledge will be used to interface with the rain gauge and wind speed sensors in later lessons.
 
