@@ -1,4 +1,4 @@
-# Weather Station - Working with Sensors
+# Weather Station Basic Input / Output
 
 ![](cover.png)
 
