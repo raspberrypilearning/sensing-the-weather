@@ -1,4 +1,4 @@
-#  Weather Station - Data Collection Lesson Plan 3 - The rain gauge
+#  Weather Station Basic I/O - Lesson Plan 3
 
 In this lesson students will examine the weather station rain gauge and simulate it using a button. Students will firstly learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall and display the measurement value.
 
