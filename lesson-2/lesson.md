@@ -1,12 +1,12 @@
 #Weather Station Basic I/O - Lesson Plan 2
 
-In this lesson students will experiment with the Raspberry Pi GPIO and do some Python programming. We are going to focus on input mode specifically since this is more appropriate to sensing things from the outside world than output mode. This knowledge will be used to interface with the rain gauge and wind speed sensors in later lessons.
+In this lesson students will experiment with the Raspberry Pi GPIO pins and do some Python programming. We are going to focus on input mode specifically since this is more appropriate to sensing things from the outside world than output mode. This knowledge will be used to connect with the rain gauge and wind speed sensors in later lessons.
 
 ## Learning objectives
 
 - Understand what a pull up circuit is, what a pull down circuit is and be able to differentiate the two
-- Understand how to detect the position of a switch in the Python programming language
-- To gain practical experience in programming and electronics
+- Understand how to detect the state of a switch from within the Python programming language
+- To write a python program which includes an infinite loop to check the state of the switch
 
 ## Learning outcomes
 
@@ -38,9 +38,7 @@ In this lesson we are going to make a very basic switch and program the Raspberr
 
 ![](images/jumpers.jpg)
 
-In the previous lesson we learnt about HIGH and LOW. In order to detect the open and closed position in code the switch must turn voltage on and off for a GPIO pin. Then, using input mode, we can detect a change in the pin's value in our code.
-
-When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change *only* when the we touch the wires together.
+In the previous lesson we learnt about the concept of `HIGH` and `LOW`. When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change *only* when the we touch the wires together.
 
 We can do this in two ways:
 
@@ -56,13 +54,15 @@ Let's give it a try in practice next.
 
 1. We will test our switch in both pull up and pull down circuit configurations. First students [connect and boot](http://www.raspberrypi.org/help/quick-start-guide/) their Raspberry Pi and load LX Terminal
 
+![](images/lxterminal.png)
+
 ### Pull up circuit
 
 Here we are going to use the internal pull up resistor to make GPIO 4 always read HIGH, then we will short it to ground through the wires so that it will read LOW when we touch the wires together.
 
-*Note : Pin numbers may be a little confusing at first, it may be worth have a pin reference sheet on the classroom wall. Some cases also have pin reference on them. Also The first 26 pins on a B+ are the same as those on a model A or B.*
+*Note : Pin numbers may be a little confusing at first, there are a couple of numbering schemes which can be used, we will be using the **BCM scheme**. It may be worth have a pin reference sheet on the classroom wall or directing students to a guide such as [this](http://pi.gadgetoid.com/pinout). Some cases also have pin reference on them. 
 
-Students follow the worksheet to build their circuits and their programs, there are a few points at which you might wish to focus the class to discuss what is happening.
+Students follow the worksheet to build their circuits and programs, there are a few points at which you might wish to focus the class to discuss what is happening.
 
 The [worksheet](worksheet.md) follows these steps:
 1. Create and execute a prorgam to get the current state of Pin 4 and display it on screen.
@@ -70,7 +70,6 @@ The [worksheet](worksheet.md) follows these steps:
 3. Add a delay to slow down the rate of **polling**.
 4. Adapt the program to use a pull down circuit.
 4. Explore the timings of the loop to get the ideal sensitivity.
-
 
 ## Plenary
 
@@ -95,7 +94,6 @@ Ask the class the following questions.
 
 1. Explain why the pull up shows those values.
 1. Explain why the pull down shows those values.
-1. Is one circuit better than the other? If so why?
 1. We've learnt an important technique in this lesson which will allow us to interface with two of the weather station sensors. Which sensors we will use this for?
 
 **Answers:**
@@ -107,6 +105,7 @@ Ask the class the following questions.
 up
 
 ## Extension
-
-- Somethingdsa
-- Something else
+Students could consider the following ideas and questions:
+- Are either of these circuits better than the other, does it make a difference which one we want to use?
+- In our code we used a button to print a simple statement, what else could you make it do? What do you want your button to do?
+- Could you connect multiple buttons to your Raspberry Pi and detect the states of each? Could you count the number of button presses?
