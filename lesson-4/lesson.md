@@ -1,4 +1,4 @@
-#  Weather Station - Data Collection Lesson Plan 4 - The anemometer
+#  Weather Station Basic I/O - Lesson Plan 4
 
 In this lesson students will use the weather station expansion board and the anemometer (or simulate it) . Students will discover learn how the anemometer works, then use Python code to detect its rotation and calculate the wind speed using a mathematical formula.
 
