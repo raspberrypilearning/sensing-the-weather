@@ -4,26 +4,6 @@
 
 This scheme of work introduces students to Raspberry Pi Weather Station. A project which aims to get schools children building and programming their own weather station to collect and present data. This is the first of a series of activities which introduces some simple sensors and get the students writing Python code to gather data from them. 
 
-To find out more about the weather station, the schemes of work and how to get one use the following links:
-- [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
-- [Advanced Sensors]()
-- [Building a live GUI]()
-- [Logging and presenting data]()
-- [Working with big data sets]()
-- [Deploying your weather station](https://github.com/raspberrypi/weather-station)
-
-Over the course of 5 lessons, students will learn:
-
-- What a Raspberry Pi is, what its main features are, and how to set up and use one
-- How to write python programs to read data from sensor inputs
-- Computer Science concepts:
-	- Sequencing
-	- Debugging
-	- Iteration
-	- Conditionals
-	- Algorithms
-	- Functions
-
 ## Lessons
 
 - [Lesson 1 - Why and how we collect weather data](lesson-1/lesson.md)
@@ -31,6 +11,16 @@ Over the course of 5 lessons, students will learn:
 - [Lesson 3 - Measuring rainfall using polling and interrupts](lesson-3/lesson.md)
 - [Lesson 4 - Calculating wind speed](lesson-4/lesson.md)
 - [Lesson 5 - Putting it all together](lesson-5/lesson.md)
+
+To find out more about the weather station project, the schemes of work and how to get one use the following links:
+- [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
+- [Advanced Sensors]()
+- [Building a live GUI]()
+- [Logging and presenting data]()
+- [Working with big data sets]()
+- [Deploying your weather station](https://github.com/raspberrypi/weather-station)
+
+
 
 ## Licence
 
