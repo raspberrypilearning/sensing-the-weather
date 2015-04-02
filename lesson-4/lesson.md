@@ -158,7 +158,7 @@ Give the students an outline solution in pseudocode / structured English or simi
 Ask the students to try code the solution using the above as a template, encourage students to collaborate, test and use trial and error to get there. A solution is provided here for reference:
 
 ```python
-	#!/usr/bin/python3
+#!/usr/bin/python3
     import RPi.GPIO as GPIO
     import time, math
 
