@@ -50,8 +50,8 @@ This lesson will introduce students to weather forecasting and how it works as w
 
 2. Introduce the Raspberry Pi and how we will use it to automatically collect data, student consider & discuss the benfits of the Raspberry Pi over a standard computer.
 
-  -This [Video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) would  be useful at this point if pupils have never used a Raspberry Pi
-  -As would this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
+  - This [Video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) would  be useful at this point if pupils have never used a Raspberry Pi
+  - As would this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
 
 3. Focus on the [General Purpose Input Output]() (GPIO) pins, students should understand that the pins can be connected to input or output devices. Students should identify some simple **input** and **output** devices. For each device students consider what it means when the voltage is `HIGH` or `LOW`.
 
