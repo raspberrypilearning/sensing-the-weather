@@ -1,4 +1,0 @@
-- Design, write and debug programs that accomplish specific goals; solve problems by breaking them into smaller parts.
-- Select, use and combine a variety of software on a range of digital devices to design and create a range of programs.
-- Use sequence, selection and repetition in programs; work with variables and various forms of input and output.
-- Use logical reasoning to explain how some simple algorithms work; detect and correct errors in algorithms and programs.
