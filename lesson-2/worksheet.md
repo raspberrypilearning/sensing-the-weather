@@ -17,6 +17,7 @@ Connect your wires / buttons as shown:
 ![Pull up wires](images/pull_up_wire.png)
 
 1. Open LX terminal from the menu bar
+
   ![](images/lxterminal.png)
 2. In LX terminal enter the command `nano pullup.py` and press Enter (nano is a text editor program).
 3. Enter the code below.
