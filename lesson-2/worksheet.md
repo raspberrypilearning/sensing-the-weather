@@ -73,7 +73,7 @@ Connect your wires / buttons as shown:
     ```
     These lines check the value of the **pin_value** variable and prints out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
-3. Press Ctrl - O then Enter to save, followed by Ctrl - X to quit from nano.
+3. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
 4. Next, mark the file as executable with the following command:
 `chmod +x pullup.py`
 
@@ -90,6 +90,8 @@ Next we are going to add a slight adaptation to make it check repeatedly or **po
 
 3. Adapt your code so that it the last section looks like this (be careful to get the indentation correct):
   ```python
+  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+  
     while True:           #This line tells the program to loop the following indented section
         pin_value = GPIO.input(pin)
         if pin_value == True:
