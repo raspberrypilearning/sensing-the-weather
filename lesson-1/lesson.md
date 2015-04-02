@@ -1,4 +1,4 @@
-# Working with Sensors - Lesson Plan 1
+# Weather Station Basic I/O - Lesson Plan 1
 
 
 This lesson will introduce the idea behind the weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will prepare the students to give them a general overview of what they are aiming to achieve. It will also introduce the using a the Raspberry Pi GPIO pins to connect to measurement devices.

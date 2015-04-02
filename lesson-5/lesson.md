@@ -1,4 +1,4 @@
-#  Weather Station - Data Collection Lesson Plan 5 - The wind vane
+#  Weather Station Basic I/O - Lesson Plan 5
 
 In this lesson students will complete their initial work on the weather station using the rain gauge and the anemometer. They will work to combine elements from the 2 programs created  for these sensors into 1 single program to manage them both.
 
