@@ -25,7 +25,7 @@ In this lesson you will:
 ##What if I don't have a rain gauge?
 In most classroom situations you won't have a rain gauge (or at least one to yourself), in that situation you can simulate one using a pair of wires and a button.
 
-1. Connect your wires up in a similar way to the previous lesson  except this time connect to pin 27.
+1. Connect your wires up in a similar way to the previous lesson  except this time connect to pin 6.
 	![](images/gpio-setup.png)
 2. Now you can simulate a bucket tip with a simple press of the button.
 
@@ -36,14 +36,14 @@ In most classroom situations you won't have a rain gauge (or at least one to you
 cp pullup.py rain_polling.py
 	```
 2. Next edit the code with **nano**  by typing `nano rain_polling.py`.
-3. In the top few lines change the pin being read to 27, the weather station is wired to use this pin so we should also use it for testing.
+3. In the top few lines change the pin being read to 6, the weather station is wired to use this pin so we should also use it for testing.
 
   ```python
   #!/usr/bin/python
   import RPi.GPIO as GPIO
   import time
 
-  pin = 27
+  pin = 6
 
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
@@ -116,7 +116,7 @@ To do that we need use a technique called interrupt handling. Rather than consta
 #!/usr/bin/python3
 import RPi.GPIO as GPIO
 
-pin = 27
+pin = 6
 count = 0
 
 def bucket_tipped(channel):
