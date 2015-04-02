@@ -62,7 +62,7 @@ More detail for students can be found in the [student worksheet](worksheet.md).
 
 ### Check the code from last lesson
 
-1. Students will first need to check their `pullup.py` code from last lesson and adapt it to use the correct pin for the rain gauge (pin 27).
+1. Students will first need to check their `pullup.py` code from last lesson and adapt it to use the correct pin for the rain gauge (pin 6).
 2. They should then connect some jumper wires and test their code works as expected.
 
 ### Counting bucket tips
@@ -85,7 +85,7 @@ More detail for students can be found in the [student worksheet](worksheet.md).
     import RPi.GPIO as GPIO
     import time
 
-    pin = 27
+    pin = 6
 
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
@@ -135,7 +135,7 @@ The bouncetime setting is the minimum amount of time between detections, this ca
   #!/usr/bin/python
   import RPi.GPIO as GPIO
 
-  pin = 27
+  pin = 6
   count = 0
 
   def bucket_tipped(channel):
