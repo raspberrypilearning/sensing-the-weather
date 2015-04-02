@@ -166,5 +166,4 @@ Ask the class the following questions.
 
 ## Extension
 
-- Something
-- Something else
+- Students could test the accuracy of their rain gauge program by pouring a known amount of water and observing the measured result.
