@@ -37,11 +37,9 @@ This lesson will introduce students to weather forecasting and how it works as w
 
 ## Starter
 
-Begin by watching the video [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4) with the students quiz them afterwards on the meaning of some key vocab such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
+  Begin by watching the video [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4) with the students quiz them afterwards on the meaning of some key vocab such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
 
-Challenge students to suggest how meteorologists are able to make predications about the weather. Illicit the fact that they collect hugh amount of data to crete [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts)
-
-
+  Challenge students to suggest how meteorologists are able to make predications about the weather. Illicit the fact that they collect hugh amount of data to cr    ete [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts)
 
 ## Main development
 
@@ -52,16 +50,13 @@ Challenge students to suggest how meteorologists are able to make predications a
 
 2. Introduce the Raspberry Pi and how we will use it to automatically collect data, student consider & discuss the benfits of the Raspberry Pi over a standard computer.
 
-![](images/raspberrypis.png)
-*The Raspberry Pi model B (left) and the B+ (right)*
+  This [Video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) would  be useful at this point if pupils have never used a Raspberry Pi as would this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
 
-This [Video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) would  be useful at this point if pupils have never used a Raspberry Pi as would this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
-
-3. Focus on the General Purpose Input Output (GPIO) pins, students should understand that the pins can be connected to input or output devices. Students should identify some simple **input** and **output** devices. For each device students consider what it means when the voltage is `HIGH` or `LOW`.
+3. Focus on the [General Purpose Input Output]() (GPIO) pins, students should understand that the pins can be connected to input or output devices. Students should identify some simple **input** and **output** devices. For each device students consider what it means when the voltage is `HIGH` or `LOW`.
 
 ## Plenary
 
-Reiterate the meaning of HIGH and LOW by showing the voltage chart 
+Reiterate the meaning of HIGH and LOW by showing the voltage chart
 
 ![](images/high_low.png)
 

@@ -3,6 +3,9 @@
 1
 
 
+![](images/raspberrypis.png)
+*The Raspberry Pi model B (left) and the B+ (right)*
+
 
     Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a wide range of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors.
 
