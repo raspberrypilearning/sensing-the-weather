@@ -12,17 +12,6 @@ To find out more about the weather station, the schemes of work and how to get o
 - [Working with big data sets]()
 - [Deploying your weather station](https://github.com/raspberrypi/weather-station)
 
-Over the course of 5 lessons, students will learn:
-
-- What a Raspberry Pi is, what its main features are, and how to set up and use one
-- How to write python programs to read data from sensor inputs
-- Computer Science concepts:
-	- Sequencing
-	- Debugging
-	- Iteration
-	- Conditionals
-	- Algorithms
-	- Functions
 
 ## Lessons
 
