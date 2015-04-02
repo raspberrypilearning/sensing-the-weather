@@ -1,15 +1,14 @@
 # Weather Station Basic I/O - Lesson Plan 1
 
 
-This lesson will introduce the idea behind the weather station and why we need one to build one. It serves as a general introduction to the scheme of work and will prepare the students to give them a general overview of what they are aiming to achieve. It will also introduce the using a the Raspberry Pi GPIO pins to connect to measurement devices.
+This lesson will introduce students to weather forecasting and how it works as well as some key weather terminology. Students will consider why gathering data about the weather is important and what data could be collected. They will be introduced to the Raspberry Pi weather station as a tool to automatically collect some of this data. It will also introduce the using a the Raspberry Pi GPIO pins to connect to measurement devices.
 
 ## Learning objectives
 
-- To identify weather characteristics that can be measured
-- To explain the need for an automated weather station
-- To understand the potential uses for the Raspberry Pi GPIO interface
-- To differentiate between the input and output modes of the GPIO interface
-- Understand the meaning of HIGH and LOW in releation to digital hardware
+- To be familar with some key weather terminology
+- To identify weather characteristics that can be measured, and understand how this is done
+- To understand the potential use of the Raspberry Pi as an automated weather station
+- To differentiate between the input and output modes of the GPIO interface and the terms `HIGH` and `LOW`
 
 ## Learning outcomes
 
@@ -31,68 +30,39 @@ This lesson will introduce the idea behind the weather station and why we need o
 
 ## Lesson Summary
 
-- Explore how weather data is collected and what measurements might be taken.
-- What other data needs to be captured?
-- What kind of computing device would be best for running this project?
-- What are the differences between Input and Output mode, what does High & Low Mean?
+- Decode a weather forecast.
+- Consider what data needs to be captured?
+- Introduce the Raspberry Pi and weather station sensors.
+- What are the differences between input and output mode, what do `HIGH` & `LOW` mean?
 
 ## Starter
 
-Predictions about future weather aren't useful unless they are based on scientifically gathered measurements. So what can we measure and how can we do it scientifically?
+Begin by watching the video [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4) with the students quiz them afterwards on the meaning of some key vocab such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
 
-Get students to consider the different characteristics that could be collected, how these could be collected and what the measurement might be. This could be done through:
+Challenge students to suggest how meteorologists are able to make predications about the weather. Illicit the fact that they collect hugh amount of data to crete [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts)
+
+
+
+## Main development
+
+1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through:
 - general class discussion
 - playing with the sensors and predicting what they might do
 - a simple [cardsort](files/WeatherStationCardsort.pdf)
 
-Discuss with the students other data we might want to store which isn't being captured by the sensors, bring them round to the idea that we will need the following.
+2. Introduce the Raspberry Pi and how we will use it to automatically collect data, student consider & discuss the benfits of the Raspberry Pi over a standard computer.
 
-Measurement | Reason
---- | ---
-Date and Time | Links the measurement to a specific time allowing for comparison to other measurements taken at earlier or later times
-Location | Ties the measurement to a specific place allowing for comparison to other measurements taken at different locations and for plotting on a map
+![](images/raspberrypis.png)
+*The Raspberry Pi model B (left) and the B+ (right)*
 
-## Main development
+This [Video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) would  be useful at this point if pupils have never used a Raspberry Pi as would this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
 
-1. For this project we will be using a computer to gather the required data, ask the students to suggest reasons for this decision, what are the alternatives, advantages and disadvantages?
-
-2. What kind of computer would be appropriate what are the criteria? Get the students to discuss?
-  - Small size,  meaning that it can be setup in any location.
-  - Low Power, we don't want to have to run mains power out to wherever the computer is.
-  - Robust, the computer needs to work well outdoors and not cost the earth if it fails.
-  - Collect Data, the computer needs to be able to communicate with sensors to gather the required data.
-
-3. The [Raspberry Pi](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) offers a great solution to this problem and is what we'll use. At this point (especially if this is the students first time using the Raspberry Pi) it might be worthwhile reviewing the [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
-
-  ![](images/raspberrypis.png)
-
-  *The Raspberry Pi model B (left) and the B+ (right)*
-
-4. What makes this computer different to the ones you may be used before is the row of pins, sticking up, in the corner.
-
-    Those are called General Purpose Input Output pins or *GPIO* for short. These allow the Raspberry Pi to interface with a wide range of electronics and physical objects such as lights, buzzers, motors, robotic arms, servos, relays and sensors.
-
-    Each individual pin can be set up in two main modes: *Input* mode and *Output* mode.
-
-    ## Output mode
-
-    Output mode is used when you want to supply power to a device like an LED or buzzer. The picture below shows how a single LED would be connected.
-
-    ![](images/gpio_out.png)
-
-    The blue wire is able to switch the positive leg of the LED on/off. The black wire connects the negative leg of the LED to GND (ground) to complete the circuit. The LED will not light up though unless we give the computer the command to make GPIO 4 output power. We'll look into these commands later the point to understand is that we have *control* of the LED turning on and off from our code.
-
-    ## Input mode
-
-    If we use *input* mode, a GPIO pin has a value that we can read in our code. If the pin has voltage going into it, the reading will be `1` HIGH; if the pin was connected directly to ground (no voltage), the reading will be `0` LOW. The picture below shows how a push button would be connected. In our code we want to know if the button has been pressed or not. To do this we can use a clever trick to loop back some power from the Raspberry Pi, through the button and into a GPIO pin that is using input mode.
-
-    ![](images/gpio_in.png)
-
-    The red wire is being used to connect one side of the button to the 3.3 volt supply of the Raspberry Pi (a pin that always outputs 3.3 volts by default). The blue wire connects the other side of the button to GPIO 4. The button works like a switch, so while it's up (open switch) no voltage will reach GPIO 4 so the reading will be `0` LOW. When the button is pressed (closed switch) voltage will flow into GPIO 4 whereupon on the reading will be `1` HIGH.
+3. Focus on the General Purpose Input Output (GPIO) pins, students should understand that the pins can be connected to input or output devices. Students should identify some simple **input** and **output** devices. For each device students consider what it means when the voltage is `HIGH` or `LOW`.
 
 ## Plenary
 
-Just to recap let's reiterate the meaning of HIGH and LOW. These are the two states a GPIO pin can have regardless of which mode it is using. Take a look at the graph below.
+Reiterate the meaning of HIGH and LOW by showing the voltage chart 
+
 ![](images/high_low.png)
 
 Discuss with the class the following questions:
