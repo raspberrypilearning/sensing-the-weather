@@ -1,4 +1,4 @@
-# Lesson 5 - Combining our code
+# Weather Station Basic I/O - Combining our code
 
 In this lesson you will:
 
