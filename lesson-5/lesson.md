@@ -55,7 +55,8 @@ Explain to students that their challenge today is to combine these 2 programs to
 Show the students how to add comments to their code, a line proceeded by a `#` symbol is ignored by the computer and provides a useful comment. eg
 
   ```python
-#The spin function is called whenever a spin is detect, it increments the count variable and print it out
+#The spin function is called whenever a spin is detected
+#it increments the count variable and print it out
 
 def spin(channel):
   global count
