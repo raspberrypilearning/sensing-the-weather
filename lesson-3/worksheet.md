@@ -1,4 +1,4 @@
-# Lesson 3 - The Rain Gauge
+# Weather Station Basic I/O - The Rain Gauge
 
 In this lesson you will:
 
