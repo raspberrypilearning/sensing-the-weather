@@ -1,6 +1,7 @@
 # Lesson 2 - Capturing input signals
 
 In this lesson you will:
+
 1. Create and execute a prorgam to get the current state of Pin 4 and display it on screen.
 2. Use a while loop to repeat nthis **polling** of the pin and output the result.
 3. Add a delay to slow down the rate of **polling**.
@@ -15,9 +16,11 @@ Connect your wires / buttons as shown:
 
 ![Pull up wires](images/pull_up_wire.png)
 
-1. In LX terminal enter the command `nano pullup.py` and press Enter (nano is a text editor program).
-1. Enter the code below.
-```python
+1. Open LX terminal from the menu bar
+  ![](images/lxterminal.png)
+2. In LX terminal enter the command `nano pullup.py` and press Enter (nano is a text editor program).
+3. Enter the code below.
+  ```python
   #!/usr/bin/python3
   import RPi.GPIO as GPIO
   import time
@@ -37,13 +40,15 @@ Connect your wires / buttons as shown:
   **Code explained:**
 
   ```python
-  #!/usr/bin/python3```
+  #!/usr/bin/python3
+  ```
 
    This line denotes this file as a Python program so that the computer knows *how* to run the code.
 
   ```python
   import RPi.GPIO as GPIO
-  import time```
+  import time
+  ```
 
   Imports the `RPi.GPIO` library that allows you to control the GPIO pins and the time library to measure time or make the program sleep.
 
