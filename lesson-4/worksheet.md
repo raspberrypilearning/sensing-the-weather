@@ -39,7 +39,7 @@ cp rain_interrupt.py wind_interrupt.py
 nano wind_interrupt.py
 ```
 
-3. The anemometer is connected to pin **17** update the code to reflect this
+3. The anemometer is connected to pin **5** update the code to reflect this
 
 4. Rename the `bucket_tipped` function to something meaningful like `spin`. *This will need doing in 2 places*
 
@@ -51,7 +51,7 @@ nano wind_interrupt.py
 ```bash
 sudo ./wind_interrupt.py
 ```
-Your code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected check your code against this [solution](wind_interrupt1.py)
+Your code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected check your code against this [solution](wind_interrupt.py)
 
 We can now count the signals from the anemometer, next we need to calculate the wind speed.
 
@@ -92,7 +92,7 @@ nano wind_calc.py
 4. Adapt your code using to following solution as a guide:
 
 > import GPIO,time,math  
-> pin 17  
+> pin 5  
 > count = 0  
 >
 > FUNCTION spin (channel)  
@@ -115,7 +115,7 @@ nano wind_calc.py
 - The first 3 lines setup the different variables and required libraries.
 - The **spin** function is called every time an interrupt is detected and adds 1 to the count variable and prints it.
 - The **calcspeed** function uses all the right inforation to calculate the wind speed and returns it.
-- The next line sets up the GPIO callback function for pin 17 and sets the function to spin.
+- The next line sets up the GPIO callback function for pin 5 and sets the function to spin.
 - The final loop is set to wait for a time period before calulating the speed, printing it and then starting again.
 
 Can you convert this program plan to a working python program.
