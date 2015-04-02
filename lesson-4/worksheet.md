@@ -1,4 +1,4 @@
-# Lesson 4 - Measuring wind speed
+# Weather Station Basic I/O - Measuring wind speed
 
 In this lesson you will:
 
