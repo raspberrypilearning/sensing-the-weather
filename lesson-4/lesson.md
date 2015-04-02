@@ -86,7 +86,7 @@ cp rain_interrupt.py wind_speed.py
 nano wind_speed.py
 ```
 3. There are 3 changes to be made.
-- Firstly change the pin from 27 to 17
+- Firstly change the pin from 6 to 5
 - Then change the name of the function from **bucket_tipped** to **spin**
 - Remove the multiplier for rainfall and just print the count
 - Finally change the function name in the event detection line to match the **spin** function
@@ -95,7 +95,7 @@ nano wind_speed.py
 	```python#!/usr/bin/python3
 	import RPi.GPIO as GPIO
 
-	pin = 27
+	pin = 5
 	count = 0
 
 	def spin(channel):
@@ -134,7 +134,7 @@ Give the students an outline solution in pseudocode / structured English or simi
 
 
 > import GPIO,time,math  
-> pin 17  
+> pin 5  
 > count = 0  
 >
 > FUNCTION spin (channel)  
@@ -162,7 +162,7 @@ Ask the students to try code the solution using the above as a template, encoura
     import RPi.GPIO as GPIO
     import time, math
 
-    pin = 17
+    pin = 5
     count = 0
 
     def calculate_speed(r_cm, time_sec):
