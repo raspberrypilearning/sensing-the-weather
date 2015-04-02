@@ -189,7 +189,7 @@ Ask the students to try code the solution using the above as a template, encoura
         count = 0
         time.sleep(interval)
         print (calculate_speed(9.0, interval), "kph")
-    ```
+```
 
 At any point the students can run their code by exiting nano `Ctrl + O` followed by `Ctrl + X`, then typing `sudo ./wind_speed.py`.
 
