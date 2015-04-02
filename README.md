@@ -2,7 +2,35 @@
 
 ![](cover.png)
 
-This scheme of work introduces students to Raspberry Pi Weather Station project. Over the course of this unit they will explore some of the simple sensors from the kit. They will use the Python programming language to read and interpret data from the sensors.
+This scheme of work introduces students to Raspberry Pi Weather Station. A project which aims to get schools children building and programming their own weather station to collect and present data. This is the first of a series of activities which introduces some simple sensors and get the students writing Python code to gather data from them. 
+
+To find out more about the weather station, the schemes of work and how to get one use the following links:
+- [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
+- [Advanced Sensors]()
+- [Building a live GUI]()
+- [Logging and presenting data]()
+- [Working with big data sets]()
+- [Deploying your weather station](https://github.com/raspberrypi/weather-station)
+
+Over the course of 5 lessons, students will learn:
+
+- What a Raspberry Pi is, what its main features are, and how to set up and use one
+- How to write python programs to read data from sensor inputs
+- Computer Science concepts:
+	- Sequencing
+	- Debugging
+	- Iteration
+	- Conditionals
+	- Algorithms
+	- Functions
+
+## Lessons
+
+- [Lesson 1 - Why and how we collect weather data](lesson-1/lesson.md)
+- [Lesson 2 - Sensing inputs from hardware](lesson-2/lesson.md)
+- [Lesson 3 - Measuring rainfall using polling and interrupts](lesson-3/lesson.md)
+- [Lesson 4 - Calculating wind speed](lesson-4/lesson.md)
+- [Lesson 5 - Putting it all together](lesson-5/lesson.md)
 
 ## Licence
 
@@ -12,4 +40,4 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 ***Weather Station Basic Input / Output*** by the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/example-resource
+Based on a work at https://github.com/raspberrypilearning/weather-station-1
