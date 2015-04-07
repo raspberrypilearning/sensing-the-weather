@@ -2,7 +2,7 @@
 
 ![](cover.png)
 
-This scheme of work introduces students to Raspberry Pi Weather Station. A project which aims to get schools children building and programming their own weather station to collect and present data. This is the first of a series of activities which introduces some simple sensors and get the students writing Python code to gather data from them. 
+This scheme of work introduces students to Raspberry Pi Weather Station, a project which aims to get schoolchildren building and programming their own weather station to collect and present data. This is the first of a series of activities which introduces some simple sensors and gets the students writing Python code to gather data from them. 
 
 ## Lessons
 
@@ -12,7 +12,8 @@ This scheme of work introduces students to Raspberry Pi Weather Station. A proje
 - [Lesson 4 - Calculating wind speed](lesson-4/lesson.md)
 - [Lesson 5 - Putting it all together](lesson-5/lesson.md)
 
-To find out more about the weather station project, the schemes of work and how to get one use the following links:
+To find out more about the weather station project, the schemes of work and how to get one, use the following links:
+
 - [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
 - [Advanced Sensors]()
 - [Building a live GUI]()

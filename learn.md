@@ -1,4 +1,4 @@
-By creating a something with your Raspberry Pi students will learn:
+By creating a weather station with Raspberry Pi, students will learn:
 
 - How to set up a Raspberry Pi camera
 - How to use GPIO pins

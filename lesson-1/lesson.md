@@ -1,14 +1,13 @@
 # Weather Station Basic I/O - Lesson Plan 1
 
-
-This lesson will introduce students to weather forecasting and how it works as well as some key weather terminology. Students will consider why gathering data about the weather is important and what data could be collected. They will be introduced to the Raspberry Pi weather station as a tool to automatically collect some of this data. It will also introduce the using a the Raspberry Pi GPIO pins to connect to measurement devices.
+This lesson will introduce students to weather forecasting and how it works, as well as some key weather terminology. Students will consider why gathering weather data is important and what data could be collected. They will be introduced to the Raspberry Pi weather station as a tool to automatically collect some of this data. The lesson will also introduce the use of Raspberry Pi GPIO pins to connect to measurement devices.
 
 ## Learning objectives
 
-- To be familar with some key weather terminology
+- To familarise students with some key weather terminology
 - To identify weather characteristics that can be measured, and understand how this is done
 - To understand the potential use of the Raspberry Pi as an automated weather station
-- To differentiate between the input and output modes of the GPIO interface and the terms `HIGH` and `LOW`
+- To differentiate between the input and output modes of the GPIO interface, and the terms `HIGH` and `LOW`
 
 ## Learning outcomes
 
@@ -21,43 +20,45 @@ This lesson will introduce students to weather forecasting and how it works as w
 ### Most students are able to
 
 - Suggest appropriate methods or devices for capturing weather data
-- Understand that digital devices only read and produces two states `HIGH` / `LOW`
+- Understand that digital devices only read and produce two states: `HIGH` and `LOW`
 
 ### Some students are able to
 
-- Relate `HIGH` / `LOW` to other digital representations (ON/OFF, 1/0)
-- Describe how the sensors might work and be able to connect to `HIGH` / `LOW` signals.
+- Relate `HIGH` and `LOW` to other digital representations such as ON/OFF and 1/0
+- Describe how the sensors might work and how they could connect to the `HIGH` and `LOW` signals
 
 ## Lesson Summary
 
-- Decode a weather forecast.
-- Consider what data needs to be captured?
-- Introduce the Raspberry Pi and weather station sensors.
-- What are the differences between input and output mode, what do `HIGH` & `LOW` mean?
+- Decode a weather forecast
+- Consider what data needs to be captured
+- Introduce the Raspberry Pi and weather station sensors
+- Understand the differences between input and output mode, and `HIGH` and `LOW` signals
 
 ## Starter
 
-  Begin by watching the video [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4) with the students quiz them afterwards on the meaning of some key vocab such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
+Begin by watching the video [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4) with the students. Afterwards, test them on the meaning of some key vocab, such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
 
-  Challenge students to suggest how meteorologists are able to make predications about the weather. Illicit the fact that they collect hugh amount of data to cr    ete [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts)
+Ask students to suggest how meteorologists are able to make predictions about the weather. Through questioning, draw out the fact that they collect huge amount of data to create [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts).
 
 ## Main development
 
-1. Discuss with the students +the different weather data that could be measured, and how this might be collected. This could be done through:
-  - general class discussion
-  - playing with the sensors and predicting what they might do
-  - a simple [cardsort](files/WeatherStationCardsort.pdf)
+<<<<<<< HEAD
+1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
+- Students could create a [weather log](files/WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week. They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare.
+>>>>>>> 4116a58fb9fea4c32a0cc6b6f2c61c196f92cbfa
 
-2. Introduce the Raspberry Pi and how we will use it to automatically collect data, student consider & discuss the benfits of the Raspberry Pi over a standard computer.
+2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. THese benefits include; size, cost and ability to interact with hardware sensors.
+- If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point
+- This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands on experience.
+- Students could complete a labelling activity
 
-  -This [Video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) would  be useful at this point if pupils have never used a Raspberry Pi
-  -As would this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
-
-3. Focus on the [General Purpose Input Output]() (GPIO) pins, students should understand that the pins can be connected to input or output devices. Students should identify some simple **input** and **output** devices. For each device students consider what it means when the voltage is `HIGH` or `LOW`.
+3. Highlight the [General Purpose Input Output](Guide links) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
+- The [worksheet](worksheet.md) has examples of different devices which students should identify as **input** or **output**.
+- Students could be given set of real devices (switches, LEDs, buzzers, PIR sensors, reed switches) and decide what each are and catagorise them as **input** or **output**
 
 ## Plenary
 
-Reiterate the meaning of HIGH and LOW by showing the voltage chart
+Reiterate the meaning of `HIGH` and `LOW` by showing the voltage chart:
 
 ![](images/high_low.png)
 
@@ -73,5 +74,5 @@ Discuss with the class the following questions:
 
 ## Extension
 
-- Student's could consider how these digital signals might relate to the actual measurement of the weather. Eg What does High and Low mean in relation to the rain gauge?
-- Are there any sensors for which the High / Low readings aren't clear or don't work? For example, how does the weather vane work, what is High and what is Low?
+- Students could consider how these digital signals might relate to the actual measurement of the weather. For instance, what do `HIGH` and `LOW` mean in relation to the rain gauge?
+- Are there any sensors for which the `HIGH` and `LOW` readings aren't clear or don't work? For example, how does the weather vane work? In this case, what is `HIGH` and what is `LOW`?
