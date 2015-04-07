@@ -43,7 +43,7 @@ Ask students to suggest how meteorologists are able to make predictions about th
 ## Main development
 
 1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
-- Students could create a [weather log](files(WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week. They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare.
+- Students could create a [weather log](files/WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week. They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare.
 
 2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. THese benefits include; size, cost and ability to interact with hardware sensors.
 - If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point
