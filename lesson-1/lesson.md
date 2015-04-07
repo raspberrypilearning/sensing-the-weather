@@ -43,10 +43,16 @@ Ask students to suggest how meteorologists are able to make predictions about th
 ## Main development
 
 1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
+- Students could create a [weather log](files(WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week. They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare.
 
-2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point, as well as this [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/).
+2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. THese benefits include; size, cost and ability to interact with hardware sensors.
+- If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point
+- This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands on experience.
+- Students could complete a labelling activity
 
-3. Focus on the [General Purpose Input Output]() (GPIO) pins. Students should understand that the pins can be connected to input or output devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
+3. Highlight the [General Purpose Input Output](Guide links) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
+- The [worksheet](worksheet.md) has examples of different devices which students should identify as **input** or **output**.
+- Students could be given set of real devices (switches, LEDs, buzzers, PIR sensors, reed switches) and decide what each are and catagorise them as **input** or **output**
 
 ## Plenary
 
