@@ -36,7 +36,9 @@ This lesson will introduce students to weather forecasting and how it works, as 
 
 ## Starter
 
-Begin by watching the video [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4) with the students. Afterwards, test them on the meaning of some key vocab, such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
+Begin by watching either video with the students. Afterwards, test them on the meaning of some key vocab, such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
+- [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4)
+- [What are weather fronts](https://www.youtube.com/watch?v=G7Ewqm0YHUI)
 
 Ask students to suggest how meteorologists are able to make predictions about the weather. Through questioning, draw out the fact that they collect huge amount of data to create [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts).
 
