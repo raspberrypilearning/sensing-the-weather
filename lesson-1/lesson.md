@@ -43,7 +43,7 @@ This lesson will introduce students to weather forecasting and how it works as w
 
 ## Main development
 
-1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through:
+1. Discuss with the students +the different weather data that could be measured, and how this might be collected. This could be done through:
   - general class discussion
   - playing with the sensors and predicting what they might do
   - a simple [cardsort](files/WeatherStationCardsort.pdf)
