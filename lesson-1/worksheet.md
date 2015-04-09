@@ -71,9 +71,14 @@ The Raspberry Pi is able to communicate with these devices using a series of pin
 
 Can you decide which of these devices are **input** and which are **output**?
 
-|Name|Image|Name|Image|
-|====|=====|====|=====|
-|button|dsadassadsa|LED|dasdsdasdsasad|
+| Component | Image | Component | Image |
+|------|-------|------|-------|
+| Button |  ![button](images/tactile-push-button.png) | LED | ![LED](images/led.png) |
+| Motor |  ![moto](images/motor.png) | Reed Switch | ![Reed Switch](images/reed.png) |
+| Camera |  ![Camera](images/camera.png) | Servo | ![Servo](images/servo.png) |
+| Anemometer |  ![Anemometer](images/anemometer.png) | Infrared Sensor | ![Infrared Sensor](images/pir.png) |
+| PiGlow |  ![Piglow](images/piglow.png) | Air Quality Sensor | ![Air Quality Sensor](images/air-quality-sensor.png) |
+| Morse Key |  ![Morse Key](images/morse-key.png) | | |
 
 
 
