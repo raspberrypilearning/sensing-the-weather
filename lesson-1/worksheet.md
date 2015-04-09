@@ -73,7 +73,7 @@ Can you decide which of these devices are **input** and which are **output**?
 
 |Name|Image|Name|Image|
 |====|=====|====|=====|
-|button|![but](images/gpio_in.png)|LED|![but](images/gpio_out.png)|
+|button|dsadassadsa|LED|dasdsdasdsasad|
 
 
 
