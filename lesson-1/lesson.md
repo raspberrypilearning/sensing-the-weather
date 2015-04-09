@@ -40,16 +40,19 @@ Begin by watching either video with the students. Afterwards, test them on the m
 - [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4)
 - [What are weather fronts](https://www.youtube.com/watch?v=G7Ewqm0YHUI)
 
-Ask students to suggest how meteorologists are able to make predictions about the weather. Through questioning, draw out the fact that they collect huge amount of data to create [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts).
+Discuss with students how meteorologists make predictions about the weather.
+- Through questioning, draw out the fact that they collect a huge amount of data to create [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts).
+- Students could explore some models at [weatheronline.co.uk](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
 
 ## Main development
 
-<<<<<<< HEAD
-1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
-- Students could create a [weather log](files/WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week. They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare.
->>>>>>> 4116a58fb9fea4c32a0cc6b6f2c61c196f92cbfa
 
-2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. THese benefits include; size, cost and ability to interact with hardware sensors.
+1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
+- Students could create a [weather log](files/WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week.
+- They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare. This could be done as a home learning task.
+
+
+2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. These benefits include; size, cost and ability to interact with hardware sensors.
 - If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point
 - This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands on experience.
 - Students could complete a labelling activity

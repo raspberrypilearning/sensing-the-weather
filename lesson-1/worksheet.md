@@ -1,14 +1,84 @@
-# Weather Station Basic I/O - Capturing input signals
+# Weather Station Basic I/O - Lesson 1
 
 In this lesson you will:
 
-1. Create and execute a prorgam to get the current state of Pin 4 and display it on screen.
-2. Use a while loop to repeat nthis **polling** of the pin and output the result.
-3. Add a delay to slow down the rate of **polling**.
-4. Adapt the program to use a pull down circuit.
-4. Explore the timings of the loop to get the ideal sensitivity.
+- Ensure you are familar with how weather forecasts work and some key weather terminology
+- Identify some weather characteristics that can be measured, and understand how this is done
+- Understand what a Raspberry Pi is and how it can be used as an automated weather station
+- Known the difference between the input and output modes of the GPIO pins, and the terms `HIGH` and `LOW`
 
-## Reading an input pin
+## What does a weather forecast tell us
+
+All of us at some point have seen a TV weather forecast, but what does it all mean? Watch the video and see if you are able to explain some of the key terms below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lITCF3UPVu4" frameborder="0" allowfullscreen></iframe>
+
+What do the following terms mean?
+- High Pressure
+- Low Pressure
+- Isobars
+- Fronts
+
+## How do we make predictions?
+
+So a weather forecast is a useful prediction of future conditions, but how are these predictions made?
+
+There are 2 key steps to predicting the weather:
+
+### Data collection
+Vast quantities of data are collected about current conditions all over the world, this is collected using:
+  - Satelites
+  - Ground based observers
+  - Weather stations
+
+What kind of data might these sources collect, temperature is one, can you think of others?
+
+### Modelling
+The data collected is gathered and used to build a **computer model** which knows the state of the weather at various points predicts the path of weather fronts and systems.
+
+Explore these models by visiting [weatheronline.co.uk
+](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
+
+[![Weather Model]](images/ani_model.gif)](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
+
+## Are predictions always accurate?
+
+- Create a [weather log](files/weather_log.pdf) and record the predicted conditions (temperature, wind speed, etc) in your area using your favourite forecasting service.
+
+[![Weather Log](images/weather_log.png)](files/weather_log.pdf)
+
+- Observe the weather for a week and record the actual conditions ([weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk)), how accurate were the forecasts?
+
+## Building a computerised weather station
+
+Forecasting relies on regular, reliable data collection, which is ideally done by an automated computer system. This is where the Raspberry Pi is perfect, it's small, light, cheap and best of all can collect data from sensors. Along with the weather station add on we can build a complete automated weather station.
+
+![Raspberry Pi](images/raspberrypis.png)
+*Needs pic of the weather board / kit*
+
+It includes a variety of sensors:
+- rain guage
+- anemometer
+- wind vane
+- temperature
+- pressure
+- air quality
+
+
+## Inputs and outputs
+
+The Raspberry Pi is able to communicate with these devices using a series of pins on the board called **G**eneral **P**urpose **I**nput **O**utput (**GPIO**) pins. These pins allow the Raspberry Pi to control **output** devices and sense data using **input** devices.
+
+Can you decide which of these devices are **input** and which are **output**?
+
+|Name|Image|Name|Image|
+|====|=====|====|=====|
+|button|![but](images/gpio_in.png)|LED|![but](images/gpio_out.png)|
+
+
+
+
+
 
 First we need to be able to make sure we can read the input pin 4, we will start by build a **pull up** circuit.
 
@@ -92,7 +162,7 @@ Next we are going to add a slight adaptation to make it check repeatedly or **po
 3. Adapt your code so that it the last section looks like this (be careful to get the indentation correct):
   ```python
   GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-  
+
     while True:           #This line tells the program to loop the following indented section
         pin_value = GPIO.input(pin)
         if pin_value == True:
