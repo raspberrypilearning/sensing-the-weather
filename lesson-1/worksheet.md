@@ -39,7 +39,7 @@ The data collected is gathered and used to build a **computer model** which know
 Explore these models by visiting [weatheronline.co.uk
 ](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
 
-[![Weather Model]](images/ani_model.gif)](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
+[![Weather Model](images/ani_model.gif)](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
 
 ## Are predictions always accurate?
 
