@@ -2,7 +2,7 @@
 
 In this lesson you will:
 
-- Ensure you are familar with how weather forecasts work and some key weather terminology
+- Ensure you are familiar with how weather forecasts work and some key weather terminology
 - Identify some weather characteristics that can be measured, and understand how this is done
 - Understand what a Raspberry Pi is and how it can be used as an automated weather station
 - Known the difference between the input and output modes of the GPIO pins, and the terms `HIGH` and `LOW`
@@ -11,7 +11,7 @@ In this lesson you will:
 
 All of us at some point have seen a TV weather forecast, but what does it all mean? Watch the video and see if you are able to explain some of the key terms below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lITCF3UPVu4" frameborder="0" allowfullscreen></iframe>
+[![Decoding a weather forecast](http://img.youtube.com/vi/lITCF3UPVu4/3.jpg)](http://www.youtube.com/watch?v=lITCF3UPVu4)
 
 What do the following terms mean?
 - High Pressure
@@ -64,6 +64,8 @@ It includes a variety of sensors:
 - pressure
 - air quality
 
+What do each of these sensors measure? In what units?
+
 
 ## Inputs and outputs
 
@@ -80,173 +82,24 @@ Can you decide which of these devices are **input** and which are **output**?
 | PiGlow |  ![Piglow](images/piglow.png) | Air Quality Sensor | ![Air Quality Sensor](images/air-quality-sensor.png) |
 | Morse Key |  ![Morse Key](images/morse-key.png) | | |
 
+## Thinking digitally
 
+When the Raspberry Pi connects to devices like the ones above it communicates with them using an electrical signal which can either be `HIGH` (maximum voltage) or `LOW` (minimum voltage).
+- When talking to an **output** device the Raspberry Pi can send a `HIGH` signal giving that device **3.3V** or a `LOW` signal which gives it **0V**
+- When talking to an **input** device the Raspberry Pi can detect a `HIGH` signal when that device allows **3.3V** to pass through. Otherwise if the device allows 0V to pass through the `LOW` signal is detected.
 
+Here is a chart showing the voltage across a device connect to the Pi
 
+![](images/high_low.png)
 
+Now answer the following questions:
 
-First we need to be able to make sure we can read the input pin 4, we will start by build a **pull up** circuit.
+1. What would be happening if this graph was from an LED being connected to the Pi?
+1. What would this graph show if instead the Pi was connected to a button?
 
-Connect your wires / buttons as shown:
-
-![Pull up wires](images/pull_up_wire.png)
-
-1. Open LX terminal from the menu bar
-
-  ![](images/lxterminal.png)
-2. In LX terminal enter the command `nano pullup.py` and press Enter (nano is a text editor program).
-3. Enter the code below.
-  ```python
-  #!/usr/bin/python3
-  import RPi.GPIO as GPIO
-  import time
-
-  pin = 4
-
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-
-  pin_value = GPIO.input(pin)
-  if pin_value == True:
-    print ("HIGH")
-  else:
-    print()"LOW")
-  ```
-
-  **Code explained:**
-
-  ```python
-  #!/usr/bin/python3
-  ```
-
-   This line denotes this file as a Python program so that the computer knows *how* to run the code.
-
-  ```python
-  import RPi.GPIO as GPIO
-  import time
-  ```
-
-  Imports the `RPi.GPIO` library that allows you to control the GPIO pins and the time library to measure time or make the program sleep.
-
-  ```python
-  pin = 4
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-  ```
-
-   These 3 lines setup a variable call pin to store the pin number. We then set the scheme for referring to our pins as the BCM scheme. The important bit is the 3rd line where we setup the pin as an input using a pull up resistor
-
-   ```python
-   pin_value = GPIO.input(pin)
-   ```
-    This line reads the state of the pin and stores the result in a variable called **pin_value**. This will either be *True* or *False*.
-
-    ```python
-    if pin_value == True:
-      print ("HIGH")
-    else:
-      print("LOW")
-    ```
-    These lines check the value of the **pin_value** variable and prints out `HIGH` if the value is **True** and `LOW` if the value is **False**.
-
-3. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-4. Next, mark the file as executable with the following command:
-`chmod +x pullup.py`
-
-5. Type `sudo ./pullup.py` to test your code to ensure that when the button is pressed you get the output `LOW` and otherwise `high`.
-
-## Repeatedly polling the input pin.
-Currently our code checks the pin status once and displays an appropriate output.
-
-Next we are going to add a slight adaptation to make it check repeatedly or **poll** the pin.
-
-1. Edit you code again, in LX terminal enter the command `nano pullup.py` and press Enter.
-
-2. You want to make the code simply check the pin over and over again until we stop the program. To do this we will wrap the main 5 lines of our program in a while loop, we will also add a pause to the program so that it doesn't check too often.
-
-3. Adapt your code so that it the last section looks like this (be careful to get the indentation correct):
-  ```python
-  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-
-    while True:           #This line tells the program to loop the following indented section
-        pin_value = GPIO.input(pin)
-        if pin_value == True:
-          print ("HIGH")
-        else:
-          print("LOW")
-        time.sleep(0.5)   #This line adds a 0.5 second pause between polls.
-  ```
-1. Press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-1. Enter `sudo ./pullup.py` to run your code.
-1. The text `HIGH` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `LOW` because you're shorting the pin to ground. Release the wires (open the switch) and it will return to `HIGH` because of the internal pull *up* resistor.
-
-  ```
-  HIGH
-  HIGH
-  HIGH
-  HIGH
-  LOW
-  LOW
-  LOW
-  LOW
-  HIGH
-  HIGH
-  HIGH
-  HIGH
-  ```
-1. Press `Ctrl - C` to exit your program.
-
-## Adjusting Polling time
-
-Now that our code constantly polls the input pin for it's state we need to think about timing.
-
-1. Can you press the button fast enough that the program misses it?
-
-2. Experiment with the line `time.sleep(0.5)`, change the time so that it always detects you're input. Try different times, find the biggest pause that still detects the input.
-
-## Pull down circuit
-
-1. Remove the jumper cables from the Raspberry Pi GPIO pins and reattach them as shown in the diagram below. Take care to select the correct pins.
-
-  ![](images/pull_down_wire.png)
-
-1. The code required to test the pull down circuit is almost identical to that for the pull up so to save time we will just make a copy of your file and change one thing. Enter the command below (this takes a copy of `pullup.py` and saves it as `pulldown.py`):
-
-  `cp pullup.py pulldown.py`
-
-1. Enter the command below to edit the new file:
-
-  `nano pulldown.py`
-
-1. There is one line in the program that needs updating to reflect the change from a **pull up** to a **pull down**, which line is it?
-
-2. Update the program and press `Ctrl - O` then Enter to save, followed by `Ctrl - X` to quit from nano.
-
-3. The file doesn't need to be marked as executable with `chmod` since this property was copied from the original file. You can go ahead and run your code now, remember to use `sudo`:
-
-  `sudo ./pulldown.py`
-
-4. The text `LOW` should begin scrolling up the screen, when you hold the wires together (close the switch) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the wires (open the switch) and it will return to `LOW` because of the internal pull *down* resistor.
-
-  ```
-  LOW
-  LOW
-  LOW
-  LOW
-  HIGH
-  HIGH
-  HIGH
-  HIGH
-  LOW
-  LOW
-  LOW
-  LOW
-  ```
-1. Press `Ctrl - C` to exit your program.
 
 ## What's next?
-In this lesson we have made our program respond to a single button press using a **Pull Up** and **Pull Down** setup.
-
-- Are either of these circuits better than the other, does it make a difference which one we want to use?
-- In our code we used a button to print a simple statement, what else could you make it do? What do you want your button to do?
-- Could you connect multiple buttons to your Raspberry Pi and detect the states of each? Could you count the number of button presses?
+In this lesson we have considered how weather is measured and forecast, how the Raspberry Pi could be used to capture data, and the difference between `input` and `output` mode.
+- How do the devices in the weather station kit sense data, how might this be detected by the Pi?
+- Are there any sensors for which the `HIGH` and `LOW` readings aren't clear or don't work? For example, how does the weather vane work? In this case, what is `HIGH` and what is `LOW`?
+- Have a go at some simple GPIO activities from the [Make](https://www.raspberrypi.org/resources/make/) section of the Raspberry Pi website.
