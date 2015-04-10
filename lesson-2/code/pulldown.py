@@ -11,5 +11,5 @@ while True:
         if pin_value == True:
             print ("HIGH")
         else:
-            print()"LOW")
+            print("LOW")
         time.sleep(0.5)

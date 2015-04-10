@@ -34,43 +34,18 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Starter
 
-In this lesson we are going to make a very basic switch and program the Raspberry Pi to detect its position. The switch could actually just be two jumper wires that you touch together, or it could be a button if you have them. If they are touching the switch is closed, and if not the switch is open.
-
-![](images/jumpers.jpg)
-
-In the previous lesson we learnt about the concept of `HIGH` and `LOW`. When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between `HIGH` and `LOW`. We need to know for sure that the wires have touched. So we need to fix the voltage level to `HIGH` or `LOW`, and then make it change *only* when the we touch the wires together.
-
-We can do this in two ways:
-
-- A [pull up circuit](images/pull_up.png) pulls the voltage up to 3.3 volts and reads as `HIGH` by default. When the button is pressed the voltage drops to `LOW`.
-
-- A [pull down circuit](images/pull_up.png) pulls the voltage down to 0 volts and reads as `LOW` by default. When the button is pressed the voltage jumps to `HIGH`.
-
-Fortunately, the Raspberry Pi has built-in versions of all the above circuitry. It can be helpful to imagine that the two resistors `R1` and `R2` from the diagrams above are *inside* the circuitry of the Raspberry Pi, and they can be enabled or disabled as we desire. We can select either a pull up or a pull down *in our code* for each GPIO pin.
-
-Let's give it a try in practice.
+Use the Pull Up / Pull down [Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
+- Teacher led explanation
+- Role play
+- Analogy
 
 ## Main development
 
-1. We will test our switch in both pull up and pull down circuit configurations. First, students [connect and boot](http://www.raspberrypi.org/help/quick-start-guide/) their Raspberry Pi and load LXTerminal:
+1. Students follow [Pull Up/Down Guide]() to connect a button to the Raspberry Pi.
+2. Students refer to lesson [worksheet](worksheet.md) to write a python program to read an input pin in a `Pull Up` circuit.
+3. Students add a loop to their code to make it poll continuously and report the status of the pin.
+4. Students adapt their program to use a Pull Down resistor setup instead of a Pull Up.
 
-![](images/lxterminal.png)
-
-### Pull up circuit
-
-Here we are going to use the internal pull up resistor to make GPIO 4 always read `HIGH`, then we will short it to ground through the wires so that it will read `LOW` when we touch the wires together.
-
-*Note* : Pin numbers may be a little confusing at first, as there are a couple of numbering schemes which can be used. We will be using the **BCM scheme**. It may be worth having a pin reference sheet on the classroom wall or directing students to a guide such as [this](http://pi.gadgetoid.com/pinout). Some cases also have pin references on them. 
-
-Students should follow the worksheet to build their circuits and programs. There are a few points where you might wish to get the class to discuss what is happening.
-
-The [worksheet](worksheet.md) follows these steps:
-
-1. Create and execute a program to get the current state of pin 4 and display it on screen.
-2. Use a `while` loop to repeat this **polling** of the pin and output the result.
-3. Add a delay to slow down the rate of polling.
-4. Adapt the program to use a pull down circuit.
-4. Explore the timings of the loop to get the ideal sensitivity.
 
 ## Plenary
 
