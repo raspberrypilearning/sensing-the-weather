@@ -11,7 +11,7 @@ In this lesson you will:
 
 All of us at some point have seen a TV weather forecast, but what does it all mean? Watch the video and see if you are able to explain some of the key terms below.
 
-[![Decoding a weather forecast](http://img.youtube.com/vi/lITCF3UPVu4/3.jpg)](http://www.youtube.com/watch?v=lITCF3UPVu4)
+[![Decoding a weather forecast](http://img.youtube.com/vi/lITCF3UPVu4/0.jpg)](http://www.youtube.com/watch?v=lITCF3UPVu4)
 
 What do the following terms mean?
 - High Pressure
