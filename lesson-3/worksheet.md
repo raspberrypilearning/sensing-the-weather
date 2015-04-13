@@ -3,7 +3,7 @@
 In this lesson you will:
 
 - Simulate a rain gauge and collect data using the Raspberry Pi GPIO pins
-- Learn the difference between continuous polling and interrupt handling
+- Learn the difference between **continuous polling** and **interrupt handling**
 - Convert the collected data into meaningful measurement information
 
 ## How does the rain gauge work?
@@ -23,25 +23,38 @@ In this lesson you will:
 
   **Rainfall = 0.2794 * number of tips**
 
-## What if I don't have a rain gauge?
+## Getting Setup
+
+In order to get started we need to setup the rain gauge or simulate it, depending on the situation.
+
+### You have you a weather station & rain gauge to yourself
+
+Connect the weather station board and rain gauge using the [guide]()
+
+### You don't have a weather station & rain gauge to yourself
 
 In most classroom situations you won't have a rain gauge, or at least one to yourself, in which case you can simulate one using a pair of wires and a button.
 
-1. Connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
+1. Follow the [button guide] to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
 
 	![](images/gpio-setup.png)
-	
+
 1. Now you can simulate a bucket tip with a simple press of the button.
 
 ## Counting bucket tips
 
-1. You can reuse much of the code written last lesson to count the bucket tips. Set up your Raspberry Pi and enter the following command from the terminal:
+Setup your Raspberry Pi and ensure you are in desktop mode.
 
-	```bash
-cp pullup.py rain_polling.py
-	```
-	
-1. Next, edit the code with **nano**  by typing `nano rain_polling.py`.
+1. Launch the LXterminal window
+
+![LX Terminal](images/lxterminal.png)
+
+1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
+
+1. Copy the program to a new file called `rain_polling.py` using the command `cp pullup.py rain_polling.py` followed by `enter`.
+
+1. Open you program by typing `sudo idle3 rain_polling.py`
+
 1. In the top few lines change the pin being read to 6; the weather station is wired to use this pin so we should also use it for testing.
 
   ```python
@@ -54,7 +67,7 @@ cp pullup.py rain_polling.py
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
     ```
-    
+
 1. We want to count the number of times the switch closes and drops the voltage from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
 
 	```python
@@ -64,8 +77,8 @@ cp pullup.py rain_polling.py
 	```
 
 1. We will still want a `while True:` loop to constantly check the pin status, but we want to do something extra with it. In pseudocode (planning) our loop might look like this:
-	
-	
+
+
 	> LOOP  
 	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**  
 	> IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN  
@@ -74,10 +87,10 @@ cp pullup.py rain_polling.py
 	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**  
 	> PAUSE 0.01 SECONDS  
 	> END LOOP  
-	
+
 
 In Python we would write
-		
+
 	```python
 	while True:
 	       current_state = GPIO.input(pin)
@@ -88,18 +101,19 @@ In Python we would write
 
 			previous_state = current_state
 	```
-	
-1. Once you have entered your code, you can save by pressing `CTRL + O` then `Enter`, and then exit with `CTRL + X`.
-1. Ensure your code is executable by typing `chmod 755 rain_polling.py`.
-1. Run your code with the command `sudo ./rain_polling.py`. If you press your button a few times, it should look something like this:
 
-     ```
-     pi@raspberrypi ~/weather_station $ sudo ./rain_polling.py 
+You can see the complete code [here](code/rain_polling.py).
+
+1. Once you have entered your code, run it by presing **F5**.
+1. If you press your button a few times, your program should display something like:
+
+```
 0.2794
 0.5588
-	```
-	
-1. You can quit at any time with the keystroke `CTRL + C`. If your code doesn't work, review the steps and the complete `rain_polling.py` code [here](code/rain_polling.py).
+0.8382
+```
+
+1. You can quit at any time with the keystroke `CTRL + C`.
 
 ## Using interrupts in place of polling
 
@@ -107,19 +121,11 @@ So far we have used polling to repeatedly check the status of the input pin, whi
 
 To do that we need to use a technique called interrupt handling. Rather than constantly check the status of the pin, we use a mechanism called an interrupt to trigger a function.
 
-1. Copy your existing code to a new file called `rain_interrupt.py`:
+1. From your rain_polling.py program in IDLE click the **file** menu and select **save as**, replace the file name with `rain_interrupt.py`
 
-	```bash
-	cp rain_polling.py rain_interupt.py
-	```
-	
-1. Open the code in nano to edit:
-
-	```bash
-	nano rain_interrupt.py
-	```
-
-1. The code to increment the count and display the current rainfall needs to be moved into a function. You should also remove the variables **current_state** and **previous_state** as we won't need them. You should call the function something sensible as you will need this function name for the next step. We've called ours `bucket_tipped`.
+1. We need to make a few changes to the code
+- You should remove the variables **current_state** and **previous_state** as we won't need them.
+- The code to increment the count and display the current rainfall needs to be moved into a function. (a reusable section of code) You should call the function something sensible as you will need this function name for the next step. We've called ours `bucket_tipped`, here's what the first section of the code looks like now:
 
 	```python
 #!/usr/bin/python3
@@ -138,7 +144,7 @@ GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 
 	```
 
-1. In order for your function to be triggered when the input voltage on pin 27 drops, you will need to define an interrupt event. Add this line to your code:
+1. In order for your function to be triggered when the input voltage on pin 6 drops, you will need to define an interrupt event. Add this line to your code:
 
 	```python
 GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
@@ -152,21 +158,21 @@ This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING
 input("Press Enter to stop logging\n")
 	```
 
-1. Save your code by pressing `CTRL + O` and `Enter`, then exit with `CTRL + X`.
-1. From the terminal you should now be able to run your program by typing `sudo ./rain_interrupt.py`. The output should look something like this:
+The complete code can be found [here](code/rain_interrupt.py)
 
-	```bash
-pi@raspberrypi ~/weather_station $ sudo ./rain_interrupt.py
+1. Run your code by pressing **F5**, this will ask you to save your code.
+2. As you press your button you should see:
+
+```
 Press Enter to stop logging
 0.2794
 0.5588
 0.8382
 1.1176
 	```
+## Summary
 
-1. If your code doesn't work, check it against the full version [here](code/rain_interrupt.py).
-
-1. You should now have a working rain gauge using two different approaches. Consider the following questions:
+You should now have a working rain gauge using two different approaches. Consider the following questions:
 
 	- What is the difference between polling and interrupt handling?
 	- Is one of these techniques better? If so, why?

@@ -43,37 +43,26 @@ Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rai
 
 ## Main development
 
-### Identifying challenges
-
-Explain to students that their challenge today is to combine these two programs together to create a single solution. The solution should measure and report both rainfall and windspeed every 5 seconds (or at an interval of their choosing). Ask them to consider what approach they might take and to consider the following:
-
+1. Discuss with students the challenges they may face when combining their code into one program. Such as:
 - Some lines of code occur in both programs and would only need to occur once.
 - Some variables (count, pin etc.) in the programs are the same. Would this cause a problem?
 - Each program has a set of defined functions, which need to be defined at the beginning of the program before they are used.
 - Both programs contain a loop of some kind to display the current readings, and these will need to be combined.
 
-### Importance of comments
+2. Show the students how to add comments to their code using the `#` symbol ie:
 
-Show the students how to add comments to their code. A line proceeded by a `#` symbol is ignored by the computer and provides a useful comment. For example:
-
-  ```python
-#The spin function is called whenever a spin is detected
-#it increments the count variable and prints it out
-
-def spin(channel):
-  global count
-  count = count + 1
-  ...
+```python
+#This is a comment, it is ignored by the computer and used to annotate the code.
 ```
-
-Ask the students what purpose comments serve when writing a program:
-
+Ask students how comments might be a useful tool for programmers.
 - They help explain the intended function of the program to others that might read the code, looking for ideas or to improve it.
 - Comments help the programmer keep track of what their code is doing, and make it easier to return to a piece of code and still make sense of it.
 
-### Solution development
-
-Students should be given time to build their own solution which logs and displays both rainfall and windspeed. Their solution should be well-annotated and tested to ensure functionality. They may want to set up their Pi with a weather station / buttons for testing. They could either start with a blank file and write from scratch, or start with one program and incorporate the other. Decide to what extent you want the students to collaborate; even if they help each other they will likely end up with subtlely different solutions. Emphasise the fact that there is no single correct solution.
+3. Students should be given time to build their own solution which logs and displays both rainfall and windspeed. Their solution should be well-annotated and tested to ensure functionality.
+- They may want to set up their Pi with a weather station / buttons for testing.
+- They could either start with a blank file and write from scratch, or start with one program and incorporate the other.
+- Decide to what extent you want the students to collaborate; even if they help each other they will likely end up with subtlely different solutions.
+- Emphasise the fact that there is no single correct solution.
 
 ## Plenary
 

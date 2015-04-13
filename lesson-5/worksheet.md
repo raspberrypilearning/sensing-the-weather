@@ -8,33 +8,33 @@ In this lesson you will:
 
 ## Reviewing your existing code
 
-Look back at the code you wrote for the anemometer and the rain gauge and review how they worked. What did each line do? To open your code you should type:
+Look back at the code you wrote for the anemometer and the rain gauge and review how they worked. What did each line do? To open your code you should open LXTerminal and change to the `weather_station` directory and open your previous code:
 
 ```bash
-nano wind_final.py
+sudo python3 wind_final.py
 ```
 
 or
 
 ```bash
-nano rain_interrupt.py
+sudo python3 rain_interrupt.py
 ```
 
 ## Creating a single solution
 
-Having two programs, one for each sensor, can be helpful. Ideally, though, we would want to run one program that monitored all our sensors. Your task this lesson is to combine your code together to create one program to perform both jobs. To get you started, here a few things to think about:
+Having two programs, one for each sensor, can be helpful. However, ideally we would want to run one program that monitored all our sensors. Your task this lesson is to combine your code together to create one program to perform both jobs. To get you started, here a few things to think about:
 
 1. Are you going to start a new program and write the program from scratch using the original two as guides?
 
   ```bash
-  nano wind_rain.py
+  sudo python3 wind_rain.py
   ```
 
 1. Or are you going to copy one of the originals and add to that?
 
   ```bash
   cp wind_final.py wind_rain.py
-  nano wind_rain.py
+  sudo python3 wind_rain.py
   ```
 
 1. Are there any lines of code appearing in both programs that only need to appear once? For example:
@@ -57,11 +57,10 @@ We haven't used comments much in our work so far but we should. Comments allow y
 #The spin function is called whenever a spin is detected, it increments the count variable and prints it out
 
 def spin(channel):
-global count
-count = count + 1
-...
-```
+  global count
+  count = count + 1
 
+```
 ## Test and review
 
 Once you have completed your code you should test it carefully to ensure it functions correctly, reliably and accurately.
@@ -73,10 +72,9 @@ If you are happy with your code and how it functions, spend some time comparing 
 - What improvements could they make to their code?
 - What ideas might you take from their code to improve yours?
 
-
 ## What's next?
 
-- Congratulations! You are now able to deploy a basic version of the weather station, which displays data on rainfall and wind speed.
+- Congratulations! You are now able to deploy a basic version of the weather station, which displays data on rainfall and wind speed. (An example solution can be found [here](code/wind_rain.py))
 - Consider what's missing from this solution. Clearly only two of the sensors have been covered but what else is missing?
     - Is this the best way to display the data?
     - Is data being saved? Could I look back at previous data?
