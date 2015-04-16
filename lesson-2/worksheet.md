@@ -11,7 +11,7 @@ In this lesson you will:
 ## Connecting a button
 Before we start working with the weather station kit, we are going to ensure we can capture a simple input signal. To do this we need to connect a button to one of the GPIO pins.
 
-1. Follow the [button guide](http://raspberrypi.org/guides/gpio/button) to connect a single button to **Pin 4**.
+1. Follow the [button guide](http://raspberrypi.org/guides/gpio/button.md) to connect a single button to **Pin 4**.
 
 ![Pull up wires](images/pull_up_wire.png)
 
@@ -89,7 +89,7 @@ These lines check the value of the `pin_value` variable, and will print out `HIG
 So now we can check the state of the button, but only **once**
 
 ## Repeatedly Polling
-Now that we can check the state of the button we ought to check continously and report it's state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputing the state.
+Now that we can check the state of the button we ought to check continously and report it's state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputting the state.
 
 For this we need to add an infinite loop to our code, in python we use a **while True:** statement and indent all the code that will be looped.
 
@@ -120,7 +120,7 @@ Think carefully about whether you want to increase this number or decrease it, a
 
 ## Using a pull down circuit
 
-In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](http://raspberrypi.org/guides/gpio/pull_up_down))
+In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](http://raspberrypi.org/guides/GPIO/pull_up_down.md))
 
 Let's see what the difference is when we use a pull down resistor.
 1. From your pullup.py program in IDLE click the **file** menu and select **save as**, replace the file name with `pulldown.py`

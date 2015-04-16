@@ -21,9 +21,6 @@ The reed switch has two metal contacts inside it which will touch together when 
 
 The top of the back wall does come off if you want to see inside; just pull on the flat end gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and back wall lid before continuing. Leave the outer funnel/lid off for now.
 
-
-
-
 ### Check the code from last lesson
 
 1. Students will first need to check their `pullup.py` code from last lesson and adapt it to use the correct pin for the rain gauge (pin 6).

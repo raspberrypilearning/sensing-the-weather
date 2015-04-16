@@ -24,7 +24,7 @@ In order to get started we need to setup the anemometer or simulate it, dependin
 
 ### You have you a weather station and anemometer to yourself
 
-Connect the weather station board and anemometer using the [guide]()
+Connect the weather station board and anemometer using the [guide](http://raspberrypi.org/guides/gpio/button.md)
 
 ### You don't have a weather station and anemometer to yourself
 

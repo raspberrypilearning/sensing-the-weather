@@ -29,7 +29,7 @@ In order to get started we need to setup the rain gauge or simulate it, dependin
 
 ### You have you a weather station & rain gauge to yourself
 
-Connect the weather station board and rain gauge using the [guide]()
+Connect the weather station board and rain gauge using the [guide](http://raspberrypi.org/guides/gpio/button.md)
 
 ### You don't have a weather station & rain gauge to yourself
 
@@ -156,7 +156,7 @@ This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING
 
 	```python
 input("Press Enter to stop logging\n")
-	```
+	```http://raspberrypi.org/guides/gpio/button.md
 
 The complete code can be found [here](code/rain_interrupt.py)
 
