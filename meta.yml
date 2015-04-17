@@ -1,8 +1,8 @@
 title: Weather Station Basic Input / Output
 category: teach
 lessons:
-    1: 
-    2: 
-    3:
-    4:
-    5:
+    1: Weather Forecasting
+    2: Detecting Input
+    3: Measuring Rainfall
+    4: Measuring Wind Speed
+    5: Simple data logger
