@@ -26,17 +26,17 @@ So a weather forecast is a useful prediction of future conditions, but how are t
 There are 2 key steps to predicting the weather:
 
 ### Data collection
-Vast quantities of data are collected about current conditions all over the world, this is collected using:
-  - Satelites
-  - Ground based observers
-  - Weather stations
+  Vast quantities of data are collected about current conditions all over the world, this is collected using:
+    - Satelites
+    - Ground based observers
+    - Weather stations
 
-What kind of data might these sources collect, temperature is one, can you think of others?
+  What kind of data might these sources collect, temperature is one, can you think of others?
 
 ### Modelling
-The data collected is gathered and used to build a **computer model** which knows the state of the weather at various points predicts the path of weather fronts and systems.
+  The data collected is gathered and used to build a **computer model** which knows the state of the weather at various points predicts the path of weather fronts and systems.
 
-Explore these models by visiting [weatheronline.co.uk
+  Explore these models by visiting [weatheronline.co.uk
 ](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
 
 [![Weather Model](images/ani_model.gif)](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
@@ -54,7 +54,6 @@ Explore these models by visiting [weatheronline.co.uk
 Forecasting relies on regular, reliable data collection, which is ideally done by an automated computer system. This is where the Raspberry Pi is perfect, it's small, light, cheap and best of all can collect data from sensors. Along with the weather station add on we can build a complete automated weather station.
 
 ![Raspberry Pi](images/raspberrypis.png)
-*Needs pic of the weather board / kit*
 
 It includes a variety of sensors:
 - rain guage
