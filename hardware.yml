@@ -1,6 +1,6 @@
 - name: 2 x Male-to-female jumper leads per pupil
   img: jumper-male-to-female
   url: http://shop.pimoroni.com/products/jumper-jerky
-- name: 1 x Weather station kit
-  img: weather-station
+- name: 1 x Weather Board
+  img: weather-board
   url: https://www.raspberrypi.org/education/weather-station/
