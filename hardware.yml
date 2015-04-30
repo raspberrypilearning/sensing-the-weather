@@ -4,3 +4,9 @@
 - name: 1 x Weather Board
   img: weather-board
   url: https://www.raspberrypi.org/education/weather-station/
+- name: 1 x Anemometer
+  img: wind-speed-sensor
+  url: https://www.raspberrypi.org/education/weather-station/
+  - name: 1 x Rain Gauge
+  img: rain-gauge
+  url: https://www.raspberrypi.org/education/weather-station/
