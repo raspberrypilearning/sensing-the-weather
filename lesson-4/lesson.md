@@ -5,7 +5,7 @@ In this lesson, students will use the weather station expansion board and the an
 ## Learning objectives
 
 - To understand how the anemometer works by triggering electrical signals each rotation
-- To count the signals produced by the anemometer and understand this is data
+- To count the signals produced by the anemometer and understand this data
 - To convert this raw signal into meaningful information about the wind speed
 
 ## Learning outcomes
