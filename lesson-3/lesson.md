@@ -37,7 +37,7 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Review the [Rain Gauge Guide](guides/weather_station/rain_gauge.md) for more detailed information.
 - Ask students what they think it does and how they think it works.
-- Open it up and explore the sensor, reed switch and magnet
+- Open it up and explore the sensor, reed switch and magnet.
 - More able students could research the link between mm of rainfall and a ml quantity.
 
 Once you have explored how the sensor works you should connect it up to a Pi in order to demonstrate later in the lesson.
@@ -48,7 +48,7 @@ Once you have explored how the sensor works you should connect it up to a Pi in 
 2. Students follow [worksheet](worksheet.md) to:
   - connect a button to pin 6 (instead of pin 4)
   - adapt their code to the new pin
-  - use their polling program to count sensor inputs.
+  - use their polling program to count sensor inputs
 3. Discuss with students the difference between [polling vs using interrupts](): polling monopolises the processor whilst interrupts only occur when the sensor is triggered.
 4. Students finish by creating an alternative program using interrupts rather than polling.
 
