@@ -84,7 +84,7 @@ Can you decide which of these devices are input and which are output?
 
 When the Raspberry Pi connects to devices like the ones above it communicates with them using an electrical signal which can either be `HIGH` (maximum voltage) or `LOW` (minimum voltage).
 - When talking to an **output** device the Raspberry Pi can send a `HIGH` signal giving that device **3.3V** or a `LOW` signal which gives it **0V**
-- When talking to an **input** device the Raspberry Pi can detect a `HIGH` signal when that device allows **3.3V** to pass through. Otherwise if the device allows 0V to pass through the `LOW` signal is detected.
+- When talking to an **input** device the Raspberry Pi can detect a `HIGH` signal when that device allows **3.3V** to pass through. Otherwise if the device allows **0V** to pass through the `LOW` signal is detected.
 
 Here is a chart showing the voltage across a device connect to the Pi
 
