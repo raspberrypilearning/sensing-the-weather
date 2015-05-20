@@ -28,7 +28,7 @@ In this lesson students will examine the weather station rain gauge and simulate
 ## Lesson Summary
 
 - How does the rain gauge work?
-- Review pullup code
+- Review pull up code
 - Counting signals using polling
 - Counting signals using interrupts
 - Plenary: Which is best?
@@ -49,7 +49,7 @@ Once you have explored how the sensor works you should connect it up to a Pi in 
   - connect a button to pin 6 (instead of pin 4)
   - adapt their code to the new pin
   - use their polling program to count sensor inputs.
-3. Discuss with students the difference between [polling vs using interrupts](), polling monopolises the processor whilst interrupts only occur when the sensor is triggered.
+3. Discuss with students the difference between [polling vs using interrupts](): polling monopolises the processor whilst interrupts only occur when the sensor is triggered.
 4. Students finish by creating an alternative program using interrupts rather than polling.
 
 ## Plenary
