@@ -52,16 +52,16 @@ Share the code for the [anemometer](weather-station-1/lesson-4/code/wind_final.p
 2. Show the students how to add comments to their code using the `#` symbol ie:
 
 ```python
-#This is a comment, it is ignored by the computer and used to annotate the code.
+#This is a comment; it is ignored by the computer and used to annotate the code.
 ```
 Ask students how comments might be a useful tool for programmers.
 - They help explain the intended function of the program to others that might read the code, looking for ideas or to improve it.
 - Comments help the programmer keep track of what their code is doing, and make it easier to return to a piece of code and still make sense of it.
 
 3. Students should be given time to build their own solution which logs and displays both rainfall and windspeed. Their solution should be well-annotated and tested to ensure functionality.
-- They may want to set up their Pi with a weather station / buttons for testing.
+- They may want to set up their Pi with a weather station and buttons for testing.
 - They could either start with a blank file and write from scratch, or start with one program and incorporate the other.
-- Decide to what extent you want the students to collaborate; even if they help each other they will likely end up with subtlely different solutions.
+- Decide to what extent you want the students to collaborate; even if they help each other theyare likely to end up with subtly different solutions.
 - Emphasise the fact that there is no single correct solution.
 
 ## Plenary
@@ -71,6 +71,6 @@ Students should be given a chance to review each other's code and comments. They
 ## What's next?
 
 - Students could use this code to deploy a basic version of the weather station, which displays data on rainfall and wind speed.
-- Consider what's missing from this solution. Clearly only two of the sensors have been covered but what else is missing?
+- Consider what is missing from this solution. Clearly only two of the sensors have been covered but what else is missing?
     - Is this the best way to display the data?
     - Is data being saved? Could I look back at previous data?
