@@ -49,7 +49,7 @@ Use the [Pull Up/Pull Down Guide](guides/GPIO/pull_up_down.md) to explain the di
 
 ## Plenary
 
-Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed. It can help if you first cover the pull down column, and then cover the pull up column instead.
+Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed. It can help if you first cover up the pull down column, and then cover up the pull up column instead.
 
 Pull up | Switch | Pull down
 :---:|:---:|:---:
