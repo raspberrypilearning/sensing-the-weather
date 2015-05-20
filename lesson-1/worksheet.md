@@ -1,4 +1,4 @@
-# Weather Station Basic I/O - Lesson 1
+# Weather Station Basic I/O - Weather Forecasting
 
 In this lesson you will:
 
