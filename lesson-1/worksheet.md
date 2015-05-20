@@ -21,20 +21,20 @@ What do the following terms mean?
 
 ## How do we make predictions?
 
-So a weather forecast is a useful prediction of future conditions, but how are these predictions made?
+So, a weather forecast is a useful prediction of future conditions, but how are these predictions made?
 
-There are 2 key steps to predicting the weather:
+There are two key steps to predicting the weather:
 
 ### Data collection
-  Vast quantities of data are collected about current conditions all over the world, this is collected using:
-    - Satelites
-    - Ground based observers
-    - Weather stations
+  Vast quantities of data are collected about current conditions all over the world. This is done using:
+  - Satelites
+  - Ground-based observers
+  - Weather stations
 
-  What kind of data might these sources collect, temperature is one, can you think of others?
+  What kind of data might these sources collect? Temperature is one, but can you think of others?
 
 ### Modelling
-  The data collected is gathered and used to build a **computer model** which knows the state of the weather at various points predicts the path of weather fronts and systems.
+  The data collected is gathered and used to build a computer model which knows the state of the weather at various points, and predicts the path of weather fronts and systems.
 
   Explore these models by visiting [weatheronline.co.uk
 ](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
@@ -47,7 +47,7 @@ There are 2 key steps to predicting the weather:
 
 [![Weather Log](images/weather_log.png)](files/weather_log.pdf)
 
-- Observe the weather for a week and record the actual conditions ([weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk)), how accurate were the forecasts?
+- Observe the weather for a week and record the actual conditions ([weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk)). How accurate were the forecasts?
 
 ## Building a computerised weather station
 
@@ -63,7 +63,7 @@ It includes a variety of sensors:
 - pressure
 - air quality
 
-What do each of these sensors measure? In what units?
+What do each of these sensors measure? In which units?
 
 
 ## Inputs and outputs
