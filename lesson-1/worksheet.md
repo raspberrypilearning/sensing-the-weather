@@ -96,7 +96,7 @@ Now answer the following questions:
 1. What would this graph show if instead the Pi was connected to a button?
 
 
-## What's next?
+## What next?
 In this lesson we have considered how weather is measured and forecast, how the Raspberry Pi could be used to capture data, and the difference between `input` and `output` mode.
 - How do the devices in the weather station kit sense data? How might this be detected by the Pi?
 - Are there any sensors for which the `HIGH` and `LOW` readings aren't clear or don't work? For example, how does the weather vane work? In this case, what is `HIGH` and what is `LOW`?
