@@ -88,7 +88,7 @@ These lines check the value of the `pin_value` variable, and will print out `HIG
 
 So now we can check the state of the button, but only once.
 
-## Repeatedly Polling
+## Repeated Polling
 Now that we can check the state of the button we ought to check continously and report its state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputting the state.
 
 For this we need to add an infinite loop to our code. In Python we use a **while True:** statement and indent all the code that will be looped.
