@@ -4,9 +4,9 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Learning objectives
 
-- Understand what pull up and pull down circuits are, and be able to differentiate between the two
-- Understand how to detect the state of a switch from within the Python programming language
-- Write a Python program which includes an infinite loop to check the state of the switch
+- To understand what pull up and pull down circuits are, and be able to differentiate between the two
+- To understand how to detect the state of a switch from within the Python programming language
+- To write a Python program which includes an infinite loop to check the state of the switch
 
 ## Learning outcomes
 
