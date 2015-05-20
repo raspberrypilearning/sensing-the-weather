@@ -27,7 +27,7 @@ In this lesson, students will use the weather station expansion board and the an
 
 ## Lesson Summary
 
-- Examine the anemometer and discuss its purpose, how it works and its unit of measurement
+- Examine the anemometer and discuss its purpose, how it works, and its unit of measurement
 - Review understanding of circle theory
 - Discuss an algorithm for the anemometer program
 - Students code and test the anemometer program
