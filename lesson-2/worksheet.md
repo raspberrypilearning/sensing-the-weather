@@ -1,4 +1,4 @@
-# Weather Station Basic I/O - Capturing input signals
+# Weather Station Basic I/O - Detecting input 
 
 In this lesson you will:
 
