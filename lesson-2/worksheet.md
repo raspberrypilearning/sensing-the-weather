@@ -2,7 +2,7 @@
 
 In this lesson you will:
 
-1. Create and execute a program to get the current state of pin 4 and display it on-screen
+1. Create and execute a program to get the current state of pin 4 and display it on screen
 2. Use a `while` loop to repeat this **polling** of the pin and output the result
 3. Add a delay to slow down the rate of polling
 4. Adapt the program to use a pull down circuit
