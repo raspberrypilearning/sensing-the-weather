@@ -1,4 +1,4 @@
-For testing of the sensors you may also want:
+To test the sensors you may also need:
 
 - A shallow tray
 - Water
