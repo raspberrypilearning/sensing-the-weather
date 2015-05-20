@@ -5,7 +5,7 @@ This lesson will introduce students to weather forecasting and how it works, as 
 ## Learning objectives
 
 - To familarise students with some key weather terminology
-- To identify weather characteristics that can be measured, and understand how this is done
+- To identify weather characteristics that can be measured, and to understand how this is done
 - To understand the potential use of the Raspberry Pi as an automated weather station
 - To differentiate between the input and output modes of the GPIO interface, and the terms `HIGH` and `LOW`
 
