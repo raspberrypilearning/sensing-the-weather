@@ -34,14 +34,14 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Starter
 
-Use the [Pull Up/Pull down Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
+Use the [Pull Up/Pull Down Guide](guides/GPIO/pull_up_down.md) to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
 - Teacher-led explanation
 - Role play
 - Analogy
 
 ## Main development
 
-1. Students follow [Pull Up/Down Guide]() to connect a button to the Raspberry Pi.
+1. Students follow [Pull Up/Pull Down Guide](guides/GPIO/pull_up_down.md) to connect a button to the Raspberry Pi.
 2. Students refer to lesson [worksheet](worksheet.md) to write a python program to read an input pin in a pull up circuit.
 3. Students add a loop to their code to make it poll continuously and report the status of the pin.
 4. Students adapt their program to use a Pull Down resistor setup instead of a Pull Up.
