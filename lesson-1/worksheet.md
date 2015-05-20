@@ -51,7 +51,7 @@ There are two key steps to predicting the weather:
 
 ## Building a computerised weather station
 
-Forecasting relies on regular, reliable data collection, which is ideally done by an automated computer system. This is where the Raspberry Pi is perfect, it's small, light, cheap and best of all can collect data from sensors. Along with the weather station add on we can build a complete automated weather station.
+Forecasting relies on regular, reliable data collection, which is ideally done by an automated computer system. This is where the Raspberry Pi is perfect: it's small, light, cheap, and best of all it can collect data from sensors. Along with the weather station add-on we can build a complete automated weather station.
 
 ![Raspberry Pi](images/raspberrypis.png)
 
@@ -70,7 +70,7 @@ What do each of these sensors measure? In which units?
 
 The Raspberry Pi is able to communicate with these devices using a series of pins on the board called **G**eneral **P**urpose **I**nput **O**utput (**GPIO**) pins. These pins allow the Raspberry Pi to control **output** devices and sense data using **input** devices.
 
-Can you decide which of these devices are **input** and which are **output**?
+Can you decide which of these devices are input and which are output?
 
 | Component | Image | Component | Image |
 |------|-------|------|-------|
@@ -99,6 +99,6 @@ Now answer the following questions:
 
 ## What's next?
 In this lesson we have considered how weather is measured and forecast, how the Raspberry Pi could be used to capture data, and the difference between `input` and `output` mode.
-- How do the devices in the weather station kit sense data, how might this be detected by the Pi?
+- How do the devices in the weather station kit sense data? How might this be detected by the Pi?
 - Are there any sensors for which the `HIGH` and `LOW` readings aren't clear or don't work? For example, how does the weather vane work? In this case, what is `HIGH` and what is `LOW`?
 - Have a go at some simple GPIO activities from the [Make](https://www.raspberrypi.org/resources/make/) section of the Raspberry Pi website.
