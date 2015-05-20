@@ -35,7 +35,7 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 ## Starter
 
 Use the [Pull Up/Pull down Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
-- Teacher led explanation
+- Teacher-led explanation
 - Role play
 - Analogy
 
