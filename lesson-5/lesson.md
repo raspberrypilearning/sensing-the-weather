@@ -73,4 +73,4 @@ Students should be given a chance to review each other's code and comments. They
 - Students could use this code to deploy a basic version of the weather station, which displays data on rainfall and wind speed.
 - Consider what is missing from this solution. Clearly only two of the sensors have been covered but what else is missing?
     - Is this the best way to display the data?
-    - Is data being saved? Could I look back at previous data?
+    - Is data being saved? Could we look back at previous data?
