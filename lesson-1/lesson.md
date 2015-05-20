@@ -48,7 +48,7 @@ Discuss with students how meteorologists make predictions about the weather.
 
 
 1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
-- Students could create a [weather log](files/WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week.
+- Students could create a [weather log](files/weather_log.pdf) using a weather forecasting service to record the conditions predicted for the coming week.
 - They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare. This could be done as a home learning task.
 
 
