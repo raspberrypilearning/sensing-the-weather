@@ -104,7 +104,7 @@ while True:
   time.sleep(0.5)
 ```
 2. Check your code against this [solution](code/pullup.py) to ensure it is correct.
-3. Run you code again by pressing **F5**, to exit the program press `Ctrl + C` on your keyboard.
+3. Run your code again by pressing **F5**, to exit the program press `Ctrl + C` on your keyboard.
 4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
 
 ## Getting the timing right
