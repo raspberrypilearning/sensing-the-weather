@@ -2,10 +2,10 @@
 
 In this lesson you will:
 
-- Ensure you are familiar with how weather forecasts work and some key weather terminology
+- Ensure you are familiar with how weather forecasts work, and with some key weather terminology
 - Identify some weather characteristics that can be measured, and understand how this is done
-- Understand what a Raspberry Pi is and how it can be used as an automated weather station
-- Known the difference between the input and output modes of the GPIO pins, and the terms `HIGH` and `LOW`
+- Understand what a Raspberry Pi is, and how it can be used as an automated weather station
+- Learn the difference between the input and output modes of the GPIO pins, and the terms `HIGH` and `LOW`
 
 ## What does a weather forecast tell us
 
