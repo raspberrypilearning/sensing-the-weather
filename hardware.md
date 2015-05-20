@@ -1,6 +1,6 @@
 # Hardware Requirements
 
-Optionally you may also want to give each pupil
+You may also want to give each pupil
 - A breadboard
 - A push button
 
