@@ -26,7 +26,7 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Lesson Summary
 
-- Connect a basic switch and discuss pull up / pull down circuits
+- Connect a basic switch and discuss pull up and pull down circuits
 - Capture data from a GPIO pin using a pull up circuit
 - Add a loop and timings
 - Adapt to create a pull down circut
@@ -34,7 +34,7 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Starter
 
-Use the Pull Up / Pull down [Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
+Use the [Pull Up/Pull down Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
 - Teacher led explanation
 - Role play
 - Analogy
@@ -82,6 +82,6 @@ Discuss the following with the class:
 
 Students could consider the following ideas and questions:
 
-- Are either of these circuits better than the other? Does it make a difference which one we use?
+- Is either one of these circuits better than the other? Does it make a difference which one we use?
 - In our code we used a button to print a simple statement, but what else could you make it do?
 - Could you connect multiple buttons to your Raspberry Pi and detect the states of each? Could you count the number of button presses?
