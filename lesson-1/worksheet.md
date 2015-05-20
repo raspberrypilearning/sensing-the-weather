@@ -65,7 +65,6 @@ It includes a variety of sensors:
 
 What do each of these sensors measure? In which units?
 
-
 ## Inputs and outputs
 
 The Raspberry Pi is able to communicate with these devices using a series of pins on the board called **G**eneral **P**urpose **I**nput **O**utput (**GPIO**) pins. These pins allow the Raspberry Pi to control **output** devices and sense data using **input** devices.
