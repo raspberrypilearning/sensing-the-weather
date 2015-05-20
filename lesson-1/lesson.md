@@ -72,7 +72,7 @@ Discuss with the class the following questions:
 1. What would be happening if this graph was from the Output mode LED example?
 1. What would be happening if this graph was from the Input mode button example?
 
-*Answers:*
+**Answers:**
 
 1. The LED is flashing on and off three times.
 1. Someone is pressing and releasing the button three times.
