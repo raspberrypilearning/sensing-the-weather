@@ -1,6 +1,6 @@
 #  Weather Station Basic I/O - Lesson Plan 3
 
-In this lesson students will examine the weather station rain gauge and simulate it using a button. Students will firstly learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall, and display the measurement value.
+In this lesson students will examine the weather station rain gauge and simulate it using a button. Students will first learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall, and display the measurement value.
 
 ## Learning objectives
 
@@ -29,13 +29,13 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 - How does the rain gauge work?
 - Review pullup code
-- Counting signals using **polling**
-- Counting signals using **interrupts**
+- Counting signals using polling
+- Counting signals using interrupts
 - Plenary: Which is best?
 
 ## Starter
 
-Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Review the [Rain Gauge Guide]() for more detailed information.
+Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Review the [Rain Gauge Guide](guides/weather_station/rain_gauge.md) for more detailed information.
 - Ask students what they think it does and how they think it works.
 - Open it up and explore the sensor, reed switch and magnet
 - More able students could research the link between mm of rainfall and a ml quantity.
@@ -44,7 +44,7 @@ Once you have explored how the sensor works you should connect it up to a Pi in 
 
 ## Main development
 
-1. Students boot their Raspberry Pi, review last lessons code with them, students could add some comments or simply discuss what each line does.
+1. Students boot their Raspberry Pi. Review last lesson's code with them: students could add some comments or simply discuss what each line does.
 2. Students follow [worksheet](worksheet.md) to:
   - connect a button to pin 6 (instead of pin 4)
   - adapt their code to the new pin
