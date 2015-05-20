@@ -4,7 +4,7 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 ## Learning objectives
 
-- Understand how the rain gauge works by creating signal pulses
+- To understand how the rain gauge works by creating signal pulses
 - To be able to collect and interpret data from an external sensor
 - To understand the difference between polling and interrupt handling
 
@@ -12,7 +12,7 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 ### All students are able to
 
-- Connect their rain gauge / buttons to another pin
+- Connect their rain gauge or buttons to another pin
 - With direction, adapt the last lesson's code to poll the rain gauge and count signals
 
 ### Most students are able to
@@ -31,7 +31,7 @@ In this lesson students will examine the weather station rain gauge and simulate
 - Review pullup code
 - Counting signals using **polling**
 - Counting signals using **interrupts**
-- Plenary - Which is best?
+- Plenary: Which is best?
 
 ## Starter
 
