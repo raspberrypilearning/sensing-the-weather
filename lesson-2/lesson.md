@@ -42,7 +42,7 @@ Use the [Pull Up/Pull down Guide]() to explain the different ways in which an in
 ## Main development
 
 1. Students follow [Pull Up/Down Guide]() to connect a button to the Raspberry Pi.
-2. Students refer to lesson [worksheet](worksheet.md) to write a python program to read an input pin in a `Pull Up` circuit.
+2. Students refer to lesson [worksheet](worksheet.md) to write a python program to read an input pin in a pull up circuit.
 3. Students add a loop to their code to make it poll continuously and report the status of the pin.
 4. Students adapt their program to use a Pull Down resistor setup instead of a Pull Up.
 
