@@ -17,7 +17,7 @@ Before we start working with the weather station kit, we are going to ensure we 
 
 ## Sensing the input
 
-2. Setup your Raspberry Pi and ensure you are in Desktop mode.
+2. Set up your Raspberry Pi and ensure you are in Desktop mode.
 
 3. Launch the LXterminal window
 
@@ -46,7 +46,7 @@ else:
   print("LOW")
 ```
 
-7. To run you code press the **F5** key on your keyboard, you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
+7. To run your code, press the **F5** key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
 ### Code explained:
 
@@ -61,7 +61,7 @@ This line denotes the file as a Python program so that the computer knows *how* 
   import time
   ```
 
-Imports the `RPi.GPIO` library that allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
+This imports the `RPi.GPIO` library that allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
 
   ```python
   pin = 4
@@ -86,12 +86,12 @@ This line reads the state of the pin and stores the result in a variable called 
 
 These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
-So now we can check the state of the button, but only **once**
+So now we can check the state of the button, but only once.
 
 ## Repeatedly Polling
-Now that we can check the state of the button we ought to check continously and report it's state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputting the state.
+Now that we can check the state of the button we ought to check continously and report its state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputting the state.
 
-For this we need to add an infinite loop to our code, in python we use a **while True:** statement and indent all the code that will be looped.
+For this we need to add an infinite loop to our code. In Python we use a **while True:** statement and indent all the code that will be looped.
 
 1. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
 
@@ -109,14 +109,14 @@ while True:
 
 ## Getting the timing right
 
-So now you've managed to check the status of the input pin over and over, does it always work though?
+So now you've managed to check the status of the input pin over and over. Does it always work though?
 
-1. Try running your program again and press the button continuously, can you press it fast enough that it fails to detect some presses.
+1. Try running your program again and press the button continuously. Can you press it fast enough that the Pi fails to detect some presses?
 2. The fact that the program only checks every 0.5 seconds means that some presses aren't detected.
 3. Adjust the timing of the program by changing the number in the line
 `time.sleep(0.5)`
 
-Think carefully about whether you want to increase this number or decrease it, adjust it until it's sensitive enough.
+Think carefully about whether you want to increase this number or decrease it. Adjust it until it's sensitive enough.
 
 ## Using a pull down circuit
 
@@ -133,9 +133,9 @@ Let's see what the difference is when we use a pull down resistor.
 which should become
 `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`, your code should now look like [this](code/pulldown.py)
 
-## What's next?
+## What next?
 
-In this lesson we have made our program respond to a single button press using a **pull up** and **pull down** setup.
+In this lesson we have made our program respond to a single button press using a pull up and pull down setup.
 
 - Are either of these circuits better than the other? Does it make a difference which one we use?
 - In our code we used a button to print a simple statement. What else could you make it do?
