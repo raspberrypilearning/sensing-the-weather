@@ -18,7 +18,7 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 ### Most students are able to
 
 - Write code to use both a pull up and pull down circuit
-- Be able to explain what each of these circuits do
+- Explain what each of these circuits do
 
 ### Some students are able to
 
