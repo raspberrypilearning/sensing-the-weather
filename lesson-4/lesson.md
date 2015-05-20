@@ -45,7 +45,7 @@ Once you have explored how the sensor works you should connect it up to a Pi in 
 
 ### Circle theory
 
-Depending on your class you may also want to get them to recap some basic circle theory, including how to find the circumference of a circle. The [BBC Bitesize guide](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev2.shtml) has an explanation of the key formulae the students need and some questions to practice with. Students could be given a few questions where they find the circumference given the radius or diameter.
+Depending on your class you may also want to get them to recap some basic circle theory, including how to find the circumference of a circle. The [BBC Bitesize guide](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev2.shtml) has an explanation of the key formulae the students need and some questions to practice with. Students could be given a few questions where they find the circumference of a circle given the radius or diameter.
 
 ## Main development
 
