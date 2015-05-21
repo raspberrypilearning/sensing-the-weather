@@ -8,24 +8,24 @@ In this lesson you will:
 
 ## How does the rain gauge work?
 
-1. Today you will be using the rain gauge sensor to collect data about rainfall. The gauge consists of a bucket to collect water and a see-saw-like device to measure how much water passes through. Each time the bucket fills with a certain amount of water it tips, releasing the water and presenting the opposite bucket to be filled.
+Today you will be using the rain gauge sensor to collect data about rainfall. The gauge consists of a bucket to collect water, and a see-saw-like device to measure how much water passes through. Each time the bucket fills with a certain amount of water it tips, releasing the water and presenting the opposite bucket to be filled.
 
   ![](images/rain_gauge_both.jpg)
 
-1. Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. This is exactly the same as using a button or pair of wires, as done in the previous lesson.
+Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. This is exactly the same as using a button or pair of wires, as done in the previous lesson.
 
   ![](images/reed_switch.jpg)
 
-1. In order to calculate the amount of water that's passed through the gauge we need to know:
+In order to calculate the amount of water that's passed through the gauge we need to know:
 
   - The amount of water needed to tip the bucket, in this case **0.2794** mm (this can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf)).
   - How many times the bucket has tipped, which can be counted as the number of input signals.
 
   **Rainfall = 0.2794 * number of tips**
 
-## Getting Setup
+## Getting Set Up
 
-In order to get started we need to setup the rain gauge or simulate it, depending on the situation.
+In order to get started we need to set up the rain gauge or simulate it, depending on the situation.
 
 ### You have you a weather station & rain gauge to yourself
 
