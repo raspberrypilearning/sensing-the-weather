@@ -1,4 +1,4 @@
-# Weather Station Basic I/O - The Rain Gauge
+# Weather Station Basic I/O - Measuring Rainfall
 
 In this lesson you will:
 
