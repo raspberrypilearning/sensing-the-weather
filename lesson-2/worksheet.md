@@ -123,15 +123,16 @@ Think carefully about whether you want to increase this number or decrease it. A
 In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](http://raspberrypi.org/guides/GPIO/pull_up_down.md))
 
 Let's see what the difference is when we use a pull down resistor.
-1. From your pullup.py program in IDLE click the **file** menu and select **save as**, replace the file name with `pulldown.py`
+1. From your pullup.py program in IDLE click the **file** menu and select **save as**. Replace the file name with `pulldown.py`
 
 2. Change the wiring of your button to a **pull down** circuit as shown here.
 ![Pull up wires](images/pull_down_wire.png)
 
-3. Update the code to use a pull down circuit rather than pull up, this is a single change on the line that reads
+3. Update the code to use a pull down circuit rather than pull up: this is a single change on the line that reads
 `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`
 which should become
-`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`, your code should now look like [this](code/pulldown.py)
+`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)` 
+Your code should now look like [this](code/pulldown.py)
 
 ## What next?
 
