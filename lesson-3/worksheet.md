@@ -89,7 +89,7 @@ Set up your Raspberry Pi and ensure you are in desktop mode.
 	> END LOOP  
 
 
-In Python we would write
+	In Python we would write
 
 	```python
 	while True:
@@ -102,7 +102,7 @@ In Python we would write
 			previous_state = current_state
 	```
 
-You can see the complete code [here](code/rain_polling.py).
+	You can see the complete code [here](code/rain_polling.py).
 
 1. Once you have entered your code, run it by presing **F5**.
 1. If you press your button a few times, your program should display something like:
