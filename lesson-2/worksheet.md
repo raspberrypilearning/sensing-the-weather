@@ -29,22 +29,22 @@ Before we start working with the weather station kit, we are going to ensure we 
 
 1. Enter the following code:
 
-```python
-#!/usr/bin/python3
-import RPi.GPIO as GPIO
-import time
+ ```python
+ #!/usr/bin/python3
+ import RPi.GPIO as GPIO
+ import time
 
-pin = 4
+ pin = 4
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP
+ GPIO.setmode(GPIO.BCM)
+ GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP
 
-pin_value = GPIO.input(pin)
-if pin_value == True:
-  print ("HIGH")
-else:
-  print("LOW")
-```
+ pin_value = GPIO.input(pin)
+ if pin_value == True:
+   print ("HIGH")
+ else:
+   print("LOW")
+ ```
 
 1. To run your code, press the **F5** key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
