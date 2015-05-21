@@ -2,32 +2,32 @@
 
 In this lesson you will:
 
-1. Create and execute a program to get the current state of pin 4 and display it on screen
-2. Use a `while` loop to repeat this **polling** of the pin and output the result
-3. Add a delay to slow down the rate of polling
-4. Adapt the program to use a pull down circuit
-4. Explore the timings of the loop to get the ideal sensitivity
+- Create and execute a program to get the current state of pin 4 and display it on screen
+- Use a `while` loop to repeat this **polling** of the pin and output the result
+- Add a delay to slow down the rate of polling
+- Adapt the program to use a pull down circuit
+- Explore the timings of the loop to get the ideal sensitivity
 
 ## Connecting a button
 Before we start working with the weather station kit, we are going to ensure we can capture a simple input signal. To do this we need to connect a button to one of the GPIO pins.
 
-1. Follow the [button guide](http://raspberrypi.org/guides/gpio/button.md) to connect a single button to **Pin 4**.
+ Follow the [button guide](http://raspberrypi.org/guides/gpio/button.md) to connect a single button to **Pin 4**.
 
 ![Pull up wires](images/pull_up_wire.png)
 
 ## Sensing the input
 
-2. Set up your Raspberry Pi and ensure you are in Desktop mode.
+1. Set up your Raspberry Pi and ensure you are in Desktop mode.
 
-3. Launch the LXterminal window
+1. Launch the LXterminal window
 
-![LX Terminal](images/lxterminal.png)
+  ![LX Terminal](images/lxterminal.png)
 
-4. Create a directory by typing `mkdir weather_station` follow by `enter`
+1. Create a directory by typing `mkdir weather_station` follow by `enter`
 
-5. Create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
+1. Create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
 
-6. Enter the following code:
+1. Enter the following code:
 
 ```python
 #!/usr/bin/python3
@@ -46,7 +46,7 @@ else:
   print("LOW")
 ```
 
-7. To run your code, press the **F5** key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
+1. To run your code, press the **F5** key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
 ### Code explained:
 
