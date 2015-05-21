@@ -55,7 +55,7 @@ Forecasting relies on regular, reliable data collection, which is ideally done b
 
 ![Raspberry Pi](images/raspberrypis.png)
 
-It includes a variety of sensors:
+The Weather Station HAT includes a variety of sensors:
 - rain guage
 - anemometer
 - wind vane
