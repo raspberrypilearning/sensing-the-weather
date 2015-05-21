@@ -46,7 +46,7 @@ Before we start working with the weather station kit, we are going to ensure we 
    print("LOW")
  ```
 
-1. To run your code, press the **F5** key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
+1. To run your code, press the F5 key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
 ### Code explained:
 
@@ -54,14 +54,14 @@ Before we start working with the weather station kit, we are going to ensure we 
   #!/usr/bin/python3
   ```
 
-This line denotes the file as a Python program so that the computer knows *how* to run the code.
+This line defines the file as a Python program so that the computer knows how to run the code.
 
   ```python
   import RPi.GPIO as GPIO
   import time
   ```
 
-This imports the `RPi.GPIO` library that allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
+This imports the `RPi.GPIO` library which allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
 
   ```python
   pin = 4
@@ -104,7 +104,7 @@ while True:
   time.sleep(0.5)
 ```
 2. Check your code against this [solution](code/pullup.py) to ensure it is correct.
-3. Run your code again by pressing **F5**, to exit the program press `Ctrl + C` on your keyboard.
+3. Run your code again by pressing F5; to exit the program press `Ctrl + C` on your keyboard.
 4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
 
 ## Getting the timing right
