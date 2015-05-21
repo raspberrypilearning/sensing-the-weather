@@ -29,13 +29,13 @@ In order to get started we need to set up the rain gauge or simulate it, dependi
 
 ### You have you a weather station & rain gauge to yourself
 
-Connect the weather station board and rain gauge using the [guide](http://raspberrypi.org/guides/gpio/button.md)
+Connect the weather station board and rain gauge using the [guide](guides/weather_station/rain_gauge.md)
 
 ### You don't have a weather station & rain gauge to yourself
 
 In most classroom situations you won't have a rain gauge, or at least one to yourself, in which case you can simulate one using a pair of wires and a button.
 
-1. Follow the [button guide] to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
+1. Follow the [button guide](guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
 
 	![](images/gpio-setup.png)
 
