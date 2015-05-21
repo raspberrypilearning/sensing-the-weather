@@ -23,7 +23,7 @@ Before we start working with the weather station kit, we are going to ensure we 
 
   ![LX Terminal](images/lxterminal.png)
 
-1. Create a directory by typing `mkdir weather_station` follow by `enter`
+1. Create a directory by typing `mkdir weather_station` followed by `enter`
 
 1. Create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
 
