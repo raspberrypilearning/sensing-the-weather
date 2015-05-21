@@ -123,9 +123,9 @@ To do that we need to use a technique called interrupt handling. Rather than con
 
 1. From your rain_polling.py program in IDLE click the **file** menu and select **save as**, replace the file name with `rain_interrupt.py`
 
-1. We need to make a few changes to the code:
-	- You should remove the variables **current_state** and **previous_state** as we won't need them.
-	- The code to increment the count and display the current rainfall needs to be moved into a function. (a reusable section of code) You should call the function something sensible as you will need this function name for the next step. We've called ours `bucket_tipped`, here's what the first section of the code looks like now:
+1. We need to make a few changes to the code: firstly, you should remove the variables **current_state** and **previous_state** as we won't need them.
+
+1. Now, the code to increment the count and display the current rainfall needs to be moved into a function (a reusable section of code). You should call the function something sensible as you will need the name for the next step. We've called ours `bucket_tipped`. Here's what the first section of the code looks like now:
 
 	```python
 	#!/usr/bin/python3
