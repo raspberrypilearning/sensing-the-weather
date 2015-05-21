@@ -95,14 +95,14 @@ For this we need to add an infinite loop to our code. In Python we use a **while
 
 1. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
 
-```python
-while True:
-  if pin_value == True:
-    print ("HIGH")
-  else:
-    print("LOW")
-  time.sleep(0.5)
-```
+ ```python
+ while True:
+   if pin_value == True:
+     print ("HIGH")
+   else:
+     print("LOW")
+   time.sleep(0.5)
+ ```
 2. Check your code against this [solution](code/pullup.py) to ensure it is correct.
 3. Run your code again by pressing F5; to exit the program press `Ctrl + C` on your keyboard.
 4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
