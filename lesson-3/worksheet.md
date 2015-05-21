@@ -25,7 +25,7 @@ In order to calculate the amount of water that's passed through the gauge we nee
 
 ## Getting Set Up
 
-In order to get started we need to set up the rain gauge or simulate it, depending on the situation.
+In order to get started we either need to set up a rain gauge, or simulate it, depending on the situation.
 
 ### You have you a weather station & rain gauge to yourself
 
@@ -33,7 +33,7 @@ Connect the weather station board and rain gauge using the [guide](guides/weathe
 
 ### You don't have a weather station & rain gauge to yourself
 
-In most classroom situations you won't have a rain gauge, or at least one to yourself, in which case you can simulate one using a pair of wires and a button.
+In most classroom situations you won't have a rain gauge, or at least not one to yourself. In this case, you can simulate one using a pair of wires and a button.
 
 1. Follow the [button guide](guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
 
@@ -43,11 +43,11 @@ In most classroom situations you won't have a rain gauge, or at least one to you
 
 ## Counting bucket tips
 
-Setup your Raspberry Pi and ensure you are in desktop mode.
+Set up your Raspberry Pi and ensure you are in desktop mode.
 
 1. Launch the LXterminal window
 
-![LX Terminal](images/lxterminal.png)
+	![LX Terminal](images/lxterminal.png)
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
 
@@ -57,16 +57,16 @@ Setup your Raspberry Pi and ensure you are in desktop mode.
 
 1. In the top few lines change the pin being read to 6; the weather station is wired to use this pin so we should also use it for testing.
 
-  ```python
-  #!/usr/bin/python
-  import RPi.GPIO as GPIO
-  import time
+	 ```python
+  	#!/usr/bin/python
+  	import RPi.GPIO as GPIO
+  	import time
 
-  pin = 6
+  	pin = 6
 
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-    ```
+  	GPIO.setmode(GPIO.BCM)
+  	GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+	 ```
 
 1. We want to count the number of times the switch closes and drops the voltage from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
 
@@ -107,11 +107,11 @@ You can see the complete code [here](code/rain_polling.py).
 1. Once you have entered your code, run it by presing **F5**.
 1. If you press your button a few times, your program should display something like:
 
-```
-0.2794
-0.5588
-0.8382
-```
+	```
+	0.2794
+	0.5588
+	0.8382
+	```
 
 1. You can quit at any time with the keystroke `CTRL + C`.
 
