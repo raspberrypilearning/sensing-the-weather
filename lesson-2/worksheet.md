@@ -75,7 +75,7 @@ These three lines set up a variable call pin to store the pin number. We then se
    pin_value = GPIO.input(pin)
    ```
 
-This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be *True* or *False*.
+This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be **True** or **False**.
 
     ```python
     if pin_value == True:
@@ -89,7 +89,7 @@ These lines check the value of the `pin_value` variable, and will print out `HIG
 So now we can check the state of the button, but only once.
 
 ## Repeated Polling
-Now that we can check the state of the button we ought to check continously and report its state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputting the state.
+Now that we can check the state of the button we ought to check continously and report its state. We can do this by **polling** the pin every 0.5 seconds and constantly outputting the state.
 
 For this we need to add an infinite loop to our code. In Python we use a **while True:** statement and indent all the code that will be looped.
 
@@ -125,8 +125,8 @@ In our program we have used what's called a pull up resistor, which ensures the 
 Let's see what the difference is when we use a pull down resistor.
 1. From your pullup.py program in IDLE click the **file** menu and select **save as**. Replace the file name with `pulldown.py`
 
-2. Change the wiring of your button to a **pull down** circuit as shown here.
-![Pull up wires](images/pull_down_wire.png)
+2. Change the wiring of your button to a pull down circuit as shown here.
+![Pull down wires](images/pull_down_wire.png)
 
 3. Update the code to use a pull down circuit rather than pull up: this is a single change on the line that reads
 `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`
