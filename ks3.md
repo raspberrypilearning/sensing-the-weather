@@ -5,4 +5,4 @@ variety of computational problems
 - Design and develop modular programs that use procedures or functions
 - Undertake creative projects that involve selecting, using, and combining multiple
 applications, preferably across a range of devices, to achieve challenging goals,
-including collecting and analysing data and meeting the needs of known users
+including collecting and analysing data, and meeting the needs of known users
