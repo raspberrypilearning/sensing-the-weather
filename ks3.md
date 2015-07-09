@@ -1,4 +1,4 @@
-- Design, use and evaluate computational abstractions that model the state and
+- Design, use, and evaluate computational abstractions that model the state and
 behaviour of real-world problems and physical systems
 - Use two or more programming languages, at least one of which is textual, to solve a
 variety of computational problems
