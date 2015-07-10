@@ -56,7 +56,7 @@ Discuss with students how meteorologists make predictions about the weather.
 - This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands-on experience.
 - Students could complete a labelling activity.
 
-3. Highlight the [General Purpose Input Output](guides/GPIO/readme.md) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
+3. Highlight the [General Purpose Input Output](../guides/GPIO/README.md) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
 - The [worksheet](worksheet.md) has examples of different devices which students should identify as **input** or **output**.
 - Students could be given set of real devices (switches, LEDs, buzzers, PIR sensors, reed switches) and decide what each are and catagorise them as **input** or **output**.
 
