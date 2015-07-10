@@ -10,11 +10,11 @@ In this lesson you will:
 
 Today you will be using the anemometer sensor to collect data about windspeed. The sensor has three arms with buckets on the end which "catch" the wind, causing the arms to spin. If you were to dismantle the sensor you would find a small magnet attached to the underside.
 
-    ![](images/anemometer_with_magnet.png)
+![](images/anemometer_with_magnet.png)
 
 At two points within the magnet's rotation, it triggers a reed switch which produces a `LOW` signal we can detect. So for each full rotation of the arms, the sensor will produce two detectable signals.
 
-    ![](images/anemometer_reed.png)
+![](images/anemometer_reed.png)
 
 So let's start collecting data from the sensor!
 

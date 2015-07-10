@@ -14,7 +14,7 @@ Look back at the code you wrote for the anemometer and the rain gauge and review
     sudo python3 wind_final.py
     ```
 
-    or
+or
 
     ```bash
     sudo python3 rain_interrupt.py
@@ -58,7 +58,6 @@ We haven't used comments much in our work so far but we should. Comments allow y
         global count
         count = count + 1
     ```
-
 
 ## Test and review
 

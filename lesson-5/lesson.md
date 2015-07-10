@@ -12,18 +12,18 @@ In this lesson, students will complete their initial work on the weather station
 
 ### All students are able to
 
-    - Explain the function of some key lines of code
-    - With support, combine their programs into one solution
+- Explain the function of some key lines of code
+- With support, combine their programs into one solution
 
 ### Most students are able to
 
-    - Clearly explain the function of the majority of the code
-    - Combine their programs into one solution, including some commenting
+- Clearly explain the function of the majority of the code
+- Combine their programs into one solution, including some commenting
 
 ### Some students are able to
 
-    - Clearly explain what each line of code does and how they work together
-    - Independently create a program which combines the two functions from previous lessons, complete with commenting
+- Clearly explain what each line of code does and how they work together
+- Independently create a program which combines the two functions from previous lessons, complete with commenting
 
 ## Lesson Summary
 
@@ -34,12 +34,12 @@ In this lesson, students will complete their initial work on the weather station
 
 ## Starter
 
-Share the code for the [anemometer](weather-station-1/lesson-4/code/wind_final.py) and the [rain gauge](weather-station-1/lesson-4/code/wind_interrupt.py ). Students are invited to explain what the two programs are doing and how they are working. This could be done in the following ways:
+Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rain gauge](../lesson-4/code/wind_interrupt.py ). Students are invited to explain what the two programs are doing and how they are working. This could be done in the following ways:
 
     - Class discussion with notes being taken.
     - Projecting code onto a whiteboard, where students use sticky notes to add annotation.
     - Printed copies which students individually annotate.
-    - Google doc / [Classroom](classroom.google.com).
+    - Google doc or [Classroom](classroom.google.com).
 
 ## Main development
 
