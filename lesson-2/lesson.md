@@ -12,17 +12,17 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ### All students are able to
 
-- Write a short piece of Python code to capture the input of a sensor
-- Use a `while` loop and pauses to repeat this capture of data
+  - Write a short piece of Python code to capture the input of a sensor
+  - Use a `while` loop and pauses to repeat this capture of data
 
 ### Most students are able to
 
-- Write code to use both a **pull up** and **pull down** circuit
-- Be able to explain what each of these circuits do
+  - Write code to use both a **pull up** and **pull down** circuit
+  - Be able to explain what each of these circuits do
 
 ### Some students are able to
 
-- Experiment with timings and decide how often to capture data from the sensor
+  - Experiment with timings and decide how often to capture data from the sensor
 
 ## Lesson Summary
 
@@ -35,9 +35,9 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 ## Starter
 
 Use the Pull Up / Pull down [Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
-- Teacher led explanation
-- Role play
-- Analogy
+  - Teacher led explanation
+  - Role play
+  - Analogy
 
 ## Main development
 
@@ -68,15 +68,15 @@ HIGH | Open | LOW
 
 Discuss the following with the class:
 
-1. Explain why the pull up shows those values.
-1. Explain why the pull down shows those values.
-1. We've learnt an important technique in this lesson which will allow us to interface with two of the weather station sensors. Which sensors we will use this for?
+  1. Explain why the pull up shows those values.
+  1. Explain why the pull down shows those values.
+  1. We've learnt an important technique in this lesson which will allow us to interface with two of the weather station sensors. Which sensors we will use this for?
 
 **Answers:**
 
-1. With a pull up circuit the GPIO pin is internally pulled up to 3.3 volts (via a programmable resistor) so that it always reads `HIGH`. When we close the switch we short the GPIO pin to ground, causing it to read `LOW`.
-1. With a pull down circuit the GPIO pin is internally pulled down to ground (via a programmable resistor) so that it always reads `LOW`. When we close the switch we short the GPIO pin to 3.3 volts, causing it to read `HIGH`.
-1.  The rain gauge and the anemometer (wind speed sensor).
+  1. With a pull up circuit the GPIO pin is internally pulled up to 3.3 volts (via a programmable resistor) so that it always reads `HIGH`. When we close the switch we short the GPIO pin to ground, causing it to read `LOW`.
+  1. With a pull down circuit the GPIO pin is internally pulled down to ground (via a programmable resistor) so that it always reads `LOW`. When we close the switch we short the GPIO pin to 3.3 volts, causing it to read `HIGH`.
+  1.  The rain gauge and the anemometer (wind speed sensor).
 
 ## Extension
 

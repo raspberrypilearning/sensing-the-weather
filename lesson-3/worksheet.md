@@ -29,7 +29,7 @@ In order to get started we need to setup the rain gauge or simulate it, dependin
 
 ### You have you a weather station & rain gauge to yourself
 
-Connect the weather station board and rain gauge using the [guide](http://raspberrypi.org/guides/gpio/button.md)
+Connect the weather station board and rain gauge using the [guide](GPIO/button.md)
 
 ### You don't have a weather station & rain gauge to yourself
 
@@ -47,7 +47,7 @@ Setup your Raspberry Pi and ensure you are in desktop mode.
 
 1. Launch the LXterminal window
 
-![LX Terminal](images/lxterminal.png)
+  ![LX Terminal](images/lxterminal.png)
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
 
@@ -89,7 +89,7 @@ Setup your Raspberry Pi and ensure you are in desktop mode.
 	> END LOOP  
 
 
-In Python we would write
+  In Python we would write:
 
 	```python
 	while True:
@@ -102,16 +102,16 @@ In Python we would write
 			previous_state = current_state
 	```
 
-You can see the complete code [here](code/rain_polling.py).
+  You can see the complete code [here](code/rain_polling.py).
 
 1. Once you have entered your code, run it by presing **F5**.
 1. If you press your button a few times, your program should display something like:
 
-```
-0.2794
-0.5588
-0.8382
-```
+    ```
+    0.2794
+    0.5588
+    0.8382
+    ```
 
 1. You can quit at any time with the keystroke `CTRL + C`.
 
@@ -127,38 +127,38 @@ To do that we need to use a technique called interrupt handling. Rather than con
 - You should remove the variables **current_state** and **previous_state** as we won't need them.
 - The code to increment the count and display the current rainfall needs to be moved into a function. (a reusable section of code) You should call the function something sensible as you will need this function name for the next step. We've called ours `bucket_tipped`, here's what the first section of the code looks like now:
 
-	```python
-#!/usr/bin/python3
-import RPi.GPIO as GPIO
+    ```python
+    #!/usr/bin/python3
+    import RPi.GPIO as GPIO
 
-pin = 6
-count = 0
+    pin = 6
+    count = 0
 
-def bucket_tipped(channel):
-    global count
-    count = count + 1
-    print (count * 0.2794)
+    def bucket_tipped(channel):
+        global count
+        count = count + 1
+        print(count * 0.2794)
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
 
-	```
+    ```
 
 1. In order for your function to be triggered when the input voltage on pin 6 drops, you will need to define an interrupt event. Add this line to your code:
 
-	```python
-GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+    ```python
+    GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
 	```
 
-This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected, it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time, in milliseconds, between two events being detected.
+    This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected, it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time, in milliseconds, between two events being detected.
 
 1. Finally, we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press `Enter`, and then exit.
 
-	```python
-input("Press Enter to stop logging\n")
-	```http://raspberrypi.org/guides/gpio/button.md
+    ```python
+    input("Press Enter to stop logging\n")
+	```
 
-The complete code can be found [here](code/rain_interrupt.py)
+    The complete code can be found [here](code/rain_interrupt.py)
 
 1. Run your code by pressing **F5**, this will ask you to save your code.
 2. As you press your button you should see:
@@ -174,9 +174,9 @@ Press Enter to stop logging
 
 You should now have a working rain gauge using two different approaches. Consider the following questions:
 
-	- What is the difference between polling and interrupt handling?
-	- Is one of these techniques better? If so, why?
-	- Why is the unit of measurement for the gauge **mm** rather than **ml**?
+    - What is the difference between polling and interrupt handling?
+    - Is one of these techniques better? If so, why?
+    - Why is the unit of measurement for the gauge **mm** rather than **ml**?
 
 ## What's next
 

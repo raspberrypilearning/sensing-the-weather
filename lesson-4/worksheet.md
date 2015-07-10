@@ -10,11 +10,11 @@ In this lesson you will:
 
 Today you will be using the anemometer sensor to collect data about windspeed. The sensor has three arms with buckets on the end which "catch" the wind, causing the arms to spin. If you were to dismantle the sensor you would find a small magnet attached to the underside.
 
-![](images/anemometer_with_magnet.png)
+    ![](images/anemometer_with_magnet.png)
 
 At two points within the magnet's rotation, it triggers a reed switch which produces a `LOW` signal we can detect. So for each full rotation of the arms, the sensor will produce two detectable signals.
 
-![](images/anemometer_reed.png)
+    ![](images/anemometer_reed.png)
 
 So let's start collecting data from the sensor!
 
@@ -24,7 +24,7 @@ In order to get started we need to setup the anemometer or simulate it, dependin
 
 ### You have you a weather station and anemometer to yourself
 
-Connect the weather station board and anemometer using the [guide](http://raspberrypi.org/guides/gpio/button.md)
+Connect the weather station board and anemometer using the [guide](GPIO/button.md)
 
 ### You don't have a weather station and anemometer to yourself
 
@@ -32,7 +32,7 @@ In most classroom situations you won't have a anemometer, or at least one to you
 
 1. Follow the [button guide] to connect your wires up in a similar way to the previous lesson, except this time connect to pin 5.
 
-![](images/gpio-setup.png)
+    ![](images/gpio-setup.png)
 
 1. Now you can simulate the anemometer by pressing the button.
 
@@ -44,7 +44,7 @@ Before we begin calculating windspeed we need to be able to count the signals co
 
 1. Launch the LXterminal window
 
-![LX Terminal](images/lxterminal.png)
+    ![LX Terminal](images/lxterminal.png)
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
 
@@ -54,24 +54,24 @@ Before we begin calculating windspeed we need to be able to count the signals co
 
 The code will currently look a little like this:
 
-  ```python
-#!/usr/bin/python3
-import RPi.GPIO as GPIO
+    ```python
+    #!/usr/bin/python3
+    import RPi.GPIO as GPIO
 
-pin = 6
-count = 0
+    pin = 6
+    count = 0
 
-def bucket_tipped(channel):
-    global count
-    count = count + 1
-    print (count * 0.2794)
+    def bucket_tipped(channel):
+        global count
+        count = count + 1
+        print (count * 0.2794)
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+        GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
 
-input("Press enter to stop logging\n")
-```
+        input("Press enter to stop logging\n")
+    ```
 
 1. The anemometer is connected to pin **5**, so update the code to reflect this.
 
@@ -93,21 +93,24 @@ We can count the number of rotations of the sensor by doubling the detected inpu
 
 1. Let's start by considering the formula for calculating [speed](http://www.bbc.co.uk/education/guides/zwwmxnb/revision):
 
-  **Speed = distance / time**
 
-Imagine we counted the number of signals over the course of 5 seconds. We now have the time but we also need the distance traveled.
+    **Speed = distance / time**
+
+  Imagine we counted the number of signals over the course of 5 seconds. We now have the time but we also need the distance traveled.
 
 1. The distance traveled by one of the cups will be equal to the number of revolutions * the distance around the edge of the circle (circumference). So we could write:
 
-  **Speed = Revolutions * Circumference / Time**
+
+    **Speed = Revolutions * Circumference / Time**
 
 1. The circumference can be calculated if we know either the **radius** or **diameter** of the circle.
 
-![](images/pi_diagram.png)
+    ![](images/pi_diagram.png)
 
 We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge. Knowing the radius, we can find the circumference with **2 x pi x r**. We also know that the revolutions are half the number of signals detected, so our formula becomes:
 
-  **Speed = (Signals/2) * (2 * pi * r) / Time**
+
+    **Speed = (Signals/2) * (2 * pi * r) / Time**
 
 This formula should enable us to calulate the speed of the wind in cm/s.
 
@@ -118,30 +121,29 @@ Now that we are able to calculate the wind speed from the information we can col
 1. Measure the radius (in cm) of the anemometer for use in your program.
 1. Decide on the time interval for calculating average windspeed, at least 5 seconds.
 1. Copy your existing code by clicking **File** --> **Save As** and calling it `wind_calc.py`
-```
 
 1. Adapt your code using the following solution as a guide:
 
-> import GPIO, time, math  
-> pin 5  
-> count = 0  
->
-> FUNCTION spin (channel)  
-> --- increment global count variable  
-> --- display count  
->
-> FUNCTION calcspeed  
-> --- using r = **???**, your time interval, count and math.pi  
-> --- calculate windspeed  
-> --- return windspeed  
->
-> Set up GPIO and interrupt which has spin as its callback function.  
->
-> INFINITE LOOP  
-> --- reset global count to 0  
-> --- wait **delay** sec  
-> --- call calcspeed to get value  
-> --- display windspeed value  
+    > import GPIO, time, math  
+    > pin 5  
+    > count = 0  
+    >
+    > FUNCTION spin (channel)  
+    > --- increment global count variable  
+    > --- display count  
+    >
+    > FUNCTION calcspeed  
+    > --- using r = **???**, your time interval, count and math.pi  
+    > --- calculate windspeed  
+    > --- return windspeed  
+    >
+    > Set up GPIO and interrupt which has spin as its callback function.  
+    >
+    > INFINITE LOOP  
+    > --- reset global count to 0  
+    > --- wait **delay** sec  
+    > --- call calcspeed to get value  
+    > --- display windspeed value  
 
 - The first three lines set up the different variables and required libraries.
 - The **spin** function is called every time an interrupt is detected, adds 1 to the count variable and prints it.
@@ -180,29 +182,29 @@ Our program should now display the wind speed in km/h, but is it accurate? The [
   2.03575203953 kph
   ```
 
-That's not quite right! This loss of accuracy is due to something called the *anemometer factor* and is a result of some of the wind energy being lost in turning the arms. To compensate for this, we are going to have to multiply the reading generated by our program by a factor of **1.18** which should correct this error. Update the final line in the `calculate_speed` function to read:
+  That's not quite right! This loss of accuracy is due to something called the *anemometer factor* and is a result of some of the wind energy being lost in turning the arms. To compensate for this, we are going to have to multiply the reading generated by our program by a factor of **1.18** which should correct this error. Update the final line in the `calculate_speed` function to read:
 
   ```python
   return km_per_hour * 1.18
   ```
 
-Your final code should now look something like [this](code/wind_final.py).
+  Your final code should now look something like [this](code/wind_final.py).
 
 1. Re-run the code and this time you should get a value closer to 2.4:
 
-```
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-2.40218740664 kph
-```
+    ```
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    2.40218740664 kph
+    ```
 
 ## What's next?
 

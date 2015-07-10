@@ -48,7 +48,7 @@ Discuss with students how meteorologists make predictions about the weather.
 
 
 1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
-- Students could create a [weather log](files/WeatherLog.pdf) using a weather forecasting service to record the conditions predicted for the coming week.
+- Students could create a [weather log](files/weatherlog.pdf) using a weather forecasting service to record the conditions predicted for the coming week.
 - They coud then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare. This could be done as a home learning task.
 
 
@@ -57,7 +57,7 @@ Discuss with students how meteorologists make predictions about the weather.
 - This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands on experience.
 - Students could complete a labelling activity
 
-3. Highlight the [General Purpose Input Output](https://raspberrypi.org/guides/GPIO/README.md) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
+3. Highlight the [General Purpose Input Output](guides/GPIO/readme.md) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
 - The [worksheet](worksheet.md) has examples of different devices which students should identify as **input** or **output**.
 - Students could be given set of real devices (switches, LEDs, buzzers, PIR sensors, reed switches) and decide what each are and catagorise them as **input** or **output**
 
@@ -69,13 +69,13 @@ Reiterate the meaning of `HIGH` and `LOW` by showing the voltage chart:
 
 Discuss with the class the following questions:
 
-1. What would be happening if this graph was from the Output mode LED example?
-1. What would be happening if this graph was from the Input mode button example?
+  1. What would be happening if this graph was from the Output mode LED example?
+  1. What would be happening if this graph was from the Input mode button example?
 
 *Answers:*
 
-1. The LED is flashing on and off three times.
-1. Someone is pressing and releasing the button three times.
+  1. The LED is flashing on and off three times.
+  1. Someone is pressing and releasing the button three times.
 
 ## Extension
 

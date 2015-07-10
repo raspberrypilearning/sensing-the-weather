@@ -2,10 +2,10 @@
 
 In this lesson you will:
 
-- Ensure you are familiar with how weather forecasts work and some key weather terminology
-- Identify some weather characteristics that can be measured, and understand how this is done
-- Understand what a Raspberry Pi is and how it can be used as an automated weather station
-- Known the difference between the input and output modes of the GPIO pins, and the terms `HIGH` and `LOW`
+  - Ensure you are familiar with how weather forecasts work and some key weather terminology
+  - Identify some weather characteristics that can be measured, and understand how this is done
+  - Understand what a Raspberry Pi is and how it can be used as an automated weather station
+  - Known the difference between the input and output modes of the GPIO pins, and the terms `HIGH` and `LOW`
 
 ## What does a weather forecast tell us
 
@@ -27,9 +27,10 @@ There are 2 key steps to predicting the weather:
 
 ### Data collection
   Vast quantities of data are collected about current conditions all over the world, this is collected using:
-    - Satelites
-    - Ground based observers
-    - Weather stations
+
+  - Satelites
+  - Ground based observers
+  - Weather stations
 
   What kind of data might these sources collect, temperature is one, can you think of others?
 
@@ -56,12 +57,12 @@ Forecasting relies on regular, reliable data collection, which is ideally done b
 ![Raspberry Pi](images/raspberrypis.png)
 
 It includes a variety of sensors:
-- rain guage
-- anemometer
-- wind vane
-- temperature
-- pressure
-- air quality
+  - rain guage
+  - anemometer
+  - wind vane
+  - temperature
+  - pressure
+  - air quality
 
 What do each of these sensors measure? In what units?
 
