@@ -65,10 +65,10 @@ Once you have completed your code you should test it carefully to ensure it func
 
 If you are happy with your code and how it functions, spend some time comparing your code with others and consider the following:
 
-    - Is your code exactly the same or are there multiple solutions?
-    - How clear is their code, and have they used comments to explain it?
-    - What improvements could they make to their code?
-    - What ideas might you take from their code to improve yours?
+- Is your code exactly the same or are there multiple solutions?
+- How clear is their code, and have they used comments to explain it?
+- What improvements could they make to their code?
+- What ideas might you take from their code to improve yours?
 
 ## What's next?
 
