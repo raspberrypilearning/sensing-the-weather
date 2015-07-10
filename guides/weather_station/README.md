@@ -2,8 +2,6 @@
 
 The weather station kit is a HAT for the Raspberry Pi which allows it to collect environmental data from its surroundings using a variety of sensors. It is designed for use in school to enable students to create their own weather station an has a range of resources to support its use.
 
-![Weather Station](images/weather_station_kit.jpg)
-
 ## The Kit
 - [Preparation](preparation.md)
 - [Assembling the board](assemble.md)
