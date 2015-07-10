@@ -38,7 +38,7 @@ In this lesson, students will use the weather station expansion board and the an
 
 ### How does the anemometer work?
 
-Examine the anemometer sensor and discuss with pupils how it works and measures windspeed. Review the [Anemometer Guide](guides/weather_station/anemometer.md) for more detailed information.
+Examine the anemometer sensor and discuss with pupils how it works and measures windspeed. Review the [Anemometer Guide]../guides/weather_station/anemometer.md) for more detailed information.
 - Ask students what they think it does and how they think it works.
 - Open it up and explore the sensor, reed switch and magnet
 

@@ -11,7 +11,7 @@ In this lesson you will:
 ## Connecting a button
 Before we start working with the weather station kit, we are going to ensure we can capture a simple input signal. To do this we need to connect a button to one of the GPIO pins.
 
- Follow the [button guide](guides/GPIO/connecting-button.md) to connect a single button to **Pin 4**.
+ Follow the [button guide](../guides/GPIO/connecting-button.md) to connect a single button to **Pin 4**.
 
 ![Pull up wires](images/pull_up_wire.png)
 
