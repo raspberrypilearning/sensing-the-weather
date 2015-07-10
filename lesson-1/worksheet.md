@@ -26,16 +26,9 @@ So, a weather forecast is a useful prediction of future conditions, but how are 
 There are two key steps to predicting the weather:
 
 ### Data collection
-<<<<<<< HEAD
-  Vast quantities of data are collected about current conditions all over the world, this is collected using:
-
-  - Satelites
-  - Ground based observers
-=======
   Vast quantities of data are collected about current conditions all over the world. This is done using:
   - Satelites
   - Ground-based observers
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
   - Weather stations
 
   What kind of data might these sources collect? Temperature is one, but can you think of others?
@@ -62,7 +55,6 @@ Forecasting relies on regular, reliable data collection, which is ideally done b
 
 ![Raspberry Pi](images/raspberrypis.png)
 
-<<<<<<< HEAD
 It includes a variety of sensors:
   - rain guage
   - anemometer
@@ -70,15 +62,6 @@ It includes a variety of sensors:
   - temperature
   - pressure
   - air quality
-=======
-The Weather Station HAT includes a variety of sensors:
-- rain guage
-- anemometer
-- wind vane
-- temperature
-- pressure
-- air quality
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 What do each of these sensors measure? In which units?
 
