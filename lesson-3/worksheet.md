@@ -35,7 +35,7 @@ Connect the weather station board and rain gauge using the [guide]../guides/weat
 
 In most classroom situations you won't have a rain gauge, or at least not one to yourself. In this case, you can simulate one using a pair of wires and a button.
 
-1. Follow the [button guide]()../guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
+1. Follow the [button guide](../guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
 
 	![](images/gpio-setup.png)
 
@@ -175,9 +175,9 @@ To do that we need to use a technique called interrupt handling. Rather than con
 
 You should now have a working rain gauge using two different approaches. Consider the following questions:
 
-    - What is the difference between polling and interrupt handling?
-    - Is one of these techniques better? If so, why?
-    - Why is the unit of measurement for the gauge **mm** rather than **ml**?
+- What is the difference between polling and interrupt handling?
+- Is one of these techniques better? If so, why?
+- Why is the unit of measurement for the gauge **mm** rather than **ml**?
 
 ## What's next
 

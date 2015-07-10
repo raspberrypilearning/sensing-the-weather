@@ -151,7 +151,7 @@ Now that we are able to calculate the wind speed from the information we can col
 - The next line sets up the GPIO callback function for pin 5 and sets the function to spin.
 - The final loop is set to wait for a time period before calculating the speed, printing it and then starting again.
 
-Can you convert this program plan to a working Python program? (A solution can be found [here](code/wind_calc.py)
+Can you convert this program plan to a working Python program? (A solution can be found [here](code/wind_calc.py))
 
 ## Measurement units
 

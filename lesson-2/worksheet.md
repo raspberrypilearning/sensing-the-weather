@@ -122,7 +122,7 @@ Think carefully about whether you want to increase this number or decrease it. A
 
 ## Using a pull down circuit
 
-In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](GPIO/pull_up_down.md))
+In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](../guides/GPIO/pull_up_down.md))
 
 Let's see what the difference is when we use a pull down resistor.
 1. From your pullup.py program in IDLE click the **file** menu and select **save as**. Replace the file name with `pulldown.py`

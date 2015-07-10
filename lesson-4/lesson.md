@@ -12,27 +12,27 @@ In this lesson, students will use the weather station expansion board and the an
 
 ### All students are able to
 
-	- Explain how the anemometer works
-	- Write code (with help) to count the number of rotations made
+- Explain how the anemometer works
+- Write code (with help) to count the number of rotations made
 
 ### Most students are able to
 
-	- Write code to count the number of rotations made
-	- Use circle theory to convert the rotations made into a wind speed
-	- With support, present the wind speed in a meaningful unit
+- Write code to count the number of rotations made
+- Use circle theory to convert the rotations made into a wind speed
+- With support, present the wind speed in a meaningful unit
 
 ### Some students are able to
 
-	- Write code to gather anemometer data and calculate wind speed, and present this information in a suitable unit of measurement
+- Write code to gather anemometer data and calculate wind speed, and present this information in a suitable unit of measurement
 
 ## Lesson Summary
 
 
-	- Examine the anemometer and discuss its purpose, how it works and its unit of measurement
-	- Review understanding of circle theory
-	- Discuss an algorithm for the anemometer program
-	- Students code and test the anemometer program
-	- Students calibrate their sensor to ensure accuracy
+- Examine the anemometer and discuss its purpose, how it works and its unit of measurement
+- Review understanding of circle theory
+- Discuss an algorithm for the anemometer program
+- Students code and test the anemometer program
+- Students calibrate their sensor to ensure accuracy
 
 ## Starter
 
@@ -62,15 +62,15 @@ Students largely follow the [worksheet](weather-station-1/lesson-4/worksheet.md)
 
 Ask the class the following questions:
 
-	1. Why could we not use a pull down circuit to detect the anemometer spinning?
-	1. Why is calibration important?
-	1. Have we done enough to calibrate the anemometer?
+1. Why could we not use a pull down circuit to detect the anemometer spinning?
+1. Why is calibration important?
+1. Have we done enough to calibrate the anemometer?
 
 **Answers:**
 
-	1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hardwired to GPIO 17 and the other is hardwired to ground, which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the anemometer spins. It would only ever read `LOW`.
-	1. Because we want to be confident that our measurements are correct, or are at least within an acceptable tolerance.
-	1. We know that the higher the wind speed, the less accurate the anemometer becomes. In order to compensate for this, we would need different calibration ratios for different speeds. With the information provided by the datasheet we have done as much as we can.
+1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hardwired to GPIO 17 and the other is hardwired to ground, which means we can only short GPIO 17 to ground. If we used a pull down on GPIO 17 we would be shorting ground to ground and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 17 when the anemometer spins. It would only ever read `LOW`.
+1. Because we want to be confident that our measurements are correct, or are at least within an acceptable tolerance.
+1. We know that the higher the wind speed, the less accurate the anemometer becomes. In order to compensate for this, we would need different calibration ratios for different speeds. With the information provided by the datasheet we have done as much as we can.
 
 ## Extension
 
