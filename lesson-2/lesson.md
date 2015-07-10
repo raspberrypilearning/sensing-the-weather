@@ -17,13 +17,9 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ### Most students are able to
 
-<<<<<<< HEAD
   - Write code to use both a **pull up** and **pull down** circuit
   - Be able to explain what each of these circuits do
-=======
-- Write code to use both a pull up and pull down circuit
-- Explain what each of these circuits do
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
+
 
 ### Some students are able to
 
@@ -39,17 +35,11 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Starter
 
-<<<<<<< HEAD
-Use the Pull Up / Pull down [Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
-  - Teacher led explanation
-  - Role play
-  - Analogy
-=======
 Use the [Pull Up/Pull Down Guide](guides/GPIO/pull_up_down.md) to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
 - Teacher-led explanation
 - Role play
 - Analogy
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
+
 
 ## Main development
 

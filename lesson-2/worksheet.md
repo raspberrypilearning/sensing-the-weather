@@ -1,4 +1,4 @@
-# Weather Station Basic I/O - Detecting input 
+# Weather Station Basic I/O - Detecting input
 
 In this lesson you will:
 
@@ -11,11 +11,7 @@ In this lesson you will:
 ## Connecting a button
 Before we start working with the weather station kit, we are going to ensure we can capture a simple input signal. To do this we need to connect a button to one of the GPIO pins.
 
-<<<<<<< HEAD
-1. Follow the [button guide](GPIO/button.md) to connect a single button to **Pin 4**.
-=======
  Follow the [button guide](guides/GPIO/connecting-button.md) to connect a single button to **Pin 4**.
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ![Pull up wires](images/pull_up_wire.png)
 
@@ -33,17 +29,10 @@ Before we start working with the weather station kit, we are going to ensure we 
 
 1. Enter the following code:
 
-<<<<<<< HEAD
   ```python
 #!/usr/bin/python3
 import RPi.GPIO as GPIO
 import time
-=======
- ```python
- #!/usr/bin/python3
- import RPi.GPIO as GPIO
- import time
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
  pin = 4
 
@@ -106,7 +95,7 @@ For this we need to add an infinite loop to our code. In Python we use a **while
 
 1. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
 
-<<<<<<< HEAD
+
   ```python
 while True:
   if pin_value == True:
@@ -115,16 +104,7 @@ while True:
     print("LOW")
   time.sleep(0.5)
 ```
-=======
- ```python
- while True:
-   if pin_value == True:
-     print ("HIGH")
-   else:
-     print("LOW")
-   time.sleep(0.5)
- ```
->>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
+
 2. Check your code against this [solution](code/pullup.py) to ensure it is correct.
 3. Run your code again by pressing F5; to exit the program press `Ctrl + C` on your keyboard.
 4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
@@ -153,7 +133,7 @@ Let's see what the difference is when we use a pull down resistor.
 3. Update the code to use a pull down circuit rather than pull up: this is a single change on the line that reads
 `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`
 which should become
-`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)` 
+`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
 Your code should now look like [this](code/pulldown.py)
 
 ## What next?
