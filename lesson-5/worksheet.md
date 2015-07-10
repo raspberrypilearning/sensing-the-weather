@@ -10,15 +10,15 @@ In this lesson you will:
 
 Look back at the code you wrote for the anemometer and the rain gauge and review how they worked. What did each line do? To open your code you should open LXTerminal and change to the `weather_station` directory and open your previous code:
 
-    ```bash
-    sudo python3 wind_final.py
-    ```
+```bash
+sudo python3 wind_final.py
+```
 
 or
 
-    ```bash
-    sudo python3 rain_interrupt.py
-    ```
+```bash
+sudo python3 rain_interrupt.py
+```
 
 ## Creating a single solution
 
@@ -51,13 +51,12 @@ Having two programs, one for each sensor, can be helpful. However, ideally we wo
 
 We haven't used comments much in our work so far but we should. Comments allow you to annotate and explain what your code is doing. This is useful both for yourself and others reading your code. Adding a comment is quite straightforward. In the example below, the line beginning with a `#` has been used; this is ignored by the computer but readable by humans.
 
-    ```python
-    #The spin function is called whenever a spin is detected, it increments the count variable and prints it out
-
-    def spin(channel):
-        global count
-        count = count + 1
-    ```
+```python
+#The spin function is called whenever a spin is detected, it increments the count variable and prints it out
+def spin(channel):
+    global count
+    count = count + 1
+```
 
 ## Test and review
 
