@@ -34,12 +34,19 @@ In this lesson, students will complete their initial work on the weather station
 
 ## Starter
 
-Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rain gauge](../lesson-4/code/rain_interrupt.py). Students are invited to explain what the two programs are doing and how they are working. This could be done in the following ways:
+Share the code for the [anemometer](weather-station-1/lesson-4/code/wind_final.py) and the [rain gauge](weather-station-1/lesson-4/code/wind_interrupt.py ). Students are invited to explain what the two programs are doing and how they are working. This could be done in the following ways:
 
+<<<<<<< HEAD
     - Class discussion with notes being taken.
     - Projecting code onto a whiteboard, where students use sticky notes to add annotation.
     - Printed copies which students individually annotate.
     - Google doc / [Classroom](classroom.google.com).
+=======
+- Class discussion with notes being taken.
+- Projecting code onto a whiteboard, where students use sticky notes to add annotation.
+- Printed copies which students individually annotate.
+- Google doc or [Classroom](classroom.google.com).
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ## Main development
 
@@ -51,6 +58,7 @@ Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rai
 
 2. Show the students how to add comments to their code using the `#` symbol ie:
 
+<<<<<<< HEAD
     ```python
     #This is a comment, it is ignored by the computer and used to annotate the code.
     ```
@@ -64,6 +72,20 @@ Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rai
     - They could either start with a blank file and write from scratch, or start with one program and incorporate the other.
     - Decide to what extent you want the students to collaborate; even if they help each other they will likely end up with subtlely different solutions.
     - Emphasise the fact that there is no single correct solution.
+=======
+```python
+#This is a comment; it is ignored by the computer and used to annotate the code.
+```
+Ask students how comments might be a useful tool for programmers.
+- They help explain the intended function of the program to others that might read the code, looking for ideas or to improve it.
+- Comments help the programmer keep track of what their code is doing, and make it easier to return to a piece of code and still make sense of it.
+
+3. Students should be given time to build their own solution which logs and displays both rainfall and windspeed. Their solution should be well-annotated and tested to ensure functionality.
+- They may want to set up their Pi with a weather station and buttons for testing.
+- They could either start with a blank file and write from scratch, or start with one program and incorporate the other.
+- Decide to what extent you want the students to collaborate; even if they help each other theyare likely to end up with subtly different solutions.
+- Emphasise the fact that there is no single correct solution.
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ## Plenary
 
@@ -72,6 +94,12 @@ Students should be given a chance to review each other's code and comments. They
 ## What's next?
 
 - Students could use this code to deploy a basic version of the weather station, which displays data on rainfall and wind speed.
+<<<<<<< HEAD
 - Consider what's missing from this solution. Clearly only two of the sensors have been covered but what else is missing?
 - Is this the best way to display the data?
 - Is data being saved? Could I look back at previous data?
+=======
+- Consider what is missing from this solution. Clearly only two of the sensors have been covered but what else is missing?
+    - Is this the best way to display the data?
+    - Is data being saved? Could we look back at previous data?
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630

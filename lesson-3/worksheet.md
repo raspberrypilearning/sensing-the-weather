@@ -1,4 +1,4 @@
-# Weather Station Basic I/O - The Rain Gauge
+# Weather Station Basic I/O - Measuring Rainfall
 
 In this lesson you will:
 
@@ -8,34 +8,38 @@ In this lesson you will:
 
 ## How does the rain gauge work?
 
-1. Today you will be using the rain gauge sensor to collect data about rainfall. The gauge consists of a bucket to collect water and a see-saw-like device to measure how much water passes through. Each time the bucket fills with a certain amount of water it tips, releasing the water and presenting the opposite bucket to be filled.
+Today you will be using the rain gauge sensor to collect data about rainfall. The gauge consists of a bucket to collect water, and a see-saw-like device to measure how much water passes through. Each time the bucket fills with a certain amount of water it tips, releasing the water and presenting the opposite bucket to be filled.
 
   ![](images/rain_gauge_both.jpg)
 
-1. Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. This is exactly the same as using a button or pair of wires, as done in the previous lesson.
+Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. This is exactly the same as using a button or pair of wires, as done in the previous lesson.
 
   ![](images/reed_switch.jpg)
 
-1. In order to calculate the amount of water that's passed through the gauge we need to know:
+In order to calculate the amount of water that's passed through the gauge we need to know:
 
   - The amount of water needed to tip the bucket, in this case **0.2794** mm (this can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf)).
   - How many times the bucket has tipped, which can be counted as the number of input signals.
 
   **Rainfall = 0.2794 * number of tips**
 
-## Getting Setup
+## Getting Set Up
 
-In order to get started we need to setup the rain gauge or simulate it, depending on the situation.
+In order to get started we either need to set up a rain gauge, or simulate it, depending on the situation.
 
 ### You have you a weather station & rain gauge to yourself
 
+<<<<<<< HEAD
 Connect the weather station board and rain gauge using the [guide](GPIO/button.md)
+=======
+Connect the weather station board and rain gauge using the [guide](guides/weather_station/rain_gauge.md)
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ### You don't have a weather station & rain gauge to yourself
 
-In most classroom situations you won't have a rain gauge, or at least one to yourself, in which case you can simulate one using a pair of wires and a button.
+In most classroom situations you won't have a rain gauge, or at least not one to yourself. In this case, you can simulate one using a pair of wires and a button.
 
-1. Follow the [button guide] to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
+1. Follow the [button guide](guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
 
 	![](images/gpio-setup.png)
 
@@ -43,11 +47,15 @@ In most classroom situations you won't have a rain gauge, or at least one to you
 
 ## Counting bucket tips
 
-Setup your Raspberry Pi and ensure you are in desktop mode.
+Set up your Raspberry Pi and ensure you are in desktop mode.
 
 1. Launch the LXterminal window
 
+<<<<<<< HEAD
   ![LX Terminal](images/lxterminal.png)
+=======
+	![LX Terminal](images/lxterminal.png)
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
 
@@ -57,16 +65,16 @@ Setup your Raspberry Pi and ensure you are in desktop mode.
 
 1. In the top few lines change the pin being read to 6; the weather station is wired to use this pin so we should also use it for testing.
 
-  ```python
-  #!/usr/bin/python
-  import RPi.GPIO as GPIO
-  import time
+	 ```python
+  	#!/usr/bin/python
+  	import RPi.GPIO as GPIO
+  	import time
 
-  pin = 6
+  	pin = 6
 
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-    ```
+  	GPIO.setmode(GPIO.BCM)
+  	GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+	 ```
 
 1. We want to count the number of times the switch closes and drops the voltage from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
 
@@ -89,7 +97,11 @@ Setup your Raspberry Pi and ensure you are in desktop mode.
 	> END LOOP  
 
 
+<<<<<<< HEAD
   In Python we would write:
+=======
+	In Python we would write
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 	```python
 	while True:
@@ -102,16 +114,28 @@ Setup your Raspberry Pi and ensure you are in desktop mode.
 			previous_state = current_state
 	```
 
+<<<<<<< HEAD
   You can see the complete code [here](code/rain_polling.py).
+=======
+	You can see the complete code [here](code/rain_polling.py).
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 1. Once you have entered your code, run it by presing **F5**.
 1. If you press your button a few times, your program should display something like:
 
+<<<<<<< HEAD
     ```
     0.2794
     0.5588
     0.8382
     ```
+=======
+	```
+	0.2794
+	0.5588
+	0.8382
+	```
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 1. You can quit at any time with the keystroke `CTRL + C`.
 
@@ -123,10 +147,11 @@ To do that we need to use a technique called interrupt handling. Rather than con
 
 1. From your rain_polling.py program in IDLE click the **file** menu and select **save as**, replace the file name with `rain_interrupt.py`
 
-1. We need to make a few changes to the code
-- You should remove the variables **current_state** and **previous_state** as we won't need them.
-- The code to increment the count and display the current rainfall needs to be moved into a function. (a reusable section of code) You should call the function something sensible as you will need this function name for the next step. We've called ours `bucket_tipped`, here's what the first section of the code looks like now:
+1. We need to make a few changes to the code: firstly, you should remove the variables **current_state** and **previous_state** as we won't need them.
 
+1. Now, the code to increment the count and display the current rainfall needs to be moved into a function (a reusable section of code). You should call the function something sensible as you will need the name for the next step. We've called ours `bucket_tipped`. Here's what the first section of the code looks like now:
+
+<<<<<<< HEAD
     ```python
     #!/usr/bin/python3
     import RPi.GPIO as GPIO
@@ -141,11 +166,28 @@ To do that we need to use a technique called interrupt handling. Rather than con
 
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+=======
+	```python
+	#!/usr/bin/python3
+	import RPi.GPIO as GPIO
+
+	pin = 6
+	count = 0
+
+	def bucket_tipped(channel):
+    		global count
+    		count = count + 1
+    		print (count * 0.2794)
+
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
     ```
 
 1. In order for your function to be triggered when the input voltage on pin 6 drops, you will need to define an interrupt event. Add this line to your code:
 
+<<<<<<< HEAD
     ```python
     GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
 	```
@@ -159,25 +201,46 @@ To do that we need to use a technique called interrupt handling. Rather than con
 	```
 
     The complete code can be found [here](code/rain_interrupt.py)
+=======
+	```python
+	GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+	```
+
+	This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected, it calls the 		`bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time, in milliseconds, between two 		events being detected.
+
+1. Finally, we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press `Enter`, and then exit.
+
+	```python
+	input("Press Enter to stop logging\n")
+	```http://raspberrypi.org/guides/gpio/button.md
+
+	The complete code can be found [here](code/rain_interrupt.py)
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 1. Run your code by pressing **F5**, this will ask you to save your code.
 2. As you press your button you should see:
 
-```
-Press Enter to stop logging
-0.2794
-0.5588
-0.8382
-1.1176
+	```
+	Press Enter to stop logging
+	0.2794
+	0.5588
+	0.8382
+	1.1176
 	```
 ## Summary
 
 You should now have a working rain gauge using two different approaches. Consider the following questions:
+<<<<<<< HEAD
 
     - What is the difference between polling and interrupt handling?
     - Is one of these techniques better? If so, why?
     - Why is the unit of measurement for the gauge **mm** rather than **ml**?
+=======
+- What is the difference between polling and interrupt handling?	
+- Is one of these techniques better? If so, why?
+- Why is the unit of measurement for the gauge **mm** rather than **ml**?
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ## What's next
 
-- Now that you have built your rain gauge code you should test its accuracy. How much water would 1mm be in the top of the bucket?
+Now that you have built your rain gauge code you should test its accuracy. How much water would 1mm be in the top of the bucket?

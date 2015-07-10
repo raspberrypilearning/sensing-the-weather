@@ -1,52 +1,63 @@
-# Weather Station Basic I/O - Capturing input signals
+# Weather Station Basic I/O - Detecting input 
 
 In this lesson you will:
 
-1. Create and execute a program to get the current state of pin 4 and display it on-screen
-2. Use a `while` loop to repeat this **polling** of the pin and output the result
-3. Add a delay to slow down the rate of polling
-4. Adapt the program to use a pull down circuit
-4. Explore the timings of the loop to get the ideal sensitivity
+- Create and execute a program to get the current state of pin 4 and display it on screen
+- Use a `while` loop to repeat this **polling** of the pin and output the result
+- Add a delay to slow down the rate of polling
+- Adapt the program to use a pull down circuit
+- Explore the timings of the loop to get the ideal sensitivity
 
 ## Connecting a button
 Before we start working with the weather station kit, we are going to ensure we can capture a simple input signal. To do this we need to connect a button to one of the GPIO pins.
 
+<<<<<<< HEAD
 1. Follow the [button guide](GPIO/button.md) to connect a single button to **Pin 4**.
+=======
+ Follow the [button guide](guides/GPIO/connecting-button.md) to connect a single button to **Pin 4**.
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ![Pull up wires](images/pull_up_wire.png)
 
 ## Sensing the input
 
-2. Setup your Raspberry Pi and ensure you are in Desktop mode.
+1. Set up your Raspberry Pi and ensure you are in Desktop mode.
 
-3. Launch the LXterminal window
+1. Launch the LXterminal window
 
   ![LX Terminal](images/lxterminal.png)
 
-4. Create a directory by typing `mkdir weather_station` follow by `enter`
+1. Create a directory by typing `mkdir weather_station` followed by `enter`
 
-5. Create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
+1. Create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
 
-6. Enter the following code:
+1. Enter the following code:
 
+<<<<<<< HEAD
   ```python
 #!/usr/bin/python3
 import RPi.GPIO as GPIO
 import time
+=======
+ ```python
+ #!/usr/bin/python3
+ import RPi.GPIO as GPIO
+ import time
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
-pin = 4
+ pin = 4
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP
+ GPIO.setmode(GPIO.BCM)
+ GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP
 
-pin_value = GPIO.input(pin)
-if pin_value == True:
-  print ("HIGH")
-else:
-  print("LOW")
-```
+ pin_value = GPIO.input(pin)
+ if pin_value == True:
+   print ("HIGH")
+ else:
+   print("LOW")
+ ```
 
-7. To run you code press the **F5** key on your keyboard, you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
+1. To run your code, press the F5 key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
 ### Code explained:
 
@@ -54,14 +65,14 @@ else:
   #!/usr/bin/python3
   ```
 
-This line denotes the file as a Python program so that the computer knows *how* to run the code.
+This line defines the file as a Python program so that the computer knows how to run the code.
 
   ```python
   import RPi.GPIO as GPIO
   import time
   ```
 
-Imports the `RPi.GPIO` library that allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
+This imports the `RPi.GPIO` library which allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
 
   ```python
   pin = 4
@@ -75,7 +86,7 @@ These three lines set up a variable call pin to store the pin number. We then se
    pin_value = GPIO.input(pin)
    ```
 
-This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be *True* or *False*.
+This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be **True** or **False**.
 
     ```python
     if pin_value == True:
@@ -86,15 +97,16 @@ This line reads the state of the pin and stores the result in a variable called 
 
 These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
-So now we can check the state of the button, but only **once**
+So now we can check the state of the button, but only once.
 
-## Repeatedly Polling
-Now that we can check the state of the button we ought to check continously and report it's state. We can do this by **Polling** the pin every 0.5 seconds and constantly outputting the state.
+## Repeated Polling
+Now that we can check the state of the button we ought to check continously and report its state. We can do this by **polling** the pin every 0.5 seconds and constantly outputting the state.
 
-For this we need to add an infinite loop to our code, in python we use a **while True:** statement and indent all the code that will be looped.
+For this we need to add an infinite loop to our code. In Python we use a **while True:** statement and indent all the code that will be looped.
 
 1. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
 
+<<<<<<< HEAD
   ```python
 while True:
   if pin_value == True:
@@ -103,39 +115,50 @@ while True:
     print("LOW")
   time.sleep(0.5)
 ```
+=======
+ ```python
+ while True:
+   if pin_value == True:
+     print ("HIGH")
+   else:
+     print("LOW")
+   time.sleep(0.5)
+ ```
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 2. Check your code against this [solution](code/pullup.py) to ensure it is correct.
-3. Run you code again by pressing **F5**, to exit the program press `Ctrl + C` on your keyboard.
+3. Run your code again by pressing F5; to exit the program press `Ctrl + C` on your keyboard.
 4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
 
 ## Getting the timing right
 
-So now you've managed to check the status of the input pin over and over, does it always work though?
+So now you've managed to check the status of the input pin over and over. Does it always work though?
 
-1. Try running your program again and press the button continuously, can you press it fast enough that it fails to detect some presses.
+1. Try running your program again and press the button continuously. Can you press it fast enough that the Pi fails to detect some presses?
 2. The fact that the program only checks every 0.5 seconds means that some presses aren't detected.
 3. Adjust the timing of the program by changing the number in the line
 `time.sleep(0.5)`
 
-Think carefully about whether you want to increase this number or decrease it, adjust it until it's sensitive enough.
+Think carefully about whether you want to increase this number or decrease it. Adjust it until it's sensitive enough.
 
 ## Using a pull down circuit
 
 In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](GPIO/pull_up_down.md))
 
 Let's see what the difference is when we use a pull down resistor.
-1. From your pullup.py program in IDLE click the **file** menu and select **save as**, replace the file name with `pulldown.py`
+1. From your pullup.py program in IDLE click the **file** menu and select **save as**. Replace the file name with `pulldown.py`
 
-2. Change the wiring of your button to a **pull down** circuit as shown here.
-![Pull up wires](images/pull_down_wire.png)
+2. Change the wiring of your button to a pull down circuit as shown here.
+![Pull down wires](images/pull_down_wire.png)
 
-3. Update the code to use a pull down circuit rather than pull up, this is a single change on the line that reads
+3. Update the code to use a pull down circuit rather than pull up: this is a single change on the line that reads
 `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`
 which should become
-`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`, your code should now look like [this](code/pulldown.py)
+`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)` 
+Your code should now look like [this](code/pulldown.py)
 
-## What's next?
+## What next?
 
-In this lesson we have made our program respond to a single button press using a **pull up** and **pull down** setup.
+In this lesson we have made our program respond to a single button press using a pull up and pull down setup.
 
 - Are either of these circuits better than the other? Does it make a difference which one we use?
 - In our code we used a button to print a simple statement. What else could you make it do?

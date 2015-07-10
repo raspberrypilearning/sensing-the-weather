@@ -4,8 +4,8 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Learning objectives
 
-- Understand what pull up and pull down circuits are, and be able to differentiate between the two
-- Understand how to detect the state of a switch from within the Python programming language
+- To understand what pull up and pull down circuits are, and be able to differentiate between the two
+- To understand how to detect the state of a switch from within the Python programming language
 - To write a Python program which includes an infinite loop to check the state of the switch
 
 ## Learning outcomes
@@ -17,8 +17,13 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ### Most students are able to
 
+<<<<<<< HEAD
   - Write code to use both a **pull up** and **pull down** circuit
   - Be able to explain what each of these circuits do
+=======
+- Write code to use both a pull up and pull down circuit
+- Explain what each of these circuits do
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ### Some students are able to
 
@@ -26,7 +31,7 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Lesson Summary
 
-- Connect a basic switch and discuss pull up / pull down circuits
+- Connect a basic switch and discuss pull up and pull down circuits
 - Capture data from a GPIO pin using a pull up circuit
 - Add a loop and timings
 - Adapt to create a pull down circut
@@ -34,22 +39,29 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Starter
 
+<<<<<<< HEAD
 Use the Pull Up / Pull down [Guide]() to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
   - Teacher led explanation
   - Role play
   - Analogy
+=======
+Use the [Pull Up/Pull Down Guide](guides/GPIO/pull_up_down.md) to explain the different ways in which an input signal can be detected by the Raspberry Pi. This could be done through:
+- Teacher-led explanation
+- Role play
+- Analogy
+>>>>>>> 001b31883c8eb2f63325dfe6e4d94613a42e9630
 
 ## Main development
 
-1. Students follow [Pull Up/Down Guide]() to connect a button to the Raspberry Pi.
-2. Students refer to lesson [worksheet](worksheet.md) to write a python program to read an input pin in a `Pull Up` circuit.
+1. Students follow [Pull Up/Pull Down Guide](guides/GPIO/pull_up_down.md) to connect a button to the Raspberry Pi.
+2. Students refer to lesson [worksheet](worksheet.md) to write a python program to read an input pin in a pull up circuit.
 3. Students add a loop to their code to make it poll continuously and report the status of the pin.
 4. Students adapt their program to use a Pull Down resistor setup instead of a Pull Up.
 
 
 ## Plenary
 
-Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed. It can help if you first cover the pull down column, and then cover the pull up column instead.
+Show this table to the class to recap. It is important to recognise that the pull up and pull down circuits give opposite values when the switch is open and closed. It can help if you first cover up the pull down column, and then cover up the pull up column instead.
 
 Pull up | Switch | Pull down
 :---:|:---:|:---:
@@ -82,6 +94,6 @@ Discuss the following with the class:
 
 Students could consider the following ideas and questions:
 
-- Are either of these circuits better than the other? Does it make a difference which one we use?
+- Is either one of these circuits better than the other? Does it make a difference which one we use?
 - In our code we used a button to print a simple statement, but what else could you make it do?
 - Could you connect multiple buttons to your Raspberry Pi and detect the states of each? Could you count the number of button presses?
