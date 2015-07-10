@@ -2,8 +2,6 @@
 
 This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind speed.
 
-![Anemometer](images/anemometer.jpg)
-
 ## How does it work?
 
 The wind catches the three cups and drives them round, spinning the central section.
@@ -40,13 +38,10 @@ The following algorithm can be used to calculate wind speed.
 
 ## How does the sensor connect?
 
-To connect the anemometer to the weather station board you will need to first have set up the main [weather station box]()
+To connect the anemometer to the weather station board you will need to first have set up the main weather station box
 1. Locate the socket on the weather station board marked **WIND** and the corresponding grommet.
 2. The anemometer can be connected directly to the board, but ideally via the [wind_vane](wind_vane.md)
 1. Unscrew the grommet from the case and thread the wind vane plug through to the inside of the box.
-
-  ![Connecting](wind_connect.jpeg)
-
 1. Connect the plug to the socket, and tighten up the grommet.
 
 ###When connected the anemometer uses **GPIO pin 5** (BCM)
