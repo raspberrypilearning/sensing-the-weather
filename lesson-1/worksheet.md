@@ -21,12 +21,12 @@ What do the following terms mean?
 
 ## How do we make predictions?
 
-So, a weather forecast is a useful prediction of future conditions, but how are these predictions made?
+A weather forecast is a useful prediction of future conditions, but how are these predictions made?
 
 There are two key steps to predicting the weather:
 
 ### Data collection
-  Vast quantities of data are collected about current conditions all over the world. This is done using:
+Vast quantities of data are collected about current conditions all over the world. This is done using:
   - Satelites
   - Ground-based observers
   - Weather stations
@@ -34,20 +34,20 @@ There are two key steps to predicting the weather:
   What kind of data might these sources collect? Temperature is one, but can you think of others?
 
 ### Modelling
-  The data collected is gathered and used to build a computer model which knows the state of the weather at various points, and predicts the path of weather fronts and systems.
+The data collected is gathered and used to build a computer model which knows the state of the weather at various points, and predicts the path of weather fronts and systems.
 
-  Explore these models by visiting [weatheronline.co.uk
+Explore these models by visiting [weatheronline.co.uk
 ](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
 
 [![Weather Model](images/ani_model.gif)](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
 
 ## Are predictions always accurate?
 
-- Create a [weather log](files/weather_log.pdf) and record the predicted conditions (temperature, wind speed, etc) in your area using your favourite forecasting service.
+1. Create a [weather log](files/weather_log.pdf) and record the predicted conditions (temperature, wind speed, etc) in your area using your favourite forecasting service.
 
-[![Weather Log](images/weather_log.png)](files/weather_log.pdf)
+  [![Weather Log](images/weather_log.png)](files/weather_log.pdf)
 
-- Observe the weather for a week and record the actual conditions ([weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk)). How accurate were the forecasts?
+1. Observe the weather for a week and record the actual conditions ([weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk)). How accurate were the forecasts?
 
 ## Building a computerised weather station
 
@@ -94,7 +94,6 @@ Now answer the following questions:
 
 1. What would be happening if this graph was from an LED being connected to the Pi?
 1. What would this graph show if instead the Pi was connected to a button?
-
 
 ## What next?
 In this lesson we have considered how weather is measured and forecast, how the Raspberry Pi could be used to capture data, and the difference between `input` and `output` mode.
