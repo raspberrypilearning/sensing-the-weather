@@ -83,7 +83,7 @@ The code will currently look a little like this:
 
 1. Test your code! Press **F5** and save when prompted
 
-Your code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected, check your code against this [solution](wind_interrupt.py).
+Your code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected, check your code against this [solution](code/wind_interrupt.py).
 
 We can now count the signals from the anemometer; next we need to calculate the wind speed.
 
