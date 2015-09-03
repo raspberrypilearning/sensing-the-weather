@@ -24,13 +24,13 @@ In order to get started we need to setup the anemometer or simulate it, dependin
 
 ### You have you a weather station and anemometer to yourself
 
-Connect the weather station board and anemometer using the [guide](GPIO/button.md)
+Connect the weather station board and anemometer using the [guide](../guides/weather_station/anemometer.md)
 
 ### You don't have a weather station and anemometer to yourself
 
 In most classroom situations you won't have a anemometer, or at least one to yourself, in which case you can simulate one using a pair of wires and a button.
 
-1. Follow the [button guide] to connect your wires up in a similar way to the previous lesson, except this time connect to pin 5.
+1. Follow the [button guide](../guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 5.
 
     ![](images/gpio-setup.png)
 
