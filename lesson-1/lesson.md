@@ -4,10 +4,10 @@ This lesson will introduce students to weather forecasting and how it works, as 
 
 ## Learning objectives
 
-- To familarise students with some key weather terminology
-- To identify weather characteristics that can be measured, and to understand how this is done
-- To understand the potential use of the Raspberry Pi as an automated weather station
-- To differentiate between the input and output modes of the GPIO interface, and the terms `HIGH` and `LOW`
+- Familarise students with some key weather terminology
+- Identify weather characteristics that can be measured, and to understand how this is done
+- Understand the potential use of the Raspberry Pi as an automated weather station
+- Differentiate between the input and output modes of the GPIO interface, and the terms `HIGH` and `LOW`
 
 ## Learning outcomes
 
@@ -36,29 +36,19 @@ This lesson will introduce students to weather forecasting and how it works, as 
 
 ## Starter
 
-Begin by watching either video with the students. Afterwards, test them on the meaning of some key vocab, such as **high pressure**, **low pressure**, **fronts**, **isobars** etc.
+Begin by watching either video with the students. Afterwards, test them on the meaning of some key vocab, such as **high pressure**, **low pressure**, **fronts**, **isobars** and so on.
 - [How To... Decode A Weather Forecast](https://www.youtube.com/watch?v=lITCF3UPVu4)
 - [What are weather fronts](https://www.youtube.com/watch?v=G7Ewqm0YHUI)
 
-Discuss with students how meteorologists make predictions about the weather.
-- Through questioning, draw out the fact that they collect a huge amount of data to create [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts).
-- Students could explore some models at [weatheronline.co.uk](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx)
+Discuss with students how meteorologists make predictions about the weather. Through questioning, draw out the fact that they collect a huge amount of data to create [forecast models](http://en.wikipedia.org/wiki/Weather_forecasting#How_models_create_forecasts). Students could explore some models at [weatheronline.co.uk](http://www.weatheronline.co.uk/cgi-app/weathercharts?LANG=en&CONT=ukuk&MAPS=vtx) too.
 
 ## Main development
 
-1. Get students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf).
-- Students could create a [weather log](files/weather_log.pdf) using a weather forecasting service to record the conditions predicted for the coming week.
-- They could then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare. This could be done as a home learning task.
+1. Ask students to consider the different weather data that could be measured, and how this might be collected. This could be done through general class discussion, playing with the sensors and predicting what they might do, or a simple [cardsort](files/WeatherStationCardsort.pdf) activity. Students could create a [weather log](files/weather_log.pdf) using a weather forecasting service to record the conditions predicted for the coming week. They could then find the nearest recording station on the [weather online](http://www.weatheronline.co.uk/weather/maps/current?LANG=en&CONT=ukuk) site and compare. This could be done as a home learning task.
 
+1. Introduce the Raspberry Pi and how it will be used to automatically collect data. Students should consider and discuss in a group the benefits of the Raspberry Pi over a standard computer. These benefits include size, cost, and ability to interact with hardware sensors. If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point. This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands-on experience.
 
-2. Introduce the Raspberry Pi and how we will use it to automatically collect data. Students should consider and discuss the benefits of the Raspberry Pi over a standard computer. These benefits include size, cost, and ability to interact with hardware sensors.
-- If pupils have never used a Raspberry Pi, this [video](http://www.raspberrypi.org/help/what-is-a-raspberry-pi/) may be useful at this point.
-- This [getting started lesson](http://www.raspberrypi.org/learning/getting-started-with-raspberry-pi-lesson/) may be useful in giving the students a hands-on experience.
-- Students could complete a labelling activity.
-
-3. Highlight the [General Purpose Input Output](../guides/GPIO/README.md) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`.
-- The [worksheet](worksheet.md) has examples of different devices which students should identify as **input** or **output**.
-- Students could be given set of real devices (switches, LEDs, buzzers, PIR sensors, reed switches) and decide what each are and catagorise them as **input** or **output**.
+1. Highlight the [General Purpose Input Output](../guides/GPIO/README.md) (GPIO) pins on the Raspberry Pi. Students should understand that the pins can be connected to **input** or **output** devices, and should be able to identify some simple examples of these. For each device, students should consider what it means when the voltage is `HIGH` or `LOW`. The [student worksheet](worksheet.md) has examples of different devices which students should identify as **input** or **output**. Students could also be given set of real devices (switches, LEDs, buzzers, PIR sensors, reed switches) and decide what each are and catagorise them as **input** or **output**.
 
 ## Plenary
 
