@@ -29,7 +29,7 @@ In order to get started we either need to set up a rain gauge, or simulate it, d
 
 ### You have you a weather station & rain gauge to yourself
 
-Connect the weather station board and rain gauge using the [guide]../guides/weather_station/rain_gauge.md)
+Connect the weather station board and rain gauge using the [guide](../guides/weather_station/rain_gauge.md)
 
 ### You don't have a weather station & rain gauge to yourself
 
