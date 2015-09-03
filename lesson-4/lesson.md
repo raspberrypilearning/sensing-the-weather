@@ -55,7 +55,7 @@ Students largely follow the [worksheet](weather-station-1/lesson-4/worksheet.md)
 2. Discuss with students how they will turn the count of signals received from the sensor into a wind speed.
 	- Teacher-led explanation
 	- Class discussion
-	- Share or co-devise with pupils a outline of code in a pseudocode style which students can refer to (example in [guide]())
+	- Share or co-devise with pupils a outline of code in a pseudocode style which students can refer to. (example in [guide](../guides/weather_station/anemometer.md))
 3. Students to implement the planned code in Python and test.
 
 ## Plenary
