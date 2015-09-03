@@ -11,13 +11,13 @@ In this lesson you will:
 Look back at the code you wrote for the anemometer and the rain gauge and review how they worked. What did each line do? To open your code you should open LXTerminal and change to the `weather_station` directory and open your previous code:
 
 ```bash
-sudo python3 wind_final.py
+nano wind_final.py
 ```
 
 or
 
 ```bash
-sudo python3 rain_interrupt.py
+nano rain_interrupt.py
 ```
 
 ## Creating a single solution
@@ -27,14 +27,14 @@ Having two programs, one for each sensor, can be helpful. However, ideally we wo
 1. Are you going to start a new program and write the program from scratch using the original two as guides?
 
     ```bash
-  sudo python3 wind_rain.py
+  nano wind_rain.py
   ```
 
 1. Or are you going to copy one of the originals and add to that?
 
     ```bash
     cp wind_final.py wind_rain.py
-    sudo python3 wind_rain.py
+    nano wind_rain.py
     ```
 
 1. Are there any lines of code appearing in both programs that only need to appear once? For example, the import line is only needed once at the beginning of our program
