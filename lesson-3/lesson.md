@@ -36,7 +36,7 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 ## Starter
 
-Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Review the [Rain Gauge Guide]../guides/weather_station/rain_gauge.md) for more detailed information.
+Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Review the [Rain Gauge Guide](../guides/weather_station/rain_gauge.md) for more detailed information.
 - Ask students what they think it does and how they think it works.
 - Open it up and explore the sensor, reed switch and magnet.
 - More able students could research the link between mm of rainfall and a ml quantity.
