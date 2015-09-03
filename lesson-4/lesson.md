@@ -4,16 +4,16 @@ In this lesson, students will use the weather station expansion board and the an
 
 ## Learning objectives
 
-- To understand how the anemometer works by triggering electrical signals each rotation
-- To count the signals produced by the anemometer and understand this data
-- To convert this raw signal into meaningful information about the wind speed
+- Understand how the anemometer works by triggering electrical signals each rotation
+- Count the signals produced by the anemometer and understand this data
+- Convert this raw signal into meaningful information about the wind speed
 
 ## Learning outcomes
 
 ### All students are able to
 
 - Explain how the anemometer works
-- Write code (with help) to count the number of rotations made
+- Write code with support to count the number of rotations made
 
 ### Most students are able to
 
@@ -27,7 +27,6 @@ In this lesson, students will use the weather station expansion board and the an
 
 ## Lesson Summary
 
-
 - Examine the anemometer and discuss its purpose, how it works and its unit of measurement
 - Review understanding of circle theory
 - Discuss an algorithm for the anemometer program
@@ -38,25 +37,42 @@ In this lesson, students will use the weather station expansion board and the an
 
 ### How does the anemometer work?
 
-Examine the anemometer sensor and discuss with pupils how it works and measures windspeed. Review the [Anemometer Guide](../guides/weather_station/anemometer.md) for more detailed information.
-- Ask students what they think it does and how they think it works.
-- Open it up and explore the sensor, reed switch and magnet
-
-Once you have explored how the sensor works you should connect it up to a Pi in order to demonstrate later in the lesson.
+Examine the anemometer sensor and discuss with pupils how it works and measures windspeed. Review the [Anemometer Guide](../guides/weather_station/anemometer.md) for more detailed information. Ask students what they think it does and how they think it works. Open it up and explore the sensor, reed switch and magnet as a group. Once you have explored how the sensor works as a group you should connect it up to a Raspberry Pi in order to demonstrate later in the lesson.
 
 ### Circle theory
 
-Depending on your class you may also want to get them to recap some basic circle theory, including how to find the circumference of a circle. The [BBC Bitesize guide](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev2.shtml) has an explanation of the key formulae the students need and some questions to practice with. Students could be given a few questions where they find the circumference of a circle given the radius or diameter.
+Depending on time and ability of the class you may also want to recap some basic circle theory, including how to find the circumference of a circle. The [BBC Bitesize guide](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/circlesrev2.shtml) has an explanation of the key formulae the students need and some questions to practice with. Students could be given a few questions where they find the circumference of a circle given the radius or diameter.
 
 ## Main development
 
-Students largely follow the [worksheet](weather-station-1/lesson-4/worksheet.md) and with some discussion points.
-1. Students set up their Raspberry Pi and adapt their button setup and code to suit the anemometer.
-2. Discuss with students how they will turn the count of signals received from the sensor into a wind speed.
-	- Teacher-led explanation
-	- Class discussion
-	- Share or co-devise with pupils a outline of code in a pseudocode style which students can refer to. (example in [guide](../guides/weather_station/anemometer.md))
-3. Students to implement the planned code in Python and test.
+1. Ask students to set up their Raspberry Pi equipment and connect the weather station board and anemometer using the [guide](../guides/weather_station/anemometer.md), turn it on and log into their Pi using the username `pi` and the password `raspberry`. In most classroom situations you might not have an anemometer for every student, in which case you can simulate one using a pair of wires and a button. Follow the [button guide](../guides/GPIO/connecting-button.md) to connect wires up in a similar way to the previous lesson, except this time connect to `pin 5`. Students will be able to simulate the anemometer by pressing the connected button.
+
+1. Before calculating windspeed students will need to be able to count the signals coming from the anemometer. Display the code from the previous lesson:
+
+    ```python
+    #!/usr/bin/python3
+    import RPi.GPIO as GPIO
+
+    pin = 6
+    count = 0
+
+    def bucket_tipped(channel):
+        global count
+        count = count + 1
+        print (count * 0.2794)
+
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+        GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+
+        input("Press enter to stop logging\n")
+    ```
+
+    *Note: The anemometer is connected to pin **5**, so update the code to reflect this.*
+    
+    Demonstrate to students how to adapt the code by renaming the `bucket_tipped` function to something meaningful like `spin`. *This will need to be done in two places*. The anemometer doesn't require a bouncetime to be set, so remove the option from the event declaration by deleting the `bouncetime=300`. Then change the `print` statement to just print out the `count` variable. Allow students time to adapt and test their code using the [student worksheet](worksheet.md). The code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected, check code against this [solution](code/wind_interrupt.py). 
+
+1. Discuss with students how they will turn the count of signals received from the sensor into a wind speed. Share or co-devise with pupils an outline of code in a pseudocode style which students can refer to. (example in [guide](../guides/weather_station/anemometer.md)) Students should then implement the planned code in Python and test.
 
 ## Plenary
 
