@@ -17,11 +17,11 @@ Before we start working with the weather station kit, we are going to ensure we 
 
 ## Sensing the input
 
-1. Set up your Raspberry Pi and ensure you are in Desktop mode.
+1. Set up your Raspberry Pi and boot to the desktop.
 
-1. Launch the LXterminal window
+1. Launch the terminal window
 
-  ![LX Terminal](images/lxterminal.png)
+  ![Terminal](images/lxterminal.png)
 
 1. Create a directory by typing `mkdir weather_station` followed by `enter`
 
@@ -45,8 +45,6 @@ import time
  else:
    print("LOW")
  ```
-
-1. To run your code, press the F5 key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
 ### Code explained:
 
@@ -86,7 +84,9 @@ This line reads the state of the pin and stores the result in a variable called 
 
 These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
-So now we can check the state of the button, but only once.
+To run your code, press the F5 key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
+
+Now we can check the state of the button, but only once.
 
 ## Repeated Polling
 Now that we can check the state of the button we ought to check continously and report its state. We can do this by **polling** the pin every 0.5 seconds and constantly outputting the state.
