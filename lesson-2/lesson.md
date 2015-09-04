@@ -40,7 +40,7 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
 ## Main development
 
 1. Lead a discussion with students exploring how buttons work. Explain the different ways in which an input signal can be detected by the Raspberry Pi. See the [Pull Up/Pull Down Guide](../guides/GPIO/pull_up_down.md) to help.
-2. Demonstrate to students how to connect a button to the Raspberry Pi and using the [Pull Up/Pull Down Guide](../guides/GPIO/pull_up_down.md) ask students to connect their button either in pairs or on their own device.
+1. Demonstrate to students how to connect a button to the Raspberry Pi and using the [Pull Up/Pull Down Guide](../guides/GPIO/pull_up_down.md) ask students to connect their button either in pairs or on their own device.
 1. Demonstrate to students how to create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
 1. Guide the students through creating the following python 3 program to detect the button press:
 
@@ -60,22 +60,22 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
       print("LOW")
   ```
   
-Students can use this [student worksheet](worksheet.md)
+  Students can use this [student worksheet](worksheet.md)
 
-### Code explained:
+  ### Code explained:
 
   ```python
   #!/usr/bin/python3
   ```
 
-This line defines the file as a Python program so that the computer knows how to run the code.
+  This line defines the file as a Python program so that the computer knows how to run the code.
 
   ```python
   import RPi.GPIO as GPIO
   import time
   ```
 
-This imports the `RPi.GPIO` library which allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
+  This imports the `RPi.GPIO` library which allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
 
   ```python
   pin = 4
@@ -83,13 +83,13 @@ This imports the `RPi.GPIO` library which allows you to control the GPIO pins, a
   GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
   ```
 
-These three lines set up a variable call pin to store the pin number. We then set the scheme for referring to our pins as the BCM scheme. The important bit is the third line, where we set up the pin as an input using a pull up resistor.
+  These three lines set up a variable call pin to store the pin number. We then set the scheme for referring to our pins as the BCM scheme. The important bit is the third line, where we set up the pin as an input using a pull up resistor.
 
    ```python
    pin_value = GPIO.input(pin)
    ```
 
-This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be **True** or **False**.
+  This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be **True** or **False**.
 
     ```python
     if pin_value == True:
@@ -98,7 +98,7 @@ This line reads the state of the pin and stores the result in a variable called 
       print("LOW")
     ```
 
-These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
+  These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
 1. Discuss with the students any problems with this program that they can see. Draw out from their answers that the button can only be pressed once which is not particularly useful. Invite suggestions from the students on how this can be impreoved. It can be achieved through **polling** the pin every 0.5 seconds and constantly outputting the state.
 
