@@ -65,16 +65,9 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
   ### Code explained:
 
   ```python
-  #!/usr/bin/python3
-  ```
-
-  This line defines the file as a Python program so that the computer knows how to run the code.
-
-  ```python
   import RPi.GPIO as GPIO
   import time
   ```
-
   This imports the `RPi.GPIO` library which allows you to control the GPIO pins, and the `time` library to measure time or make the program sleep.
 
   ```python
@@ -82,13 +75,11 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
   ```
-
   These three lines set up a variable call pin to store the pin number. We then set the scheme for referring to our pins as the BCM scheme. The important bit is the third line, where we set up the pin as an input using a pull up resistor.
 
    ```python
    pin_value = GPIO.input(pin)
    ```
-
   This line reads the state of the pin and stores the result in a variable called `pin_value`. This will either be **True** or **False**.
 
     ```python
@@ -97,7 +88,6 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
     else:
       print("LOW")
     ```
-
   These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
 1. Discuss with the students any problems with this program that they can see. Draw out from their answers that the button can only be pressed once which is not particularly useful. Invite suggestions from the students on how this can be impreoved. It can be achieved through **polling** the pin every 0.5 seconds and constantly outputting the state.
