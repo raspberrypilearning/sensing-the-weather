@@ -100,7 +100,48 @@ This line reads the state of the pin and stores the result in a variable called 
 
 These lines check the value of the `pin_value` variable, and will print out `HIGH` if the value is **True** and `LOW` if the value is **False**.
 
-So now we can check the state of the button, but only once.
+1. Discuss with the students any problems with this program that they can see. Draw out from their answers that the button can only be pressed once which is not particularly useful. Invite suggestions from the students on how this can be impreoved. It can be achieved through **polling** the pin every 0.5 seconds and constantly outputting the state.
+
+1. Demonstrate to students how to add an infinite loop to the code. In Python 3 a **while True:** loop can be used. Remind students about the importance of indenting code. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
+
+  ```python
+while True:
+  if pin_value == True:
+    print ("HIGH")
+  else:
+    print("LOW")
+  time.sleep(0.5)
+```
+
+3. Run your code again by pressing F5; to exit the program press `Ctrl + C` on your keyboard.
+4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
+
+## Getting the timing right
+
+So now you've managed to check the status of the input pin over and over. Does it always work though?
+
+1. Try running your program again and press the button continuously. Can you press it fast enough that the Pi fails to detect some presses?
+2. The fact that the program only checks every 0.5 seconds means that some presses aren't detected.
+3. Adjust the timing of the program by changing the number in the line
+`time.sleep(0.5)`
+
+Think carefully about whether you want to increase this number or decrease it. Adjust it until it's sensitive enough.
+
+## Using a pull down circuit
+
+In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](../guides/GPIO/pull_up_down.md))
+
+Let's see what the difference is when we use a pull down resistor.
+1. From your pullup.py program in IDLE click the **file** menu and select **save as**. Replace the file name with `pulldown.py`
+
+2. Change the wiring of your button to a pull down circuit as shown here.
+![Pull down wires](images/pull_down_wire.png)
+
+3. Update the code to use a pull down circuit rather than pull up: this is a single change on the line that reads
+`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`
+which should become
+`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
+Your code should now look like [this](code/pulldown.py)
 
 1. Students add a loop to their code to make it poll continuously and report the status of the pin.
 1. Students adapt their program to use a Pull Down resistor setup instead of a Pull Up.
