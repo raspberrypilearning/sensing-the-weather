@@ -86,7 +86,7 @@ These lines check the value of the `pin_value` variable, and will print out `HIG
 
 To run your code, press the F5 key on your keyboard: you will be asked to save, then an extra window will pop up and should print either `HIGH` or `LOW` depending on whether the button is pressed or not.
 
-Now we can check the state of the button, but only once.
+Now we can check the state of the button, but only once. Why might this be a problem?
 
 ## Repeated Polling
 Now that we can check the state of the button we ought to check continously and report its state. We can do this by **polling** the pin every 0.5 seconds and constantly outputting the state.
