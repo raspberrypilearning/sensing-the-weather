@@ -105,47 +105,24 @@ These lines check the value of the `pin_value` variable, and will print out `HIG
 1. Demonstrate to students how to add an infinite loop to the code. In Python 3 a **while True:** loop can be used. Remind students about the importance of indenting code. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
 
   ```python
-while True:
-  if pin_value == True:
-    print ("HIGH")
-  else:
-    print("LOW")
-  time.sleep(0.5)
+  while True:
+      if pin_value == True:
+        print ("HIGH")
+      else:
+        print("LOW")
+      time.sleep(0.5)
 ```
+  When students run their code again by pressing `F5`; to exit the program and press `Ctrl + C`. They should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
 
-3. Run your code again by pressing F5; to exit the program press `Ctrl + C` on your keyboard.
-4. You should see `HIGH` when the button isn't pressed and `LOW` when it is pressed.
+1. Discuss with students what might still be problematic about the code. They are able to check the status of the input pin over and over but does it always work? Ask students to run the program again and press the button continuously. Set the challenge to see if they can press it fast enough that the Pi fails to detect some presses? The fact that the program only checks every 0.5 seconds means that some presses aren't detected. Ask students to adjust the timing of the program by changing the number in the line `time.sleep(0.5)` Ask students to think carefully about whether to increase this number or decrease it.
 
-## Getting the timing right
+1. Demonstrate to students the difference between using a pull up resistor and a pull down resistor by changing the button wiring like this: 
 
-So now you've managed to check the status of the input pin over and over. Does it always work though?
+  ![Pull down wires](images/pull_down_wire.png)
 
-1. Try running your program again and press the button continuously. Can you press it fast enough that the Pi fails to detect some presses?
-2. The fact that the program only checks every 0.5 seconds means that some presses aren't detected.
-3. Adjust the timing of the program by changing the number in the line
-`time.sleep(0.5)`
+  and by updainge the code to use a pull down circuit rather than pull up: this is a single change on the line that reads `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` which should become `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`. The code should now look like [this](code/pulldown.py)
 
-Think carefully about whether you want to increase this number or decrease it. Adjust it until it's sensitive enough.
-
-## Using a pull down circuit
-
-In our program we have used what's called a pull up resistor, which ensures the pin reads as `HIGH` until the button is pressed at which points the voltage drops and the pin reads `LOW` (For a more detailed explanation see the [Pull up / Pull down Guide](../guides/GPIO/pull_up_down.md))
-
-Let's see what the difference is when we use a pull down resistor.
-1. From your pullup.py program in IDLE click the **file** menu and select **save as**. Replace the file name with `pulldown.py`
-
-2. Change the wiring of your button to a pull down circuit as shown here.
-![Pull down wires](images/pull_down_wire.png)
-
-3. Update the code to use a pull down circuit rather than pull up: this is a single change on the line that reads
-`GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)`
-which should become
-`GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
-Your code should now look like [this](code/pulldown.py)
-
-1. Students add a loop to their code to make it poll continuously and report the status of the pin.
-1. Students adapt their program to use a Pull Down resistor setup instead of a Pull Up.
-
+1. Ask students to add a loop to their code to make it poll continuously and report the status of the pin and adapt their program to use a Pull Down resistor setup instead of a Pull Up.
 
 ## Plenary
 
