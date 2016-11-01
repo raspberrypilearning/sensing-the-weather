@@ -110,7 +110,7 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
 
   ![Pull down wires](images/pull_down_wire.png)
 
-  and by updainge the code to use a pull down circuit rather than pull up: this is a single change on the line that reads `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` which should become `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`. The code should now look like [this](code/pulldown.py)
+  and by updating the code to use a pull down circuit rather than pull up: this is a single change on the line that reads `GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)` which should become `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`. The code should now look like [this](code/pulldown.py)
 
 1. Ask students to add a loop to their code to make it poll continuously and report the status of the pin and adapt their program to use a Pull Down resistor setup instead of a Pull Up.
 
