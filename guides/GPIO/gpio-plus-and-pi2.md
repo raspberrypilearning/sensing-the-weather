@@ -38,7 +38,7 @@ The next step is to write a program to tell the pin to go HIGH or LOW. Here's an
 
 ### Input
 
-GPIO **outputs** are easy; they are on or off, HIGH or LOW, 3V3 or 0V. **Inputs** are a bit trickier because of the way that digital devices work. Although it might seem reasonable just to connect a button across an input pin and a ground pin, the Pi can get confused as to whether the button is on or off. It might work properly, it might not. It's a bit like floating about in deep space; without a reference it would be hard to tell if you were going up or down, or even what up or down meant!
+GPIO are straightforward in that they are on or off, HIGH or LOW, 3V3 or 0V. Inputs are a bit trickier because of the way that digital devices work. Although it might seem reasonable just to connect a button across an input pin and a ground pin, the Pi can get confused as to whether the button is on or off. It might work properly, it might not. It's a bit like floating around in deep space; without a reference it would be hard to tell if you were going up or down, or even what up or down meant!
 
 This is why you will see phrases like "pull up" and "pull down" in Raspberry Pi GPIO tutorials. It's a way of giving the input pin a reference so it knows for certain when an input is received.
 
