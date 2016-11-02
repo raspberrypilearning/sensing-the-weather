@@ -1,6 +1,6 @@
 # Pull Up and Pull Down Resistors 
 
-When a GPIO pin is in input mode, the pin is said to be "floating", meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change only when the we touch the wires together.
+When a GPIO pin is in input mode, the pin is said to be "floating", meaning that it has no fixed voltage level. That may be no good for what we want, as the pin will randomly float between HIGH and LOW, and we may need to know when a change occurs, e.g. when two wires touch. So we need to fix the voltage level to HIGH or LOW, and then make it change only when the change occurs, e.g. when we touch the wires together.
 
 We can do this in two ways:
 
@@ -16,15 +16,11 @@ We can do this in two ways:
 
   ![](images/pull_down.png)
   
-  *Note: The 1kΩ R2 resistor is there in both circuits to give the GPIO pin a fail-safe protection, in case we mistakenly set the pin to be in OUTPUT mode.*
+  Note: The 1kΩ R2 resistor is there in both circuits to give the GPIO pin a fail-safe protection, in case we mistakenly set the pin to be in OUTPUT mode.
 
-## An Analogy
-> Image a gate to a field which has the smoothest hinges ever, the slightest knock, gently breeze or landing of an insect could move it.  
-> We'd never know whether the gate was being opened or closed as it could constantly swing gently between these two posistions.  
-> If we were to add a spring to the gate to pull it closed, the gate would be held in place, except for a deliberate push which could open it.
->  
-> In this situation the Gate's position represents the Voltage which can fluctuate, the spring represents the resistor which fixes the voltage either **high** or **low**.
+If this seems confusing, consider this analogy. Imagine a gate to a field which has the smoothest hinges possible. The slightest knock, gently breeze, or landing of an insect could move it. We'd never know whether the gate was being opened or closed as it would constantly swing gently between these two positions. If we were to add a spring to the gate to pull it closed, the gate would be held in place, unless it was given a deliberate push which could open it.
 
+In this analogy, the position of the gate represents the Voltage, which can fluctuate. The spring represents the resistor, which fixes the voltage either **high** or **low**.
 
 Fortunately, the Raspberry Pi has all the above circuitry built in. It can be helpful to imagine that the two resistors `R1` and `R2` from the diagrams above are *inside* the circuitry of the Raspberry Pi and they can be enabled or disabled as we desire. We can select either a pull up or a pull down *in our code* for each GPIO pin. 
 
