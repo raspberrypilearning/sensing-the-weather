@@ -4,7 +4,7 @@ One powerful feature of the Raspberry Pi is the row of General-Purpose Input/Out
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
-These pins are a physical interface between the Pi and the outside world. At the simplest level, you can think of them as switches that you can turn on or off (input) or that the Pi can turn on or off (output). Of the 40 pins, 26 are GPIO pins and the others are power or ground pins (plus two ID EEPROM pins which you should not play with unless you know your stuff!)
+These pins are a physical interface between the Pi and the outside world. At the simplest level, you can think of them as switches that you can turn on or off (input) or that the Pi can turn on or off (output). Of the 40 pins, 26 are GPIO pins and the others are power or ground pins. There are also two ID EEPROM pins which you should not play with unless you know your stuff!
 
 ![GPIO layout](images/gpio-numbers-pi2.png)
 
@@ -12,13 +12,11 @@ Models A and B have only 26 pins and look like this:
 
 ![](images/gpio-pins.jpg)
 
-Note that the numbering of the GPIO pins is a little unusual. Appendix 1: A note on pin numbering, below, explains why.
+Note that the numbering of the GPIO pins is a little unusual. Our guide to [GPIO Pin Numbering](sensing-the-weather/guides/GPIO/pin-numbering.md) explains why.
 
 ## What are the GPIO pins for? What can I do with them?
 
-You can program the pins to interact in amazing ways with the real world. Inputs don't have to come from a physical switch. An input could be from a sensor, or a signal from another computer or device, for example. The output can also do anything, from turning on an LED to sending a signal or some data to another device. If the Raspberry Pi is on a network, you can control devices that are attached to it from anywhere\*\* and those devices can send data back. Connectivity and control of physical devices over the internet is a powerful and exciting thing, and the Raspberry Pi is ideal for this. There are lots of brilliant examples of physical computing on [our blog](http://www.raspberrypi.org/blog/).
-
-**Note**: Not **literally** anywhere, of course. You need things like access to the network, a network capable computing device, and electricity. Please do not write to us to point this out. :)
+You can program the pins to interact in amazing ways with the real world. Inputs don't have to come from a physical switch. An input could be from a sensor, or a signal from another computer or device, for example. The output can also do anything, from turning on an LED to sending a signal or some data to another device. If the Raspberry Pi is connected to a network, you can control other network-connected devices that are attached to it from almost anywhere, and those devices can send data back. Connectivity and control of physical devices over the internet is a powerful and exciting thing, and the Raspberry Pi is ideal for this. There are lots of brilliant examples of physical computing on [our blog](http://www.raspberrypi.org/blog/).
 
 ## How the GPIO pins work
 
