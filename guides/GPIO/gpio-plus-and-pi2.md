@@ -42,11 +42,9 @@ GPIO are straightforward in that they are on or off, HIGH or LOW, 3V3 or 0V. Inp
 
 This is why you will see phrases like "pull up" and "pull down" in Raspberry Pi GPIO tutorials. It's a way of giving the input pin a reference so it knows for certain when an input is received.
 
-If you'd like to have a go at using the GPIO as an input then have a look at our [screaming jelly baby](http://www.raspberrypi.org/learning/screaming-jellybaby/) and [quick reaction game](http://www.raspberrypi.org/learning/quick-reaction-game/) tutorials for Python, or a [reaction game](http://www.raspberrypi.org/learning/reaction-game/) for Scratch.
+If you'd like to have a go at using the GPIO as an input then have a look at our [Buring Jelly Baby](http://www.raspberrypi.org/learning/burping-jelly-baby/) and [Quick Reaction Game](http://www.raspberrypi.org/learning/quick-reaction-game/) tutorials for Python, or a [Reaction Game](http://www.raspberrypi.org/learning/reaction-game/) for Scratch.
 
-## The end of the guide. The start of something amazing
-
-We hope that this has encouraged you to have a go at physical computing using the Pi's GPIO; it's really not as daunting as it looks. It all starts with a simple LED, but it can take you to incredible places. Do not underestimate the fun, creativity and sense of achievement you can get from a little computer and a bunch of pins. Have fun! And if you do make something cool please let us know. 
+We hope that this has encouraged you to have a go at physical computing using the Pi's GPIO pins; it's really not as daunting as it looks. It all starts with a simple LED, but it can take you to incredible places. Do not underestimate the fun, creativity, and sense of achievement you can get from a little computer and a bunch of pins. Have fun, and let us know what you make! 
 
 ---
 
@@ -54,11 +52,11 @@ We hope that this has encouraged you to have a go at physical computing using th
 
 ### GPIO
 
-General-Purpose Input/Output; in this specific case the pins on the Raspberry Pi and what you can do with them. So called because you can use them for all sorts of purposes; most can be used as either inputs or outputs, depending on your program.
+General-Purpose Input/Output. In this specific case, this refers to the pins on the Raspberry Pi and what you can do with them. They are named this way because you can use them various purposes; most can be used as either inputs or outputs, depending on your program.
 
 ### LED
 
-Light-emitting diode- a small, low-power light source used widely in electronics. Ideal as an introduction to physical computing on the Pi.
+Light-emitting diode. A small, low-power light source used widely in electronics. Ideal as an introduction to physical computing on the Pi.
 
 ### Physical computing
 
