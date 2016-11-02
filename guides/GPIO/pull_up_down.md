@@ -1,6 +1,6 @@
-# Pull Up & Pull Down Resistors 
+# Pull Up and Pull Down Resistors 
 
-When a GPIO pin is in input mode the pin is said to be *floating*, meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change *only* when the we touch the wires together.
+When a GPIO pin is in input mode, the pin is said to be "floating", meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between HIGH and LOW. We need to categorically know that the wires have touched. So we need to fix the voltage level to HIGH or LOW, and then make it change only when the we touch the wires together.
 
 We can do this in two ways:
 
