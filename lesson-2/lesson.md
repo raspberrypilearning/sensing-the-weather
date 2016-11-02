@@ -35,14 +35,14 @@ In this lesson students will experiment with the Raspberry Pi GPIO pins and do s
 
 ## Starter
 
-Connect a button to a demonstration Raspberry Pi. For effect, use a large red button. Run [this program on your Pi]() in python 3. Invite students to guess what they think the button will do when they press it. After a few answers are given, ask students to think about what they might like a button to do if they connected one to a computer. Add suggestions to a whiteboard or spider diagram. Finally, invite a student to press the button to see what happens! 
+Connect a button to a demonstration Raspberry Pi. For effect, use a large red button. Run [this program on your Pi]() in Python 3. Invite students to guess what they think the button will do when they press it. After a few answers are given, ask students to think about what they might like a button to do if they connected one to a computer. Add suggestions to a whiteboard or spider diagram. Finally, invite a student to press the button to see what happens! 
 
 ## Main development
 
 1. Lead a discussion with students exploring how buttons work. Explain the different ways in which an input signal can be detected by the Raspberry Pi. See the [Pull Up/Pull Down Guide](../guides/GPIO/pull_up_down.md) to help.
 1. Demonstrate to students how to connect a button to the Raspberry Pi and using the [Pull Up/Pull Down Guide](../guides/GPIO/pull_up_down.md) ask students to connect their button either in pairs or on their own device.
 1. Demonstrate to students how to create an empty program file called pullup.py by typing `sudo idle3 weather_station/pullup.py`
-1. Guide the students through creating the following python 3 program to detect the button press:
+1. Guide the students through creating the following Python 3 program to detect the button press:
 
   ```python
   import RPi.GPIO as GPIO
@@ -92,7 +92,7 @@ Connect a button to a demonstration Raspberry Pi. For effect, use a large red bu
 
 1. Discuss with the students any problems with this program that they can see. Draw out from their answers that the button can only be pressed once which is not particularly useful. Invite suggestions from the students on how this can be impreoved. It can be achieved through **polling** the pin every 0.5 seconds and constantly outputting the state.
 
-1. Demonstrate to students how to add an infinite loop to the code. In Python 3 a **while True:** loop can be used. Remind students about the importance of indenting code. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
+1. Demonstrate to students how to add an infinite loop to the code. In Python 3, a **while True:** loop can be used. Remind students about the importance of indenting code. Change your program to put the last 4 lines inside a while loop and add a 0.5 second delay like this:
 
   ```python
   while True:
