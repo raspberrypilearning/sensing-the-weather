@@ -4,7 +4,7 @@ One powerful feature of the Raspberry Pi is the row of GPIO pins along the top e
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
-It is a way in which the Raspberry Pi can control and monitor the outside world by being connected to electronic circuits. The Pi is able to control LEDs, turning them on or off, or motors, or many other things. It is also able to detect whether a switch has been pressed, or temperature, or light. We refer to this as **physical computing**.
+It is a way in which the Raspberry Pi can control and monitor the outside world by being connected to electronic circuits. The Pi is able to control LEDs, turning them on or off, or motors, or many other things. It is also able to detect whether a switch has been pressed, and read temperature or light levels. We refer to this as **physical computing**.
 
 ## GPIO
 - [Raspberry Pi GPIO Introduction](gpio-plus-and-pi2.md)
