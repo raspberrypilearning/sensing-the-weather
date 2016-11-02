@@ -12,7 +12,7 @@ This scheme of work introduces students to Raspberry Pi Weather Station, a proje
 - [Lesson 4 - Calculating wind speed](lesson-4/lesson.md)
 - [Lesson 5 - Putting it all together](lesson-5/lesson.md)
 
-To find out more about the weather station project, the schemes of work and how to get one, use the following links:
+To find out more about the Weather Station project, the schemes of work, and how to get one, use the following links:
 
 - [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
 - [Advanced Sensors]()
