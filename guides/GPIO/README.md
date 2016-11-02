@@ -1,6 +1,6 @@
 # A Guide to Physical Computing
 
-One powerful feature of the Raspberry Pi is the row of GPIO pins along the top edge of the board. GPIO stands for *General Purpose Input Output*. These pins are a physical interface between the Pi and the outside world. At the simplest level, you can think of them as switches that you can turn on or off (input) or that the Pi can turn on or off (output).
+One powerful feature of the Raspberry Pi is the row of GPIO pins along the top edge of the board. GPIO stands for General-Purpose Input/Output. These pins are a physical interface between the Pi and the outside world. At the simplest level, you can think of them as switches that you can turn on or off (input) or that the Pi can turn on or off (output).
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
