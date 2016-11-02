@@ -1,6 +1,6 @@
 # An introduction to GPIO and physical computing on the Raspberry Pi
 
-One powerful feature of the Raspberry Pi is the row of GPIO (General-Purpose Input/Output) pins along the top edge of the board. Models A+, B+, Pi 2, and Pi 3 have 40 pins that look like this:
+One powerful feature of the Raspberry Pi is the row of General-Purpose Input/Output (GPIO) pins along the top edge of the board. Models A+, B+, Pi 2, and Pi 3 have 40 pins that look like this:
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
@@ -12,11 +12,11 @@ Models A and B have only 26 pins and look like this:
 
 ![](images/gpio-pins.jpg)
 
-Note that the numbering of the GPIO pins is rather weird. *Appendix 1: A note on pin numbering*  below explains why.
+Note that the numbering of the GPIO pins is a little unusual. Appendix 1: A note on pin numbering, below, explains why.
 
-## What are they for? What can I do with them?
+## What are the GPIO pins for? What can I do with them?
 
-You can program the pins to interact in amazing ways with the real world. Inputs don't have to come from a physical switch; it could be input from a sensor or a signal from another computer or device, for example. The output can also do anything, from turning on an LED to sending a signal or data to another device. If the Raspberry Pi is on a network, you can control devices that are attached to it from anywhere\*\* and those devices can send data back. Connectivity and control of physical devices over the internet is a powerful and exciting thing, and the Raspberry Pi is ideal for this. There are lots of brilliant examples of physical computing on [our blog](http://www.raspberrypi.org/blog/).
+You can program the pins to interact in amazing ways with the real world. Inputs don't have to come from a physical switch. An input could be from a sensor, or a signal from another computer or device, for example. The output can also do anything, from turning on an LED to sending a signal or some data to another device. If the Raspberry Pi is on a network, you can control devices that are attached to it from anywhere\*\* and those devices can send data back. Connectivity and control of physical devices over the internet is a powerful and exciting thing, and the Raspberry Pi is ideal for this. There are lots of brilliant examples of physical computing on [our blog](http://www.raspberrypi.org/blog/).
 
 **Note**: Not **literally** anywhere, of course. You need things like access to the network, a network capable computing device, and electricity. Please do not write to us to point this out. :)
 
