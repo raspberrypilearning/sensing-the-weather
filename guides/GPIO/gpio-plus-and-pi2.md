@@ -1,6 +1,6 @@
 # An introduction to GPIO and physical computing on the Raspberry Pi
 
-One powerful feature of the Raspberry Pi is the row of GPIO (general purpose input/output) pins along the top edge of the board. Models A+, B+ and Pi 2 have 40 pins that look like this:
+One powerful feature of the Raspberry Pi is the row of GPIO (General-Purpose Input/Output) pins along the top edge of the board. Models A+, B+, Pi 2, and Pi 3 have 40 pins that look like this:
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
@@ -56,7 +56,7 @@ We hope that this has encouraged you to have a go at physical computing using th
 
 ### GPIO
 
-General purpose input/output; in this specific case the pins on the Raspberry Pi and what you can do with them. So called because you can use them for all sorts of purposes; most can be used as either inputs or outputs, depending on your program.
+General-Purpose Input/Output; in this specific case the pins on the Raspberry Pi and what you can do with them. So called because you can use them for all sorts of purposes; most can be used as either inputs or outputs, depending on your program.
 
 ### LED
 
