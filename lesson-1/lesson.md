@@ -69,4 +69,4 @@ Discuss with the class the following questions:
 ## Extension
 
 - Students could consider how these digital signals might relate to the actual measurement of the weather. For instance, what do `HIGH` and `LOW` mean in relation to the rain gauge?
-- Are there any sensors for which the `HIGH` and `LOW` readings aren't clear or don't work? For example, how does the weather vane work? In this case, what is `HIGH` and what is `LOW`?
+- Are there any sensors for which the `HIGH` and `LOW` readings aren't clear or don't work? For example, how does the weather vane work? In this case, what is `HIGH` and what is `LOW`? 
