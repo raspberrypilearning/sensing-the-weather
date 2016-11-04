@@ -27,7 +27,7 @@ In order to calculate the amount of water that's passed through the gauge we nee
 
 In order to get started we either need to set up a rain gauge, or simulate it, depending on the situation.
 
-### You have you a weather station & rain gauge to yourself
+### You have a weather station & rain gauge to yourself
 
 Connect the weather station board and rain gauge using the [guide](../guides/weather_station/rain_gauge.md)
 
