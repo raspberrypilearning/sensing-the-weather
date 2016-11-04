@@ -19,7 +19,7 @@ To find out more about the Weather Station project, the schemes of work, and how
 - [Building a live GUI]()
 - [Logging and presenting data]()
 - [Working with big data sets]()
-- [Deploying your weather station](https://github.com/raspberrypi/weather-station)
+- [Deploying your weather station](https://github.com/raspberrypi/weather-station) 
 
 
 
