@@ -27,7 +27,7 @@ There are two key steps to predicting the weather:
 
 ### Data collection
 Vast quantities of data are collected about current conditions all over the world. This is done using:
-  - Satelites
+  - Satellites
   - Ground-based observers
   - Weather stations
 
@@ -56,7 +56,7 @@ Forecasting relies on regular, reliable data collection, which is ideally done b
 ![Raspberry Pi](images/raspberrypis.png)
 
 It includes a variety of sensors:
-  - rain guage
+  - rain gauge
   - anemometer
   - wind vane
   - temperature
@@ -93,7 +93,7 @@ Here is a chart showing the voltage across a device connect to the Pi
 Now answer the following questions:
 
 1. What would be happening if this graph was from an LED being connected to the Pi?
-1. What would this graph show if instead the Pi was connected to a button?
+1. What would be happening if instead this graph was from a button being connected to the Pi?
 
 ## What next?
 In this lesson we have considered how weather is measured and forecast, how the Raspberry Pi could be used to capture data, and the difference between `input` and `output` mode.
