@@ -110,7 +110,7 @@ We can count the number of rotations of the sensor by doubling the detected inpu
 We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge. Knowing the radius, we can find the circumference with **2 x pi x r**. We also know that the revolutions are half the number of signals detected, so our formula becomes:
 
 
-  **Speed = (Signals/2) * (2 * pi * r) / Time**
+    **Speed = (Signals/2) * (2 * pi * r) / Time**
 
 This formula should enable us to calulate the speed of the wind in cm/s.
 

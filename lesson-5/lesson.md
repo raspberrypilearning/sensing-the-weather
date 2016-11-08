@@ -36,10 +36,10 @@ In this lesson, students will complete their initial work on the weather station
 
 Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rain gauge](../lesson-4/code/wind_interrupt.py ). Students are invited to explain what the two programs are doing and how they are working. This could be done in the following ways:
 
-    - Class discussion with notes being taken.
-    - Projecting code onto a whiteboard, where students use sticky notes to add annotation.
-    - Printed copies which students individually annotate.
-    - Google doc or [Classroom](classroom.google.com).
+* Class discussion with notes being taken.
+* Projecting code onto a whiteboard, where students use sticky notes to add annotation.
+* Printed copies which students individually annotate.
+* Google doc or [Classroom](classroom.google.com).
 
 ## Main development
 
@@ -52,7 +52,7 @@ Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rai
 2. Show the students how to add comments to their code using the `#` symbol ie:
 
     ```python
-    #This is a comment, it is ignored by the computer and used to annotate the code.
+    # This is a comment, it is ignored by the computer and used to annotate the code.
     ```
 
     Ask students how comments might be a useful tool for programmers.
@@ -62,7 +62,7 @@ Share the code for the [anemometer](../lesson-4/code/wind_final.py) and the [rai
 3. Students should be given time to build their own solution which logs and displays both rainfall and windspeed. Their solution should be well-annotated and tested to ensure functionality.
     - They may want to set up their Pi with a weather station / buttons for testing.
     - They could either start with a blank file and write from scratch, or start with one program and incorporate the other.
-    - Decide to what extent you want the students to collaborate; even if they help each other they will likely end up with subtlely different solutions.
+    - Decide to what extent you want the students to collaborate; even if they help each other they will likely end up with subtly different solutions.
     - Emphasise the fact that there is no single correct solution.
 
 ## Plenary
