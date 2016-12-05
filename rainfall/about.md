@@ -2,13 +2,13 @@
 
 Here is the rain gauge sensor supplied with the Raspberry Pi Weather Station kit
 
-![Rain Gauge](../images/rain_gauge.jpg)
+![Rain Gauge](images/rain_gauge.jpg)
 
 ## How does it work?
 
 We can explore the rain gauge and how it works by removing the bucket, by gently squeezing the clips on either side; the lid should then pop off.
 
-![](../images/rain_gauge_open.jpg)
+![](images/rain_gauge_open.jpg)
 
 This rain gauge is basically a self-emptying tipping bucket. Rain is collected and channelled into the bucket. Once enough rainwater has been collected the bucket will tip over, the water will drain out from the base, and the opposite bucket will come up into position.
 
@@ -16,7 +16,7 @@ The product [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) te
 
 If you look at the RJ11 plug on the end of the wire attached to the rain gauge, you'll see there are only two wires inside: one red and one green.  Now take a close look at the ridge between the two buckets. Inside this is a small cylindrical magnet that points towards the back wall. Inside the back wall there is a clever piece of electronics called a *reed switch*, pictured below.
 
-![](../images/reed_switch.jpg)
+![](images/reed_switch.jpg)
 
 The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as a button connected to the Raspberry Pi. When the bucket tips, the magnet passes the reed switch, causing it to close momentarily.
 
