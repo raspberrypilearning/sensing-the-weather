@@ -1,4 +1,4 @@
-#  Sensing the Weather - Rainfall
+#  Sensing the Weather - Rainfall Lesson
 
 In this lesson students will learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall, and display the measurement value.
 
@@ -29,14 +29,13 @@ In this lesson students will learn how the rain gauge works, then Python code wi
 ## Lesson Summary
 
 - How does the rain gauge work?
-- Review pull up code
 - Counting signals using polling
 - Counting signals using interrupts
 - Plenary: Which is best?
 
 ## Starter
 
-Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Read about the [Rain Gauge](about.md) for more detailed information.
+Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Read the [Rain Gauge](about.md) guide for more detailed information.
 
 - Ask students what they think it does and how they think it works.
 - Open it up and explore the sensor, reed switch and magnet.
@@ -46,7 +45,7 @@ Once you have explored how the sensor works you should connect it up to a Pi in 
 
 ## Main development
 
-1. Students boot their Raspberry Pi. Review last lesson's code with them: students could add some comments or simply discuss what each line does.
+1. Students boot their Raspberry Pi. 
 2. Students follow [worksheet](worksheet.md) to:
   - connect a button to pin 6 (instead of pin 4)
   - adapt their code to the new pin

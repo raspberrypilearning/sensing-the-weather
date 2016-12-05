@@ -1,8 +1,8 @@
-# Weather Station Basic I/O - Measuring Rainfall
+# Sensing the Weather - Rainfall Worksheet
 
 In this lesson you will:
 
-- Simulate a rain gauge and collect data using the Raspberry Pi GPIO pins
+- Collect data using the Raspberry Pi Weather Station hardware
 - Learn the difference between **continuous polling** and **interrupt handling**
 - Convert the collected data into meaningful measurement information
 
@@ -12,7 +12,7 @@ Today you will be using the rain gauge sensor to collect data about rainfall. Th
 
   ![](images/rain_gauge_both.jpg)
 
-Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. This is exactly the same as using a button or pair of wires, as done in the previous lesson.
+Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. 
 
   ![](images/reed_switch.jpg)
 
@@ -21,33 +21,16 @@ In order to calculate the amount of water that's passed through the gauge we nee
   - The amount of water needed to tip the bucket, in this case **0.2794** mm (this can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf)).
   - How many times the bucket has tipped, which can be counted as the number of input signals.
 
-  **Rainfall = 0.2794 * number of tips**
+  `Rainfall = 0.2794 * number of tips`
 
-## Getting Set Up
-
-In order to get started we either need to set up a rain gauge, or simulate it, depending on the situation.
-
-### You have a weather station & rain gauge to yourself
-
-Connect the weather station board and rain gauge using the [guide](../guides/weather_station/rain_gauge.md)
-
-### You don't have a weather station & rain gauge to yourself
-
-In most classroom situations you won't have a rain gauge, or at least not one to yourself. In this case, you can simulate one using a pair of wires and a button.
-
-1. Follow the [button guide](../guides/GPIO/connecting-button.md) to connect your wires up in a similar way to the previous lesson, except this time connect to pin 6.
-
-	![](images/gpio-setup.png)
-
-1. Now you can simulate a bucket tip with a simple press of the button.
 
 ## Counting bucket tips
 
-Set up your Raspberry Pi and ensure you are in desktop mode.
+Make sure your rain gauge is connected to your weather station, then turn it on.
 
-1. Launch the LXterminal window
+1. Launch the terminal
 
-  ![LX Terminal](images/lxterminal.png)
+  ![Terminal](images/terminal.png)
 
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
