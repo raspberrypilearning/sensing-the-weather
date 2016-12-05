@@ -33,23 +33,18 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
   ![Terminal](images/terminal.png)
 
 
-1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
+1. Move to the `weather station` directory by typing `cd weather_station` into the terminal and pressing `enter`
 
-1. Copy the program to a new file called `rain_polling.py` using the command `cp pullup.py rain_polling.py` followed by `enter`.
+1. Start a new Python program by typing `sudo idle3 rain_polling.py`
 
-1. Open you program by typing `sudo idle3 rain_polling.py`
-
-1. In the top few lines change the pin being read to 6; the weather station is wired to use this pin so we should also use it for testing.
+1. We are going to set up the rain sensor
 
 	 ```python
-  	#!/usr/bin/python
-  	import RPi.GPIO as GPIO
-  	import time
+  from gpiozero import Button
 
-  	pin = 6
-
-  	GPIO.setmode(GPIO.BCM)
-  	GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+  rain_sensor = Button(6)
+  BUCKET_SIZE = 0.2794
+  count = 0
 	 ```
 
 1. We want to count the number of times the switch closes and drops the voltage from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.

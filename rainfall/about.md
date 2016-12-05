@@ -27,16 +27,16 @@ The top of the back wall does come off if you want to see inside; just pull on t
 1. To connect the rain gauge to the weather station board you will need to first have set up the main weather station box
 1. Locate the socket on the weather station board marked **RAIN SENSOR** and ensure that the rain sensor is connected.
 
-When connected the rain gauge uses **GPIO pin 6** (BCM)
+When connected, the weather station rain gauge uses **GPIO pin 6** (BCM), so if you are using a rain gauge bought separately connect it to GPIO pin 6 for the code below to work.
 
 ## Sample Code
 
-The following program uses a GPIO interupt handler to detect input from the rain gauge and convert it to a meaningful measurement which is displayed on screen. Notice that the rain gauge is set up as if it were a button
+The following program detects input from the rain gauge and converts it to a meaningful measurement which is displayed on screen. 
 
   ```python
-  from gpiozero import Button
+  from gpiozero import DigitalInputDevice
 
-  rain_sensor = Button(6)
+  rain_sensor = DigitalInputDevice(6)
   BUCKET_SIZE = 0.2794
   count = 0
 
@@ -46,5 +46,5 @@ The following program uses a GPIO interupt handler to detect input from the rain
       print (count * BUCKET_SIZE)
 
   while True:
-    rain_sensor.when_pressed = bucket_tipped
+    rain_sensor.when_activated = bucket_tipped
 ```
