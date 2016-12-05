@@ -1,4 +1,4 @@
-# The Rain Gauge
+# About the Rain Gauge
 
 Here is the rain gauge sensor supplied with the Raspberry Pi Weather Station kit
 
@@ -25,9 +25,7 @@ The top of the back wall does come off if you want to see inside; just pull on t
 ## How does the sensor connect?
 
 1. To connect the rain gauge to the weather station board you will need to first have set up the main weather station box
-1. Locate the socket on the weather station board marked **RAIN SENSOR** and the corresponding grommet.
-1. Unscrew the grommet from the case and thread the rain gauge plug through to the inside of the box.
-1. Connect the plug to the socket, and tighten up the grommet.
+1. Locate the socket on the weather station board marked **RAIN SENSOR** and ensure that the rain sensor is connected.
 
 ###When connected the rain gauge uses **GPIO pin 6** (BCM)
 
@@ -36,18 +34,17 @@ The top of the back wall does come off if you want to see inside; just pull on t
 The following program uses a GPIO interupt handler to detect input from the rain guage and convert it to a meaningful measurement which is displayed on screen.
 
   ```python
-  #!/usr/bin/python
-  import RPi.GPIO as GPIO
+  from gpiozero import Button
 
-  pin = 6
+  rain_sensor = Button(6)
+  BUCKET_SIZE = 0.2794
   count = 0
 
-  def bucket_tipped(channel):
+  def bucket_tipped():
       global count
       count = count + 1
-      print (count * 0.2794)
+      print (count * BUCKET_SIZE)
 
-  GPIO.setmode(GPIO.BCM)
-  GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-  GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+  while True:
+    rain_sensor.when_pressed = bucket_tipped
 ```
