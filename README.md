@@ -6,7 +6,7 @@ This scheme of work introduces students to the sensors included with the Raspber
 
 ## Lessons
 
-- [Rainfall]()
+- [Rainfall](rainfall/lesson.md)
 - [Wind Speed]()
 - [Wind Gust speed]()
 - [Wind Direction]()
