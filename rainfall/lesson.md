@@ -1,6 +1,6 @@
-#  Weather Station Basic I/O - Lesson Plan 3
+#  Sensing the Weather - Rainfall
 
-In this lesson students will examine the weather station rain gauge and simulate it using a button. Students will first learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall, and display the measurement value.
+In this lesson students will learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall, and display the measurement value.
 
 ## Learning objectives
 
@@ -12,14 +12,14 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 ### All students are able to
 
-- Connect their rain gauge / buttons to another pin
-- With direction, adapt the last lesson's code to poll the rain gauge and count signals
+- Connect their rain gauge to the weather station
+- Poll the rain gauge and count signals
 
 
 ### Most students are able to
 
 - Explain how we convert bucket tips into a useful measurement
-- With direction, adapt the last lesson's code to use interrupts to count signals
+- Use interrupts to count signals
 
 ### Some students are able to
 
@@ -36,7 +36,8 @@ In this lesson students will examine the weather station rain gauge and simulate
 
 ## Starter
 
-Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Review the [Rain Gauge Guide](../guides/weather_station/rain_gauge.md) for more detailed information.
+Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Read about the [Rain Gauge](about.md) for more detailed information.
+
 - Ask students what they think it does and how they think it works.
 - Open it up and explore the sensor, reed switch and magnet.
 - More able students could research the link between mm of rainfall and a ml quantity.
