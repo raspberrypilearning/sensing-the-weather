@@ -6,19 +6,21 @@ This scheme of work introduces students to Raspberry Pi Weather Station, a proje
 
 ## Lessons
 
-- [Lesson 1 - Why and how we collect weather data](lesson-1/lesson.md)
-- [Lesson 2 - Sensing inputs from hardware](lesson-2/lesson.md)
-- [Lesson 3 - Measuring rainfall using polling and interrupts](lesson-3/lesson.md)
-- [Lesson 4 - Calculating wind speed](lesson-4/lesson.md)
-- [Lesson 5 - Putting it all together](lesson-5/lesson.md)
+- [Rainfall]()
+- [Wind Speed]()
+- [Wind Gust speed]()
+- [Wind Direction]()
+- [Ambient Temperature]()
+- [Soil Temperature]()
+- [Barometric Pressure]()
+- [Relative Humidity]()
+- [Air Quality]()
+
+
 
 To find out more about the Weather Station project, the schemes of work, and how to get one, use the following links:
 
 - [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
-- [Advanced Sensors]()
-- [Building a live GUI]()
-- [Logging and presenting data]()
-- [Working with big data sets]()
 - [Deploying your weather station](https://github.com/raspberrypi/weather-station) 
 
 
