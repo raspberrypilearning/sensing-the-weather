@@ -21,27 +21,27 @@ Now use a screwdriver to remove the three screws on the bottom of the base. The 
 
 So what does this mean? When the blades/cups are in their original position and spinning, the magnet will rotate in a tight circle above the reed switch. So for every complete rotation there will be two moments when the switch is closed.
 
-If we can detect the number of rotations in a given time period we can calculate the speed at which the arms are spinning. As some energy is lost in the pushing of the cups an anemometer often under-reports the wind speed. To conpensate for this we will multiply our calculated speed by a factor of 1.18 (specific to this anemometer).
+If we can detect the number of rotations in a given time period we can calculate the speed at which the arms are spinning. As some energy is lost in the pushing of the cups an anemometer often under-reports the wind speed. To compensate for this we will multiply our calculated speed by a factor of 1.18 (which is specific to this anemometer).
 
 The following algorithm can be used to calculate wind speed.
 
 > For each time period **t**  
-> --- **count** = recorded anemometer signals 
-> --- **rotations** = count / 2  
-> --- **distance** = rotations * 2 * pi * radius (9cm)  
-> --- **speed** = distance / t (**in cm/s**)  
+> - **count** = recorded anemometer signals 
+> - **rotations** = count / 2  
+> - **distance** = rotations * 2 * pi * radius (9cm)  
+> - **speed** = distance / t (**in cm/s**)  
 > 
 > To convert **speed** into **km/h**  
-> --- speed = speed / 100000 (**km/s**)  
-> --- speed = speed * 3600 (**km/h**)  
+> - speed = speed / 100000 (**km/s**)  
+> - speed = speed * 3600 (**km/h**)  
 > 
 > To compensate for anemometer factor  
-> --- speed = speed * 1.18  
+> - speed = speed * 1.18  
 
 
 ## How does the sensor connect?
 
-To connect the anemometer to the weather station board you will need to first have set up the main weather station box
+To connect the anemometer to the weather station board, first have set up the main weather station box using the weather station guide.
 
 1. Connect the anemometer to the wind vane
 1. Connect the wind vane to the Raspberry Pi weather station
