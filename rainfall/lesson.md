@@ -4,22 +4,21 @@ In this lesson students will learn how the rain gauge works, then Python code wi
 
 ## Sensor Guide
 
-Background [about the rain gauge](about.md)
+Background information [about the rain gauge](about.md)
 
 ## Learning objectives
 
 - To understand how the rain gauge works by creating signal pulses
 - To be able to collect and interpret data from an external sensor
-- Understand the difference between polling a sensor and using interrupts
+- To be able to convert bucket tips into a measurement of rainfall in mm
+- Understand and evaluate the difference between polling a sensor and using interrupts
 
-## Learning outcomes
+## Cross-Curricular applications
 
-- Connect the rain gauge to the Raspberry Pi Weather Station
-- Poll the rain gauge and count signals
-- Use interrupts to count signals
-- Explain how to convert bucket tips into a measurement of rainfall in mm
-- Independently adapt code to count the number of bucket tips and display meaningful rainfall data
-- Evaluate the differences between polling and using interrupts
+- Geography - Rainfall data from local area
+- Physics - Pull up/Pull down circuits, sensors
+- Mathematics - Surface area, volume, conversion to mm
+
 
 ## Lesson Summary
 
@@ -36,7 +35,7 @@ Examine the rain gauge sensor and discuss with pupils how it works and measures 
 - Open it up and explore the sensor, reed switch and magnet.
 - More able students could research the link between mm of rainfall and a ml quantity.
 
-Once you have explored how the sensor works you should connect it up to a Pi in order to demonstrate later in the lesson.
+Once you have explored how the sensor works you should connect it up to the Raspberry Pi Weather Station in order to demonstrate later in the lesson.
 
 ## Main development
 
