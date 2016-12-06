@@ -72,7 +72,7 @@ To connect the wind vane to the weather station board you will need to first hav
 
 1. Locate the socket on the weather station board marked **WIND** and the corresponding grommet.
 
-  ![Connecting](wind_connect.jpg)
+  ![Connecting](images/wind_connect.jpg)
 
 1. Make sure the wind vane is connected to the socket, and tighten up the grommet.
 
