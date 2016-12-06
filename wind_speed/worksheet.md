@@ -71,7 +71,7 @@ We know that the anemometer registers two signals per spin, so we can count the 
 
     **speed = distance / time**
 
-  To calculate **speed** we need to know the **distance** travelled in a certain amount of **time*.
+  To calculate **speed** we need to know the **distance** travelled in a certain amount of **time**.
   Measuring time is fairly straightforward as we can count the number of signals over the course of a fixed time period, for example 5 seconds. We now have the time but we also need the distance travelled.
 
 1. The distance travelled by one of the cups will be equal to the number of rotations * the distance around the edge of the circle (circumference). So we could write:
@@ -83,10 +83,9 @@ We know that the anemometer registers two signals per spin, so we can count the 
 
     ![](images/pi_diagram.png)
 
-We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge of one of the cups. Knowing the radius, we can find the circumference with `2 * pi * r`. We also know that a whole rotation generates two signals, so if we halve the number of signals detected our formula becomes as follows:
+We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge of one of the cups. Knowing the radius, we can find the circumference with the formula `2 * pi * radius`. We also know that a whole rotation generates two signals, so if we halve the number of signals detected our formula becomes as follows:
 
-
-    **speed = (signals/2) * (2 * pi * r) / time**
+    **speed = (signals/2) * (2 * pi * radius) / time**
 
 This formula should enable us to calulate the speed of the wind in cm/s.
 
