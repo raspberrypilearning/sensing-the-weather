@@ -8,9 +8,9 @@ Here is the wind vane sensor supplied with the Raspberry Pi Weather Station kit
 
 A wind vane shows the direction *from which* the wind is coming, not where it's going (this can be confusing because TV weather maps show the opposite). It works by the wind exerting force on a vertical blade which rotates to find the position of least resistance, this position is then aligned with the direction of the oncoming wind.
 
-The wind vane is the more complex than the [rain gauge](rain.md) or [anemometer](anemometer.md). It does use reed switches and magnets but it works in a completely different way. Let's look inside the wind vane to see:
+The wind vane is the more complex than the [rain gauge](../rainfall/about.md) or [anemometer](../wind_speed/about.md). It does use reed switches and magnets but it works in a completely different way. Let's look inside the wind vane to see:
 
-1. Pull the top off the wind vane, it should come off without much force. On the underside you'll again find the metal cylinder which is the magnet.
+1. Pull the top off the wind vane, it should come off without much force. On the underside you'll again find the metal cylinder which is the magnet, you can test it with something magnetic if you like.
 
 ![](images/wind_vane_magnet.png)
 
@@ -32,15 +32,17 @@ Each of the 8 resistors have different values which you'll see printed in white 
 
 Reassemble the wind vane now. Firstly locate the letter N on the side of the base, insert the circuit board with the green side facing away from you so that the anemometer socket aligns with North. Replace the three smaller screws (this step can be tricky and a magnetic screwdriver helps a lot). Next replace the base ensuring the knot in the cable remains inside. Finally replace the three larger screws.
 
-### How can we measure it?
+### What will we measure?
 
 So we now understand that the wind vane is essentially a variable resistor similar to a volume knob (but with only 16 positions). Resistance is something that we can't measure directly because it's a passive property of the wind vane. What we need to do is measure something that changes as a *consequence* of the resistance. Namely the *voltage* going through the wind vane. The voltage level passing through it will go up and down as different resistors are switched on and off by the magnet. That, we *can* measure.
 
-This is going to be entirely different to what we have done before. With the rain gauge and the anemometer we were working with voltage levels changing between 0 volts meaning *LOW* and 3.3 volts meaning *HIGH*. Our code could only tell us if a GPIO pin was HIGH or LOW but not somewhere in between. This is what is known as a *digital* signal, all or nothing, 1 or 0, HIGH or LOW. For the wind vane we need to accommodate a range between HIGH and LOW, this is known as an *analogue* signal.
+This is going to be entirely different to what we have done before. With the rain gauge and the anemometer we were working with voltage levels changing between 0 volts meaning `LOW` and 3.3 volts meaning `HIGH`. Our code could only tell us if a GPIO pin was `HIGH` or `LOW` but not somewhere in between. This is what is known as a *digital* signal, all or nothing, 1 or 0, `HIGH` or `LOW`, and is why we set up the rain gauge and the anemometer as a DigitalInputDevice using gpiozero. 
+
+For the wind vane we need to accommodate a **range** between HIGH and LOW, this is known as an *analogue* signal.
 
 ### Analogue vs Digital
 
-It is important for us to understand the general concept of analogue and digital. Think of a gaming control pad like the one below. The circle is highlighting the thumb joystick and the directional-pad. Ask the class which one is analogue and which one is digital?
+It is important for us to understand the general concept of analogue and digital. Think of a gaming control pad like the one below. The circle is highlighting the thumb joystick and the directional-pad. Which one is analogue and which one is digital?
 
 ![](images/xbone_pad.png)
 
@@ -52,7 +54,7 @@ It is important for us to understand the general concept of analogue and digital
 
 - Directional-pad: Digital
 
-  The directional-pad is digital because the each direction button has only two states, on and off. Just like HIGH and LOW. In a driving game it would be like steering a car using the indicator stick, you would have full left and full right only. It would be very tricky to control!
+  The directional-pad is digital because the each direction button has only two states, pressed and not pressed, just like `HIGH` and `LOW` voltages. In a driving game it would be like steering a car using the indicator stick, you would have full left and full right only. It would be very tricky to control!
 
 Analogue and digital both have their place and often one works better for a particular task than the other. For a game like a flight simulator you would want analogue control to aim the plane, whereas for something simple like a jump, run and shoot platform game digital control is better.
 
@@ -60,26 +62,24 @@ Analogue and digital both have their place and often one works better for a part
 
 So to recap then. The wind vane has a voltage going through it and this will vary according to which resistors are switched in and out by the reed switches and magnet. The challenge we face is being able to observe this analogue signal changing on a computer which is basically a digital machine.
 
-![](../../../images/adc_msop10.png)
+![Analogue to Digital Converter](images/adc_msop10.png)
 
-To do this we're going to use a clever microchip called an [Analogue to Digital Converter](http://en.wikipedia.org/wiki/Analog-to-digital_converter) or ADC for short. The weather expansion board has one of these built in (as do most games consoles). An ADC chip, like the one above, has a number of input pins. One of them is connected to the voltage going through the wind vane. We don't need to worry about the internal workings of the chip we just need to understand that it can convert from a continuous analogue voltage to a number (in code) that represents the voltage *magnitude*. More voltage will give a higher number, less voltage a lower one.
+To do this we're going to use a clever microchip called an [Analogue to Digital Converter](http://en.wikipedia.org/wiki/Analog-to-digital_converter) or ADC for short. The weather expansion board has one of these built in (as do most games consoles). An ADC chip, like the one above, has a number of input pins. One of them is connected to the voltage going through the wind vane. Don't worry about the internal workings of the chip, you just need to understand that it can convert from a continuous analogue voltage to a number (in code) that represents the voltage *magnitude*. More voltage will give a higher number, less voltage a lower one.
 
 ## How does the sensor connect?
 
-1. To connect the <sensor> to the weather station
+To connect the wind vane to the weather station board you will need to first have set up the main [weather station](https://www.raspberrypi.org/learning/weather-station-guide) 
 
-To connect the wind vane to the weather station board you will need to first have set up the main [weather station box]()
 1. Locate the socket on the weather station board marked **WIND** and the corresponding grommet.
-1. Unscrew the grommet from the case and thread the windvane plug through to the inside of the box.
 
-  ![Connecting](wind_connect.jpeg)
+  ![Connecting](wind_connect.jpg)
 
-1. Connect the plug to the socket, and tighten up the grommet.
+1. Make sure the wind vane is connected to the socket, and tighten up the grommet.
 
 
 ## Sample Code
 
-The following program detects blah
+The following program measures the wind direction for 10 seconds and then outputs the result
 
   ```python
   while True:
