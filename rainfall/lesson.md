@@ -2,28 +2,23 @@
 
 In this lesson students will learn how the rain gauge works, then Python code will be written to interface with it, detect rainfall, and display the measurement value.
 
+## Sensor Guide
+
+Background [about the rain gauge](about.md)
+
 ## Learning objectives
 
 - To understand how the rain gauge works by creating signal pulses
 - To be able to collect and interpret data from an external sensor
-- To understand the difference between polling and interrupt handling
+- Understand the difference between polling a sensor and using interrupts
 
 ## Learning outcomes
 
-### All students are able to
-
-- Connect their rain gauge to the weather station
+- Connect the rain gauge to the Raspberry Pi Weather Station
 - Poll the rain gauge and count signals
-
-
-### Most students are able to
-
-- Explain how we convert bucket tips into a useful measurement
 - Use interrupts to count signals
-
-### Some students are able to
-
-- Independently adapt their code to count the number of bucket tips and display meaningful rainfall data
+- Explain how to convert bucket tips into a measurement of rainfall in mm
+- Independently adapt code to count the number of bucket tips and display meaningful rainfall data
 - Evaluate the differences between polling and using interrupts
 
 ## Lesson Summary
@@ -47,27 +42,22 @@ Once you have explored how the sensor works you should connect it up to a Pi in 
 
 1. Students boot their Raspberry Pi. 
 2. Students follow [worksheet](worksheet.md) to:
-  - connect a button to pin 6 (instead of pin 4)
-  - adapt their code to the new pin
-  - use their polling program to count sensor inputs
+	- create a polling program to gather data from the sensor
+	- create an interrupt program to gather data from the sensor
 3. Discuss with students the difference between polling vs using interrupts: polling monopolises the processor whilst interrupts only occur when the sensor is triggered.
-4. Students finish by creating an alternative program using interrupts rather than polling.
 
 ## Plenary
 
 Ask the class the following questions:
 
-1. Why could we not use a pull down circuit to detect the bucket tip?
 1. Why is the unit of measurement for rainfall a length/depth as opposed to a volume?
 1. What are the advantages of using interrupt handlers over continuous polling?
-1. What is de-bouncing?
 
 **Answers:**
 
-1. The weather expansion board has fixed circuitry that we cannot change. The rain gauge has two wires; one is hardwired to GPIO 6, and the other is hardwired to ground, which means we can only short GPIO 6 to ground. If we used a pull down on GPIO 6 we would be shorting ground to ground, and this would not produce a detectable change in the `HIGH` or `LOW` state of GPIO 6 when the bucket tips; it would only ever read `LOW`.
 1. The rain gauge measures only a small sample of the rain that falls from the sky. However, we can assume that the amount of rain falling into it will be the same as that falling everywhere locally per unit of surface area. This allows us to assert that our calculation of rainfall will equate to the amount of rain that has fallen over a much larger area than the rain gauge itself.
 1. Interrupt handlers allow you to avoid having to write code to compare the current and previous states of the GPIO pin between each iteration of a continuous polling loop.
-1. De-bouncing is a timeout, started when an interrupt occurs, during which subsequent interrupt events are ignored. This avoids switch bounce causing multiple, undesired event detections that could produce erroneous results.
+
 
 ## Extension
 
