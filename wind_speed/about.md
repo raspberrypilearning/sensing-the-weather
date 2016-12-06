@@ -1,4 +1,4 @@
-# About the Rain Gauge
+# About the Anemometer
 
 This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind speed.
 
