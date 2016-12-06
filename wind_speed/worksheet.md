@@ -31,7 +31,7 @@ First we need to be able to count the signals coming from the anemometer. To do 
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
 
-1. Make a copy of your rainfall_interrupt program to a new file called `wind_interrupt.py` by using the command 
+1. Make a copy of your rainfall_interrupt program to a new file called `wind_interrupt.py` by typing this command into the terminal and pressing enter
 
 	```bash
 	cp rainfall_interrupt.py wind_interrupt.py
@@ -39,7 +39,7 @@ First we need to be able to count the signals coming from the anemometer. To do 
 
 1. Open your program by typing `sudo idle3 wind_interrupt.py`
 
-The code will currently look like this:
+    The code will currently look like this:
 
     ```python
     from gpiozero import DigitalInputDevice
