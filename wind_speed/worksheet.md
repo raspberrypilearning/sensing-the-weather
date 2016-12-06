@@ -31,7 +31,11 @@ First we need to be able to count the signals coming from the anemometer. To do 
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `enter`
 
-1. Make a copy of your rainfall_interrupt program to a new file called `wind_interrupt.py` by using the command `cp rainfall_interrupt.py wind_interrupt.py` followed by `enter`.
+1. Make a copy of your rainfall_interrupt program to a new file called `wind_interrupt.py` by using the command 
+
+	``bash
+	cp rainfall_interrupt.py wind_interrupt.py
+	```
 
 1. Open your program by typing `sudo idle3 wind_interrupt.py`
 
@@ -50,7 +54,7 @@ The code will currently look like this:
         print(count * BUCKET_SIZE)
 
     rain_sensor.when_activated = bucket_tipped
-       
+	   
     ```
 
 1. Think about how you will need to update your code to gather data from the anemometer instead of the rain gauge, and update it. Then test your code! Press **F5** and save when prompted, then spin the anemometer by hand.
@@ -171,7 +175,7 @@ Our program should now display the wind speed in km/h, but is it accurate? The [
   ```
 
   Again, you might want to store the anemometer adjustment value as a constant with the value of 1.18 and then use the constant in your code to make sure it makes sense to other people.
-  
+
   Your final code should now look something like [this](code/wind_final.py).
 
 1. Re-run the code and this time you should get a value closer to 2.4:
