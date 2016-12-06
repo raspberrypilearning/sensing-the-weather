@@ -18,9 +18,10 @@ If you look at the RJ11 plug on the end of the wire attached to the rain gauge, 
 
 ![](images/reed_switch.jpg)
 
-The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as a button connected to the Raspberry Pi. When the bucket tips, the magnet passes the reed switch, causing it to close momentarily.
+The reed switch has two metal contacts inside it which will touch together when under the influence of a magnet. Therefore, electronically, this works in exactly the same way as a button connected to the Raspberry Pi. When the bucket tips, the magnet passes the reed switch, causing it to close momentarily. Because the switch is connected to GPIO pin 6 on the Raspberry Pi, this will generate a `LOW` signal on the pin which we can detect and record.
 
 The top of the back wall does come off if you want to see inside; just pull on the flat end gently and it should release. Inside there is a small circuit board that you can remove to examine. In the middle of it you will see the reed switch. Replace the circuit board and back wall lid before continuing.
+
 
 ## How does the sensor connect?
 

@@ -12,11 +12,11 @@ Today you will be using the rain gauge sensor to collect data about rainfall. Th
 
   ![](images/rain_gauge_both.jpg)
 
-Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on the GPIO pins. 
+Each tip causes a magnet to pass in front a sensor called a reed switch, which closes the switch and triggers a `LOW` signal on GPIO pin 6. We can detect this `LOW` signal and use it to count how many times the bucket tips.
 
   ![](images/reed_switch.jpg)
 
-In order to calculate the amount of water that's passed through the gauge we need to know:
+In order to calculate the amount of water that has passed through the gauge we need to know:
 
   - The amount of water needed to tip the bucket, in this case **0.2794** mm (this can be found on the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf)).
   - How many times the bucket has tipped, which can be counted as the number of input signals.
@@ -37,34 +37,41 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
 
 1. Start a new Python program by typing `sudo idle3 rain_polling.py`
 
-1. We are going to set up the rain sensor
+1. We are going to set up the rain sensor as a digital input device - it is digital because when the bucket tips this causes a single input at a specific point in time rather than a gradual measurement of the bucket tipping.
+
+We will also store the size of the bucket as a constant (hence the capitals) and a counter for how many times the bucket has tipped.
 
 	 ```python
-  from gpiozero import Button
+  from gpiozero import DigitalInputDevice
 
-  rain_sensor = Button(6)
+  rain_sensor = DigitalInputDevice(6)
   BUCKET_SIZE = 0.2794
   count = 0
 	 ```
 
-1. We want to count the number of times the switch closes and drops the voltage from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
+1. We want to count the number of times the bucket tips. Remember that when the bucket tips, this causes the reed switch to close and drops the voltage on GPIO pin 6 from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
 
 	```python
 	current_state = 0
 	previous_state = 0
-	count = 0
 	```
 
-1. We will still want a `while True:` loop to constantly check the pin status, but we want to do something extra with it. In pseudocode (planning) our loop might look like this:
+1. The current state of the rain gauge sensor can be found by asking for the value. The value will be `True` if the GPIO pin has a `HIGH` voltage and `False` if it has a `LOW` voltage. 
+
+```python
+current_state = rain_sensor.value
+```
+
+
+1. We will want a `while True:` loop to constantly check the pin status, but we want to do something extra with it. In pseudocode (planning) our loop might look like this:
 
 
 	> LOOP  
-	> SET **CURRENT STATE** TO THE READING OF **INPUT PIN**  
-	> IF **PREVIOUS STATE** = 1 AND THE **CURRENT STATE** = 0 THEN  
+	> SET **CURRENT STATE** TO THE READING OF THE **SENSOR VALUE**  
+	> IF **PREVIOUS STATE** = True AND THE **CURRENT STATE** = False THEN  
 	> --- ADD 1 ONTO **COUNT**  
 	> --- DISPLAY **RAINFALL**  
 	> MOVE THE **CURRENT STATE** TO **PREVIOUS STATE**  
-	> PAUSE 0.01 SECONDS  
 	> END LOOP  
 
 
@@ -73,19 +80,19 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
 
 	```python
 	while True:
-	       current_state = GPIO.input(pin)
+	       current_state = rain_sensor.value
 
-	        if previous_state == GPIO.HIGH and current_state == GPIO.LOW:
-	            count=count + 1
-	            print (count * 0.2794)
+	        if previous_state == True and current_state == False:
+	            count = count + 1
+	            print ( count * BUCKET_SIZE )
 
 			previous_state = current_state
 	```
 
-  You can see the complete code [here](code/rain_polling.py).
+  You can see the complete code [here](code/rainfall_poll.py).
 
 1. Once you have entered your code, run it by presing **F5**.
-1. If you press your button a few times, your program should display something like:
+1. If you tilt the rain gauge a few times, your program should display something like:
 
     ```
     0.2794
