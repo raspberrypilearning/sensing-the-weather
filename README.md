@@ -9,7 +9,7 @@ This scheme of work introduces students to the sensors included with the Raspber
 - [Rainfall](rainfall/lesson.md)
 - [Wind Speed](wind_speed/lesson.md)
 - [Wind Gust speed](wind_gust_speed/lesson.md)
-- [Wind Direction]()
+- [Wind Direction](wind_direction/lesson.md)
 - [Ambient Temperature]()
 - [Soil Temperature]()
 - [Barometric Pressure]()
