@@ -85,17 +85,17 @@ We know that the anemometer registers two signals per spin, so we can count the 
 
     We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge of one of the cups. Knowing the radius, we can find the circumference with the formula `2 * pi * radius`. We also know that a whole rotation generates two signals, so if we halve the number of signals detected our formula becomes as follows:
 
-    **speed = (signals/2) * (2 * pi * radius) / time**
+    **speed = ( (signals/2) * (2 * pi * radius) ) / time**
 
     This formula should enable us to calulate the speed of the wind in cm/s.
 
 ## Updating the code
 
-Now that we are able to calculate the wind speed from the information we can collect, we need to add the code to make this work.
+Now that we are able to calculate the wind speed from the sensor signals, we need to add the code to make this work.
 
 1. Measure the radius (in cm) of the anemometer for use in your program. The radius of the anemometer in the Raspberry Pi Weather Station kit is 9.0cm
-1. Decide on the time interval for calculating average windspeed, make sure it is at least 5 seconds.
-1. Save another copy of your existing code by clicking **File** --> **Save As** and naming the file `wind_calc.py`
+1. Decide on your time interval for calculating average windspeed, make sure it is at least 5 seconds.
+1. Save another copy of your existing wind speed code by clicking **File** --> **Save As** and naming the file `wind_calc.py`
 
 1. Adapt your code to calculate the wind speed using the following solution as a guide:
 
@@ -120,11 +120,11 @@ Now that we are able to calculate the wind speed from the information we can col
     > --- call calcspeed to get value  
     > --- display windspeed value  
 
-- The first three lines set up the different variables and required libraries.
+- The first two lines set up the different variables and required libraries.
 - The **spin** function is called every time an interrupt is detected, adds 1 to the count variable and prints it.
 - The **calcspeed** function uses the given information to calculate the wind speed and returns it.
 - The sensor is set up on pin 5 and set to call the spin function when activated
-- The final loop is set to reset the counter, wait for a time period before calculating the speed, printing it and then starting again.
+- The final loop resets the counter then waits for a time period before calculating the speed, printing it and then starting again.
 
 Can you convert this program plan to a working Python program? (A solution can be found [here](code/wind_calc.py))
 
@@ -132,17 +132,17 @@ Can you convert this program plan to a working Python program? (A solution can b
 
 Currently, the program we have created will measure the wind speed in **cm** per **second**, however this is not particularly useful. A more practical unit would be **km** per **hour**. 
 
-	It is a good idea to set up constants to store the values of the number of seconds in an hour, and the number of centimetres in a kilometre. This will make our calculations less confusing for other people to understand:
+    It is a good idea to set up constants to store the values of the number of seconds in an hour, and the number of centimetres in a kilometre. This will make our calculations less confusing for other people to understand:
 
-	```python
-	CM_IN_A_KM = 100000.0
-	SECS_IN_AN_HOUR = 3600
-	```
+    ```python
+    CM_IN_A_KM = 100000.0
+    SECS_IN_AN_HOUR = 3600
+    ```
 
-	In order to convert our units we will need to:
+    In order to convert our units we will need to:
 
-	- Convert cm -> km by **dividing** the distance in cm by the number of cm in 1km
-	- Convert seconds -> hours by **multiplying** the speed by the number of seconds in 1 hour
+    - Convert cm -> km by **dividing** the distance in cm by the number of cm in 1km
+    - Convert seconds -> hours by **multiplying** the speed by the number of seconds in 1 hour
 
 
 Adapt your code so that it displays the windspeed in km/h.
