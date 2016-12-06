@@ -39,7 +39,7 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
 
 1. We are going to set up the rain sensor as a digital input device - it is digital because when the bucket tips this causes a single input at a specific point in time rather than a gradual measurement of the bucket tipping.
 
-We will also store the size of the bucket as a constant (hence the capitals) and a counter for how many times the bucket has tipped.
+  We will also store the size of the bucket as a constant (hence the capitals) and a counter for how many times the bucket has tipped.
 
   ```python
   from gpiozero import DigitalInputDevice
