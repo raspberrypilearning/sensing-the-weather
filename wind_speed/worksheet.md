@@ -57,22 +57,22 @@ First we need to be able to count the signals coming from the anemometer. To do 
 	   
     ```
 
-1. Think about how you will need to update your code to gather data from the anemometer instead of the rain gauge, and update it. Then test your code! Press **F5** and save when prompted, then spin the anemometer by hand.
+1. Think about what parts of this code you will need to change to gather data from the anemometer instead of the rain gauge. Update and test your code! Press **F5** and save when prompted, then spin the anemometer by hand.
 
-Your code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected, check your code against this [solution](code/wind_interrupt.py).
+    Your code should display the number of half rotations counted. Press `Ctrl + C` to stop the program. If it doesn't work as expected, check your code against this [solution](code/wind_interrupt.py).
 
-We can now count the signals from the anemometer; now let's use this information to calculate the wind speed.
+    We can now count the signals from the anemometer; now let's use this information to calculate the wind speed.
 
 ## Calculating wind speed
 
-We know that the anemometer registers two `LOW` voltages per spin, so we can count the number of full rotations of the sensor by halving the number of detected inputs. But how do we change that into a speed?
+We know that the anemometer registers two signals per spin, so we can count the number of full rotations of the sensor by halving the number of detected inputs. But how do we change that into a speed?
 
 1. Let's start by considering the formula for calculating [speed](http://www.bbc.co.uk/education/guides/zwwmxnb/revision):
 
     **speed = distance / time**
 
-  To calculate `speed` we need to know the **distance** travelled in a certain amount of **time**.
-  Time is fairly straightforward, we can count the number of signals over the course of a fixed time period, for example 5 seconds. We now have the time but we also need the distance travelled.
+  To calculate **speed** we need to know the **distance** travelled in a certain amount of **time*.
+  Measuring time is fairly straightforward as we can count the number of signals over the course of a fixed time period, for example 5 seconds. We now have the time but we also need the distance travelled.
 
 1. The distance travelled by one of the cups will be equal to the number of rotations * the distance around the edge of the circle (circumference). So we could write:
 
@@ -83,7 +83,7 @@ We know that the anemometer registers two `LOW` voltages per spin, so we can cou
 
     ![](images/pi_diagram.png)
 
-We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge. Knowing the radius, we can find the circumference with **2 x pi x r**. We also know that the rotations are half the number of signals detected, so our formula becomes:
+We can measure the radius of the circle made by the anemometer by measuring the distance from the centre to the edge of one of the cups. Knowing the radius, we can find the circumference with `2 * pi * r`. We also know that a whole rotation generates two signals, so if we halve the number of signals detected our formula becomes as follows:
 
 
     **speed = (signals/2) * (2 * pi * r) / time**

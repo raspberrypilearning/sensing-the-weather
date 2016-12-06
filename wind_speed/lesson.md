@@ -18,7 +18,7 @@ Background information about [the anemometer](about.md)
 - DT - designing an optimal method of attaching the anemometer to collect wind data
 - Geography - wind speed data for local area
 - Mathematics - circle theory
-- Physics - reed switch sensor affecting voltage on a circuit
+- Physics - reed switch sensor affecting voltage on a circuit, speed = distance/time
 
 ## Lesson Summary
 
