@@ -41,13 +41,13 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
 
 We will also store the size of the bucket as a constant (hence the capitals) and a counter for how many times the bucket has tipped.
 
-	 ```python
+  ```python
   from gpiozero import DigitalInputDevice
 
   rain_sensor = DigitalInputDevice(6)
   BUCKET_SIZE = 0.2794
   count = 0
-	 ```
+  ```
 
 1. We want to count the number of times the bucket tips. Remember that when the bucket tips, this causes the reed switch to close and drops the voltage on GPIO pin 6 from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
 
