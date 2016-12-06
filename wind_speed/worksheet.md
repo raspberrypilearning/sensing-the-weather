@@ -33,7 +33,7 @@ First we need to be able to count the signals coming from the anemometer. To do 
 
 1. Make a copy of your rainfall_interrupt program to a new file called `wind_interrupt.py` by using the command 
 
-	``bash
+	```bash
 	cp rainfall_interrupt.py wind_interrupt.py
 	```
 
