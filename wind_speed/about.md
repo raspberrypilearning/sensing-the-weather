@@ -2,7 +2,7 @@
 
 This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind speed.
 
-![Anemometer](images/anemometer.jpg)
+![Anemometer](images/anemometer.png)
 
 ## How does it work?
 
@@ -42,48 +42,51 @@ The following algorithm can be used to calculate wind speed.
 ## How does the sensor connect?
 
 To connect the anemometer to the weather station board you will need to first have set up the main weather station box
-1. Locate the socket on the weather station board marked **WIND** and the corresponding grommet.
-2. The anemometer can be connected directly to the board, but ideally via the wind_vane.
-1. Unscrew the grommet from the case and thread the wind vane plug through to the inside of the box.
-1. Connect the plug to the socket, and tighten up the grommet.
 
-When connected the anemometer uses **GPIO pin 5** (BCM)
+1. Connect the anemometer to the wind vane
+1. Connect the wind vane to the Raspberry Pi weather station
+
+When connected the anemometer uses GPIO pin 5 (BCM)
 
 
 ## Sample Code
 
-The following program uses a GPIO interupt handler to detect input from the anemometer and convert it to a meaningful measurement which is displayed on screen.
+The following program uses a GPIO interupt handler to detect input from the anemometer and convert it to a meaningful measurement which is displayed on screen
 
 ```python
-#!/usr/bin/python3
-import RPi.GPIO as GPIO
-import time, math
+from gpiozero import DigitalInputDevice
+from time import sleep
+import math
 
-pin = 5
 count = 0
+radius_cm = 9.0		# Radius of the anemometer
+interval = 5		# How often to report speed
+ADJUSTMENT = 1.18	# Adjustment for weight of cups
+CM_IN_A_KM = 100000.0
+SECS_IN_AN_HOUR = 3600
 
-def calculate_speed(r_cm, time_sec):
+def calculate_speed(time_sec):
     global count
-    circ_cm = (2 * math.pi) * r_cm
-    rot = count / 2.0
-    dist_km = (circ_cm * rot) / 100000.0 # convert to kilometres
-    km_per_sec = dist_km / time_sec
-    km_per_hour = km_per_sec * 3600 # convert to distance per hour
-    return km_per_hour
+    circumference_cm = (2 * math.pi) * radius_cm
+    rotations = count / 2.0
 
-def spin(channel):
+    dist_km = (circumference_cm * rotations) / CM_IN_A_KM
+
+    km_per_sec = dist_km / time_sec
+    km_per_hour = km_per_sec * SECS_IN_AN_HOUR
+
+    return km_per_hour * ADJUSTMENT
+
+def spin():
     global count
-    count += 1
+    count = count + 1
     print (count)
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
-GPIO.add_event_detect(pin, GPIO.FALLING, callback=spin)
-
-interval = 5
+wind_speed_sensor = DigitalInputDevice(5)
+wind_speed_sensor.when_activated = spin
 
 while True:
     count = 0
-    time.sleep(interval)
-    print (calculate_speed(9.0, interval), "kph")
+    sleep(interval)
+    print ( calculate_speed(interval), "kph")
 ```
