@@ -21,7 +21,7 @@ This scheme of work introduces students to the sensors included with the Raspber
 To find out more about the Weather Station project and how to get one, use the following links:
 
 - [The weather station project](http://www.raspberrypi.org/school-weather-station-project/) 
-- [Deploying your weather station](https://github.com/raspberrypi/weather-station) 
+- [Deploying your weather station](https://www.raspberrypi.org/learning/weather-station-guide) 
 
 
 
