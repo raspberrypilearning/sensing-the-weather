@@ -105,7 +105,7 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
 ## Using interrupts in place of polling
 
 ### Question
-Using an infinite loop to repeatedly check the status of the input pin is called **polling**. Why do you think this method is very inefficient?
+Using an infinite loop to repeatedly check the status of the input pin is called **polling**. Why do you think this method is a very inefficient way of checking whether the sensor has been activated?
 
 ### Answer
 The code constantly checks for rainfall every 0.01 seconds, which uses some processing power. Wouldn't it be better if the system only checked for rainfall when it was raining, and ignored the rain gauge the rest of the time?
@@ -133,7 +133,7 @@ To do that we need to use a technique called interrupt handling. Rather than con
        
     ```
 
-1. You will need to tell the sensor to call the `bucket_tipped()` function when the sensor is activated - i.e. when the voltage on GPIO pin 6 drops to `LOW`
+1. You will need to tell the sensor to call the `bucket_tipped()` function when the sensor is activated - i.e. when the voltage on GPIO pin 6 drops to `LOW`. Make sure this line of code is not indented.
 
     ```python
     rain_sensor.when_activated = bucket_tipped
@@ -148,8 +148,8 @@ To do that we need to use a technique called interrupt handling. Rather than con
 	0.8382
 	1.1176
 	```
-  
-  The complete code can be found [here](code/rain_interrupt.py)
+
+  The complete code can be found [here](code/rainfall_interrupt.py)
 
 ## Summary
 
@@ -161,4 +161,4 @@ You should now have a working rain gauge using two different approaches. Conside
 
 ## What's next
 
-Now that you have built your rain gauge code you should test its accuracy. How much water would 1mm be in the top of the bucket?
+Now that you have built your rain gauge code you should test its accuracy. You could try tipping a known amount of water in ml into the top of the rain gauge. How much water in ml would you have to pour in per 1mm of measured rainfall?
