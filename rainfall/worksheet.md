@@ -49,18 +49,18 @@ Make sure your rain gauge is connected to your weather station, then turn it on.
   count = 0
   ```
 
-1. We want to count the number of times the bucket tips. Remember that when the bucket tips, this causes the reed switch to close and drops the voltage on GPIO pin 6 from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin, the **previous state**, and the signal **count**. To do this, create three variables and set them each to 0.
+1. We want to count the number of times the bucket tips. Remember that when the bucket tips, this causes the reed switch to close and drops the voltage on GPIO pin 6 from `HIGH` to `LOW`. In order to do this, we need to keep track of the **current state** of the pin and the **previous state**. To do this, create two variables and set them each to True which is the default `HIGH` voltage.
 
 	```python
-	current_state = 0
-	previous_state = 0
+	current_state = True
+	previous_state = True
 	```
 
 1. The current state of the rain gauge sensor can be found by asking for the value. The value will be `True` if the GPIO pin has a `HIGH` voltage and `False` if it has a `LOW` voltage. 
 
-```python
-current_state = rain_sensor.value
-```
+  ```python
+  current_state = rain_sensor.value
+  ```
 
 
 1. We will want a `while True:` loop to constantly check the pin status, but we want to do something extra with it. In pseudocode (planning) our loop might look like this:
@@ -104,58 +104,53 @@ current_state = rain_sensor.value
 
 ## Using interrupts in place of polling
 
-So far we have used polling to repeatedly check the status of the input pin, which is very inefficient. The code constantly checks for rainfall every 0.01 seconds, which uses some processing power. Wouldn't it be better if the system only checked for rainfall when it was raining, and ignored the rain gauge the rest of the time?
+### Question
+Using an infinite loop to repeatedly check the status of the input pin is called **polling**. Why do you think this method is very inefficient?
 
-To do that we need to use a technique called interrupt handling. Rather than constantly check the status of the pin, we use a mechanism called an interrupt to trigger a function.
+### Answer
+The code constantly checks for rainfall every 0.01 seconds, which uses some processing power. Wouldn't it be better if the system only checked for rainfall when it was raining, and ignored the rain gauge the rest of the time?
 
-1. From your rain_polling.py program in IDLE click the **file** menu and select **save as**, replace the file name with `rain_interrupt.py`
+To do that we need to use a technique called interrupt handling. Rather than constantly check the status of the pin, we use a mechanism called an **interrupt** to trigger a function.
+
+1. From your rainfall_poll.py program in IDLE click the **file** menu and select **save as**, replace the file name with `rainfall_interrupt.py`
 
 1. We need to make a few changes to the code: firstly, you should remove the variables **current_state** and **previous_state** as we won't need them.
 
-1. Now, the code to increment the count and display the current rainfall needs to be moved into a function (a reusable section of code). You should call the function something sensible as you will need the name for the next step. We've called ours `bucket_tipped`. Here's what the first section of the code looks like now:
+1. Let's make a function (a reusable section of code with a name) to tell the program what to do when the bucket is tipped. For each time the bucket gets tipped, we will add 1 to the variable `count` and then print out the total rainfall so far (number of tips * size of bucket).
 
     ```python
-    #!/usr/bin/python3
-    import RPi.GPIO as GPIO
+    from gpiozero import DigitalInputDevice
 
-    pin = 6
+    rain_sensor = DigitalInputDevice(6)
+    BUCKET_SIZE = 0.2794
     count = 0
 
-    def bucket_tipped(channel):
+    def bucket_tipped():
         global count
         count = count + 1
-        print(count * 0.2794)
+        print(count * BUCKET_SIZE)
 
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(pin, GPIO.IN, GPIO.PUD_UP)
+       
     ```
 
-1. In order for your function to be triggered when the input voltage on pin 6 drops, you will need to define an interrupt event. Add this line to your code:
+1. You will need to tell the sensor to call the `bucket_tipped()` function when the sensor is activated - i.e. when the voltage on GPIO pin 6 drops to `LOW`
 
     ```python
-    GPIO.add_event_detect(pin, GPIO.FALLING, callback=bucket_tipped, bouncetime=300)
+    rain_sensor.when_activated = bucket_tipped
 	```
-
-    This line sets up the interrupt event on the `pin` and waits for a `GPIO.FALLING` event. When detected, it calls the `bucket_tipped` function. The `bouncetime=300` parameter specifies the minimum time, in milliseconds, between two events being detected.
-
-1. Finally, we need a line to keep the program running, otherwise it will finish before any rain is detected. For now we'll get it to wait for the user to press `Enter`, and then exit.
-
-    ```python
-    input("Press Enter to stop logging\n")
-	```
-
-    The complete code can be found [here](code/rain_interrupt.py)
 
 1. Run your code by pressing **F5**, this will ask you to save your code.
-2. As you press your button you should see:
+2. Tip the rain gauge from side to size and you should see the following:
 
 	```
-	Press Enter to stop logging
 	0.2794
 	0.5588
 	0.8382
 	1.1176
 	```
+  
+  The complete code can be found [here](code/rain_interrupt.py)
+
 ## Summary
 
 You should now have a working rain gauge using two different approaches. Consider the following questions:

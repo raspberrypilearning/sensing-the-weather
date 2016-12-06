@@ -46,6 +46,6 @@ The following program detects input from the rain gauge and converts it to a mea
       count = count + 1
       print (count * BUCKET_SIZE)
 
-  while True:
-    rain_sensor.when_activated = bucket_tipped
+  
+  rain_sensor.when_activated = bucket_tipped
 ```
