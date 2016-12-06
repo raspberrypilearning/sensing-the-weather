@@ -60,4 +60,4 @@ Ask the class the following questions:
 
 ## Extension
 
-- Students could test the accuracy of their rain gauge program by pouring a known amount of water and observing the measured result.
+- Students could test the accuracy of their rain gauge program by pouring a known amount of water and observing the measured result. 1mm of rainfall equates to 1 litre of water per square metre (1mm of rainfall = 1L/m^2)
