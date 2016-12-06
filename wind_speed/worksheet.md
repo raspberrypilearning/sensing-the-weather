@@ -200,8 +200,6 @@ The [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf) says that 
     2.40218740664 kph
     ```
 
-Finished code
-
 ## Summary
 
 - You have created a program which uses the anemometer to measure wind speed. What kind of location would be most suitable for this device? 
