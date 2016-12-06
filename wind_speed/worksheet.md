@@ -132,17 +132,17 @@ Can you convert this program plan to a working Python program? (A solution can b
 
 Currently, the program we have created will measure the wind speed in **cm** per **second**, however this is not particularly useful. A more practical unit would be **km** per **hour**. 
 
-    It is a good idea to set up constants to store the values of the number of seconds in an hour, and the number of centimetres in a kilometre. This will make our calculations less confusing for other people to understand:
+It is a good idea to set up constants to store the values of the number of seconds in an hour, and the number of centimetres in a kilometre. This will make our calculations less confusing for other people to understand:
 
-    ```python
-    CM_IN_A_KM = 100000.0
-    SECS_IN_AN_HOUR = 3600
-    ```
+```python
+CM_IN_A_KM = 100000.0
+SECS_IN_AN_HOUR = 3600
+```
 
-    In order to convert our units we will need to:
+In order to convert our units we will need to:
 
-    - Convert cm -> km by **dividing** the distance in cm by the number of cm in 1km
-    - Convert seconds -> hours by **multiplying** the speed by the number of seconds in 1 hour
+- Convert cm -> km by **dividing** the distance in cm by the number of cm in 1km
+- Convert seconds -> hours by **multiplying** the speed by the number of seconds in 1 hour
 
 
 Adapt your code so that it displays the windspeed in km/h.
