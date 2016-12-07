@@ -132,7 +132,9 @@ Now that we have a well defined logical way of testing whether a gust has occurr
 - `GUST_ABOVE` - a gust occurs when the wind speed is above 29.6km/h AND
 - `GUST_RANGE` - a gust occurs when the range is above 16.7km/h
 
-1. Finally, check the conditions and return either the gust speed if a gust has occurred, or 0 if no gust is recorded within this time period. Here is some pseudo code to help you.
+1. Finally, check the conditions and return either the gust speed if a gust has occurred, or 0 if no gust is recorded within this time period. 
+
+Here is some pseudo code to help you.
 
 > FUNCTION check_for_gusts()
 > --- highest = MAX speed in list
@@ -142,9 +144,9 @@ Now that we have a well defined logical way of testing whether a gust has occurr
 > --- ELSE
 > --- --- RETURN 0
 
-	The final code can be found [here](code/wind_gust.py).
+The final code can be found [here](code/wind_gust.py).
 
-1. Run and test your program. If you are testing it indoors by pushing the anemometer by hand, what issues do you think might occur which might make it difficult to test your code?
+Run and test your program. If you are testing it indoors by pushing the anemometer by hand, what issues do you think might occur which might make it difficult to test your code?
 
 ## Summary
 
