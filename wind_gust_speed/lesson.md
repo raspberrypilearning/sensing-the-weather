@@ -73,15 +73,15 @@ A gust occurs within a given time period when:
 
 	The slicing operator takes a slice of the list in the following format:
 
-		```python
-		list_name[start:end]
-		```
+	```python
+	list_name[start:end]
+	```
 	So if we examine the following code:
 	
-		```python
-		letters = ["a", "b", "c", "d", "e"]
-		letters = letters[1:]
-		```
+	```python
+	letters = ["a", "b", "c", "d", "e"]
+	letters = letters[1:]
+	```
 	It is important to remember that list indexing begins at 0, so the 0th item in the list is "a", the 1st item is "b" and so on. The slicing starts at element 1 ("b") and there is no end point specified which means the slice will continue to the end of the list. The resulting sliced list will be `["b", "c", "d", "e"]` - we will have sliced off the first element.
 
 	You can experiment with other slices, for example:
