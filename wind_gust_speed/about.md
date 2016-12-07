@@ -30,7 +30,9 @@ The following algorithm can be used to calculate the gust speed:
     > --- highest = MAX speed in list
     > --- lowest = MIN speed in list
     > --- IF highest > 29.6 and highest - lowest > 16.7
-    > --- --- PRINT "Gust " + highest
+    > --- --- RETURN highest
+    > --- ELSE
+    > --- --- RETURN 0
 
 ## How does the sensor connect?
 
@@ -103,7 +105,9 @@ def check_for_gusts():
         GUST_ABOVE = 29.6       
         GUST_RANGE = 16.7
         if highest > GUST_ABOVE and highest - lowest > GUST_RANGE:
-                print("Gust! " + str(highest) + "km/h")        
+            return highest
+        else:
+            return 0      
 
 wind_speed_sensor = DigitalInputDevice(5)
 wind_speed_sensor.when_activated = spin
@@ -114,6 +118,6 @@ while True:
         count = 0
         sleep(interval)
         print( calc_speed(interval), "kph")
-        check_for_gusts()
+        print("Gust speed " + str(check_for_gusts() + "kph")
 
 ```
