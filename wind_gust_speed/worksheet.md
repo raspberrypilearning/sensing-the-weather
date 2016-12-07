@@ -136,13 +136,13 @@ Now that we have a well defined logical way of testing whether a gust has occurr
 
 Here is some pseudo code to help you.
 
-> FUNCTION check_for_gusts()
-> --- highest = MAX speed in list
-> --- lowest = MIN speed in list
-> --- IF highest > GUST_ABOVE and highest - lowest > GUST_RANGE
-> --- --- RETURN highest
-> --- ELSE
-> --- --- RETURN 0
+	> FUNCTION check_for_gusts()
+	> --- highest = MAX speed in list
+	> --- lowest = MIN speed in list
+	> --- IF highest > GUST_ABOVE and highest - lowest > GUST_RANGE
+	> --- --- RETURN highest
+	> --- ELSE
+	> --- --- RETURN 0
 
 The final code can be found [here](code/wind_gust.py).
 
