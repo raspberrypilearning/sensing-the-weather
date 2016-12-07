@@ -24,13 +24,13 @@ We will measure the wind speed as before, but this time we will store a range of
 
 The following algorithm can be used to calculate the gust speed:
 
-> STORE most recent four speed readings as a list
->
-> FUNCTION check_for_gusts()
-> --- highest = MAX speed in list
-> --- lowest = MIN speed in list
-> --- IF highest > 29.6 and highest - lowest > 16.7
-> --- --- PRINT "Gust " + highest
+    > STORE most recent four speed readings as a list
+    >
+    > FUNCTION check_for_gusts()
+    > --- highest = MAX speed in list
+    > --- lowest = MIN speed in list
+    > --- IF highest > 29.6 and highest - lowest > 16.7
+    > --- --- PRINT "Gust " + highest
 
 ## How does the sensor connect?
 
