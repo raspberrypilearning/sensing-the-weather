@@ -79,7 +79,7 @@ To connect the wind vane to the weather station board, first set up the main [we
 
 ## Sample Code
 
-The following program measures the wind direction for 10 seconds and then outputs the result
+The following program measures the wind direction for 10 seconds and then outputs the result. It is important that this program is placed inside the `weather_station` folder on your Raspberry Pi and that you have installed the software from the [Weather Station Guide](https://www.raspberrypi.org/learning/weather-station-guide) as this code uses a class called `wind_direction` which is part of this software, and will not work without it.
 
   ```python
   import wind_direction as wind_vane
