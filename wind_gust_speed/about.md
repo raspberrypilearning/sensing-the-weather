@@ -1,43 +1,32 @@
 # About the Anemometer
 
-This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind speed.
+This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind gust speed.
 
 ![Anemometer](images/anemometer.png)
 
 ## How does it work?
 
-The wind catches the three cups and drives them round, spinning the central section.
+You have already explored the inside of the anemometer in the wind speed lesson. 
 
-To help explain how the device works, you can dismantle it following these steps:
-First, hold the base in one hand and pull on the blades/cups with the other hand. You do not need to use much force. 
+Gusts of wind are sudden brief increases in the speed of the wind. 
 
-Look at the underside of the blades/cups and you'll see a small metal cylinder on one side. This is a magnet, just like the one found on the bucket of the rain gauge. Test it with a paper clip if you like.
+According to U.S. weather observing practice, gusts are reported when the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds. 
 
-![Anemometer Magnet](images/anemometer_magnet.png)
+16 knots is approximately 29.6km/h, and 9 knots is 16.7km/h
 
-Now use a screwdriver to remove the three screws on the bottom of the base. The base should then pop out easily. Slide it down the cable to get it out of the way. If you look inside you'll see our old friend the reed switch again.
+(Note: Recommend 5 and 2 for testing)
 
-![Anemometer Reed](images/anemometer_reed.png)
+We can use this information to calculate when gusts appear using three rules:
+A gust occurs within a given time period when:
+- the highest wind speed measured during a period is above 29.6km/h AND
+- the difference between the peak speed and lowest speed in that period is greater than 16.7km/h AND
+- the time period is 20 seconds or less
 
-So what does this mean? When the blades/cups are in their original position and spinning, the magnet will rotate in a tight circle above the reed switch. So for every complete rotation there will be two moments when the switch is closed.
+We will measure the wind speed as before, but this time we will store a range of values, allowing us to calculate whether a gust has occurred within the last 20 second time period.
 
-If we can detect the number of rotations in a given time period we can calculate the speed at which the arms are spinning. As some energy is lost in the pushing of the cups an anemometer often under-reports the wind speed. To compensate for this we will multiply our calculated speed by a factor of 1.18 (which is specific to this anemometer).
+The following algorithm can be used to calculate the gust speed:
 
-The following algorithm can be used to calculate wind speed.
-
-> For each time period **t**  
-> - **count** = recorded anemometer signals 
-> - **rotations** = count / 2  
-> - **distance** = rotations * 2 * pi * radius (9cm)  
-> - **speed** = distance / t (**in cm/s**)  
-> 
-> To convert **speed** into **km/h**  
-> - speed = speed / 100000 (**km/s**)  
-> - speed = speed * 3600 (**km/h**)  
-> 
-> To compensate for anemometer factor  
-> - speed = speed * 1.18  
-
+>   Pseudo code here
 
 ## How does the sensor connect?
 
@@ -51,42 +40,76 @@ When connected the anemometer uses GPIO pin 5 (BCM)
 
 ## Sample Code
 
-The following program uses a GPIO interupt handler to detect input from the anemometer and convert it to a meaningful measurement which is displayed on screen
+The following program uses a GPIO interupt handler to detect input from the anemometer, converting it to a speed in km/h. It also stores the last four speeds (20 seconds of readings) and checks for gust conditions:
+- A wind speed above 29.6km/h in a 20 second period
+- A variance in wind speed of 16.7km/h between the highest and lowest speed in that 20 second period
 
 ```python
 from gpiozero import DigitalInputDevice
 from time import sleep
 import math
 
-count = 0
-radius_cm = 9.0		# Radius of the anemometer
-interval = 5		# How often to report speed
-ADJUSTMENT = 1.18	# Adjustment for weight of cups
+count = 0       # Counts how many half rotations
+radius_cm = 9.0 # Radius of your anemometer
+interval = 5    # How often (secs) to report speed
+ADJUSTMENT = 1.18
 CM_IN_A_KM = 100000.0
-SECS_IN_AN_HOUR = 3600
+SECS_IN_AN_HOUR = 3600 
+store_speeds = [] # Define a list to store last 4 wind speeds
 
-def calculate_speed(time_sec):
-    global count
-    circumference_cm = (2 * math.pi) * radius_cm
-    rotations = count / 2.0
-
-    dist_km = (circumference_cm * rotations) / CM_IN_A_KM
-
-    km_per_sec = dist_km / time_sec
-    km_per_hour = km_per_sec * SECS_IN_AN_HOUR
-
-    return km_per_hour * ADJUSTMENT
-
+# Every half rotation, add 1 to count
 def spin():
     global count
     count = count + 1
-    print (count)
+    print( count )
+
+# Calculate the wind speed given the time interval, the 
+def calc_speed(time_sec):
+        global count
+        global store_speeds
+        circumference_cm = (2 * math.pi) * radius_cm        
+        rotations = count / 2.0
+
+        # Calculate distance travelled by a cup in km
+        dist_km = (circumference_cm * rotations) / CM_IN_A_KM
+
+        # Speed = distance / time
+        km_per_sec = dist_km / time_sec
+        km_per_hour = km_per_sec * SECS_IN_AN_HOUR
+
+        # Calculate speed
+        final_speed = km_per_hour * ADJUSTMENT
+
+        # Add this speed to the list
+        store_speeds.append(final_speed)
+
+        # If that takes the list over 4 items, chop off the first
+        if len(store_speeds) > 4:
+                store_speeds = store_speeds[1:]
+      
+        # Show what is in the store_speeds list
+        print( str(store_speeds) )
+        
+        return final_speed
+
+# Check whether the last 20 seconds of readings had any gusts
+def check_for_gusts():
+        highest = max(store_speeds)
+        lowest = min(store_speeds)
+        GUST_ABOVE = 29.6       
+        GUST_RANGE = 16.7
+        if highest > GUST_ABOVE and highest - lowest > GUST_RANGE:
+                print("Gust! " + str(highest) + "km/h")        
 
 wind_speed_sensor = DigitalInputDevice(5)
 wind_speed_sensor.when_activated = spin
 
+
+# Loop to measure wind speed and report at 5 second intervals
 while True:
-    count = 0
-    sleep(interval)
-    print ( calculate_speed(interval), "kph")
+        count = 0
+        sleep(interval)
+        print( calc_speed(interval), "kph")
+        check_for_gusts()
+
 ```
