@@ -27,18 +27,20 @@ To measure the wind gust speed we will also use the anemometer, the same instrum
 	```bash
 	cp wind_final.py wind_gust.py
 	```
-Alternatively, you could download this [wind speed program](../wind_speed/code/wind_final.py) to your `weather_station` folder.
+If you don't have your old program, you can download a copy of the old [wind speed program](../wind_speed/code/wind_final.py) from here into your `weather_station` folder.
 
 1. Open the program by typing `sudo idle3 wind_gust.py`. We still need to use all of this code to gather wind speeds, but we need to add to it to be able to store and analyse the wind speeds.
     
 ## Storing wind speed readings
 
-Since the time period we are interested in is 20 seconds and our existing program records wind speed every 5 seconds (this is the number of seconds stored in the `interval` variable in the program), we need to record the **four** most recent readings to cover the last 20 seconds. To do this we will use a Python data structure called a list. Here is some code which creates an empty list, add this to the top of your code where you have initialised your other variables.
+Since the time period we are interested in is 20 seconds and our existing program records wind speed every 5 seconds (this is the number of seconds stored in the `interval` variable in the program), we need to record the **four** most recent readings to cover the last 20 seconds. To do this we will use a Python data structure called a list. 
+
+Here is some code which creates an empty list. Add this at the top of your program next to where you have initialised your other variables.
 
 ```python
 store_speeds = []
 ```
-Now we need to make sure that when we calculate a speed reading inside the function `calc_speed()` that speed reading gets recorded in the list. Your code for this function should look like this at the moment:
+Now we need to make sure that when we calculate a speed reading inside the function `calc_speed()`, that speed reading gets recorded in the list. Your old code for this function should look like this at the moment:
 
 ```python
 def calculate_speed(time_sec):
@@ -53,14 +55,14 @@ def calculate_speed(time_sec):
 
     return km_per_hour * ADJUSTMENT
 ```
-The final result for the wind speed is the final line where we `return km_per_hour * ADJUSTMENT`. Returning a value immediately ends the function, but we still have some work to do.
+The final result for the wind speed is the final line where we `return km_per_hour * ADJUSTMENT`. Returning a value immediately ends the function, but as we want to add some other calculations we need to change this.
 
-1. Let's alter the code to store this result in a variable so we can return it later.
+1. Alter the code to store the wind speed result in a variable so we can return it later.
 
 	```python
 	final_speed = km_per_hour * ADJUSTMENT
 	```
-1. Now add this speed to our list of wind speed measurements:
+1. Add the speed to our list of wind speed measurements:
 
 	```python
 	store_speeds.append(final_speed)
@@ -71,13 +73,16 @@ The final result for the wind speed is the final line where we `return km_per_ho
 	```python
 	store_speeds = store_speeds[1:]
 	```
-	Each item in a list is called an **element**. This code tells the list to slice off a chunk of the list from element 1 to the end. It might sound like this won't do anything, unless you know that elements in lists are indexed from 0. For example, if I have the list `["a", "b", "c", "d", "e"]` then element 0 is "a", element 1 is "b" etc. 
+	Each item in a list is called an **element**. This code tells the list to slice off a chunk of the list from element 1 to the end. It might sound like this won't do anything, unless you know that elements in lists are indexed from 0. For example, if I have the list `["a", "b", "c", "d", "e"]` then element 0 is "a", element 1 is "b" etc, so using this code, element 0 in the list will be chopped off.
 
-	Add some code to your `calculate_speed()` function to store the reading, here is some pseudo code to help you achieve this:
+	Add some code to your `calculate_speed()` function to store the reading, chop the list, and then return the latest calculated speed. Here is some pseudo code to help you achieve this:
 
     > STORE most recent reading IN store_speeds LIST
+    > 
     > IF store_speeds LIST has MORE THAN 4 elements
-    >	store_speeds LIST = SLICE store_speeds LIST from element 1 to end
+    > --- store_speeds LIST = SLICE store_speeds LIST from element 1 to end
+    >
+    > RETURN final_speed
     
 
 ## Checking for gusts
