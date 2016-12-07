@@ -80,6 +80,7 @@ The final result for the wind speed is the final line where we `return km_per_ho
     > STORE most recent reading IN store_speeds LIST
     > 
     > IF store_speeds LIST has MORE THAN 4 elements
+    >
     > --- store_speeds LIST = SLICE store_speeds LIST from element 1 to end
     >
     > RETURN final_speed
