@@ -82,23 +82,18 @@ To connect the wind vane to the weather station board, first set up the main [we
 The following program measures the wind direction for 10 seconds and then outputs the result
 
   ```python
+  import wind_direction as wind_vane
+
+  # Loop forever taking readings
   while True:
-      data = [] # a list to store the measurements
-      length = 10 # ten seconds
-      
-      print "Measuring wind direction for", length, "seconds..."
-      start_time = time.time()
-      
-      while time.time() - start_time <= length:
-          adc_value = adc.read(0)
-          direction = get_direction(adc_value, 10)
-          if direction != None: # keep only good measurements
-              data.append(direction)
-      
-      average = None
-      
-      if len(data) > 0:
-          average = sum(data) / len(data)
-      
-      print "Wind direction:", average
+
+    # Instantiate a wind vane object
+    # 0 = adc channel, wind_direction.json = config file
+    our_wind_vane = wind_vane.wind_direction(0, "wind_direction.json")
+
+    # Print the direction value after testing for 10 seconds
+    interval = 10
+    print(our_wind_vane.get_value(interval))
+
+
   ```
