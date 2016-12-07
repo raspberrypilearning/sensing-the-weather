@@ -51,45 +51,45 @@ A gust occurs within a given time period when:
 	```
 1. Students will also need to know how to do the following things to be able to piece together their program. You may want to teach these as concepts and then ask the students to write the program themselves, or you may wish to offer more help to guide them through the process of writing the program.
 
-### Add an item to a list
+	### Add an item to a list
 
-```python
-item = 1.234
-store_speeds.append(item)
-```
-### Find the largest item in a list
-
-```python
-largest = max(store_speeds)
-```
-
-### Find the smallest item in a list
-
-```python
-smallest = min(store_speeds)
-```
-
-### Slice a section of the list
-
-The slicing operator takes a slice of the list in the following format:
 	```python
-	list_name[start:end]
+	item = 1.234
+	store_speeds.append(item)
 	```
-So if we examine the following code:
+	### Find the largest item in a list
+
 	```python
-	letters = ["a", "b", "c", "d", "e"]
-	letters = letters[1:]
+	largest = max(store_speeds)
 	```
-It is important to remember that list indexing begins at 0, so the 0th item in the list is "a", the 1st item is "b" and so on. The slicing starts at element 1 ("b") and there is no end point specified which means the slice will continue to the end of the list. The resulting sliced list will be `["b", "c", "d", "e"]` - we will have sliced off the first element.
 
-You can experiment with other slices, for example:
+	### Find the smallest item in a list
 
-```python
-letters = letters[2:4]
-```
-This would generate a list containing `["c", "d"]. This is because the slice starts at 2 (character `"c"`) and stops AT 4, but does not include item 4. Therefore we get the 2nd and 3rd items from the list.
+	```python
+	smallest = min(store_speeds)
+	```
 
-Students follow the [worksheet](worksheet.md) to adapt their code to add gust speed monitoring.
+	### Slice a section of the list
+
+	The slicing operator takes a slice of the list in the following format:
+		```python
+		list_name[start:end]
+		```
+	So if we examine the following code:
+		```python
+		letters = ["a", "b", "c", "d", "e"]
+		letters = letters[1:]
+		```
+	It is important to remember that list indexing begins at 0, so the 0th item in the list is "a", the 1st item is "b" and so on. The slicing starts at element 1 ("b") and there is no end point specified which means the slice will continue to the end of the list. The resulting sliced list will be `["b", "c", "d", "e"]` - we will have sliced off the first element.
+
+	You can experiment with other slices, for example:
+
+	```python
+	letters = letters[2:4]
+	```
+	This would generate a list containing `["c", "d"]. This is because the slice starts at 2 (character `"c"`) and stops AT 4, but does not include item 4. Therefore we get the 2nd and 3rd items from the list.
+
+1. Students follow the [worksheet](worksheet.md) to adapt their code to add gust speed monitoring.
 
 
 ## Plenary
