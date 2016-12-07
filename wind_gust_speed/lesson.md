@@ -103,8 +103,8 @@ Ask the class the following questions:
 
 **Answers:**
 
-1. Yes - in reality the wind speed is measured much more frequently than every 5 seconds, in fact on meteorological weather stations it would be measured as frequently as every 0.25 seconds. Therefore we might miss any gusts of very short duration.
-2. We could change the time period across which we sample the wind speed to be less than 5 seconds. However, this would not be a suitable modification for this particular anemometer because it is not sensitive enough to record wind speed information this accurately. 
+1. Yes - in reality the wind speed is measured much more frequently than every 5 seconds, in fact on more sophisticated weather stations it might be measured as frequently as every 0.25 seconds. Therefore we might miss any gusts of very short duration.
+2. We could consider changing the time period across which we sample the wind speed to be smaller than 5 seconds. However, this would not be a suitable modification for this particular anemometer because it is not sensitive enough to record wind speed information this accurately. 
 
 
 ## Extension
