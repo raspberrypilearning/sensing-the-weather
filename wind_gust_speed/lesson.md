@@ -72,10 +72,12 @@ A gust occurs within a given time period when:
 	### Slice a section of the list
 
 	The slicing operator takes a slice of the list in the following format:
+
 		```python
 		list_name[start:end]
 		```
 	So if we examine the following code:
+	
 		```python
 		letters = ["a", "b", "c", "d", "e"]
 		letters = letters[1:]
