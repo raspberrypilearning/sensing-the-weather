@@ -6,15 +6,13 @@ This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit
 
 ## How does it work?
 
-You have already explored the inside of the anemometer in the wind speed lesson. 
+You have already explored how the anemometer works in the wind speed lesson. Now we will use the measurements from the anemometer to measure wind gust speed.
 
 Gusts of wind are sudden brief increases in the speed of the wind. 
 
-According to U.S. weather observing practice, gusts are reported when the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds. 
+According to U.S. weather observing practice, gusts are reported when the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds. [[Source](http://glossary.ametsoc.org/wiki/Gust)]
 
-16 knots is approximately 29.6km/h, and 9 knots is 16.7km/h
-
-(Note: Recommend 5 and 2 for testing)
+To convert these into measurements we can use, 16 knots is approximately 29.6km/h, and 9 knots is 16.7km/h. If you are testing your program in a classroom by pushing the anemometer by hand, it is unlikely you will be able to reach a speed greater than 29.6km/h so you will need to change these threshold values to simulate gusts occurring - don't forget to change them back when you put your weather station outside!
 
 We can use this information to calculate when gusts appear using three rules:
 A gust occurs within a given time period when:
@@ -26,11 +24,17 @@ We will measure the wind speed as before, but this time we will store a range of
 
 The following algorithm can be used to calculate the gust speed:
 
->   Pseudo code here
+> STORE most recent four speed readings as a list
+>
+> FUNCTION check_for_gusts()
+>   highest = MAX speed in list
+>   lowest = MIN speed in list
+>   IF highest > 29.6 and highest - lowest > 16.7
+>       PRINT "Gust " + highest
 
 ## How does the sensor connect?
 
-To connect the anemometer to the weather station board, first have set up the main weather station box using the weather station guide.
+To connect the anemometer to the weather station board, first set up the main weather station box using the [weather station guide](https://www.raspberrypi.org/learning/weather-station-guide).
 
 1. Connect the anemometer to the wind vane
 1. Connect the wind vane to the Raspberry Pi weather station
