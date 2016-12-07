@@ -106,8 +106,8 @@ Data #4 - [2.9, 3.8, 2.1, 6.5]
 ### Answer
 A gust has occurred for Data #1, but not in the other data sets. Let's examine why. We already measured a time period of 20 seconds, but for a gust to have occurred, two further conditions need to be true:
 
-Condition 1 - Highest wind speed above 29.6km/h
-Condition 2 - Difference between highest and lowest is above 16.7km/h
+- **Condition 1** - Highest wind speed above 29.6km/h
+- **Condition 2** - Difference between highest and lowest is above 16.7km/h
 
 So the results for each data set are:
 
@@ -118,16 +118,39 @@ So the results for each data set are:
 | Data #3 		| True (35.9)  	| False (35.9 - 31.3 = 4.6)	| False   |
 | Data #4 		| False (6.5)  	| False (6.5 - 2.1 = 4.4)	| False   |
 
-(If you have studied Boolean Logic, you might notice that these examples just happen to form the truth table for the logical operator 'AND' - for the answer to be True, both condition 1 and condition 2 need to be True.)
+(If you have studied Boolean logic, you might notice that these examples form the truth table for the logical operator 'AND' - for the gust to be true, both condition 1 AND condition 2 need to be true.)
 
 ## Adding a gust detection function
 
-Our final job is to add a function we can call to check whether a gust occurred in the last 20 seconds.
+Now that we have a well defined logical way of testing whether a gust has occurred, our final job is to add a function we can call to check whether a gust occurred in the last 20 seconds. 
+
+1. Create a new function called `check_for_gusts()`
+
+1. Inside this function, create variables to store the highest and lowest speeds in the `store_speeds` list. You can calculate these easily using the built in Python functions `min()` and `max()`.
+
+1. Now add constants to represent the values we are testing against
+- `GUST_ABOVE` - a gust occurs when the wind speed is above 29.6km/h AND
+- `GUST_RANGE` - a gust occurs when the range is above 16.7km/h
+
+1. Finally, check the conditions and return either the gust speed if a gust has occurred, or 0 if no gust is recorded within this time period. Here is some pseudo code to help you.
+
+    > FUNCTION check_for_gusts()
+    > --- highest = MAX speed in list
+    > --- lowest = MIN speed in list
+    > --- IF highest > GUST_ABOVE and highest - lowest > GUST_RANGE
+    > --- --- RETURN highest
+    > --- ELSE
+    > --- --- RETURN 0
+
+	The final code can be found [here](code/wind_gust.py).
+
+1. Run and test your program. If you are testing it indoors by pushing the anemometer by hand, what issues do you think might occur which might make it difficult to test your code?
 
 ## Summary
 
-- Questions to think about
+- You have created a program which stores the last 20 seconds of wind speed data as four readings in a list, and checks whether a gust of wind has occurred. 
+- How can you test whether your program works?
+
 
 ## What's next
-
-Ideas for things to do next
+- Devise a way to test your code indoors. It is unlikely that you will be able to generate "gusts" by spinning the anemometer at greater than 29.6km/h by hand. How could you test whether the code you have written to check for gusts actually works? 
