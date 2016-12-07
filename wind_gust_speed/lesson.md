@@ -76,20 +76,20 @@ A gust occurs within a given time period when:
 	```python
 	list_name[start:end]
 	```
-	So if we examine the following code:
-	
+	So let's examine the following code:
+
 	```python
 	letters = ["a", "b", "c", "d", "e"]
 	letters = letters[1:]
 	```
-	It is important to remember that list indexing begins at 0, so the 0th item in the list is "a", the 1st item is "b" and so on. The slicing starts at element 1 ("b") and there is no end point specified which means the slice will continue to the end of the list. The resulting sliced list will be `["b", "c", "d", "e"]` - we will have sliced off the first element.
+	It is important to remember that list indexing begins at 0, so the 0th item in the list is "a", the 1st item is "b" and so on. The slicing starts at element 1 ("b") and there is no end point specified which means the slice will continue until the end of the list. The resulting sliced list will be `["b", "c", "d", "e"]` - we will have sliced off the first (0th) element.
 
 	You can experiment with other slices, for example:
 
 	```python
 	letters = letters[2:4]
 	```
-	This would generate a list containing `["c", "d"]. This is because the slice starts at 2 (character `"c"`) and stops AT 4, but does not include item 4. Therefore we get the 2nd and 3rd items from the list.
+	This would generate a list containing `["c", "d"]`. This is because the slice starts at 2 (character `"c"`) and stops AT 4, but does not include item 4. Therefore we get the 2nd and 3rd items from the list.
 
 1. Students follow the [worksheet](worksheet.md) to adapt their code to add gust speed monitoring.
 
@@ -98,13 +98,16 @@ A gust occurs within a given time period when:
 
 Ask the class the following questions:
 
-Questions here
+1.  Are there any limitations to our gust speed monitoring program?
+2.  How could we alter the program to address these limitations?
 
 **Answers:**
 
-Answers here
+1. Yes - in reality the wind speed is measured much more frequently than every 5 seconds, in fact on meteorological weather stations it would be measured as frequently as every 0.25 seconds. Therefore we might miss any gusts of very short duration.
+2. We could change the time period across which we sample the wind speed to be less than 5 seconds. However, this would not be a suitable modification for this particular anemometer because it is not sensitive enough to record wind speed information this accurately. 
 
 
 ## Extension
 
-- Extension task
+- Test the gust monitoring program with the anemometer situated outside. Does it pick up gusts (if there are any) accurately?
+- Could you come up with some kind of visual display to show when it is particularly gusty outside and provide a warning? The Met Office forecasts show a black wind icon when there are gusts detected, and a white icon if there are not.
