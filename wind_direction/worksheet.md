@@ -26,7 +26,7 @@ We record a voltage from the wind vane which varies according to which combinati
 
 ## Using the wind_direction module
 
-Reading information from the ADC is a little tricky, so we are going to use a **module** which contains code someone else has written. 
+Reading information from the ADC is a little tricky, so we are going to use a **module** which contains code someone else has written to help us. 
 
 1. Set up your Raspberry Pi weather station.
 
@@ -54,7 +54,7 @@ Reading information from the ADC is a little tricky, so we are going to use a **
 
 	The object we have created is given the name `our_wind_vane`, just as we would name a variable
 
-1. We would like to sample the wind direction at a 10 second interval. There is a function inside the module we are using called `get_value()`. This code calls this method upon the `our_wind_vane` object which returns a value in degrees for the direction of the wind vane. 
+1. We would like to sample the wind direction at a 10 second interval. There is a function inside the module we are using called `get_value()`. The code below calls this method upon the `our_wind_vane` object which returns a value in degrees for the direction of the wind vane. 
 
 	```python
 	interval = 10
@@ -76,23 +76,45 @@ Reading information from the ADC is a little tricky, so we are going to use a **
 	```
 
 
-## Part 2 title
+## Which direction is the wind coming from?
 
 ### Question
-A question
+
+Earlier we talked about how the 8 reed switches can provide 16 possible values depending on the position of the vane. So how is it possible for the `get_value()` function to give us a precise reading in degrees, when there are 360&deg; in a circle and only 16 possible combinations of resistance?
 
 ### Answer
-The answer
+During the sampling interval, multiple readings are taken and we are given an *average* of those readings, converted into degrees.
 
-More instructions
+![Wind vane with some angles](images/wind_vane_shaded.png)
+
+
+### Question
+How can we use the data from the wind vane which is given in degrees to show which compass direction the wind is coming from?
+
+### Answer
+The Met Office weather reports use a number of [wind symbols](http://www.metoffice.gov.uk/guide/weather/symbols#windsymbols) to show information about the wind, as well as giving a compass direction that the wind is blowing *from*.
+
+Looking at this diagram with compass points, if we consider North to be 0&deg; then any of the compass points can be worked out as a bearing from North. The first has been shown for you as an example:
+
+![Wind vane with some angles](images/wind_vane_degrees.png)
+
+Your task is to write some code to take the value we received from the sensor, and instead of presenting the data as degrees, to work out the corresponding compass direction.
+
+
+Note: Need to ask Dave about this
+
+- What will be our boundaries
+- Code for generating the direction
+
 
 
 Finished code
 
 ## Summary
 
-- Questions to think about
+- Why round the values?
+- Does it matter which way around our weather vane is?
 
 ## What's next
 
-Ideas for things to do next
+- Representing this on a diagram with turtle graphics
