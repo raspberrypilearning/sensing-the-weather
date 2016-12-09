@@ -80,16 +80,14 @@ Reading information from the ADC is a little tricky, so we are going to use a **
 
 ### Question
 
-Earlier we talked about how the 8 reed switches can provide 16 possible values depending on the position of the vane. So how is it possible for the `get_value()` function to give us a precise reading in degrees, when there are 360&deg; in a circle and only 16 possible combinations of resistance?
+Earlier we talked about how the 8 reed switches can provide 16 possible values depending on the position of the vane. So how is it possible for the `get_value()` function to give us a reading in degrees, when there are 360&deg; in a circle and only 16 possible combinations of resistance?
 
 ### Answer
 During the sampling interval, multiple readings are taken and we are given an *average* of those readings, converted into degrees.
 
-![Wind vane with some angles](images/wind_vane_shaded.png)
-
 
 ### Question
-How can we use the data from the wind vane which is given in degrees to show which compass direction the wind is coming from?
+How can we use the data from the wind vane (given in degrees) to show which compass direction the wind is coming from?
 
 ### Answer
 The Met Office weather reports use a number of [wind symbols](http://www.metoffice.gov.uk/guide/weather/symbols#windsymbols) to show information about the wind, as well as giving a compass direction that the wind is blowing *from*.
@@ -100,21 +98,45 @@ Looking at this diagram with compass points, if we consider North to be 0&deg; t
 
 Your task is to write some code to take the value we received from the sensor, and instead of presenting the data as degrees, to work out the corresponding compass direction.
 
+Clearly a reading of 0&deg; should report back **North**. But what about 1&deg;? 2&deg;? etc. You need to define a range within which each direction is reported by your program. In the diagram below, the range of degrees for North would be between the red lines. 
 
-Note: Need to ask Dave about this
+![Wind vane with some angles](images/wind_vane_shaded.png)
 
-- What will be our boundaries
-- Code for generating the direction
+The code for the shaded area is done here for you:
 
+```python
+if degrees >= 338 or degrees < 23:
+	print("N")
+```
+Now add more `elif` statements to define the other directions. Test your code and put the wind vane in different positions to check whether it works. North on the wind vane can be found by positioning the pointed end of the vane level with the black anemometer port underneath the vane.
 
-
-Finished code
+The [final code](code/find_wind_direction.py) is here if you want to check your answer.
 
 ## Summary
 
-- Why round the values?
-- Does it matter which way around our weather vane is?
+- You have gathered data converted from an analogue voltage to a digital number representation using an ADC, and then converted again to a measurement in degrees.
+
+- Will it matter which way around our weather vane is situated when we put it up outside?
 
 ## What's next
 
-- Representing this on a diagram with turtle graphics
+It would be good if we could represent the wind's direction graphically. Can you use `turtle` graphics to draw a graphic representation of the direction of the wind? The example below uses the turtle to draw compass points before drawing a red line pointing in the direction the wind is blowing from.
+
+![Turtle wind direction](images/turtle.png)
+
+If you use the Python turtle module in Logo mode (so that North is 0 degrees), you can set the `heading` of the turtle which sets the angle the turtle points. Full documentation for the turtle module is available [here](https://docs.python.org/2/library/turtle.html).
+
+Can you go one step further and draw a weather map style arrow, pointing in the direction the wind is blowing TO? To do this, you will need to calculate the angle which is exactly 180 degrees further around the circle than the wind direction. However, simply adding 180 to the measurement will not work - what if the measurement was 350&deg; for example - then adding 180 would result in 530&deg; . To do this, you can use the `MOD` (`%`) operator, which gives the remainder of a division:
+
+```
+direction = 350
+direction = (direction + 180) % 180
+```
+
+`%` performs [integer division](http://mathworld.wolfram.com/IntegerDivision.html) and reports the remainder. So in this case:
+
+```
+350 + 180 = 530
+530 \ 180 = 2 		# How many times 180 fully goes into 530
+530 % 180 = 170		# The remainder of the integer division
+```

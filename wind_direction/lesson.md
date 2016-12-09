@@ -16,7 +16,7 @@ Background information about the [wind vane](about.md)
 
 - Computer Science - instantiating objects, object methods
 - Geography - wind direction for meteorological forecasts
-- Mathematics - degrees, bearings, rounding
+- Mathematics - degrees, bearings
 - Physics - resistance, circuits, analogue vs digital
 
 ## Lesson Summary
@@ -63,12 +63,12 @@ Recap the points of the compass and how these relate to bearings in degrees (a r
 
 Ask the class the following questions:
 
-- Why did we round the value generated from the wind vane?
+- How is it possible for the wind vane to generate a direction in degrees?
 - What is the difference between an analogue signal and a digital signal?
 
 **Answers:**
 
-- The degrees value is converted from the voltage reported by the ADC. This is reported to an unplausibly high degree of accuracy so we round the number to a whole number.
+- The degrees value comes from an average of voltage readings across the time interval chosen, in our case 10 seconds. These voltages are converted to degrees by code in the wind_direction library.
 - The wind vane records a **range** of voltages, this is known as an *analogue* signal. Previous sensors simply reported a `HIGH` or `LOW` voltage - all or nothing. This is a *digital* signal.
 
 

@@ -1,6 +1,6 @@
 # Sensing the Weather
 
-![](cover.png)
+![Sensing the weather cover image](cover.png)
 
 This scheme of work introduces students to the sensors included with the Raspberry Pi Weather Station, a project which aims to get schoolchildren building and programming their own weather station to collect and present data. These resources introduce some simple sensors and get the students writing Python code to gather data from them. 
 
@@ -10,11 +10,11 @@ This scheme of work introduces students to the sensors included with the Raspber
 - [Wind Speed](wind_speed/lesson.md)
 - [Wind Gust Speed](wind_gust_speed/lesson.md)
 - [Wind Direction](wind_direction/lesson.md)
-- [Ambient Temperature]()
-- [Soil Temperature]()
-- [Barometric Pressure]()
-- [Relative Humidity]()
-- [Air Quality]()
+- Ambient Temperature
+- [Soil Temperature](soil_temperature/lesson.md)
+- Barometric Pressure
+- Relative Humidity
+- Air Quality
 
 
 
