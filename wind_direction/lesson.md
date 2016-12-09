@@ -38,15 +38,9 @@ Recap the points of the compass and how these relate to bearings in degrees (a r
 
 1. This exercise makes use of a **class** someone else has written, a common occurrence in everyday programming. Students may already be familiar with using code from Python libraries such as `random` or `time`, this is exactly the same idea. It is important that your wind direction program is saved within the `weather_station` folder on the Raspberry Pi so that it can access the file containing this code, otherwise it will not work. Additionally, make sure that your code is **NOT** saved with the file name `wind_direction.py` as this is the name of the module you are trying to import. 
 
-1. To be able to use this pre-written code, firstly we need to import the module 
+1. This code tells Python to get the contents of the `wind_direction` module, and when I refer to things from this module I want to refer to them by the name `wind_vane`. The reason we are using pre-written code here is because a lot of the necessary code to take readings from the ADC would be too complicated for students to write independently. 
 
-```python
-import wind_direction as wind_vane
-```
-
-This code tells Python to get the contents of the `wind_direction` module, and when I refer to things from this module I want to refer to them by the name `wind_vane`. The reason we are using pre-written code here is because a lot of the necessary code to take readings from the ADC would be too complicated for students to write independently. 
-
-2. Now is a good opportunity to introduce students to the concept of **Object Oriented Programming**. We need to create an **object** which will allow us to gather readings from our wind vane.
+1. You can use this opportunity to introduce students to the concept of **Object Oriented Programming**. We need to create an **object** which will allow us to gather readings from our wind vane.
 
 	```python
 	our_wind_vane = wind_vane.wind_direction(0, "wind_direction.json")
@@ -54,7 +48,7 @@ This code tells Python to get the contents of the `wind_direction` module, and w
 
 	This code creates a variable `our_wind_vane` which is a pointer to a `wind_direction` object. (This is why we renamed the module to `wind_vane` earlier, otherwise we would have had to type `wind_direction.wind_direction` which is a bit confusing.) We have provided some necessary information to create the object - the ADC channel (0) and a config file (wind_direction.json).
 
-3. Now we need to specify the interval to sample the wind direction in, and then get the direction:
+1. Now we need to specify the interval to sample the wind direction in, and then get the direction:
 
 	```python
 	interval = 10
@@ -62,9 +56,8 @@ This code tells Python to get the contents of the `wind_direction` module, and w
 	```
 	`get_value()` is a method which is called upon the `our_wind_vane` object. It contains code that returns a value in degrees for the direction of the wind vane. (You can examine this code if you want to, it is in the file `wind_direction.py` in the `weather_station` folder.)
 
-4. By placing this code inside a `while True:` infinite loop, we can repeatedly sample the wind direction. 
 
-5. Students work through the [worksheet](worksheet.md) to instantiate their wind vane object and take readings. They are challenged to display the compass direction the wind is blowing from, and to round the figures generated.
+1. Students work through the [worksheet](worksheet.md) to instantiate their wind vane object and take readings. They are challenged to display the compass direction the wind is blowing from, and to round the figures generated.
 
 ## Plenary
 
@@ -75,12 +68,13 @@ Ask the class the following questions:
 
 **Answers:**
 
-Answers here
+- The degrees value is converted from the voltage reported by the ADC. This is reported to an unplausibly high degree of accuracy so we round the number to a whole number.
+- The wind vane records a **range** of voltages, this is known as an *analogue* signal. Previous sensors simply reported a `HIGH` or `LOW` voltage - all or nothing. This is a *digital* signal.
 
 
 ## Extension
 
-- The code inside the `wind_direction.py` module contains a function called `get_average()` which takes all angles read during the wind direction sampling interval. Supposing there were three samples of 10&deg;, 20&deg;, &30deg; and we took the mean average of these angles, we would get the result of 20&deg; which is correct:
+- The code inside the `wind_direction.py` module contains a function called `get_average()` which takes all angles read during the wind direction sampling interval. Supposing there were three samples of 10&deg;, 20&deg; and 30&deg; and we took the mean average of these angles, we would get the result of 20&deg; which is correct:
 
 ```
 (10 + 20 + 30) / 3 = 20
