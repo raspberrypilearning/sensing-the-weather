@@ -74,7 +74,7 @@ Ask the class the following questions:
 
 ## Extension
 
-- The code inside the `wind_direction.py` module contains a function called `get_average()` which takes all angles read during the wind direction sampling interval. Supposing there were three samples of 10&deg;, 20&deg; and 30&deg; and we took the mean average of these angles, we would get the result of 20&deg; which is correct:
+- The code inside the `wind_direction.py` module contains a function called `get_average()` which takes all angles read during the wind direction sampling interval and returns the average. Supposing there were three samples of 10&deg;, 20&deg; and 30&deg; and we took the mean average of these angles, we would get the result of 20&deg; which is correct:
 
 ```
 (10 + 20 + 30) / 3 = 20

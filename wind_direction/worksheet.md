@@ -2,11 +2,23 @@
 
 In this lesson you will:
 
-- Bullet points
+- Understand how the wind vane uses reed switches to change its output voltage
+- Understand the difference between an analogue and a digital signal
+- Be able to write a program to output the wind direction based on input from the wind vane
 
-## How does the rain gauge work?
+## How does the wind vane work?
 
-Brief description with pics
+A wind vane shows the direction *from which* the wind is coming, not where it's going (this can be confusing because TV weather maps show the opposite). It works by the wind exerting force on a vertical blade which rotates to find the position of least resistance, this position is then aligned with the direction of the oncoming wind.
+
+The wind vane is the more complex than the [rain gauge](../rainfall/about.md) or [anemometer](../wind_speed/about.md). It does use reed switches and magnets but it works in a completely different way. 
+
+If you look inside the wind vane, you'll see there are eight reed switches arranged like the spokes of a wheel. 
+
+![](images/wind_vane_reed.png)
+
+So what is going on here? Firstly we need to understand what a [resistor](http://en.wikipedia.org/wiki/Resistor) is. These are small components that resist/reduce the flow of electrical current but do not stop it, at the same time they also reduce the voltage moving through the circuit. Resistors can have different values, a low resistance value would let almost all voltage/current through but a high resistance value would let very little through. As the magnet rotates different reed switches will open and close and thus switch their corresponding resistor in and out of the circuit.
+
+Each of the 8 resistors have different values which you'll see printed in white text next to them, this then allows the wind vane to have 16 possible combinations of resistance since the magnet is able to close two reed switches when half way between them. More info in the [datasheet](https://www.argentdata.com/files/80422_datasheet.pdf).
 
 
 ## Using the wind_direction code
