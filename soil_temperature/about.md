@@ -1,6 +1,6 @@
-# About the Soil Temperature Probe
+# About the Soil Temperature Sensor
 
-Here is the soil temperature probe supplied with the Raspberry Pi Weather Station kit.
+Here is the soil temperature sensor supplied with the Raspberry Pi Weather Station kit.
 
 ![Soil temperature sensor](images/soil_temp_sensor.png)
 
