@@ -18,12 +18,13 @@ Here is the [data sheet](http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf
 
 ## How does the sensor connect?
 
-1. To connect the soil temperature probe to the weather station, first assemble the main weather station, then attach the air board module. The soil temperature probe is attached to the air board.
+1. To connect the soil temperature probe to the weather station, first assemble the main weather station
+1. Now attach the air board module to the main weather station box. The soil temperature probe is attached to the air board.
 
 
 ## Sample Code
 
-The following program is a very basic program to take a reading from the soil temperature sensor. This program needs to be put inside the `weather_station` directory as it uses the library `ds18b20_therm` which was included when you installed the weather station software.
+The following program is a very basic program to take a reading from the soil temperature sensor. This program needs to be put inside the `weather_station` directory as it uses the library `ds18b20_therm` which is included with the weather station software.
 
 ```python
 import ds18b20_therm as soil_temp
