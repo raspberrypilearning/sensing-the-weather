@@ -12,7 +12,7 @@ This scheme of work introduces students to the sensors included with the Raspber
 - [Wind Direction](wind_direction/lesson.md)
 - [Soil Temperature](soil_temperature/lesson.md)
 - [Ambient Temperature](ambient_temperature/lesson.md)
-- Relative Humidity
+- [Relative Humidity](relative_humidity/lesson.md)
 - Barometric Pressure
 - Air Quality
 
