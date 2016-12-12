@@ -42,7 +42,7 @@ In order to produce graphs using your Raspberry Pi weather station, you will nee
 
 1. Students boot their Raspberry Pi weather station and log in. 
 
-1. This lesson reinforces the concept of storing multiple sensor readings in a list, a concept first encountered in the wind vane lesson. The sensor works in exactly the same way as the wind vane - firstly we instantiate an object which can talk to the sensor and then we call a method on that object to get the current data reading. Students create a simple program which takes one reading from the sensor. DS18B20 is the name of the temperature sensor component.
+1. To access the sensor data we will use a module of code written by someone else to help us, in exactly the same way as we did when using the wind vane. Firstly we instantiate an object which can talk to the sensor and then we call a method on that object to get the current data reading. Students create a simple program which takes one reading from the sensor. DS18B20 is the name of the temperature sensor component.
 
 	```python
 	import ds18b20_therm as soil_temp
@@ -68,7 +68,7 @@ In order to produce graphs using your Raspberry Pi weather station, you will nee
 
 	Breaking this down, what is happening is we are assigning the variable `x` to a list generated "on the fly" which consists of numbers in the range beginning at `0`, ending at `10*interval` (or `50`), and going up by `interval` (or `5`) each time.
 
-1. Now students need to work out how to generate and store 10 readings from the temperature probe, which is easily done with a for loop. They will also need the `time` library so that they can pause the program for an appropriate interval between the readings. It is nice to print out when a reading has occurred otherwise the program has a long pause where it appears as if nothing is happening even though readings are being taken behind the scenes.
+1. This lesson reinforces the concept of storing multiple sensor readings in a list, a concept first encountered in the wind gust speed lesson. Students need to work out how to generate and store 10 readings from the temperature probe, which is easily done with a for loop. They will also need the `time` library so that they can pause the program for an appropriate interval between the readings. It is nice to print out when a reading has occurred otherwise the program has a long pause where it appears as if nothing is happening even though readings are being taken behind the scenes.
 
 	```python
 	for i in range(10):
@@ -80,6 +80,8 @@ In order to produce graphs using your Raspberry Pi weather station, you will nee
 1. Here is the [finished code](code/soil_temp.py) for the program which generates a very basic graph.
 
 1. Students could investigate the [matplotlib documentation](http://matplotlib.org/users/beginner.html) to find out how to improve their graph, for example adding axis labels, a title, changing the colour of the line plot or one of the many other options.
+
+	Here is an example of a graph which could be produced. Students can vary the temperature whilst testing by simply holding the sensor in their hand and releasing it during the sampling - or they might be able to think of other possible tests!
 
 	![Example graph](images/graph_example.png)
 
