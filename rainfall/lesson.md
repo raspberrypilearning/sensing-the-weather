@@ -15,9 +15,10 @@ Background information [about the rain gauge](about.md)
 
 ## Cross-Curricular applications
 
-- Geography - Rainfall data from local area
-- Physics - Pull up/Pull down circuits, sensors
-- Mathematics - Surface area, volume, conversion to mm
+- Computer Science - loops, functions, variables
+- Geography - rainfall data from local area
+- Physics - pull up/pull down circuits, sensors
+- Mathematics - surface area, volume, conversion to mm
 
 
 ## Lesson Summary

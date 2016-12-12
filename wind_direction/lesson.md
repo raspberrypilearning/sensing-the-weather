@@ -16,7 +16,7 @@ Background information about the [wind vane](about.md)
 
 - Computer Science - instantiating objects, object methods
 - Geography - wind direction for meteorological forecasts
-- Mathematics - degrees, bearings
+- Mathematics - degrees, bearings, modulo operation
 - Physics - resistance, circuits, analogue vs digital
 
 ## Lesson Summary

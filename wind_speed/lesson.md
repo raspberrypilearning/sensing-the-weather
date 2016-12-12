@@ -15,6 +15,7 @@ Background information about [the anemometer](about.md)
 
 ## Cross-Curricular applications
 
+- Computer Science - functions, variables, loops
 - DT - designing an optimal method of attaching the anemometer to collect wind data
 - Geography - wind speed data for local area
 - Mathematics - circle theory
