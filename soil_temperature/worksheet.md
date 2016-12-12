@@ -49,11 +49,11 @@ Which type of graph would best show the data we have gathered from the temperatu
 ### Answer
 A line graph would be the most suitable graph to show this data as it shows the change in temperature over time. 
 
-Python has a software library called `matplotlib` which allows us to easily create graphs of our data. Ask your teacher whether you need to install this library or if it has already been done for you.
+Python has a software library called `matplotlib` which allows us to easily create graphs of our data. Ask your teacher whether you need to install this library or if it has already been done for you. If you need to install the software, open up a terminal and type `sudo apt-get install python3-matplotlib`.
 
 1. You have already written code to generate a list of 10 temperature readings and store them in a list. Rename the list to `y` as it contains the values that will be plotted on the `y` axis of your graph.
 
-1. To be able to build a graph, we also need some values for the x axis of our graph. These values should represent time. In your code, you took a temperature reading every 5 seconds, so our x axis values should look like this:
+1. To be able to build a graph, we also need some values for the x axis of our graph. These values should represent the points in time when we took a sample. In your code, you took a temperature reading every 5 seconds, so our x axis values should look like this:
 
 	```python
 	[0, 5, 10, 15, 20, 25, 30, 35, 40, 45]
@@ -90,7 +90,7 @@ Python has a software library called `matplotlib` which allows us to easily crea
 	    sleep(interval)
 	```
 
-1. Now for the surprisingly easy part - creating the graph! Add this line at the top of your program to import the `matplotlib` library. (Remember to check with your teacher whether you need to install this software.)
+1. Now for the surprisingly easy part - creating the graph! Add this line at the top of your program to import the `matplotlib` library. 
 
 	```python
 	import matplotlib.pyplot as plt
@@ -103,12 +103,16 @@ Python has a software library called `matplotlib` which allows us to easily crea
 	plt.show()
 	```
 
-	This tells the library (which we have called `plt`) to call the `plot()` function using the x and y lists as the data, and then to call the `show()` function to show the graph. 
+	This tells the graph code (which we have nicknamed `plt`) to call its `plot()` function using the x and y lists as the data, and then to call the `show()` function to display the graph on the screen. 
 
 
 1. The [code with the graph](code/soil_temp.py) is here for you to look at 
 
-1. Your graph doesn't have any axis labels or a title. Can you work out how to add these using the `matplotlib` functions `suptitle()`, `xlabel()` and `ylabel()`? The answer is [here](code/soil_fancy_graph.py) if you get stuck.
+1. Your graph doesn't have any axis labels or a title. Can you work out how to add these using the `matplotlib` functions `suptitle("Title")`, `xlabel("x axis label")` and `ylabel("y axis label")`? 
+
+	![Example graph](images/graph_example.png)
+
+	The answer is [here](code/soil_fancy_graph.py) if you get stuck.
 
 ## Summary
 
