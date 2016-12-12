@@ -1,10 +1,10 @@
-#  Sensing the Weather - <sensor> Lesson
+#  Sensing the Weather - Ambient Temperature Sensor Lesson
 
 In this lesson students will learn 
 
 ## Sensor Guide
 
-Background information about
+Background information about the [ambient temperature sensor](about.md)
 
 ## Learning objectives
 
@@ -14,7 +14,7 @@ Background information about
 
 ## Cross-Curricular applications
 
-- Subject - info
+- Physics - resistance, capacitance, relative humidity
 
 ## Lesson Summary
 

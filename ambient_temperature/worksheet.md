@@ -1,4 +1,4 @@
-# Sensing the Weather - Rainfall Worksheet
+# Sensing the Weather - Ambient Temperature Worksheet
 
 In this lesson you will:
 
