@@ -10,8 +10,8 @@ This scheme of work introduces students to the sensors included with the Raspber
 - [Wind Speed](wind_speed/lesson.md)
 - [Wind Gust Speed](wind_gust_speed/lesson.md)
 - [Wind Direction](wind_direction/lesson.md)
-- Ambient Temperature
 - [Soil Temperature](soil_temperature/lesson.md)
+- [Ambient Temperature](ambient_temperature/lesson.md)
 - Barometric Pressure
 - Relative Humidity
 - Air Quality

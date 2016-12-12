@@ -106,7 +106,7 @@ Python has a software library called `matplotlib` which allows us to easily crea
 	This tells the graph code (which we have nicknamed `plt`) to call its `plot()` function using the x and y lists as the data, and then to call the `show()` function to display the graph on the screen. 
 
 
-1. The [code with the graph](code/soil_temp.py) is here for you to look at 
+1. Test your code - you can cause temperature variations by simply holding the sensor in your hand to warm it up. The full [code with the graph](code/soil_temp.py) is here for you to look at.
 
 1. Your graph doesn't have any axis labels or a title. Can you work out how to add these using the `matplotlib` functions `suptitle("Title")`, `xlabel("x axis label")` and `ylabel("y axis label")`? 
 
