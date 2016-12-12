@@ -14,8 +14,9 @@ Background information about the [ambient temperature sensor](about.md)
 
 ## Cross-Curricular applications
 
+- Biology - growing crops in a greenhouse environment
 - Computer Science - using external modules, combining code
-- Physics - resistance, capacitance, relative humidity, evaluating data reliability
+- Physics - resistance, capacitance, evaluating data reliability
 
 ## Lesson Summary
 
@@ -26,7 +27,7 @@ Background information about the [ambient temperature sensor](about.md)
 
 Discuss with students the fact that the weather station has two different sensors for sensing the temperature. Why is this, and what might the differences be between the two sensors?
 
-Open up the plastic box containing the air board and point out the ambient temperature sensor - it is extremely tiny! 
+Open up the plastic box containing the air board and point out the ambient temperature sensor - it is very small!
 
 ## Main development
 
@@ -36,7 +37,7 @@ Open up the plastic box containing the air board and point out the ambient tempe
 
 	![Temperature Graph](images/temperature_graph.png)
 
-1. The [worksheet](worksheet.md) gives students the necessary information to complete the task, but the real aim here is to consolidate students understanding of the previous lessons. They will work independently to read data from two sensors at once and integrate new code with previous code to check their understanding of the concepts covered so far. 
+1. The [worksheet](worksheet.md) gives students the necessary information to complete the task, but the real aim here is to consolidate students' understanding of the previous lessons. They will work independently to read data from two sensors at once and integrate new code with previous code to check their understanding of the concepts covered so far. 
 
 ## Plenary
 
@@ -54,3 +55,4 @@ Ask the class the following questions:
 ## Extension
 
 - Can students apply these skills to create a graph of data from the anemometer?
+- How could these sensors be applied to monitor growing crops in a greenhouse environment?
