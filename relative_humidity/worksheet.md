@@ -118,9 +118,9 @@ dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temperature) + (0.1 * tem
 
 1. From the dictionary, print the correct corresponding statement for the dew point you calculated, using the `threshold_exceeded` variable as the key, following the syntax below:
 
-```python
-print ( name_of_dictionary[key] )
-```
+	```python
+	print ( name_of_dictionary[key] )
+	```
 
 1. Run and test your code. You can check your answer using the [dew point calculator](http://www.ajdesigner.com/phphumidity/dewpoint_equation_dewpoint_temperature.php#ajscroll)
 
