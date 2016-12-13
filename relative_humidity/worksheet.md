@@ -51,7 +51,7 @@ We can calculate the dew point using a formula called the **Magnus formula** - h
 ```python
 dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temperature) + (0.1 * temperature) – 112
 ```
-1. Create a new python file called `calculate_dewpoint.py`. Write a program to calculate and display the dew point using readings from your sensor. Store the relative humidity reading as `humidity` and the ambient temperature reading as `temperature`
+1. Create a new python file called `calculate_dewpoint.py`. Write a program to calculate and display the dew point using readings from your sensor. Store the relative humidity reading as `humidity` and the ambient temperature reading as `temperature` and then plug them into the formula you were given above.
 
 	If you would like to check your answer, the finished code is [here](code/calculate_dewpoint.py)
 
@@ -69,9 +69,9 @@ dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temperature) + (0.1 * tem
 	                    90 : "A*" }
 	```
 
-	In this example, the numbers represent the score gained and are called the **keys** of the dictionary. The letters represent the grade that corresponds to that key and they are called the **values** of the dictionary.
+	In this example, the numbers represent the grade boundaries and are called the **keys** of the dictionary. The letters represent the grade that corresponds to that number of marks and they are called the **values** of the dictionary.
 
-	We can generate a list of all of the **keys** and sort it into ascending order:
+	We can generate a list of all of the **keys** (the numbers representing % scores) and sort it into ascending order:
 
 	```python
 	grade_boundaries = list( test_scores.keys() )
@@ -85,9 +85,9 @@ dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temperature) + (0.1 * tem
 
 	highest_boundary = 0
 	
-	for score in grade_boundaries:
-	    if student_score > score:
-	        highest_boundary = score
+	for boundary in grade_boundaries:
+	    if student_score >= boundary:
+	        highest_boundary = boundary
 	```
 
 	Now we can go back to the dictionary and print the **value** of the highest boundary they crossed, using the `highest_boundary` variable as the **key**
@@ -98,25 +98,29 @@ dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temperature) + (0.1 * tem
 
 	Result: `B`
 
-	Start a new Python file called `grade_boundaries.py` and type in the code. Try changing the variable `student_score` to other values to check that the correct grade is awarded.
+	Start a new Python file called `grade_boundaries.py` and type in the code. Try changing the variable `student_score` to other values to check that the correct grade is awarded to the student.
 
 1. Switch back to your `calculate_dewpoint.py` program. Using the code above to help you, create a dictionary of the following threshold values for dew point feelings:
 
-| Threshold &deg;C  | Message           		|
-| -----------------	| --------------------------| 
-| 0      			| A bit dry for some 		| 
-| 12      			| Very comfortable      	|   
-| 16 				| Comfortable      			|    
-| 18 				| Upper edge of comfortable |  
-| 21 				| Somewhat uncomfortable    |  
-| 24 				| Quite uncomfortable      	|  
-| 26 				| Extremely uncomfortable  	|  
-| 27 				| Severely high to deadly  	|  
+	| Threshold &deg;C  | Message           		|
+	| -----------------	| --------------------------| 
+	| 0      			| A bit dry for some 		| 
+	| 12      			| Very comfortable      	|   
+	| 16 				| Comfortable      			|    
+	| 18 				| Upper edge of comfortable |  
+	| 21 				| Somewhat uncomfortable    |  
+	| 24 				| Quite uncomfortable      	|  
+	| 26 				| Extremely uncomfortable  	|  
+	| 27 				| Severely high to deadly  	|  
 
 
-1. Find the largest threshold crossed by your dew point value and store it in a variable.
+1. Just like we did with the grade boundaries, find the largest threshold crossed by your dew point value and store it in a variable called `threshold_exceeded`
 
-1. From the dictionary, print the correct corresponding statement for the dew point you calculated. 
+1. From the dictionary, print the correct corresponding statement for the dew point you calculated, using the `threshold_exceeded` variable as the key, following the syntax below:
+
+```python
+print ( name_of_dictionary[key] )
+```
 
 1. Run and test your code. You can check your answer using the [dew point calculator](http://www.ajdesigner.com/phphumidity/dewpoint_equation_dewpoint_temperature.php#ajscroll)
 
@@ -125,9 +129,9 @@ dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temperature) + (0.1 * tem
 ## Summary
 
 - You have created a program which reads two data points from a sensor and uses a known equation to calculate the dew point
-- You have used a dictionary to look up your value and display a corresponding message
+- You have used a dictionary to look up a value and display a corresponding message
 
 ## What's next
 
-- Could you make a dew point calculator - allow the user to input their own values for temperature and relative humidity and give them the dew point
-- Could you add a GUI to your dew point calculator?
+- Could you make a dew point calculator like the online one - allow the user to input their own values for temperature and relative humidity and give them the dew point
+- Could you add a GUI to your dew point calculator so that people could interact using sliders. You could investigate the `tkinter` library and the `Scale` GUI object

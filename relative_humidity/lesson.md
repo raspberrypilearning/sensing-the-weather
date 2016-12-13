@@ -37,12 +37,12 @@ Discuss the concepts of relative humidity and the dew point, using the informati
 
 1. Introduce the code for calculating the dew point. This equation is a "plug and play" equation for the students - the explanation of how it is calculated is outside the scope of this lesson. The formula is a version of the Magnus formula and it provides an *approximation* of the dew point.
 
-```python
-dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temp) + (0.1 * temp) – 112
-```
-[[Formula source](http://www.ajdesigner.com/phphumidity/dewpoint_equation_dewpoint_temperature.php#ajscroll)]
+	```python
+	dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temp) + (0.1 * temp) – 112
+	```
+	[[Formula source](http://www.ajdesigner.com/phphumidity/dewpoint_equation_dewpoint_temperature.php#ajscroll)]
 
-1. Students follow the [worksheet](worksheet.md) to calculate and print the dew point for the relative humidity and temperature levels in their current environment.
+1. Students follow the [worksheet](worksheet.md) to calculate and print the dew point for the relative humidity and temperature levels in their current environment. The code for this is [here](code/calculate_dewpoint.py)
 
 1. Introduce the concept of a dictionary and show students how to create one. Dictionaries have **keys** and corresponding **values**. here is a dictionary of values taken from the [Wikipedia page](https://en.wikipedia.org/wiki/Dew_point) on dew points. The number represents a threshold temperature in &deg;C and the corresponding statement is the one which will be printed if the dew point temperature has exceeded that threshold.
 
@@ -72,14 +72,14 @@ dew_point = ((humidity / 100) ** 0.125) * (112 + 0.9 * temp) + (0.1 * temp) – 
 
 	# Loop through all thresholds and set threshold_exceeded to the highest exceeded
 	for temp in thresholds:
-	    if int(dewpoint) > temp:
+	    if dewpoint >= temp:
 	        threshold_exceeded = temp
 
 	# Print out the corresponding message from the dictionary
 	print( dew_description[threshold_exceeded] )
 	```
 
-1. The finished program is [here](code/calculate_dewpoint.py)
+1. The finished program is [here](code/calculate_dewpoint_message.py)
 
 
 ## Plenary

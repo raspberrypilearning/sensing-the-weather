@@ -31,7 +31,7 @@ threshold_exceeded = 0
 
 # Loop through all thresholds and set threshold_exceeded to the highest exceeded
 for temp in thresholds:
-    if dewpoint > temp:
+    if dewpoint >= temp:
         threshold_exceeded = temp
 
 # Print out the corresponding message
