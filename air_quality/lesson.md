@@ -14,7 +14,7 @@ Background information about the [air quality sensor](about.md)
 
 ## Cross-Curricular applications
 
-- Computer Science - using an API 
+- Computer Science - concatenation, using an API 
 - Geography - GIS mapping, climate change
 
 
@@ -34,7 +34,7 @@ The air sensor on the Raspberry Pi weather station board measures the concentrat
 
 1. Students boot their Raspberry Pi weather station and log in.
 
-1. Demonstrate the basic program to gather a reading from the air quality sensor. It follows the exact same concepts students have already encountered: import a library, create an object, call a method on the object to get the data.
+1. Demonstrate the basic program to gather a reading from the air quality sensor. It follows the exact same concepts students have already encountered: import a library, create an object, call a method on the object to get the data and then print it.
 
 	```python
 	import tgs2600 as aqsensor
@@ -44,7 +44,7 @@ The air sensor on the Raspberry Pi weather station board measures the concentrat
 	print( str(air_quality.get_value()) + "%")
 	```
 
-1. To allow your weather station to tweet, you will need to create a class Twitter account for students to tweet from. This requires a valid email address and a mobile phone number. The students will need access to the OAuth consumer key, consumer secret, access token and access token secret from the Twitter account.
+1. To allow your weather station to tweet, you will need to create a class Twitter account for students to tweet from. This requires a valid email address and a mobile phone number. The students will need access to the **OAuth consumer key, consumer secret, access token and access token secret** values from the Twitter account.
 
 1. Following steps 1-4 from the [Getting started with Twitter](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/) guide, students write a program that will allow the weather station to send tweets from a Twitter account.
 
@@ -80,24 +80,27 @@ The air sensor on the Raspberry Pi weather station board measures the concentrat
 	- How to tweet a reading at regular intervals, e.g. once every hour
 	- How to add a random message to the tweet depending on the value
 
-	It is probably a good idea to comment out the line that actually tweets whilst testing the program, to avoid producing lots of tweets by mistake:
+	It is probably a good idea to comment out the line that actually tweets with a `#` whilst testing the program, to avoid producing lots of tweets by mistake!
 
 	```python
 	# Comment out by putting a # in front of the line
-	#twitter.update_status(status=message)
+	# twitter.update_status(status=message)
 	```
+
+	The finished program is [here](code/tweeting_weather_station.py) for you to look at
 
 ## Plenary
 
 Ask the class the following questions:
 
-- Why might the data from this sensor not be as useful as the data from other sensors
+- Why might the data from this sensor not be as useful as the data from other sensors?
 
 **Answers:**
 
-- This data is 
+- The air quality sensor can only detect some gases in the atmosphere, not all possible pollutants. The value returned is a percentage of air purity - but what does that really mean? How is it calibrated? A value of around 60% actually indicates a pretty good air quality. 
 
 
 ## Extension
 
 - Can you add any of the weather data collected from the other sensors into your tweet? For example could you provide the current wind speed, or the relative humidity as well as the air quality?
+- Now that you have finished working with all of the sensors, why not try [Graphing the weather](https://www.raspberrypi.org/learning/graphing-the-weather/)

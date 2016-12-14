@@ -6,14 +6,14 @@ This scheme of work introduces students to the sensors included with the Raspber
 
 ## Lessons
 
-- [Rainfall](rainfall/lesson.md)
-- [Wind Speed](wind_speed/lesson.md)
-- [Wind Gust Speed](wind_gust_speed/lesson.md)
-- [Wind Direction](wind_direction/lesson.md)
-- [Soil Temperature](soil_temperature/lesson.md)
-- [Ambient Temperature](ambient_temperature/lesson.md)
-- [Relative Humidity](relative_humidity/lesson.md)
-- [Air Quality](air_quality/lesson.md)
+- [Rainfall](rainfall/lesson.md) - gather data using polling and interrupt methods
+- [Wind Speed](wind_speed/lesson.md) - calculate wind speed using circle theory
+- [Wind Gust Speed](wind_gust_speed/lesson.md) - store multiple sensor readings in a list
+- [Wind Direction](wind_direction/lesson.md) - discover the difference between analogue and digital
+- [Soil Temperature](soil_temperature/lesson.md) - plot a graph of sensor results
+- [Ambient Temperature](ambient_temperature/lesson.md) - compare data from two sensors
+- [Relative Humidity](relative_humidity/lesson.md) - use equations and look up values in a dictionary
+- [Air Quality](air_quality/lesson.md) - tweet sensor values from your weather station
 - [Barometric Pressure](barometric_pressure/lesson.md)
 
 
