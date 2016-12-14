@@ -74,7 +74,7 @@ The air sensor on the Raspberry Pi weather station board measures the concentrat
 	twitter.update_status(status=message)
 	print("Tweeted: %s" % message)
 	```
-1. Now students will need to add the following to their program:
+1. Now students will need to add the following to their program, using the [worksheet](worksheet.md) as a guide:
 
 	- How to tweet the weather sensor reading (rounded to a whole percentage)
 	- How to tweet a reading at regular intervals, e.g. once every hour
