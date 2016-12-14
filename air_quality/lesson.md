@@ -8,7 +8,7 @@ Background information about
 
 ## Learning objectives
 
-- Physics - mass, weight, pressure, Newtons, bars
+- x
 - y
 - z
 

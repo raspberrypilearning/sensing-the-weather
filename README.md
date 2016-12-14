@@ -13,8 +13,9 @@ This scheme of work introduces students to the sensors included with the Raspber
 - [Soil Temperature](soil_temperature/lesson.md)
 - [Ambient Temperature](ambient_temperature/lesson.md)
 - [Relative Humidity](relative_humidity/lesson.md)
+- [Air Quality](air_quality/lesson.md)
 - [Barometric Pressure](barometric_pressure/lesson.md)
-- Air Quality
+
 
 
 
