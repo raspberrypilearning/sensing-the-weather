@@ -21,13 +21,13 @@ This sensor is particularly sensitive to hydrogen, carbon monoxide and methane g
 
 You have taken a reading from other sensors where you create an object to talk to the sensor and then call a method to get data from that object. The air quality sensor works in exactly the same way:
 
-	```python
-	import tgs2600 as aqsensor
+```python
+import tgs2600 as aqsensor
 
-	air_quality = aqsensor.TGS2600()
+air_quality = aqsensor.TGS2600()
 
-	print( str(air_quality.get_value()) + "%")
-	```
+print( str(air_quality.get_value()) + "%")
+```
 
 1. Start a new Python program called `air_quality.py` inside the `weather_station` directory on your Raspberry Pi weather station.
 
