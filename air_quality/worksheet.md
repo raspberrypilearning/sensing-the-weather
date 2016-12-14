@@ -20,7 +20,7 @@ This sensor is particularly sensitive to hydrogen, carbon monoxide and methane g
 ## Taking a reading from the air quality sensor
 
 You have taken a reading from other sensors where you create an object to talk to the sensor and then call a method to get data from that object. The air quality sensor works in exactly the same way:
-	
+
 	```python
 	import tgs2600 as aqsensor
 
@@ -39,15 +39,15 @@ You have taken a reading from other sensors where you create an object to talk t
 How can we share data from the weather station with people across the world?
 
 ### Answer
-Our weather station already shares data with schools across the world via the Oracle database. Readings are taken from every sensor and uploaded via the weather station's internet connection to the database. You can use this data in the [Graphing the weather](https://www.raspberrypi.org/learning/graphing-the-weather/) resource!
+Your weather station already shares data with schools across the world via the Oracle database. Readings are taken from every sensor and uploaded via the weather station's internet connection to the database. You can use data from the database in the [Graphing the weather](https://www.raspberrypi.org/learning/graphing-the-weather/) resource.
 
-However we can also share weather data on social media - let's make our weather station tweet the weather!
+However we can also share local weather data on social media - let's make our weather station tweet the weather!
 
 ## Setting up your weather station to tweet
 
 1. Ask your teacher for the consumer keys and access tokens for the class Twitter account. Your teacher might provide these to you as a file, or on their own. 
 
-1. Follow steps 1-4 on the guide to [getting started with Twitter](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/) 
+1. Follow steps 1-4 on the guide [Getting started with Twitter](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/) 
 
 	Your program so far should look like this:
 
@@ -83,9 +83,9 @@ However we can also share weather data on social media - let's make our weather 
 
 The aim of this lesson is to use the Twitter API to tweet the air quality data from your weather station. For our tweet weather bulletin to be useful, it would be good if the program could:
 
-	- Tweet the weather sensor reading (rounded to a whole percentage)
-	- Tweet a reading at regular intervals, e.g. once every hour
-	- Add a random message to the tweet depending on the value
+- Tweet the weather sensor reading (rounded to a whole percentage)
+- Tweet a reading at regular intervals, e.g. once every hour
+- Add a random message to the tweet depending on the value
 
 1. Firstly we will tackle simply tweeting a sensor reading. You need to combine your `twitter.py` code from before with the code that takes a reading from the sensor:
 
@@ -97,7 +97,7 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
 	print( str(air_quality.get_value()) + "%")
 	```
 
-	Work out where to put the first two lines of code in your `twitter.py` program and add them.
+	Work out where to put the first two lines of the code above in your `twitter.py` program and add them.
 
 1. Instead of printing the air quality value, we would like to tweet it. Change your `message` variable to be equal to the sensor reading:
 
@@ -123,9 +123,11 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
         print("Gust speed " + str(check_for_gusts() + "kph")
     ```
 
-    This code set up an infinite loop which calculated the wind speed at an `interval`, or in other words calculated it every few seconds. Tweeting the air quality every few seconds is too often, but we could provide readings further apart, for example one every hour. For this we will need to use `from time import sleep` at the start of the program to be able to use the `sleep()` function.
+    This code set up an infinite loop which calculated the wind speed at an `interval`, or in other words calculated it every few seconds. Tweeting the air quality every few seconds is too often, but we could provide readings further apart, for example one every hour. 
 
-1. The loop below runs forever and "tweets" every 10 minutes. Work out how to modify the code to tweet every hour, and then put your tweet code inside the loop.
+1. Add `from time import sleep` at the start of the program to be able to use the `sleep()` function.
+
+1. The loop below runs forever and "tweets" every 10 minutes. Work out how to modify the code to tweet every hour, and then put your tweet code *inside* the loop.
 
 	```python
 	while True:
@@ -141,7 +143,7 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
     	print("N")
     ```
 
-1. Add some code using `if` and `elif` statements to **concatenate** a comment about the air quality on to the end of the message, depending on the value read from the sensor. The `+=` performs the concatenation. Here is an example to get you started:
+	Add some code after you generate the message but *before* actually tweeting it to **concatenate** a comment about the air quality on to the end of the message, depending on the value read from the sensor. The `+=` performs the concatenation. Here is an example to get you started:
 
 	```python
 	if current_quality > 55:
