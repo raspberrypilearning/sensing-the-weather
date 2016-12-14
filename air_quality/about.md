@@ -6,7 +6,7 @@ Here is the Air Quality sensor supplied with the Raspberry Pi Weather Station ki
 
 ## How does it work?
 
-The air quality sensor detects the presence of contaminants in the air. The conductivity of the material inside the sensor increases depending on the concentration of detectable gases in the air around the sensor. This change in conductivity is converted to an output signal which corresponds to the gas concentration.
+The air quality sensor detects the presence of contaminants in the air. The conductivity of the material inside the sensor increases depending on the concentration of detectable gases in the air around the sensor. This change in conductivity is converted to an output signal which corresponds to the gas concentration. The Python library converts this value into a percentage reading of hair purity, with 100% being completely free from detectable contaminants. 
 
 This sensor is particularly sensitive to hydrogen, carbon monoxide and methane gases which are present in contaminants such as cigarette smoke and traffic fumes.
 
@@ -26,8 +26,8 @@ The following program initialises an air quality sensor object and reads a value
 ```python
 import tgs2600 as aqsensor
 
-air_qual = aqsensor.TGS2600(adc_channel = 0)
+air_quality = aqsensor.TGS2600()
 
-print( str(air_qual.get_value()) + "%")
+print( str(air_quality.get_value()) + "%")
 ```
 

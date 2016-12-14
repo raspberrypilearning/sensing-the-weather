@@ -1,45 +1,103 @@
-#  Sensing the Weather - <sensor> Lesson
+#  Sensing the Weather - Air Quality Lesson
 
-In this lesson students will learn 
+In this lesson students will learn about how air quality is monitored and will take readings from an air quality sensor expressed as a percentage of air purity. The weather station will generate a regular tweet showing the air quality in the local area.
 
 ## Sensor Guide
 
-Background information about
+Background information about the [air quality sensor](about.md)
 
 ## Learning objectives
 
-- x
-- y
-- z
+- Understand how an air quality sensor works
+- Be able to take a reading from an air quality sensor
+- Be able to connect to the Twitter API to post tweets with weather data
 
 ## Cross-Curricular applications
 
-- Subject - info
+- Computer Science - using an API 
+- Geography - GIS mapping, climate change
+
 
 ## Lesson Summary
 
-- How does rewrew 
+- How does the air quality sensor work - which gases does it monitor for?
+- Collecting readings from an air quality sensor
+- Using the Twitter API to 
 
 ## Starter
 
+Data is freely available online about the quantity of pollutants recorded in the atmosphere. For example in the UK this [interactive emissions map](http://naei.defra.gov.uk/data/gis-mapping) is a GIS map where you can inspect the quantity of a variety of pollutants in your local area. Select Carbon Monoxide from the drop down menu and enter your post code or zoom in to your local area on the map to see how polluted your area is. 
 
+The air sensor on the Raspberry Pi weather station board measures the concentration of contaminants such as hydrogen, carbon monoxide and methane. They are not returned in the same units as this map, but rather expressed as a percentage of air purity - the higher the percentage the more pure the surrounding air is.
 
 ## Main development
 
-1. Students boot their Raspberry Pi. 
+1. Students boot their Raspberry Pi weather station and log in.
 
+1. Demonstrate the basic program to gather a reading from the air quality sensor. It follows the exact same concepts students have already encountered: import a library, create an object, call a method on the object to get the data.
+
+	```python
+	import tgs2600 as aqsensor
+
+	air_quality = aqsensor.TGS2600()
+
+	print( str(air_quality.get_value()) + "%")
+	```
+
+1. To allow your weather station to tweet, you will need to create a class Twitter account for students to tweet from. This requires a valid email address and a mobile phone number. The students will need access to the OAuth consumer key, consumer secret, access token and access token secret from the Twitter account.
+
+1. Following steps 1-4 from the [Getting started with Twitter](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/) guide, students write a program that will allow the weather station to send tweets from a Twitter account.
+
+	You may need to install the `requests_oauthlib` if you receive an error that this is missing. To do this, make sure your Raspberry Pi weather station is connected to the internet, open the terminal and type:
+
+	```bash
+	sudo pip3 install requests_oauthlib
+	```
+
+	Follow the steps up to and including step 4, where you will create a program which tweets. The program so far should look like this:
+
+	```python
+	from twython import Twython
+	from auth import (
+	    consumer_key,
+	    consumer_secret,
+	    access_token,
+	    access_token_secret
+	)
+	twitter = Twython(
+	    consumer_key,
+	    consumer_secret,
+	    access_token,
+	    access_token_secret
+	)
+	message = "Hello World! I'm a tweeting weather station."
+	twitter.update_status(status=message)
+	print("Tweeted: %s" % message)
+	```
+1. Now students will need to add the following to their program:
+
+	- How to tweet the weather sensor reading (rounded to a whole percentage)
+	- How to tweet a reading at regular intervals, e.g. once every hour
+	- How to add a random message to the tweet depending on the value
+
+	It is probably a good idea to comment out the line that actually tweets whilst testing the program, to avoid producing lots of tweets by mistake:
+
+	```python
+	# Comment out by putting a # in front of the line
+	#twitter.update_status(status=message)
+	```
 
 ## Plenary
 
 Ask the class the following questions:
 
-Questions here
+- Why might the data from this sensor not be as useful as the data from other sensors
 
 **Answers:**
 
-Answers here
+- This data is 
 
 
 ## Extension
 
-- Extension task
+- Can you add any of the weather data collected from the other sensors into your tweet? For example could you provide the current wind speed, or the relative humidity as well as the air quality?
