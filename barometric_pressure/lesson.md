@@ -15,6 +15,7 @@ Background information about the [Barometric Pressure Sensor](about.md)
 ## Cross-Curricular applications
 
 - Computer Science - writing to CSV, loops, concatenation, date and time functions
+- Mathematics - rearranging equations
 - Physics - mass, weight, pressure, Newtons, Pascals
 
 ## Lesson Summary
@@ -55,16 +56,28 @@ The unit of pressure the weather station sensor measures in is called the **pasc
 
 1. Students type in the code and check that they can successfully take a reading. They will then follow the [worksheet](worksheet.md) instructions to take multiple readings and store these in a CSV file format.
 
+1. You may wish to ask students to use the data collected for analysis with another program.
+
 
 ## Plenary
 
-Ask the class the following questions:
+Ask the class the following question:
 
-Questions here
+What could cause the pressure value measured by the barometric pressure sensor to change?
 
 **Answers:**
 
-Answers here
+Given that we know that pressure is the force exerted by the air over a given area:
+
+**pressure = force / area**
+
+...it follows that for the pressure to increase, the force will have to increase over the same area (either that or the size of the area will decrease, but that seems pretty unlikely!)
+
+So, another way to phrase this question could be "what factors could cause the force (weight) of the air above the measurement point to change?".
+
+The first answer is **altitude**. If we were to move our weather station to a higher altitude (higher above sea level), the pressure would decrease because the mass of the overlying air decreases.
+
+Secondly, barometric pressure is used to predict **the weather conditions**. You may have heard weather reports talking about high or low pressure - there is an explanation on the [Met Office website](http://www.metoffice.gov.uk/learning/learn-about-the-weather/how-weather-works/highs-and-lows/pressure). Areas of low pressure are caused by air warming and ascending, and high pressure is caused when the air cools and descends. Low pressure results in changeable weather whereas high pressure results in settled weather conditions - whether the weather is likely to change or not is sometimes measured at home using a device called a barometer.
 
 
 ## Extension

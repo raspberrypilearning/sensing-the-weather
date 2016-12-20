@@ -32,10 +32,10 @@ Our barometric pressure sensor measures pressure in Pascals (Pa). One Pascal is 
 ## Taking readings over time
 
 ### Question
-A question
+What could cause the pressure value measured by the barometric pressure sensor to change?
 
 ### Answer
-The answer
+
 
 More instructions
 
