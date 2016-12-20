@@ -11,12 +11,12 @@ The component is a BMP180 digital barometric pressure sensor.
 Barometric pressure is the pressure exerted by the weight of air. You might think that air does not weigh anything, but if you were to take a 1cm<sup>2</sup> cross section of air measured from sea level to the top level of the atmosphere, it would have a mass of approximately 1.03kg and weigh about 10.1 newtons. This air exerts a pressure of 101,000N/m<sup>2</sup>
 
 Weight * Number of cm<sup>2</sup> in 1m<sup>2</sup> = Pressure in N/m<sup>2</sup>
+
 **10.1N * 1000 = 101,000N/m<sup>2</sup>**
 
-Our barometric pressure sensor measures pressure in millibars, so we need to know how to convert between the units of bars and Newtons/m<sup>2</sup>. The formula is as follows:
+Our barometric pressure sensor measures pressure in Pascals (Pa). One Pascal is equal to one Newton per square metre.
 
-1 bar = 100,000 N/m<sup>2</sup> or
-1 millibar = 100N/m<sup>2</sup>
+1Pa = 1N/m<sup>2</sup>
 
 Here is the [data sheet](https://www.rapidonline.com/pdf/35-1630_V1.pdf) for the BMP180 digital barometric pressure sensor.
 
@@ -29,4 +29,17 @@ Here is the [data sheet](https://www.rapidonline.com/pdf/35-1630_V1.pdf) for the
 
 ## Sample Code
 
-The following program detects blah
+The following program sets up a sensor object and detects the current pressure. For this program to work you will need to have first installed the Adafruit BMP library by typing this command into the terminal:
+
+```bash
+sudo pip3 install adafruit-bmp
+```
+Here is the Python code to read from the sensor:
+
+```python
+import Adafruit_BMP.BMP085 as bmp
+
+bmpsensor = bmp.BMP085()
+
+print('Pressure = '+ str(bmpsensor.read_pressure()) + "Pa")
+```
