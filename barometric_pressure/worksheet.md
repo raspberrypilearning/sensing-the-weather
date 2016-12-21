@@ -120,11 +120,11 @@ We are going to take a series of readings from the barometric pressure sensor at
 You already know how to automate things happening at an interval. This code is from the lesson on [air quality](air_quality_sensor/worksheet.md)
 
 ```python
-	while True:
-    count = 0
-    sleep(interval)
-    print( calc_speed(interval), "kph")
-    print("Gust speed " + str(check_for_gusts() + "kph")
+while True:
+	count = 0
+	sleep(interval)
+	print( calc_speed(interval), "kph")
+	print("Gust speed " + str(check_for_gusts() + "kph")
 ```
 
 Can you alter this code to make your program write a line to the CSV file every 30 minutes? Don't forget that you will need to take new readings *within* the loop otherwise the same values will be written over and over again to your CSV file!
