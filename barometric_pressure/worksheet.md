@@ -77,13 +77,13 @@ We are going to take a series of readings from the barometric pressure sensor at
 
 ## Saving data to a CSV file
 
-1. We need to save these values to a CSV file, which is basically just a text file where we write the data in a special format. You can open a file in Python like this:
+1. We need to save these values to a CSV file, which is basically just a text file where we write the data in a special format. Type in this code at the end of your program to open a file in Python:
 
 	```python
 	f = open("bmp_readings.csv", "a")
 	```
 
-	The first value in the brackets tells Python the name of the file to open (and Python will create this file if it doesn't exist). The second part tells Python which mode to open the file in:
+	The first value in the brackets tells Python the name of the file to open (Python will create this file if it doesn't exist). The second part tells Python which mode to open the file in:
 
 	* "r" - read mode, to read contents from the file
 	* "w" - write mode, to erase the whole file and write new data into it
@@ -95,15 +95,47 @@ We are going to take a series of readings from the barometric pressure sensor at
 	f.write("Data")
 	```
 
-1. Finally it is important to close the file at the end of the program:
+	Add this line of code to your program.
+
+1. Finally it is important to close the file at the end of the program so add the following line of code:
 
 	```python
 	f.close()
 	```
 
+1. Run your program and check that a file called bmp_readings.csv is created in the same folder as your code, and that it contains the word "Data". If it has worked, delete the word "Data" from the file and save it as a blank file as we do not want this test data as one of the barometric pressure readings!
+
+1. To write data in CSV format, we simply add commas between the values. Here we have started creating a string to write to the file, to show you how to add the commas:
+
+	```python
+	string_to_write = str(current_date) + ", " +
+	```
+
+	Find the place in your program where you open the file and after that line, type in the line of code above. Finish off the line of code by adding in the `current_time` and `current_pressure` data, converted to a string and separated by a comma. At the end of the line add the newline character `"\n"` to tell the file to start the next piece of data on a new line.
+
+1. Now alter the line which currently reads `f.write("Data")` to write the variable `string_to_write` to the file, instead of the string "Data". Check that your data writes correctly to the file.
+
+## Automating the readings
+
+You already know how to automate things happening at an interval. This code is from the lesson on [air quality](air_quality_sensor/worksheet.md)
+
+	```python
+		while True:
+	    count = 0
+	    sleep(interval)
+	    print( calc_speed(interval), "kph")
+	    print("Gust speed " + str(check_for_gusts() + "kph")
+	```
+
+	Can you alter this code to make your program write a line to the CSV file every 30 minutes? Don't forget that you will need to take new readings *within* the loop otherwise the same values will be written over and over again to your CSV file!
+
+	The finished code is [here](code/bmp_over_time.py) if you would like to compare it.
+
 ## Summary
 
-- Questions to think about
+- You have taken readings over a time period from the barometric pressure sensor and stored them as a CSV file
+- How could you use this data in another program?
+- Why do you think the readings from the pressure sensor change over time?
 
 ## What's next
 
