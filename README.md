@@ -14,7 +14,7 @@ This scheme of work introduces students to the sensors included with the Raspber
 - [Ambient Temperature](ambient_temperature/lesson.md) - compare data from two sensors
 - [Relative Humidity](relative_humidity/lesson.md) - use equations and look up values in a dictionary
 - [Air Quality](air_quality/lesson.md) - tweet sensor values from your weather station
-- [Barometric Pressure](barometric_pressure/lesson.md)
+- [Barometric Pressure](barometric_pressure/lesson.md) - write data to a CSV file to use in another program
 
 
 
