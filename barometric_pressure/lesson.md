@@ -1,42 +1,42 @@
 #  Sensing the Weather - Barometric Pressure Lesson
 
-In this lesson students will learn how to take readings from the barometric pressure sensor and to record this data in a CSV format for processing in another application.
+In this lesson students will learn how to take readings from the barometric pressure sensor and to record this data in CSV format for processing in another application.
 
-## Sensor Guide
+## Sensor guide
 
-Background information about the [Barometric Pressure Sensor](about.md)
+Here is some background information about the [barometric pressure sensor](about.md).
 
 ## Learning objectives
 
 - Be able to take a reading from the barometric pressure sensor
-- Understand what pressure is and the units it is measured in
-- Be able to store data in a CSV format and access it from other applications
+- Understand what pressure is and the units it's measured in
+- Be able to store data in CSV format and access it from other applications
 
-## Cross-Curricular applications
+## Cross-curricular applications
 
 - Computer Science - writing to CSV, loops, concatenation, date and time functions
 - Mathematics - rearranging equations
-- Physics - mass, weight, pressure, Newtons, Pascals
+- Physics - mass, weight, pressure, newtons, pascals
 
-## Lesson Summary
+## Lesson summary
 
-- Talk about what pressure is and how it is measured
-- Introduce the Barometric Pressure sensor and write code to take a reading
+- Talk about what pressure is and how it's measured
+- Introduce the barometric pressure sensor and write code to take a reading
 - Students write code to read values from the sensor and write them to a CSV file
 
 ## Starter
 
-Students may not be aware that air has a weight - introduce this concept and ask them how much they think a 1cm square cross section of air from sea level to the top level of the atmosphere would weigh. (The answer is approximately 10.1 Newtons, and the mass of the air is approximately 1.03kg.)
+Students may not be aware that air has a weight; introduce this concept and ask them how much they think a 1cm square cross section of air from sea level to the top level of the atmosphere would weigh. (The answer is approximately 10.1 newtons, and the mass of the air is approximately 1.03kg.)
 
 People often confuse mass with weight, largely because the activity involving scales that we describe as "weighing" should more accurately be described as "finding the mass"! Pressure is a measure of the *weight* (the force) relative to the *area* over which it is spread. There is a [BBC Bitesize](http://www.bbc.co.uk/education/guides/zssbgk7/revision) article you could use as a refresher.
 
-The unit of pressure the weather station sensor measures in is called the **pascal** and it has the symbol Pa.
+The unit of pressure the Weather Station sensor measures in is called the **pascal** and it has the symbol Pa.
 
 1Pa = 1 N/m<sup>2</sup>
 
 ## Main development
 
-1. Students boot their Raspberry Pi weather station and log in. 
+1. Students boot their Raspberry Pi Weather Station and log in. 
 
 1. In order to read from the pressure sensor, the Adafruit BMP library must be installed. Open a terminal window and type in the following command to install the software: 
 
@@ -54,7 +54,7 @@ The unit of pressure the weather station sensor measures in is called the **pasc
 	print('Pressure = '+ str(bmpsensor.read_pressure()) + "Pa")
 	```
 
-1. Students type in the code and check that they can successfully take a reading. They will then follow the [worksheet](worksheet.md) instructions to take multiple readings and store these in a CSV file format.
+1. Students type in the code and check that they can successfully take a reading. They will then follow the [worksheet](worksheet.md) instructions to take multiple readings and store these in a CSV file.
 
 1. You may wish to ask students to use the data collected for analysis with another program.
 
@@ -71,13 +71,13 @@ Given that we know that pressure is the force exerted by the air over a given ar
 
 **pressure = force / area**
 
-...it follows that for the pressure to increase, the force will have to increase over the same area (either that or the size of the area will decrease, but that seems pretty unlikely!)
+...it follows that for the pressure to increase, the force will have to increase over the same area; either that or the size of the area will decrease, but that seems pretty unlikely!
 
 So, another way to phrase this question could be "what factors could cause the force (weight) of the air above the measurement point to change?".
 
-The first answer is **altitude**. If we were to move our weather station to a higher altitude (higher above sea level), the pressure would decrease because the mass of the overlying air decreases.
+The first answer is **altitude**. If we were to move our Weather Station to a higher altitude (higher above sea level), the pressure would decrease because the mass of the overlying air decreases.
 
-Secondly, barometric pressure is used to predict **the weather conditions**. You may have heard weather reports talking about high or low pressure - there is an explanation on the [Met Office website](http://www.metoffice.gov.uk/learning/learn-about-the-weather/how-weather-works/highs-and-lows/pressure). Areas of low pressure are caused by air warming and ascending, and high pressure is caused when the air cools and descends. Low pressure results in changeable weather whereas high pressure results in settled weather conditions - whether the weather is likely to change or not is sometimes measured at home using a device called a barometer.
+Secondly, barometric pressure is used to predict the weather conditions. You may have heard weather reports talking about high or low pressure; there is an explanation on the [Met Office website](http://www.metoffice.gov.uk/learning/learn-about-the-weather/how-weather-works/highs-and-lows/pressure). Areas of low pressure are caused by air warming and ascending, and high pressure is caused when the air cools and descends. Low pressure results in changeable weather, whereas high pressure results in settled weather conditions. Whether the weather is likely to change or not is sometimes measured at home using a device called a barometer.
 
 
 ## Extension
