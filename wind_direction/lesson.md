@@ -55,7 +55,7 @@ This code creates a variable `our_wind_vane` which is a pointer to a `wind_direc
 	print( our_wind_vane.get_value(interval) )
 	```
 	
-`get_value()` is a method which calls the `our_wind_vane` object. It contains code that returns a value in degrees for the direction of the wind vane. (You can examine this code if you want to; it's in the file `wind_direction.py` in the `weather_station` folder.)
+`get_value()` is a method which calls on the `our_wind_vane` object. It contains code that returns a value in degrees for the direction of the wind vane. (You can examine this code if you want to; it's in the file `wind_direction.py` in the `weather_station` folder.)
 
 
 1. Students work through the [worksheet](worksheet.md) to instantiate their wind vane object and take readings. They are challenged to display the compass direction the wind is blowing from, and to round the figures generated.
