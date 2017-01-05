@@ -1,4 +1,4 @@
-# About the Anemometer
+# About the anemometer
 
 This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind gust speed.
 
@@ -6,21 +6,19 @@ This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit
 
 ## How does it work?
 
-You have already explored how the anemometer works in the wind speed lesson. Now we will use the measurements from the anemometer to measure wind gust speed.
+You have already explored how the anemometer works in the wind speed lesson. Now we'll use the measurements from the anemometer to measure wind gust speed.
 
-Gusts of wind are sudden brief increases in the speed of the wind. 
+Gusts of wind are sudden brief increases in the speed of the wind. According to U.S. weather observing practice, gusts are reported when the peak wind speed reaches at least 16 knots, and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds. [[Source](http://glossary.ametsoc.org/wiki/Gust)]
 
-According to U.S. weather observing practice, gusts are reported when the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds. [[Source](http://glossary.ametsoc.org/wiki/Gust)]
+To convert these into measurements we can use, 16 knots is approximately 29.6km/h, and 9 knots is 16.7km/h. If you're testing your program in a classroom by pushing the anemometer by hand, it's unlikely you will be able to reach a speed greater than 29.6km/h, so you'll need to change these threshold values to simulate gusts occurring. Don't forget to change them back when you put your Weather Station outside!
 
-To convert these into measurements we can use, 16 knots is approximately 29.6km/h, and 9 knots is 16.7km/h. If you are testing your program in a classroom by pushing the anemometer by hand, it is unlikely you will be able to reach a speed greater than 29.6km/h so you will need to change these threshold values to simulate gusts occurring - don't forget to change them back when you put your weather station outside!
+We can use this information to calculate when gusts appear using three rules. A gust occurs within a given time period when:
 
-We can use this information to calculate when gusts appear using three rules:
-A gust occurs within a given time period when:
 - the highest wind speed measured during a period is above 29.6km/h AND
 - the difference between the peak speed and lowest speed in that period is greater than 16.7km/h AND
 - the time period is 20 seconds or less
 
-We will measure the wind speed as before, but this time we will store a range of values, allowing us to calculate whether a gust has occurred within the last 20 second time period.
+We'll measure the wind speed as before, but this time we'll store a range of values, allowing us to calculate whether a gust has occurred within the last 20-second time period.
 
 The following algorithm can be used to calculate the gust speed:
 
@@ -36,26 +34,27 @@ The following algorithm can be used to calculate the gust speed:
 
 ## How does the sensor connect?
 
-To connect the anemometer to the weather station board, first set up the main weather station box using the [weather station guide](https://www.raspberrypi.org/learning/weather-station-guide).
+To connect the anemometer to the Weather Station board, first set up the main Weather Station box using the [Weather Station guide](https://www.raspberrypi.org/learning/weather-station-guide).
 
-1. Connect the anemometer to the wind vane
-1. Connect the wind vane to the Raspberry Pi weather station
+1. Connect the anemometer to the wind vane.
+1. Connect the wind vane to the Raspberry Pi Weather Station.
 
-When connected the anemometer uses GPIO pin 5 (BCM)
+When connected, the anemometer uses GPIO pin 5 (BCM).
 
 
-## Sample Code
+## Sample code
 
 The following program uses a GPIO interupt handler to detect input from the anemometer, converting it to a speed in km/h. It also stores the last four speeds (20 seconds of readings) and checks for gust conditions:
-- A wind speed above 29.6km/h in a 20 second period
-- A variance in wind speed of 16.7km/h between the highest and lowest speed in that 20 second period
+
+- A wind speed above 29.6km/h in a 20-second period
+- A variance in wind speed of 16.7km/h between the highest and lowest speed in that 20-second period
 
 ```python
 from gpiozero import DigitalInputDevice
 from time import sleep
 import math
 
-count = 0       # Counts how many half rotations
+count = 0       # Counts how many half-rotations
 radius_cm = 9.0 # Radius of your anemometer
 interval = 5    # How often (secs) to report speed
 ADJUSTMENT = 1.18
@@ -63,13 +62,13 @@ CM_IN_A_KM = 100000.0
 SECS_IN_AN_HOUR = 3600 
 store_speeds = [] # Define a list to store last 4 wind speeds
 
-# Every half rotation, add 1 to count
+# Every half-rotation, add 1 to count
 def spin():
     global count
     count = count + 1
     print( count )
 
-# Calculate the wind speed given the time interval, the 
+# Calculate the wind speed given the time interval 
 def calc_speed(time_sec):
         global count
         global store_speeds
@@ -113,7 +112,7 @@ wind_speed_sensor = DigitalInputDevice(5)
 wind_speed_sensor.when_activated = spin
 
 
-# Loop to measure wind speed and report at 5 second intervals
+# Loop to measure wind speed and report at 5-second intervals
 while True:
         count = 0
         sleep(interval)
