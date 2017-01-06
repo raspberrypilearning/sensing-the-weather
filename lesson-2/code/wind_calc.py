@@ -2,11 +2,11 @@ from gpiozero import DigitalInputDevice
 from time import sleep
 import math
 
-count = 0       # Counts how many half rotations
+count = 0       # Counts how many half-rotations
 radius_cm = 9.0 # Radius of your anemometer
 interval = 5    # How often (secs) to report speed
 
-# Every half rotation, add 1 to count
+# Every half-rotation, add 1 to count
 def spin():
 	global count
 	count = count + 1
@@ -30,7 +30,7 @@ wind_speed_sensor = DigitalInputDevice(5)
 wind_speed_sensor.when_activated = spin
 
 
-# Loop to measure wind speed and report at 5 second intervals
+# Loop to measure wind speed and report at 5-second intervals
 while True:
         count = 0
         sleep(interval)
