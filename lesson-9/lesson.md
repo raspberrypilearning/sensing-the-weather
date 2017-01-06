@@ -4,7 +4,7 @@ In this lesson students will learn how to take readings from the barometric pres
 
 ## Sensor guide
 
-Here is some background information about the [barometric pressure sensor](about.md).
+Here is some background information about the [barometric pressure sensor](../guides/barometric_pressure.md).
 
 ## Learning objectives
 
@@ -36,9 +36,9 @@ The unit of pressure the Weather Station sensor measures in is called the **pasc
 
 ## Main development
 
-1. Students boot their Raspberry Pi Weather Station and log in. 
+1. Students boot their Raspberry Pi Weather Station and log in.
 
-1. In order to read from the pressure sensor, the Adafruit BMP library must be installed. Open a terminal window and type in the following command to install the software: 
+1. In order to read from the pressure sensor, the Adafruit BMP library must be installed. Open a terminal window and type in the following command to install the software:
 
 	```bash
 	sudo pip3 install adafruit-bmp

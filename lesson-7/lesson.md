@@ -4,7 +4,7 @@ In this lesson students will learn how to take readings from the relative humidi
 
 ## Sensor guide
 
-Here is some background information about the [relative humidity sensor](about.md).
+Here is some background information about the [relative humidity sensor](../guides/relative_humidity.md).
 
 ## Learning objectives
 
@@ -22,18 +22,18 @@ Here is some background information about the [relative humidity sensor](about.m
 
 - What is relative humidity?
 - What is the dew point?
-- Use readings of relative humidity and temperature to calculate the dew point 
+- Use readings of relative humidity and temperature to calculate the dew point
 - Look up this value using a dictionary and provide some advice about how this will feel to humans
 
 ## Starter
 
-Discuss the concepts of relative humidity and the dew point, using the [further information about the sensor](about.md). Before beginning the main part of the task, students should understand what they are trying to achieve with this program: they will calculate the dew point from the humidity and temperature values, and then use this to display a statement about how this will feel to humans, read from a dictionary.
+Discuss the concepts of relative humidity and the dew point, using the [further information about the sensor](../guides/relative_humidity.md). Before beginning the main part of the task, students should understand what they are trying to achieve with this program: they will calculate the dew point from the humidity and temperature values, and then use this to display a statement about how this will feel to humans, read from a dictionary.
 
 ## Main development
 
 1. Students boot their Raspberry Pi Weather Station with the air quality sensor board attached.
 
-1. Guide students through the basic code for gathering a relative humidity reading from the sensor. This is almost the same as the ambient temperature reading, except that we call a different method on the sensor object, so it should be very familiar. 
+1. Guide students through the basic code for gathering a relative humidity reading from the sensor. This is almost the same as the ambient temperature reading, except that we call a different method on the sensor object, so it should be very familiar.
 
 1. Introduce the code for calculating the dew point. This is a "plug and play" equation for the students; the explanation of how it's calculated is outside the scope of this lesson. The formula is a version of the Magnus formula and it provides an *approximation* of the dew point.
 
@@ -63,7 +63,7 @@ Discuss the concepts of relative humidity and the dew point, using the [further 
 	thresholds = list( dew_description.keys() )
 	thresholds.sort()
 	```
-	
+
 The first line returns a list containing all of the numbers. We then call the `sort()` function because of the way that dictionaries store their data. Although when we typed in the values they were in numerical order, the dictionary uses a hash function to store and retrieve its data, so if you were to print out the `thresholds` list without calling the `sort()` function, you would see that the numbers were no longer in ascending order.
 
 1. Students should iterate through the list and find the highest number exceeded by the dew point they calculated. For example, if the dew point is calculated as 17 degrees C then the threshold of 16 has been exceeded but the threshold of 18 has not been exceeded. The message displayed should be `"Comfortable"`.

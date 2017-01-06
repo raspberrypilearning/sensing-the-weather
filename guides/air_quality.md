@@ -2,11 +2,11 @@
 
 Here is the air quality sensor supplied with the Raspberry Pi Weather Station kit:
 
-![Air Quality Sensor](images/air_quality_sensor.png)
+![Air Quality Sensor](../lesson-8/images/air_quality_sensor.png)
 
 ## How does it work?
 
-The air quality sensor detects the presence of contaminants in the air. The conductivity of the material inside the sensor increases depending on the concentration of detectable gases in the air around the sensor. This change in conductivity is converted to an output signal which corresponds to the gas concentration. The Python library converts this value into a percentage reading of air purity, with 100% being completely free from detectable contaminants. 
+The air quality sensor detects the presence of contaminants in the air. The conductivity of the material inside the sensor increases depending on the concentration of detectable gases in the air around the sensor. This change in conductivity is converted to an output signal which corresponds to the gas concentration. The Python library converts this value into a percentage reading of air purity, with 100% being completely free from detectable contaminants.
 
 This sensor is particularly sensitive to hydrogen, carbon monoxide, and methane gases which are present in contaminants such as cigarette smoke and traffic fumes.
 
@@ -30,4 +30,3 @@ air_quality = aqsensor.TGS2600()
 
 print( str(air_quality.get_value()) + "%")
 ```
-

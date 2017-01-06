@@ -10,7 +10,7 @@ In this lesson you will:
 
 ![Ambient Temperature Sensor](images/air_board.png)
 
-This sensor (circled in red on the photograph) can detect the ambient temperature of the air surrounding it. 
+This sensor (circled in red on the photograph) can detect the ambient temperature of the air surrounding it.
 
 Temperature sensors can detect changes in temperature and humidity because they are made of materials whose properties change depending on the temperature and the amount of water vapour present in the air.
 
@@ -44,9 +44,9 @@ Inspect this code with a partner and answer the following:
 
 ## Combining the programs
 
-Now that you know how to take a reading from both the ambient temperature sensor and the soil temperature sensor, your challenge is to make a graph with *two* lines, showing the readings from both sensors at once. 
+Now that you know how to take a reading from both the ambient temperature sensor and the soil temperature sensor, your challenge is to make a graph with *two* lines, showing the readings from both sensors at once.
 
-1. Save a copy of your soil temperature program as `two_temperature_sensors.py` (or you could start with our [finished code](../soil_temperature/code/soil_fancy_graph.py)).
+1. Save a copy of your soil temperature program as `two_temperature_sensors.py` (or you could start with our [finished code](../lesson-5/code/soil_fancy_graph.py)).
 
 1. Your two lists of values in this code were called `x` and `y`. However, we now want to plot *two* things on the y axis, so change the name of the list `y` to `soil_temp`, then create a new blank list called `amb_temp` where we will store the ambient temperature values.
 

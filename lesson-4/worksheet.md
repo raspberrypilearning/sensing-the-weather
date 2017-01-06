@@ -10,9 +10,9 @@ In this lesson you will:
 
 A wind vane shows the direction *from which* the wind is coming, not where it's going; this can be confusing because TV weather maps show the opposite. It works by the wind exerting force on a vertical blade which rotates to find the position of least resistance; this position is then aligned with the direction of the oncoming wind.
 
-The wind vane is more complex than the [rain gauge](../rainfall/about.md) or [anemometer](../wind_speed/about.md). It does use reed switches and magnets, but it works in a completely different way. 
+The wind vane is more complex than the [rain gauge](../guides/rain_gauge.md) or [anemometer](../guides/wind_speed.md). It does use reed switches and magnets, but it works in a completely different way. 
 
-If you look inside the wind vane, you'll see there are eight reed switches arranged like the spokes of a wheel. 
+If you look inside the wind vane, you'll see there are eight reed switches arranged like the spokes of a wheel.
 
 ![](images/wind_vane_reed.png)
 
@@ -26,7 +26,7 @@ We record a voltage from the wind vane which varies according to which combinati
 
 ## Using the wind_direction module
 
-Reading information from the ADC is a little tricky, so we're going to use a **module** which contains code someone else has written to help us. 
+Reading information from the ADC is a little tricky, so we're going to use a **module** which contains code someone else has written to help us.
 
 1. Set up your Raspberry Pi Weather Station.
 
@@ -36,7 +36,7 @@ Reading information from the ADC is a little tricky, so we're going to use a **m
 
 1. Move to the `weather station` directory by typing `cd weather_station` and pressing `Enter`.
 
-1. Start a new Python program by typing `sudo idle3 find_wind_direction.py`. It's important that your program is in the `weather_station` directory, as this is where the module we need is stored. 
+1. Start a new Python program by typing `sudo idle3 find_wind_direction.py`. It's important that your program is in the `weather_station` directory, as this is where the module we need is stored.
 
 1. First, let's import the module. Type this code into the start of your Python program:
 
@@ -44,7 +44,7 @@ Reading information from the ADC is a little tricky, so we're going to use a **m
 	import wind_direction as wind_vane
 	```
 
-This code tells Python to get the contents of the `wind_direction` module, and that when you refer to this module you will refer to it by the name `wind_vane`. 
+This code tells Python to get the contents of the `wind_direction` module, and that when you refer to this module you will refer to it by the name `wind_vane`.
 
 1. Now we need to create an **object** which will allow us to gather readings from our wind vane:
 
@@ -60,7 +60,7 @@ The object we have created is given the name `our_wind_vane`, just as we would n
 	interval = 10
 	print( our_wind_vane.get_value(interval) )
 	```
-	
+
 1. By placing this code inside a `while True:` infinite loop, we can repeatedly sample the wind direction at 10-second intervals. The finished code so far should look like this; save it and run the code whilst pointing your weather vane in different directions to see if it works.
 
 	```python
@@ -101,7 +101,7 @@ Looking at this diagram with compass points, if we consider North to be 0 degree
 
 Your task is to write some code to take the value we received from the sensor, and instead of presenting the data as degrees, to work out the corresponding compass direction.
 
-Clearly a reading of 0 degrees should report back **North**. But what about 1 degrees, 2 degrees, and so on? You need to define a range within which each direction is reported by your program. In the diagram below, the range of degrees for North would be between the red lines. 
+Clearly a reading of 0 degrees should report back **North**. But what about 1 degrees, 2 degrees, and so on? You need to define a range within which each direction is reported by your program. In the diagram below, the range of degrees for North would be between the red lines.
 
 ![Wind vane with some angles](images/wind_vane_shaded.png)
 

@@ -4,7 +4,7 @@ In this lesson students will learn how a more complicated sensor called a wind v
 
 ## Sensor guide
 
-Here is some background information about the [wind vane](about.md).
+Here is some background information about the [wind vane](../guides/wind_vane.md).
 
 ## Learning objectives
 
@@ -28,17 +28,17 @@ Here is some background information about the [wind vane](about.md).
 
 ## Starter
 
-Examine the [wind vane](about.md) and discuss with pupils how it measures the wind direction. It's a much more complicated sensor than the rain gauge and anemometer sensors, still using reed switches but combining eight of these with variable resistors to alter the voltage output according to the position of the internal magnet. 
+Examine the [wind vane](../guides/wind_vane.md) and discuss with pupils how it measures the wind direction. It's a much more complicated sensor than the rain gauge and anemometer sensors, still using reed switches but combining eight of these with variable resistors to alter the voltage output according to the position of the internal magnet. 
 
-Recap the points of the compass and how these relate to bearings in degrees (a revision article on bearings can be found on [BBC Bitesize](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/coordinatesandbearingsrev3.shtml)). 
+Recap the points of the compass and how these relate to bearings in degrees (a revision article on bearings can be found on [BBC Bitesize](http://www.bbc.co.uk/schools/gcsebitesize/maths/geometry/coordinatesandbearingsrev3.shtml)).
 
 ## Main development
 
 1. Set up the Raspberry Pi Weather Station and connect the wind vane. Turn the Weather Station on and log in.
 
-1. This exercise makes use of a **class** someone else has written, a common occurrence in everyday programming. Students may already be familiar with using code from Python libraries such as `random` or `time`, and this is exactly the same idea. It's important that your wind direction program is saved within the `weather_station` folder on the Raspberry Pi so that it can access the file containing this code, otherwise it will not work. Additionally, make sure that your code is **NOT** saved with the file name `wind_direction.py`, as this is the name of the module you're trying to import. 
+1. This exercise makes use of a **class** someone else has written, a common occurrence in everyday programming. Students may already be familiar with using code from Python libraries such as `random` or `time`, and this is exactly the same idea. It's important that your wind direction program is saved within the `weather_station` folder on the Raspberry Pi so that it can access the file containing this code, otherwise it will not work. Additionally, make sure that your code is **NOT** saved with the file name `wind_direction.py`, as this is the name of the module you're trying to import.
 
-1. This code tells Python to get the contents of the `wind_direction` module, and when we refer to things from this module we want to refer to them by the name `wind_vane`. The reason we're using prewritten code here is because a lot of the necessary code to take readings from the ADC would be too complicated for students to write independently. 
+1. This code tells Python to get the contents of the `wind_direction` module, and when we refer to things from this module we want to refer to them by the name `wind_vane`. The reason we're using prewritten code here is because a lot of the necessary code to take readings from the ADC would be too complicated for students to write independently.
 
 1. You can use this opportunity to introduce students to the concept of **object-oriented programming**. We need to create an **object** which will allow us to gather readings from our wind vane.
 
@@ -54,7 +54,7 @@ This code creates a variable `our_wind_vane` which is a pointer to a `wind_direc
 	interval = 10
 	print( our_wind_vane.get_value(interval) )
 	```
-	
+
 `get_value()` is a method which calls on the `our_wind_vane` object. It contains code that returns a value in degrees for the direction of the wind vane. (You can examine this code if you want to; it's in the file `wind_direction.py` in the `weather_station` folder.)
 
 
@@ -81,11 +81,11 @@ Ask the class the following questions:
 (10 + 20 + 30) / 3 = 20
 ```
 
-**Question:** 
+**Question:**
 
 Can students think of any problems with calculating the average in this way?
 
-**Answer:** 
+**Answer:**
 
 What if the angles reported were 355 degrees, 5 degrees, and 15 degrees, which would be a plausible fluctuation around North:
 

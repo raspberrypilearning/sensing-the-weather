@@ -5,7 +5,7 @@ In this lesson students will learn how the anemometer works, use Python code to 
 
 ## Sensor guide
 
-Here is some background information about [the anemometer](about.md).
+Here is some background information about [the anemometer](../guides/wind_speed.md).
 
 ## Learning objectives
 
@@ -31,7 +31,7 @@ Here is some background information about [the anemometer](about.md).
 
 ## Starter
 
-Examine the anemometer sensor and discuss with pupils how it works and measures windspeed. (Review the [Anemometer guide](about.md) for more detailed information.) Ask students what they think it does and how they think it works. Open it up and explore the sensor, reed switch, and magnet as a group. Once you have explored how the sensor works as a group, you should connect it up to a Raspberry Pi Weather Station in order to demonstrate it later in the lesson.
+Examine the anemometer sensor and discuss with pupils how it works and measures windspeed. (Review the [Anemometer guide](../guides/wind_speed.md) for more detailed information.) Ask students what they think it does and how they think it works. Open it up and explore the sensor, reed switch, and magnet as a group. Once you have explored how the sensor works as a group, you should connect it up to a Raspberry Pi Weather Station in order to demonstrate it later in the lesson.
 
 Depending on time and ability of the class, you may also want to recap some basic circle theory, including how to find the circumference of a circle. The [BBC Bitesize guide](http://www.bbc.co.uk/education/guides/z34xsbk/revision/2) has an explanation of the key formulae the students need and some questions to practice with. Students could be given a few questions where they find the circumference of a circle, given the radius or diameter.
 
@@ -54,7 +54,7 @@ Depending on time and ability of the class, you may also want to recap some basi
         print(count * BUCKET_SIZE)
 
     rain_sensor.when_activated = bucket_tipped
-       
+
     ```
 
  Ask students how they would need to modify this code to gather data from the anemometer:
@@ -63,8 +63,8 @@ Depending on time and ability of the class, you may also want to recap some basi
     - The anemometer is connected to GPIO pin 5, so change this too
     - We have no need for a bucket size so remove this in two places
     - Rename the function `bucket_tipped` to `spin` or similar
-    
-    
+
+
 Allow students time to adapt and test their code using the [student worksheet](worksheet.md). The code should display the number of **half**-rotations counted. Press `Ctrl + C` to stop the program. The altered code should look like this:
 
     ```python
@@ -79,11 +79,11 @@ Allow students time to adapt and test their code using the [student worksheet](w
         print(count)
 
     wind_speed_sensor.when_activated = spin
-       
+
     ```
 
 
-Discuss with students how they will turn the count of signals received from the sensor into a wind speed. Share or co-devise with pupils an outline of code in a pseudocode style which students can refer to (there's an example in the [anemometer guide](about.md)). Students should then implement the planned code in Python and test it.
+Discuss with students how they will turn the count of signals received from the sensor into a wind speed. Share or co-devise with pupils an outline of code in a pseudocode style which students can refer to (there's an example in the [anemometer guide](../guides/wind_speed.md)). Students should then implement the planned code in Python and test it.
 
 
 ## Plenary
@@ -103,5 +103,4 @@ Ask the class the following questions:
 
 - Students could test their anemometer with a fan or other wind source to ensure consistency.
 - Students have used interrupts this lesson to collect inputs from the anemometer. Could they write a program to use continuous polling instead?
-- Students could begin to think about the deployment of the Weather Station. Where would be an ideal location for the sensors? What factors might affect that decision? 
-
+- Students could begin to think about the deployment of the Weather Station. Where would be an ideal location for the sensors? What factors might affect that decision?

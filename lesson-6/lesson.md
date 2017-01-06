@@ -4,7 +4,7 @@ In this lesson students will learn how to read the ambient temperature from the 
 
 ## Sensor guide
 
-Here is some background information about the [ambient temperature sensor](about.md).
+Here is some background information about the [ambient temperature sensor](../guides/ambient_temperature.md).
 
 ## Learning objectives
 
@@ -31,19 +31,19 @@ Open up the plastic box containing the air quality sensor board and point out th
 
 ## Main development
 
-1. Students boot their Raspberry Pi Weather Station with the air quality sensor board attached. 
+1. Students boot their Raspberry Pi Weather Station with the air quality sensor board attached.
 
 1. The aim of the lesson is to produce a graph of the temperature readings from both sensors at once. An example graph is shown below:
 
 	![Temperature Graph](images/temperature_graph.png)
 
-1. The [worksheet](worksheet.md) gives students the necessary information to complete the task, but the real aim here is to consolidate students' understanding of the previous lessons. They will work independently to read data from two sensors at once, and integrate new code with previous code to check their understanding of the concepts covered so far. 
+1. The [worksheet](worksheet.md) gives students the necessary information to complete the task, but the real aim here is to consolidate students' understanding of the previous lessons. They will work independently to read data from two sensors at once, and integrate new code with previous code to check their understanding of the concepts covered so far.
 
 ## Plenary
 
 Ask the class the following questions:
 
-- Are the readings from the different sensors the same? 
+- Are the readings from the different sensors the same?
 - If not, discuss possible reasons why there might be differences in the readings from the different sensors.
 
 **Answers:**

@@ -4,7 +4,7 @@ In this lesson students will learn how to take multiple readings from a soil tem
 
 ## Sensor guide
 
-Here is some background information about the [soil temperature sensor](about.md).
+Here is some background information about the [soil temperature sensor](../guides/soil_temperature.md).
 
 ## Learning objectives
 
@@ -25,7 +25,7 @@ Here is some background information about the [soil temperature sensor](about.md
 
 ## Starter
 
-In order to produce graphs using your Raspberry Pi Weather Station, you will need to install a new library called `matplotlib`. 
+In order to produce graphs using your Raspberry Pi Weather Station, you will need to install a new library called `matplotlib`.
 
 1. Open the terminal.
 
@@ -36,12 +36,12 @@ In order to produce graphs using your Raspberry Pi Weather Station, you will nee
 	```bash
 	sudo apt-get install python3-matplotlib
 	```
-	
-Introduce students to the soil temperature sensor and discuss what they might find if they were to open it up and have a look inside. For this sensor it's not possible to dismantle it without damaging the waterproof housing, but you may have access to a non-waterproofed version of the component to demonstrate. Alternatively, there is a photograph in the [information about the sensor](about.md).
+
+Introduce students to the soil temperature sensor and discuss what they might find if they were to open it up and have a look inside. For this sensor it's not possible to dismantle it without damaging the waterproof housing, but you may have access to a non-waterproofed version of the component to demonstrate. Alternatively, there is a photograph in the [information about the sensor](../guides/soil_temperature.md).
 
 ## Main development
 
-1. Students boot their Raspberry Pi Weather Station and log in. 
+1. Students boot their Raspberry Pi Weather Station and log in.
 
 1. To access the sensor data we will use a module of code written by someone else to help us, in exactly the same way as we did when using the wind vane. Firstly, we instantiate an object which can talk to the sensor and then we call a method on that object to get the current data reading. Students create a simple program which takes one reading from the sensor. DS18B20 is the name of the temperature sensor component.
 

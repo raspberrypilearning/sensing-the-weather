@@ -4,7 +4,7 @@ In this lesson students will learn how to use the anemometer to detect and store
 
 ## Sensor guide
 
-Here is some background information about using the [anemometer](about.md) to record gust speed.
+Here is some background information about using the [anemometer](../guides/wind_gust_speed.md) to record gust speed.
 
 ## Learning objectives
 
@@ -15,7 +15,7 @@ Here is some background information about using the [anemometer](about.md) to re
 
 ## Cross-curricular applications
 
-- Computer Science - lists, functions, constants, Boolean logic, slicing 
+- Computer Science - lists, functions, constants, Boolean logic, slicing
 - Geography - effects of gusts of wind, meteorological forecasting
 - Mathematics - range, magnitude, max/min
 
@@ -29,7 +29,7 @@ Here is some background information about using the [anemometer](about.md) to re
 
 ## Starter
 
-Ask students "What is a gust of wind?" and discuss the answers received. Are any of them precise enough to be presented to the computer as instructions? We are going to use the anemometer to measure gusts of wind, so we need a precise definition that a computer could check to decide whether it is true or false. 
+Ask students "What is a gust of wind?" and discuss the answers received. Are any of them precise enough to be presented to the computer as instructions? We are going to use the anemometer to measure gusts of wind, so we need a precise definition that a computer could check to decide whether it is true or false.
 
 Students could use the internet to research the meteorological definition of a gust of wind. The definition we have used can be found [here](http://glossary.ametsoc.org/wiki/Gust). (They may need to convert units to km/h, since this page gives wind speed as knots rather than km/h.)
 
@@ -51,7 +51,7 @@ A gust occurs within a given time period when:
 	```python
 	store_speeds = []
 	```
-	
+
 1. Students will also need to know how to do the following things to be able to piece together their program. You may want to teach these as concepts and then ask the students to write the program themselves, or you may wish to offer more help to guide them through the process of writing the program.
 
 	### Add an item to a list
@@ -60,7 +60,7 @@ A gust occurs within a given time period when:
 	item = 1.234
 	store_speeds.append(item)
 	```
-	
+
 	### Find the largest item in a list
 
 	```python
@@ -80,14 +80,14 @@ A gust occurs within a given time period when:
 	```python
 	list_name[start:end]
 	```
-	
+
 	So let's examine the following code:
 
 	```python
 	letters = ["a", "b", "c", "d", "e"]
 	letters = letters[1:]
 	```
-	
+
 It's important to remember that list indexing begins at 0, so the 0th item in the list is "a", the 1st item is "b", and so on. The slicing starts at element 1 ("b") and there's no end point specified, which means the slice will continue until the end of the list. The resulting sliced list will be `["b", "c", "d", "e"]` as we will have sliced off the first (0th) element.
 
 You can experiment with other slices. For example:
@@ -95,7 +95,7 @@ You can experiment with other slices. For example:
 	```python
 	letters = letters[2:4]
 	```
-	
+
 This would generate a list containing `["c", "d"]`. This is because the slice starts at 2 (character `"c"`) and stops AT 4, but does not include item 4. Therefore, we get the 2nd and 3rd items from the list.
 
 1. Students follow the [worksheet](worksheet.md) to adapt their code to add gust speed monitoring.
@@ -111,7 +111,7 @@ Ask the class the following questions:
 **Answers:**
 
 1. Yes; in reality the wind speed is measured much more frequently than every 5 seconds. In fact, on more sophisticated weather stations it might be measured as frequently as every 0.25 seconds. Therefore, we might miss any gusts with a very short duration.
-1. We could consider changing the time period across which we sample the wind speed to be smaller than 5 seconds. However, this would not be a suitable modification for this particular anemometer, because it's not sensitive enough to record wind speed information this accurately. 
+1. We could consider changing the time period across which we sample the wind speed to be smaller than 5 seconds. However, this would not be a suitable modification for this particular anemometer, because it's not sensitive enough to record wind speed information this accurately.
 
 
 ## Extension

@@ -12,7 +12,7 @@ Here is the air quality sensor supplied with the Raspberry Pi Weather Station ki
 
 ![Air Quality Sensor](images/air_quality_sensor.png)
 
-The air quality sensor detects the presence of contaminants in the air. The conductivity of the material inside the sensor increases depending on the concentration of detectable gases in the air around the sensor. This change in conductivity is converted to an output signal which corresponds to the gas concentration. The Python library converts this value into a percentage reading of air purity, with 100% being completely free from detectable contaminants. 
+The air quality sensor detects the presence of contaminants in the air. The conductivity of the material inside the sensor increases depending on the concentration of detectable gases in the air around the sensor. This change in conductivity is converted to an output signal which corresponds to the gas concentration. The Python library converts this value into a percentage reading of air purity, with 100% being completely free from detectable contaminants.
 
 This sensor is particularly sensitive to hydrogen, carbon monoxide, and methane gases which are present in contaminants such as cigarette smoke and traffic fumes.
 
@@ -47,9 +47,9 @@ However, we can also share local weather data on social media. Let's make our We
 
 ## Setting up your Weather Station to tweet
 
-1. Ask your teacher for the consumer keys and access tokens for the class Twitter account. Your teacher might provide these to you as a file, or on their own. 
+1. Ask your teacher for the consumer keys and access tokens for the class Twitter account. Your teacher might provide these to you as a file, or on their own.
 
-1. Follow steps 1-4 on the guide [Getting started with Twitter](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/). 
+1. Follow steps 1-4 on the guide [Getting started with Twitter](https://www.raspberrypi.org/learning/getting-started-with-the-twitter-api/worksheet/).
 
 	Your program so far should look like this:
 
@@ -74,7 +74,7 @@ However, we can also share local weather data on social media. Let's make our We
 
 	Run the program and check whether it tweets the message.
 
-1. Comment out the line of code which performs the tweet. We're going to make some changes to the program and we don't want to generate a lot of nonsense tweets whilst we are testing, and potentially make mistakes in the code!	
+1. Comment out the line of code which performs the tweet. We're going to make some changes to the program and we don't want to generate a lot of nonsense tweets whilst we are testing, and potentially make mistakes in the code!
 
 	```python
 	# Comment out by putting a # in front of the line
@@ -115,7 +115,7 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
 	message = str( round( air_quality.get_value() ) ) + "%"
 	```
 
-1. Next, let's make the code tweet at regular intervals. Think back to the lesson about [wind gust speed](wind_gust_speed/worksheet.md) where we saw this code:
+1. Next, let's make the code tweet at regular intervals. Think back to the lesson about [wind gust speed](../lesson-3/worksheet.md) where we saw this code:
 
 	```python
 	while True:
@@ -125,7 +125,7 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
         print("Gust speed " + str(check_for_gusts() + "kph")
     ```
 
-    This code set up an infinite loop which calculated the wind speed at an `interval`, or in other words calculated it every few seconds. Tweeting the air quality every few seconds is too often, but we could provide readings further apart, for example one every hour. 
+    This code set up an infinite loop which calculated the wind speed at an `interval`, or in other words calculated it every few seconds. Tweeting the air quality every few seconds is too often, but we could provide readings further apart, for example one every hour.
 
 1. Add `from time import sleep` at the start of the program to be able to use the `sleep()` function.
 
@@ -133,7 +133,7 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
 
 	```python
 	while True:
-    
+
 	    sleep(60*10)
 	    print("Tweeting...")
     ```

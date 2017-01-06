@@ -16,16 +16,16 @@ Your soil temperature probe is a prewired and waterproof digital temperature sen
 
 ![Digital temperature sensor](images/bare_sensor.jpg)
 
-The sensor has three pins: a ground pin, a data pin, and a 3.3V power pin. You may have noticed that the sensor was described as a *digital* temperature sensor; this is because the signals generated are converted into a digital format that the Raspberry Pi can understand. 
+The sensor has three pins: a ground pin, a data pin, and a 3.3V power pin. You may have noticed that the sensor was described as a *digital* temperature sensor; this is because the signals generated are converted into a digital format that the Raspberry Pi can understand.
 
-To initiate a temperature measurement, the Raspberry Pi sends a command to the sensor. Then the resulting thermal data is stored in a temperature register in the sensor memory for the Raspberry Pi to read. 
+To initiate a temperature measurement, the Raspberry Pi sends a command to the sensor. Then the resulting thermal data is stored in a temperature register in the sensor memory for the Raspberry Pi to read.
 
 
 ## Taking a reading
 
 1. Set up and boot your Raspberry Pi Weather Station, including the smaller box which contains the air quality sensor board and to which the soil temperature probe is connected.
 
-1. The first thing we need to know is how to take a simple reading from the temperature sensor. Remember when we used someone else's code to help us access the data from the [wind vane](wind_vane/worksheet.md)? The temperature sensor also has some prewritten code we can use; it has a bit of a confusing name because the actual name of the temperature sensor component is **DS18B20**. This code creates an object `temp_probe` we can use to talk to the sensor, and then calls the method `read_temp()` on this object to get the current temperature reading.
+1. The first thing we need to know is how to take a simple reading from the temperature sensor. Remember when we used someone else's code to help us access the data from the [wind vane](../lesson-4/worksheet.md)? The temperature sensor also has some prewritten code we can use; it has a bit of a confusing name because the actual name of the temperature sensor component is **DS18B20**. This code creates an object `temp_probe` we can use to talk to the sensor, and then calls the method `read_temp()` on this object to get the current temperature reading.
 
 
 	```python
@@ -35,7 +35,7 @@ To initiate a temperature measurement, the Raspberry Pi sends a command to the s
 	print( temp_probe.read_temp() )
 	```
 
-1. Now think back to the [wind gust speed lesson](wind_gust_speed/worksheet.md) where we took multiple readings from the anemometer and stored the speeds in a list. Can you work out how to take 10 readings and store them in a list? You might want to use your [old code](wind_gust_speed/code/wind_gust.py) to help you.
+1. Now think back to the [wind gust speed lesson](../lesson-3/worksheet.md) where we took multiple readings from the anemometer and stored the speeds in a list. Can you work out how to take 10 readings and store them in a list? You might want to use your [old code](../lesson-3/code/wind_gust.py) to help you.
 
 1. It's not much use to us if we take temperature readings immediately one after the other. Can you work out how to space the readings at an interval of 5 seconds? Your first step is to add the code `from time import sleep` at the start of your program so you can use the `sleep()` function to help you.
 
@@ -49,7 +49,7 @@ Which type of graph would best show the data we have gathered from the temperatu
 
 ### Answer
 
-A line graph would be the most suitable graph to show this data, as it shows the change in temperature over time. 
+A line graph would be the most suitable graph to show this data, as it shows the change in temperature over time.
 
 Python has a software library called `matplotlib` which allows us to easily create graphs of our data. Ask your teacher whether you need to install this library or if it has already been done for you. If you need to install the software, open up a terminal and type `sudo apt-get install python3-matplotlib`.
 
@@ -105,12 +105,12 @@ Using this as an example, can you write some code to generate a list which looks
 	plt.show()
 	```
 
-This tells the graph code (which we have nicknamed `plt`) to call its `plot()` function using the `x` and `y` lists as the data, and then to call the `show()` function to display the graph on the screen. 
+This tells the graph code (which we have nicknamed `plt`) to call its `plot()` function using the `x` and `y` lists as the data, and then to call the `show()` function to display the graph on the screen.
 
 
 1. Test your code; you can cause temperature variations by simply holding the sensor in your hand to warm it up. The full [code with the graph](code/soil_temp.py) is here for you to look at.
 
-1. Your graph doesn't have any axis labels or a title. Can you work out how to add these using the `matplotlib` functions `suptitle("Title")`, `xlabel("x axis label")`, and `ylabel("y axis label")`? 
+1. Your graph doesn't have any axis labels or a title. Can you work out how to add these using the `matplotlib` functions `suptitle("Title")`, `xlabel("x axis label")`, and `ylabel("y axis label")`?
 
 	![Example graph](images/graph_example.png)
 

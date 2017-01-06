@@ -30,7 +30,7 @@ Here is some background information [about the rain gauge](../guides/rain_gauge.
 
 ## Starter
 
-Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Read the [rain gauge](about.md) guide for more detailed information.
+Examine the rain gauge sensor and discuss with pupils how it works and measures the rainfall over time. Read the [rain gauge](../guides/rain_gauge.md) guide for more detailed information.
 
 - Ask students what they think it does and how they think it works.
 - Open it up and explore the sensor, reed switch, and magnet.

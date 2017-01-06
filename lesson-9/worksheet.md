@@ -118,7 +118,7 @@ Find the place in your program where you open the file and after that line, type
 
 ## Automating the readings
 
-You already know how to automate things happening at an interval. This code is from the lesson on [air quality](air_quality_sensor/worksheet.md).
+You already know how to automate things happening at an interval. This code is from the lesson on [air quality](../lesson-8/worksheet.md).
 
 ```python
 while True:

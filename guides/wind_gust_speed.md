@@ -2,7 +2,7 @@
 
 This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind gust speed.
 
-![Anemometer](images/anemometer.png)
+![Anemometer](../lesson-3/images/anemometer.png)
 
 ## How does it work?
 
@@ -59,7 +59,7 @@ radius_cm = 9.0 # Radius of your anemometer
 interval = 5    # How often (secs) to report speed
 ADJUSTMENT = 1.18
 CM_IN_A_KM = 100000.0
-SECS_IN_AN_HOUR = 3600 
+SECS_IN_AN_HOUR = 3600
 store_speeds = [] # Define a list to store last 4 wind speeds
 
 # Every half-rotation, add 1 to count
@@ -68,7 +68,7 @@ def spin():
     count = count + 1
     print( count )
 
-# Calculate the wind speed given the time interval 
+# Calculate the wind speed given the time interval
 def calc_speed(time_sec):
         global count
         global store_speeds
@@ -91,10 +91,10 @@ def calc_speed(time_sec):
         # If that takes the list over 4 items, chop off the first
         if len(store_speeds) > 4:
                 store_speeds = store_speeds[1:]
-      
+
         # Show what is in the store_speeds list
         print( str(store_speeds) )
-        
+
         return final_speed
 
 # Check whether the last 20 seconds of readings had any gusts

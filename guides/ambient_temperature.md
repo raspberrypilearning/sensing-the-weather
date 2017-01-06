@@ -2,21 +2,21 @@
 
 Here is the ambient temperature sensor component on the air quality sensor board included with the Raspberry Pi Weather Station. The component is circled in red.
 
-![Ambient Temperature Sensor](images/air_board.png)
+![Ambient Temperature Sensor](../lesson-6/images/air_board.png)
 
 ## How does it work?
 
-This sensor detects both the ambient temperature and the relative humidity of the air surrounding it. We will explore the humidity part of the sensor further in the [lesson on relative humidity](relative_humidity/lesson.md).
+This sensor detects both the ambient temperature and the relative humidity of the air surrounding it. We will explore the humidity part of the sensor further in the [lesson on relative humidity](relative_humidity.md).
 
 These types of sensor detect changes in temperature and humidity in two possible ways, depending on how they are built.
 
 **Capacitive sensing** - The sensor uses a material which absorbs water from the air. The sensor's capacitance (ability to store an electric charge) changes depending on how much water vapour the air contains, and this can be measured and converted into meaningful units.
 
-**Resistive sensing** - The sensor uses a material which has the property that its resistance (how easy it is for a current to pass through it) changes depending on the humidity of the surrounding air, and this value is measured and converted into meaningful units. 
+**Resistive sensing** - The sensor uses a material which has the property that its resistance (how easy it is for a current to pass through it) changes depending on the humidity of the surrounding air, and this value is measured and converted into meaningful units.
 
-Relative humidity is directly related to the ambient temperature; it's for this reason that we can access both temperature and relative humidity data from the same sensor. Relative humidity is defined as the amount of water vapour present in the air, as a percentage of the amount of water vapour needed for *saturation* at that temperature. 
+Relative humidity is directly related to the ambient temperature; it's for this reason that we can access both temperature and relative humidity data from the same sensor. Relative humidity is defined as the amount of water vapour present in the air, as a percentage of the amount of water vapour needed for *saturation* at that temperature.
 
-![Relative humidity equation](images/relative_humidity_equation.png)
+![Relative humidity equation](../lesson-6/images/relative_humidity_equation.png)
 
 For example, at 20 degrees C, the saturated vapour density is 17.3g/m<sup>3</sup>.
 

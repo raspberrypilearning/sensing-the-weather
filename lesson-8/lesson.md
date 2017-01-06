@@ -4,7 +4,7 @@ In this lesson students will learn about how air quality is monitored, and will 
 
 ## Sensor guide
 
-Here is some background information about the [air quality sensor](about.md).
+Here is some background information about the [air quality sensor](../guides/air_quality.md).
 
 ## Learning objectives
 
@@ -14,7 +14,7 @@ Here is some background information about the [air quality sensor](about.md).
 
 ## Cross-curricular applications
 
-- Computer Science - concatenation, using an API 
+- Computer Science - concatenation, using an API
 - Geography - GIS mapping, climate change
 
 
@@ -26,7 +26,7 @@ Here is some background information about the [air quality sensor](about.md).
 
 ## Starter
 
-Data is freely available online about the quantity of pollutants recorded in the atmosphere. For example, in the UK this [interactive emissions map](http://naei.defra.gov.uk/data/gis-mapping) is a GIS map where you can inspect the quantity of a variety of pollutants in your local area. Select 'Carbon Monoxide' from the drop-down menu and enter your post code or zoom in to your local area on the map to see how polluted your area is. 
+Data is freely available online about the quantity of pollutants recorded in the atmosphere. For example, in the UK this [interactive emissions map](http://naei.defra.gov.uk/data/gis-mapping) is a GIS map where you can inspect the quantity of a variety of pollutants in your local area. Select 'Carbon Monoxide' from the drop-down menu and enter your post code or zoom in to your local area on the map to see how polluted your area is.
 
 The air sensor on the Raspberry Pi Weather Station board measures the concentration of contaminants such as hydrogen, carbon monoxide, and methane. They are not returned in the same units as this map, but rather expressed as a percentage of air purity; the higher the percentage, the more pure the surrounding air is.
 
@@ -97,7 +97,7 @@ Ask the class the following question:
 
 **Answer:**
 
-- The air quality sensor can only detect some gases in the atmosphere, not all possible pollutants. The value returned is a percentage of air purity, but what does that really mean? How is it calibrated? A value of around 60% actually indicates a pretty good air quality. 
+- The air quality sensor can only detect some gases in the atmosphere, not all possible pollutants. The value returned is a percentage of air purity, but what does that really mean? How is it calibrated? A value of around 60% actually indicates a pretty good air quality.
 
 
 ## Extension

@@ -27,14 +27,14 @@ To measure the wind gust speed we will also use the anemometer, the same instrum
 	```bash
 	cp wind_final.py wind_gust.py
 	```
-	
-If you don't have your old program, you can download a copy of the old [wind speed program](../wind_speed/code/wind_final.py) into your `weather_station` folder.
+
+If you don't have your old program, you can download a copy of the old [wind speed program](../lesson-2/code/wind_final.py) into your `weather_station` folder.
 
 1. Open the program by typing `sudo idle3 wind_gust.py`. We still need to use all of this code to gather wind speeds, but we need to add to it to be able to store and analyse the wind speeds.
-    
+
 ## Storing wind speed readings
 
-Since the time period we're interested in is 20 seconds and our existing program records wind speed every 5 seconds (this is the number of seconds stored in the `interval` variable in the program), we need to record the **four** most recent readings to cover the last 20 seconds. To do this we will use a Python data structure called a list. 
+Since the time period we're interested in is 20 seconds and our existing program records wind speed every 5 seconds (this is the number of seconds stored in the `interval` variable in the program), we need to record the **four** most recent readings to cover the last 20 seconds. To do this we will use a Python data structure called a list.
 
 Here is some code which creates an empty list. Add this at the top of your program next to where you have initialised your other variables.
 
@@ -65,7 +65,7 @@ The final result for the wind speed is the final line where we `return km_per_ho
 	```python
 	final_speed = km_per_hour * ADJUSTMENT
 	```
-	
+
 1. Add the speed to our list of wind speed measurements:
 
 	```python
@@ -77,19 +77,19 @@ The final result for the wind speed is the final line where we `return km_per_ho
 	```python
 	store_speeds = store_speeds[1:]
 	```
-	
+
 Each item in a list is called an **element**. This code tells the list to slice off a chunk of the list from element 1 to the end. It might sound like this won't do anything, unless you know that elements in lists are indexed from 0. For example, if we have the list `["a", "b", "c", "d", "e"]` then element 0 is "a", element 1 is "b" and so on, so using this code, element 0 in the list will be chopped off.
 
 Add some code to your `calculate_speed()` function to store the reading, chop the list, and then return the latest calculated speed. Here is some pseudocode to help you achieve this:
 
     > STORE most recent reading IN store_speeds LIST
-    > 
+    >
     > IF store_speeds LIST has MORE THAN 4 elements
     >
     > --- store_speeds LIST = SLICE store_speeds LIST from element 1 to end
     >
     > RETURN final_speed
-    
+
 
 ## Checking for gusts
 
@@ -130,7 +130,7 @@ So the results for each data set are:
 
 ## Adding a gust detection function
 
-Now that we have a well-defined logical way of testing whether a gust has occurred, our final job is to add a function we can call to check whether a gust occurred in the last 20 seconds. 
+Now that we have a well-defined logical way of testing whether a gust has occurred, our final job is to add a function we can call to check whether a gust occurred in the last 20 seconds.
 
 1. Create a new function called `check_for_gusts()`.
 
@@ -141,7 +141,7 @@ Now that we have a well-defined logical way of testing whether a gust has occurr
 	- `GUST_ABOVE` - a gust occurs when the wind speed is above 29.6km/h AND
 	- `GUST_RANGE` - a gust occurs when the range is above 16.7km/h
 
-1. Finally, check the conditions and return either the gust speed if a gust has occurred, or 0 if no gust is recorded within this time period. 
+1. Finally, check the conditions and return either the gust speed if a gust has occurred, or 0 if no gust is recorded within this time period.
 
 Here is some pseudocode to help you:
 
@@ -159,11 +159,11 @@ Run and test your program. If you're testing it indoors by pushing the anemomete
 
 ## Summary
 
-- You have created a program which stores the last 20 seconds of wind speed data as four readings in a list, and checks whether a gust of wind has occurred. 
+- You have created a program which stores the last 20 seconds of wind speed data as four readings in a list, and checks whether a gust of wind has occurred.
 - How can you test whether your program works?
 
 
 ## What next
 
-- Devise a way to test your code indoors. It's unlikely that you will be able to generate "gusts" by spinning the anemometer at greater than 29.6km/h by hand. How could you test whether the code you have written to check for gusts actually works? 
+- Devise a way to test your code indoors. It's unlikely that you will be able to generate "gusts" by spinning the anemometer at greater than 29.6km/h by hand. How could you test whether the code you have written to check for gusts actually works?
 - Devise a test plan and test your code.
