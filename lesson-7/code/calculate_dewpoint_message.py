@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import HTU21D as temp_humid
 
 humidity_sensor = temp_humid.HTU21D()
