@@ -10,6 +10,8 @@ Your soil temperature probe is a prewired and waterproof digital temperature sen
 
 ![Digital temperature sensor](images/bare_sensor.jpg)
 
+-- Image by oomlout [CC BY-SA 2.0](http://creativecommons.org/licenses/by-sa/2.0), via Wikimedia Commons --
+
 The sensor has three pins: a ground pin, a data pin, and a 3.3V power pin. You may have noticed that the sensor was described as a *digital* temperature sensor; this is because the signals generated are converted into a digital format that the Raspberry Pi can understand.
 
 To initiate a temperature measurement, the Raspberry Pi sends a command to the sensor. Then the resulting thermal data is stored in a temperature register in the sensor memory for the Raspberry Pi to read.
