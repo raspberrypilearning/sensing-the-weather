@@ -12,7 +12,7 @@ Barometric pressure is the pressure exerted by the weight of air. You might thin
 
 Weight * Number of cm<sup>2</sup> in 1m<sup>2</sup> = Pressure in N/m<sup>2</sup>
 
-**10.1N * 1000 = 101,000N/m<sup>2</sup>**
+10.1N * 1000 = 101,000N/m<sup>2</sup>
 
 Our barometric pressure sensor measures pressure in pascals (Pa). One pascal is equal to one newton per square metre.
 
