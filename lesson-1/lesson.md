@@ -4,7 +4,7 @@ In this lesson students will learn how the rain gauge works, then Python code wi
 
 ## Sensor guide
 
-Here is some background information [about the rain gauge](about.md).
+Here is some background information [about the rain gauge](../guides/rain_gauge.md).
 
 ## Learning objectives
 
@@ -40,7 +40,7 @@ Once you have explored how the sensor works, you should connect it up to the Ras
 
 ## Main development
 
-1. Students boot their Raspberry Pi. 
+1. Students boot their Raspberry Pi.
 1. Students follow the [worksheet](worksheet.md) to create a polling program to gather data from the sensor, and create an interrupt program to gather data from the sensor.
 1. Discuss with students the difference between polling vs. using interrupts: polling monopolises the processor, but interrupts only occur when the sensor is triggered.
 
