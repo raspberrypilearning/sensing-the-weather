@@ -1,2 +1,12 @@
 title: Sensing the Weather
 category: teach
+lessons:
+    1: Rainfall
+    2: Wind Speed
+    3: Wind Gust Speed
+    4: Wind Direction
+    5: Ambient Temperature
+    6: Soil Temperature
+    7: Barometric Pressure
+    8: Relative Humidity
+    9: Air Quality
