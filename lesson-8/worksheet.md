@@ -138,7 +138,7 @@ The aim of this lesson is to use the Twitter API to tweet the air quality data f
 	    print("Tweeting...")
     ```
 
-1. Finally, let's add a message about the air quality, depending on how good or bad it is. Think back to the [wind direction](wind_direction/worksheet.md) lesson where we used code to determine what to do based on boundaries:
+1. Finally, let's add a message about the air quality, depending on how good or bad it is. Think back to the [wind direction](lesson-3/worksheet.md) lesson where we used code to determine what to do based on boundaries:
 
 	```python
 	if degrees >= 338 or degrees < 23:
