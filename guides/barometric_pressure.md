@@ -2,7 +2,7 @@
 
 Here is the barometric pressure sensor supplied with the Raspberry Pi Weather Station kit as part of the air quality sensor board:
 
-![Barometric pressure sensor](../lesson-9/images/pressure_sensor.png)
+![Barometric pressure sensor](images/pressure_sensor.png)
 
 The component is a BMP180 digital barometric pressure sensor.
 

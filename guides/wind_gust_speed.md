@@ -2,7 +2,7 @@
 
 This is the anemometer sensor supplied with the Raspberry Pi Weather Station kit. It is used to measure wind gust speed.
 
-![Anemometer](../lesson-3/images/anemometer.png)
+![Anemometer](images/anemometer.png)
 
 ## How does it work?
 

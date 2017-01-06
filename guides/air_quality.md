@@ -2,7 +2,7 @@
 
 Here is the air quality sensor supplied with the Raspberry Pi Weather Station kit:
 
-![Air Quality Sensor](../lesson-8/images/air_quality_sensor.png)
+![Air Quality Sensor](images/air_quality_sensor.png)
 
 ## How does it work?
 

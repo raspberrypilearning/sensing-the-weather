@@ -2,13 +2,13 @@
 
 Here is the soil temperature sensor supplied with the Raspberry Pi Weather Station kit.
 
-![Soil temperature sensor](../lesson-5/images/soil_temp_sensor.png)
+![Soil temperature sensor](images/soil_temp_sensor.png)
 
 ## How does it work?
 
 Your soil temperature probe is a prewired and waterproof digital temperature sensor. If you were to take the sensor out of the protective wiring and waterproofing, it would look like this:
 
-![Digital temperature sensor](../lesson-5/images/bare_sensor.jpg)
+![Digital temperature sensor](images/bare_sensor.jpg)
 
 The sensor has three pins: a ground pin, a data pin, and a 3.3V power pin. You may have noticed that the sensor was described as a *digital* temperature sensor; this is because the signals generated are converted into a digital format that the Raspberry Pi can understand.
 

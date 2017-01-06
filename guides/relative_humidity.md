@@ -2,7 +2,7 @@
 
 Here is the relative humidity sensor component on the air quality sensor board included with the Raspberry Pi Weather Station. The component is circled in red. (The relative humidity and ambient temperature are both measured by the same sensor.)
 
-![Relative Humidity Sensor](../lesson-7/images/air_board.png)
+![Relative Humidity Sensor](images/air_board.png)
 
 ## How does it work?
 
@@ -25,7 +25,7 @@ These types of sensor detect changes in temperature and humidity in two possible
 
 Relative humidity is directly related to the ambient temperature. It's for this reason that we can access both temperature and relative humidity data from the same sensor. Relative humidity is defined as the amount of water vapour present in the air, as a percentage of the amount of water vapour needed for *saturation* at that temperature.
 
-![Relative humidity equation](../lesson-7/images/relative_humidity_equation.png)
+![Relative humidity equation](images/relative_humidity_equation.png)
 
 For example, at 20 degrees C, the saturation vapour density is 17.3g/m<sup>3</sup>. The saturation vapour density is the maximum amount of water vapour the air can hold at that temperature.
 
