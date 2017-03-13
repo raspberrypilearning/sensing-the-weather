@@ -134,13 +134,13 @@ Can you go one step further and draw a weather map-style arrow, pointing in the 
 
 ```
 direction = 350
-direction = (direction + 180) % 180
+direction = (direction + 180) % 360
 ```
 
 `%` performs [integer division](http://mathworld.wolfram.com/IntegerDivision.html) and reports the remainder. So in this case:
 
 ```
 350 + 180 = 530
-530 \ 180 = 2 		# How many times 180 fully goes into 530
-530 % 180 = 170		# The remainder of the integer division
+530 \ 360 = 1 		# How many times 360 fully goes into 530
+530 % 360 = 170		# The remainder of the integer division
 ```
